@@ -73,6 +73,7 @@
     <Compile Include="LoginWindow.Designer.cs">
       <DependentUpon>LoginWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Subject.cs" />
     <Compile Include="Users\Faculty.cs" />
     <Compile Include="Group.cs" />
     <Compile Include="Program.cs" />
