@@ -8,5 +8,10 @@ namespace OOP_Project_Group13
 {
     public class TimeTable
     {
+        List<Class> classes { get; set; }
+        public TimeTable(List<Class>classes)
+        {
+            this.classes = classes;
+        }
     }
 }

@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace OOP_Project_Group13
 {
-    public class Course
+    public class Course : Subject
     {
+        Faculty teacher { get; set; }
+        string type { get; set; }
+        public Course(string name, Faculty teacher, string type) : base(name)
+        {
+            this.teacher = teacher;
+            this.type = type;
+        }
     }
 }
