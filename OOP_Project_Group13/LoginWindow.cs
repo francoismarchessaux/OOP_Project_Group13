@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace OOP_Project_Group13
 {
-    public partial class MainMenu : Form
+    public partial class LoginWindow : Form
     {
-        public MainMenu()
+        public LoginWindow()
         {
             InitializeComponent();
         }
