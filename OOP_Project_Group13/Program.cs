@@ -16,7 +16,7 @@ namespace OOP_Project_Group13
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainMenu());
+            Application.Run(new LoginWindow());
             Console.ReadLine();
         }
     }
