@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace OOP_Project_Group13
 {
-    public class Course
+    public class Course : Subject
     {
+
     }
 }
