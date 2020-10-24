@@ -61,16 +61,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\AdministratorMainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdministratorMainWindow.Designer.cs">
+      <DependentUpon>AdministratorMainWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Course.cs" />
     <Compile Include="Database1DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Database1DataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="LoginWindow.cs">
+    <Compile Include="Forms\CreateStudentWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginWindow.Designer.cs">
+    <Compile Include="Forms\CreateStudentWindow.Designer.cs">
+      <DependentUpon>CreateStudentWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LoginWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LoginWindow.Designer.cs">
       <DependentUpon>LoginWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Subject.cs" />
@@ -82,7 +94,13 @@
     <Compile Include="Users\Administrator.cs" />
     <Compile Include="Users\Student.cs" />
     <Compile Include="Users\User.cs" />
-    <EmbeddedResource Include="LoginWindow.resx">
+    <EmbeddedResource Include="Forms\AdministratorMainWindow.resx">
+      <DependentUpon>AdministratorMainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CreateStudentWindow.resx">
+      <DependentUpon>CreateStudentWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LoginWindow.resx">
       <DependentUpon>LoginWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
