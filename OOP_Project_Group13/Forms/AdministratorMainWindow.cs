@@ -30,13 +30,6 @@ namespace OOP_Project_Group13
             studentCreationWindow.Show();
         }
 
-        private void AdministratorMainWindow_Load(object sender, EventArgs e)
-        {
-            // TODO: cette ligne de code charge les données dans la table 'database1DataSet.User'. Vous pouvez la déplacer ou la supprimer selon les besoins.
-            this.userTableAdapter.Fill(this.database1DataSet.User);
-
-        }
-
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 

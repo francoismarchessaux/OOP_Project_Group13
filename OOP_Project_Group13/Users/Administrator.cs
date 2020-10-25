@@ -14,15 +14,9 @@ namespace OOP_Project_Group13.Users
         
         }
 
-        public void RegisterStudent(Student student, Course course)
+        public void CreateStudent(Student student)
         {
 
-        }
-
-        public bool SetGrades(Student student)
-        {
-            bool gradesSubmitted = false;
-            return gradesSubmitted;
         }
     }
 }

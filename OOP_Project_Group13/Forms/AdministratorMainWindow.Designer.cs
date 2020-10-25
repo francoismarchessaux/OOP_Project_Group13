@@ -41,12 +41,9 @@
             this.ManageCourseButton = new System.Windows.Forms.Button();
             this.CreateClassButton = new System.Windows.Forms.Button();
             this.ManageClassButton = new System.Windows.Forms.Button();
-            this.database1DataSet = new OOP_Project_Group13.Database1DataSet();
             this.database1DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.userTableAdapter = new OOP_Project_Group13.Database1DataSetTableAdapters.UserTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.AdminPP_PictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -161,25 +158,6 @@
             this.ManageClassButton.Text = "Manage Classes";
             this.ManageClassButton.UseVisualStyleBackColor = true;
             // 
-            // database1DataSet
-            // 
-            this.database1DataSet.DataSetName = "Database1DataSet";
-            this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // database1DataSetBindingSource
-            // 
-            this.database1DataSetBindingSource.DataSource = this.database1DataSet;
-            this.database1DataSetBindingSource.Position = 0;
-            // 
-            // userBindingSource
-            // 
-            this.userBindingSource.DataMember = "User";
-            this.userBindingSource.DataSource = this.database1DataSetBindingSource;
-            // 
-            // userTableAdapter
-            // 
-            this.userTableAdapter.ClearBeforeFill = true;
-            // 
             // AdministratorMainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -203,9 +181,7 @@
             this.Name = "AdministratorMainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main Menu";
-            this.Load += new System.EventHandler(this.AdministratorMainWindow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.AdminPP_PictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -228,8 +204,6 @@
         private System.Windows.Forms.Button CreateClassButton;
         private System.Windows.Forms.Button ManageClassButton;
         private System.Windows.Forms.BindingSource database1DataSetBindingSource;
-        private Database1DataSet database1DataSet;
         private System.Windows.Forms.BindingSource userBindingSource;
-        private Database1DataSetTableAdapters.UserTableAdapter userTableAdapter;
     }
 }
