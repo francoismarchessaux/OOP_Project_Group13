@@ -114,6 +114,7 @@
             this.comboBox1.Size = new System.Drawing.Size(175, 33);
             this.comboBox1.TabIndex = 7;
             this.comboBox1.Text = "System.Data.DataViewManagerListItemTypeDescriptor";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -197,6 +198,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.AdminName_Label);
             this.Location = new System.Drawing.Point(200, 100);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AdministratorMainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main Menu";

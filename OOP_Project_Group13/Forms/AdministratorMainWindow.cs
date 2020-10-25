@@ -36,5 +36,10 @@ namespace OOP_Project_Group13
             this.userTableAdapter.Fill(this.database1DataSet.User);
 
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
