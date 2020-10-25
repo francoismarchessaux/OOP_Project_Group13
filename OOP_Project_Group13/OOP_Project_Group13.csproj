@@ -12,7 +12,6 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -25,6 +24,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -63,11 +63,23 @@
   <ItemGroup>
     <Compile Include="Attendance.cs" />
     <Compile Include="Class.cs" />
-    <Compile Include="CreateCourse.cs">
+    <Compile Include="ClassInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreateCourse.Designer.cs">
-      <DependentUpon>CreateCourse.cs</DependentUpon>
+    <Compile Include="ClassInfo.Designer.cs">
+      <DependentUpon>ClassInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FacultyHomePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FacultyHomePage.Designer.cs">
+      <DependentUpon>FacultyHomePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ListClasses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ListClasses.Designer.cs">
+      <DependentUpon>ListClasses.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\AdministratorMainWindow.cs">
       <SubType>Form</SubType>
@@ -94,10 +106,10 @@
       <DependentUpon>LoginWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Grade.cs" />
-    <Compile Include="StudentInformationsWindow.cs">
+    <Compile Include="Forms\StudentInformationsWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StudentInformationsWindow.Designer.cs">
+    <Compile Include="Forms\StudentInformationsWindow.Designer.cs">
       <DependentUpon>StudentInformationsWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Subject.cs" />
@@ -108,14 +120,20 @@
     <Compile Include="Users\Administrator.cs" />
     <Compile Include="Users\Student.cs" />
     <Compile Include="Users\User.cs" />
-    <EmbeddedResource Include="CreateCourse.resx">
-      <DependentUpon>CreateCourse.cs</DependentUpon>
+    <EmbeddedResource Include="ClassInfo.resx">
+      <DependentUpon>ClassInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FacultyHomePage.resx">
+      <DependentUpon>FacultyHomePage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdministratorMainWindow.resx">
       <DependentUpon>AdministratorMainWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CreateStudentWindow.resx">
       <DependentUpon>CreateStudentWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ListClasses.resx">
+      <DependentUpon>ListClasses.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginWindow.resx">
       <DependentUpon>LoginWindow.cs</DependentUpon>
@@ -129,7 +147,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="StudentInformationsWindow.resx">
+    <EmbeddedResource Include="Forms\StudentInformationsWindow.resx">
       <DependentUpon>StudentInformationsWindow.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Database1DataSet.xsc">
@@ -157,12 +175,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Database2.mdf">
+    <Content Include="Database1.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Database2_log.ldf">
+    <Content Include="Database1_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>Database2.mdf</DependentUpon>
+      <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
   </ItemGroup>
   <ItemGroup>
