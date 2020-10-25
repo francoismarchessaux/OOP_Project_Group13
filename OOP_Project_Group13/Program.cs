@@ -15,10 +15,10 @@ namespace OOP_Project_Group13
         [STAThread]
         static void Main()
         {
-            SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\François\Desktop\OOP\OOP_Project_Group13\OOP_Project_Group13\Database1.mdf;Integrated Security=True");
+            SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\ANNEE3\POO\OOP_Project_Group_13\OOP_Project_Group13\Database2.mdf;Integrated Security=True");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginWindow(connection));
+            Application.Run(new CreateCourse(connection));
             Console.ReadLine();
         }
     }

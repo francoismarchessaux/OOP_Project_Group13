@@ -36,5 +36,20 @@ namespace OOP_Project_Group13.Forms
         {
             this.Hide();
         }
+
+        private void LastName_TxtBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FirstName_TxtBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void StudentID_TxtBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
