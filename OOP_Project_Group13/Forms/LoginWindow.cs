@@ -22,7 +22,7 @@ namespace OOP_Project_Group13
 
         private void button1_Click(object sender, EventArgs e)
         {
-            String query = "Select * from [User] Where userID = ' " + userID_TextBox.Text + "'";
+            String query = "Select * from [Users] Where userID = ' " + userID_TextBox.Text + "'";
             SqlDataAdapter SDA = new SqlDataAdapter(query, connection);
             DataTable userTable = new DataTable();
             SDA.Fill(userTable);
