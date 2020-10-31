@@ -29,8 +29,7 @@
         private void InitializeComponent()
         {
             this.StudentPicture = new System.Windows.Forms.PictureBox();
-            this.LastNameLabel = new System.Windows.Forms.Label();
-            this.FirstNameLabel = new System.Windows.Forms.Label();
+            this.NameLabel = new System.Windows.Forms.Label();
             this.StudentIDLabel = new System.Windows.Forms.Label();
             this.BirthDate = new System.Windows.Forms.Label();
             this.AdressLabel = new System.Windows.Forms.Label();
@@ -50,23 +49,14 @@
             this.StudentPicture.TabIndex = 0;
             this.StudentPicture.TabStop = false;
             // 
-            // LastNameLabel
+            // NameLabel
             // 
-            this.LastNameLabel.AutoSize = true;
-            this.LastNameLabel.Location = new System.Drawing.Point(225, 26);
-            this.LastNameLabel.Name = "LastNameLabel";
-            this.LastNameLabel.Size = new System.Drawing.Size(115, 25);
-            this.LastNameLabel.TabIndex = 1;
-            this.LastNameLabel.Text = "Last Name";
-            // 
-            // FirstNameLabel
-            // 
-            this.FirstNameLabel.AutoSize = true;
-            this.FirstNameLabel.Location = new System.Drawing.Point(337, 26);
-            this.FirstNameLabel.Name = "FirstNameLabel";
-            this.FirstNameLabel.Size = new System.Drawing.Size(116, 25);
-            this.FirstNameLabel.TabIndex = 2;
-            this.FirstNameLabel.Text = "First Name";
+            this.NameLabel.AutoSize = true;
+            this.NameLabel.Location = new System.Drawing.Point(225, 26);
+            this.NameLabel.Name = "NameLabel";
+            this.NameLabel.Size = new System.Drawing.Size(150, 25);
+            this.NameLabel.TabIndex = 1;
+            this.NameLabel.Text = "Student NAme";
             // 
             // StudentIDLabel
             // 
@@ -140,14 +130,14 @@
             this.Controls.Add(this.AdressLabel);
             this.Controls.Add(this.BirthDate);
             this.Controls.Add(this.StudentIDLabel);
-            this.Controls.Add(this.FirstNameLabel);
-            this.Controls.Add(this.LastNameLabel);
+            this.Controls.Add(this.NameLabel);
             this.Controls.Add(this.StudentPicture);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "StudentInformationsWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Student Informations";
+            this.Load += new System.EventHandler(this.StudentInformationsWindow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.StudentPicture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -157,8 +147,7 @@
         #endregion
 
         private System.Windows.Forms.PictureBox StudentPicture;
-        private System.Windows.Forms.Label LastNameLabel;
-        private System.Windows.Forms.Label FirstNameLabel;
+        private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.Label StudentIDLabel;
         private System.Windows.Forms.Label BirthDate;
         private System.Windows.Forms.Label AdressLabel;

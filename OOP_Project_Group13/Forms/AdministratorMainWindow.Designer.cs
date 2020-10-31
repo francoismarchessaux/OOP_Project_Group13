@@ -35,7 +35,7 @@
             this.Label2 = new System.Windows.Forms.Label();
             this.AdminID_Label = new System.Windows.Forms.Label();
             this.CreateStudentButton = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.StudentList = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.CreateCourseButton = new System.Windows.Forms.Button();
             this.ManageCourseButton = new System.Windows.Forms.Button();
@@ -43,9 +43,14 @@
             this.ManageClassButton = new System.Windows.Forms.Button();
             this.database1DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.database1DataSet = new OOP_Project_Group13.Database1DataSet();
+            this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usersTableAdapter = new OOP_Project_Group13.Database1DataSetTableAdapters.UsersTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.AdminPP_PictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // AdminName_Label
@@ -103,15 +108,15 @@
             this.CreateStudentButton.UseVisualStyleBackColor = true;
             this.CreateStudentButton.Click += new System.EventHandler(this.CreateStudentButton_Click);
             // 
-            // comboBox1
+            // StudentList
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(25, 386);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(175, 33);
-            this.comboBox1.TabIndex = 7;
-            this.comboBox1.Text = "System.Data.DataViewManagerListItemTypeDescriptor";
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.StudentList.FormattingEnabled = true;
+            this.StudentList.Location = new System.Drawing.Point(25, 386);
+            this.StudentList.Name = "StudentList";
+            this.StudentList.Size = new System.Drawing.Size(313, 33);
+            this.StudentList.TabIndex = 7;
+            this.StudentList.Text = "Select Student ...";
+            this.StudentList.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -124,7 +129,7 @@
             // 
             // CreateCourseButton
             // 
-            this.CreateCourseButton.Location = new System.Drawing.Point(313, 284);
+            this.CreateCourseButton.Location = new System.Drawing.Point(383, 284);
             this.CreateCourseButton.Name = "CreateCourseButton";
             this.CreateCourseButton.Size = new System.Drawing.Size(175, 48);
             this.CreateCourseButton.TabIndex = 9;
@@ -133,7 +138,7 @@
             // 
             // ManageCourseButton
             // 
-            this.ManageCourseButton.Location = new System.Drawing.Point(313, 358);
+            this.ManageCourseButton.Location = new System.Drawing.Point(383, 358);
             this.ManageCourseButton.Name = "ManageCourseButton";
             this.ManageCourseButton.Size = new System.Drawing.Size(175, 76);
             this.ManageCourseButton.TabIndex = 10;
@@ -158,6 +163,20 @@
             this.ManageClassButton.Text = "Manage Classes";
             this.ManageClassButton.UseVisualStyleBackColor = true;
             // 
+            // database1DataSet
+            // 
+            this.database1DataSet.DataSetName = "Database1DataSet";
+            this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // usersBindingSource
+            // 
+            this.usersBindingSource.DataMember = "Users";
+            this.usersBindingSource.DataSource = this.database1DataSet;
+            // 
+            // usersTableAdapter
+            // 
+            this.usersTableAdapter.ClearBeforeFill = true;
+            // 
             // AdministratorMainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -168,7 +187,7 @@
             this.Controls.Add(this.ManageCourseButton);
             this.Controls.Add(this.CreateCourseButton);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.StudentList);
             this.Controls.Add(this.CreateStudentButton);
             this.Controls.Add(this.AdminID_Label);
             this.Controls.Add(this.Label2);
@@ -181,9 +200,12 @@
             this.Name = "AdministratorMainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main Menu";
+            this.Load += new System.EventHandler(this.AdministratorMainWindow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.AdminPP_PictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,7 +219,7 @@
         private System.Windows.Forms.Label Label2;
         private System.Windows.Forms.Label AdminID_Label;
         private System.Windows.Forms.Button CreateStudentButton;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox StudentList;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button CreateCourseButton;
         private System.Windows.Forms.Button ManageCourseButton;
@@ -205,5 +227,8 @@
         private System.Windows.Forms.Button ManageClassButton;
         private System.Windows.Forms.BindingSource database1DataSetBindingSource;
         private System.Windows.Forms.BindingSource userBindingSource;
+        private Database1DataSet database1DataSet;
+        private System.Windows.Forms.BindingSource usersBindingSource;
+        private Database1DataSetTableAdapters.UsersTableAdapter usersTableAdapter;
     }
 }

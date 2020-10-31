@@ -1,123 +1,40 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace OOP_Project_Group13.Users
 {
-    public class Student
+    public class Student : User
     {
-        string name;
+        public string tutor { get; set; }
+        public List<Grade> gradesList { get; set; }
+        public List<Attendance> attendances { get; set; }
+        public TimeTable timetable { get; set; }
+        public List<Class> studentClasses { get; set; }
+        public int fees { get; set; }
+        public DateTime birthday { get; set; }
+        public string address { get; set; }
 
-        string tutor;
-        List<Grade> notes;
-        List<Attendance> absences;
-        TimeTable edt;
-        string groups;
-        int fees;
-        public Student(List<Grade> notes, List<Attendance> absences, string tutor, TimeTable edt, string name, string groups, int fees)
+        public Student() { }
+        public Student(string _name, string _firstName, string _status, string _password, int _ID, string _mail, string _phone, string _profilePicture, DateTime _birthday, string _address) : base(_name, _firstName, _status, _password, _ID, _mail, _phone, _profilePicture)
         {
-            this.notes = notes;
-            this.absences = absences;
-            this.tutor = tutor;
-            this.edt = edt;
-            this.name = name;
-            this.groups = groups;
-            this.fees = fees;
+            birthday = _birthday;
+            address = _address;
         }
-        public List<Grade> Notes
+        public Student(string _name, string _firstName, string _status, string _password, int _ID, string _mail, string _phone, string _profilePicture, string _tutor, List<Grade> _gradesList, List<Attendance> _attendances, TimeTable _timetable, List<Class> _studentClasses, int _fees, DateTime _birthday, string _address) : base(_name, _firstName, _status, _password, _ID, _mail, _phone, _profilePicture)
         {
-            get
-            {
-                return this.notes;
-            }
+            gradesList = _gradesList;
+            attendances = _attendances;
+            tutor = _tutor;
+            timetable = _timetable;
+            studentClasses = _studentClasses;
+            fees = _fees;
+            birthday = _birthday;
+            address = _address;
         }
-        public List<Attendance> Absences
-        {
-            get
-            {
-                return this.absences;
-            }
-        }
-        public string Tutor
-        {
-            get
-            {
-                return this.tutor;
-            }
-            set
-            {
-                this.tutor = value;
-            }
-        }
-        public string Name
-        {
-            get
-            {
-                return this.name;
-            }
-            set
-            {
-                this.name = value;
-            }
-        }
-        public string Groups
-        {
-            get
-            {
-                return this.groups;
-            }
-            set
-            {
-                this.groups = value;
-            }
-        }
-        public int Fees
-        {
-            get
-            {
-                return this.fees;
-            }
-            set
-            {
-                if (value < 0)
-                {
-                    Console.WriteLine("Fees must be 0 or higher");
-                }
-                else
-                {
-                    this.fees = value;
-                }
-            }
-        }
-        public void SeeGrades()
-        {
-            int i = 0;
-            while (i < notes.Count)
-            {
-                Console.WriteLine(notes[i]);
-                i++;
-            }
-        }
-        public void SeeAttendance()
-        {
-            int i = 0;
-            while (i < absences.Count)
-            {
-                Console.WriteLine(absences[i]);
-                i++;
-            }
-        }
-        public void SeeInformation()
-        {
-            Console.WriteLine("Name: " + name);
-            Console.WriteLine("Groups :" + groups);
-            Console.WriteLine("Grades: ");
-            SeeGrades();
-            Console.WriteLine("You have " + absences.Count + " absences :");
-            SeeAttendance();
 
-        }
     }
 }
