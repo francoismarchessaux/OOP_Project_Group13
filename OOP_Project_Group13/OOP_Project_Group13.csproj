@@ -121,6 +121,9 @@
     <Compile Include="Users\Administrator.cs" />
     <Compile Include="Users\Student.cs" />
     <Compile Include="Users\User.cs" />
+    <EmbeddedResource Include="FacultyHomePage.resx">
+      <DependentUpon>FacultyHomePage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdministratorMainWindow.resx">
       <DependentUpon>AdministratorMainWindow.cs</DependentUpon>
     </EmbeddedResource>
