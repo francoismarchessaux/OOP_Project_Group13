@@ -33,17 +33,48 @@ namespace OOP_Project_Group13
             MailLabel.Text = "Mail : " + student.mail;
             PhoneLabel.Text = "Phone number : " + student.phone;
             StudentPicture.ImageLocation = student.profilePicture;
-            Label label1 = new Label();
-            splitContainer1.Panel1.Controls.Add(label1);
-            label1.Visible = true;
-            label1.Text = "a";
-            label1.Location = new Point(800,400);
-            
-
+            AddCourse("Algo");
+            AddCourse("Maths");
         }
 
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
         {
+
+        }
+        private void AddCourse(string name)
+        {
+            Panel newPan = new Panel();
+            newPan.Height = 70;
+            newPan.Width = 752;
+            int x = 0;
+            int y = 0;
+            int count = 0;
+            foreach(Control c in generalPanel.Controls)
+            {
+                if (c is Panel)
+                    count++;
+            }
+            y += count * 80;
+            generalPanel.Controls.Add(newPan);
+            newPan.Location = new Point(x, y);
+            Label courseName = new Label();
+            courseName.Text = name;
+            courseName.AutoSize = true;
+            courseName.Visible = true;
+            newPan.Controls.Add(courseName);
+            courseName.Location = new Point(10, 10);
+            Label averageLabel = new Label();
+            averageLabel.Text = "Average : ";
+            averageLabel.AutoSize = true;
+            averageLabel.Visible = true;
+            newPan.Controls.Add(averageLabel);
+            averageLabel.Location = new Point(650,10);
+            Label average = new Label();
+            average.Text = "00.00";
+            average.AutoSize = true;
+            average.Visible = true;
+            newPan.Controls.Add(average);
+            average.Location = new Point(710, 10);
 
         }
     }
