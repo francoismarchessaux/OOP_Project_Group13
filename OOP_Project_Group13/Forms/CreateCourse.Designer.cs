@@ -42,6 +42,7 @@
             this.checkBoxExam = new System.Windows.Forms.CheckBox();
             this.checkBoxAssignment = new System.Windows.Forms.CheckBox();
             this.buttonCreate = new System.Windows.Forms.Button();
+            this.backBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LabelSubject
@@ -56,10 +57,10 @@
             // 
             // textBoxSubject
             // 
-            this.textBoxSubject.Location = new System.Drawing.Point(365, 71);
+            this.textBoxSubject.Location = new System.Drawing.Point(365, 73);
             this.textBoxSubject.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxSubject.Name = "textBoxSubject";
-            this.textBoxSubject.Size = new System.Drawing.Size(132, 31);
+            this.textBoxSubject.Size = new System.Drawing.Size(265, 31);
             this.textBoxSubject.TabIndex = 1;
             this.textBoxSubject.TextChanged += new System.EventHandler(this.textBoxSubject_TextChanged);
             // 
@@ -78,7 +79,7 @@
             this.textBoxClass.Location = new System.Drawing.Point(365, 126);
             this.textBoxClass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxClass.Name = "textBoxClass";
-            this.textBoxClass.Size = new System.Drawing.Size(132, 31);
+            this.textBoxClass.Size = new System.Drawing.Size(265, 31);
             this.textBoxClass.TabIndex = 3;
             this.textBoxClass.TextChanged += new System.EventHandler(this.textBoxClass_TextChanged);
             // 
@@ -97,7 +98,7 @@
             this.textBoxTeacher.Location = new System.Drawing.Point(365, 184);
             this.textBoxTeacher.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxTeacher.Name = "textBoxTeacher";
-            this.textBoxTeacher.Size = new System.Drawing.Size(132, 31);
+            this.textBoxTeacher.Size = new System.Drawing.Size(265, 31);
             this.textBoxTeacher.TabIndex = 5;
             this.textBoxTeacher.TextChanged += new System.EventHandler(this.textBoxTeacher_TextChanged);
             // 
@@ -135,7 +136,7 @@
             this.textBoxTime.Location = new System.Drawing.Point(365, 294);
             this.textBoxTime.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxTime.Name = "textBoxTime";
-            this.textBoxTime.Size = new System.Drawing.Size(132, 31);
+            this.textBoxTime.Size = new System.Drawing.Size(265, 31);
             this.textBoxTime.TabIndex = 9;
             this.textBoxTime.TextChanged += new System.EventHandler(this.textBoxTime_TextChanged);
             // 
@@ -176,20 +177,31 @@
             // 
             // buttonCreate
             // 
-            this.buttonCreate.Location = new System.Drawing.Point(127, 491);
+            this.buttonCreate.Location = new System.Drawing.Point(121, 473);
             this.buttonCreate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonCreate.Name = "buttonCreate";
             this.buttonCreate.Size = new System.Drawing.Size(100, 39);
             this.buttonCreate.TabIndex = 13;
-            this.buttonCreate.Text = "CreateCourse";
+            this.buttonCreate.Text = "Create";
             this.buttonCreate.UseVisualStyleBackColor = true;
             this.buttonCreate.Click += new System.EventHandler(this.buttonCreate_Click);
+            // 
+            // backBtn
+            // 
+            this.backBtn.Location = new System.Drawing.Point(266, 473);
+            this.backBtn.Name = "backBtn";
+            this.backBtn.Size = new System.Drawing.Size(103, 39);
+            this.backBtn.TabIndex = 14;
+            this.backBtn.Text = "Back";
+            this.backBtn.UseVisualStyleBackColor = true;
+            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
             // 
             // CreateCourse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(782, 562);
+            this.Controls.Add(this.backBtn);
             this.Controls.Add(this.buttonCreate);
             this.Controls.Add(this.checkBoxAssignment);
             this.Controls.Add(this.checkBoxExam);
@@ -230,5 +242,6 @@
         private System.Windows.Forms.CheckBox checkBoxExam;
         private System.Windows.Forms.CheckBox checkBoxAssignment;
         private System.Windows.Forms.Button buttonCreate;
+        private System.Windows.Forms.Button backBtn;
     }
 }

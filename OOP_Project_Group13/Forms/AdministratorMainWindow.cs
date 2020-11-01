@@ -27,7 +27,7 @@ namespace OOP_Project_Group13
 
         private void CreateStudentButton_Click(object sender, EventArgs e)
         {
-            CreateStudentWindow studentCreationWindow = new CreateStudentWindow(connection);
+            CreateStudentWindow studentCreationWindow = new CreateStudentWindow(connection, "Student");
             studentCreationWindow.Show();
         }
 
@@ -54,6 +54,23 @@ namespace OOP_Project_Group13
             {
                 this.StudentList.Items.Add(userTable.Rows[i]["name"].ToString() + " " + userTable.Rows[i]["firstName"].ToString() + " " + userTable.Rows[i]["userID"].ToString());
             }
+        }
+
+        private void CreateCourseButton_Click(object sender, EventArgs e)
+        {
+            CreateCourse ccWin = new CreateCourse(connection);
+            ccWin.Show();
+        }
+
+        private void TeacherList_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CreateTeacherBtn_Click(object sender, EventArgs e)
+        {
+            CreateStudentWindow studentCreationWindow = new CreateStudentWindow(connection, "Faculty");
+            studentCreationWindow.Show();
         }
     }
 }

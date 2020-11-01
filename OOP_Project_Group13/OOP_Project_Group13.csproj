@@ -87,11 +87,29 @@
     <Compile Include="Forms\ClassInfo.Designer.cs">
       <DependentUpon>ClassInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\CreateCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CreateCourse.Designer.cs">
+      <DependentUpon>CreateCourse.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CreateStudentWindow.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\CreateStudentWindow.Designer.cs">
       <DependentUpon>CreateStudentWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FacultyHomePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FacultyHomePage.Designer.cs">
+      <DependentUpon>FacultyHomePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormCreateStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormCreateStudent.Designer.cs">
+      <DependentUpon>FormCreateStudent.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\LoginWindow.cs">
       <SubType>Form</SubType>
@@ -130,8 +148,17 @@
     <EmbeddedResource Include="Forms\ClassInfo.resx">
       <DependentUpon>ClassInfo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CreateCourse.resx">
+      <DependentUpon>CreateCourse.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CreateStudentWindow.resx">
       <DependentUpon>CreateStudentWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FacultyHomePage.resx">
+      <DependentUpon>FacultyHomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormCreateStudent.resx">
+      <DependentUpon>FormCreateStudent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginWindow.resx">
       <DependentUpon>LoginWindow.cs</DependentUpon>

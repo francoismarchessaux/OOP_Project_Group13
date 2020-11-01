@@ -14,21 +14,55 @@ namespace OOP_Project_Group13.Forms
     public partial class CreateStudentWindow : Form
     {
         SqlConnection connection;
+        string status;
 
-        public CreateStudentWindow(SqlConnection _connection)
+        public CreateStudentWindow(SqlConnection _connection, string _status)
         {
             InitializeComponent();
             connection = _connection;
+            status = _status;
         }
 
         private void CreateButton_Click(object sender, EventArgs e)
         {
+            bool continueID = true;
+            int IDbase = Convert.ToInt32(DateTime.Now.Year.ToString() + "01");
+            while(continueID == true)
+            {
+                String queryID = "Select * from [Users] Where userID = ' " + IDbase + "'";
+                SqlDataAdapter sdaID = new SqlDataAdapter(queryID, connection);
+                DataTable idTable = new DataTable();
+                sdaID.Fill(idTable);
+                if (idTable.Rows.Count != 0 )
+                {
+                    IDbase++;
+                }
+                else
+                {
+                    continueID = false;
+                }
+            }
             connection.Open();
-            String query = "INSERT INTO [Users] (userID, name, firstName, mail, status) VALUES ('" + Convert.ToInt32(StudentID_TxtBox.Text) + "', '" + LastName_TxtBox.Text.ToUpper() + "', '" + FirstName_TxtBox.Text.ToLower() + "', '" + FirstName_TxtBox.Text.ToLower() + "." + LastName_TxtBox.Text.ToLower() + "@college.ie', 'Student')";
+            String query;
+            if(status == "Student")
+            {
+                query = "INSERT INTO [Users] (userID, name, firstName, mail, status) VALUES ('" + IDbase + "', '" + LastName_TxtBox.Text.ToUpper() + "', '" + FirstName_TxtBox.Text + "', '" + FirstName_TxtBox.Text.ToLower() + "." + LastName_TxtBox.Text.ToLower() + "@college.ie', 'Student')";
+            }
+            else
+            {
+                query = "INSERT INTO [Users] (userID, name, firstName, mail, status) VALUES ('" + IDbase + "', '" + LastName_TxtBox.Text.ToUpper() + "', '" + FirstName_TxtBox.Text + "', '" + FirstName_TxtBox.Text.ToLower() + "." + LastName_TxtBox.Text.ToLower() + "@college.ie', 'Faculty')";
+            }
             SqlDataAdapter SDA = new SqlDataAdapter(query, connection);
             SDA.SelectCommand.ExecuteNonQuery();
             connection.Close();
-            MessageBox.Show("Student created succesfully !");
+            if(status == "Student")
+            {
+                MessageBox.Show("Student created succesfully !");
+            }
+            else
+            {
+                MessageBox.Show("Teacher created succesfully !");
+            }
             this.Hide();
         }
 

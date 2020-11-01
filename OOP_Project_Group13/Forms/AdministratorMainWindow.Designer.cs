@@ -46,6 +46,9 @@
             this.database1DataSet = new OOP_Project_Group13.Database1DataSet();
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usersTableAdapter = new OOP_Project_Group13.Database1DataSetTableAdapters.UsersTableAdapter();
+            this.label4 = new System.Windows.Forms.Label();
+            this.TeacherList = new System.Windows.Forms.ComboBox();
+            this.CreateTeacherBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.AdminPP_PictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
@@ -129,16 +132,17 @@
             // 
             // CreateCourseButton
             // 
-            this.CreateCourseButton.Location = new System.Drawing.Point(383, 284);
+            this.CreateCourseButton.Location = new System.Drawing.Point(815, 269);
             this.CreateCourseButton.Name = "CreateCourseButton";
             this.CreateCourseButton.Size = new System.Drawing.Size(175, 48);
             this.CreateCourseButton.TabIndex = 9;
             this.CreateCourseButton.Text = "Create Course";
             this.CreateCourseButton.UseVisualStyleBackColor = true;
+            this.CreateCourseButton.Click += new System.EventHandler(this.CreateCourseButton_Click);
             // 
             // ManageCourseButton
             // 
-            this.ManageCourseButton.Location = new System.Drawing.Point(383, 358);
+            this.ManageCourseButton.Location = new System.Drawing.Point(815, 343);
             this.ManageCourseButton.Name = "ManageCourseButton";
             this.ManageCourseButton.Size = new System.Drawing.Size(175, 76);
             this.ManageCourseButton.TabIndex = 10;
@@ -147,7 +151,7 @@
             // 
             // CreateClassButton
             // 
-            this.CreateClassButton.Location = new System.Drawing.Point(611, 284);
+            this.CreateClassButton.Location = new System.Drawing.Point(1043, 269);
             this.CreateClassButton.Name = "CreateClassButton";
             this.CreateClassButton.Size = new System.Drawing.Size(175, 48);
             this.CreateClassButton.TabIndex = 11;
@@ -156,7 +160,7 @@
             // 
             // ManageClassButton
             // 
-            this.ManageClassButton.Location = new System.Drawing.Point(611, 358);
+            this.ManageClassButton.Location = new System.Drawing.Point(1043, 343);
             this.ManageClassButton.Name = "ManageClassButton";
             this.ManageClassButton.Size = new System.Drawing.Size(175, 76);
             this.ManageClassButton.TabIndex = 12;
@@ -177,11 +181,43 @@
             // 
             this.usersTableAdapter.ClearBeforeFill = true;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(404, 358);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(175, 25);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Manage Teacher";
+            // 
+            // TeacherList
+            // 
+            this.TeacherList.FormattingEnabled = true;
+            this.TeacherList.Location = new System.Drawing.Point(409, 386);
+            this.TeacherList.Name = "TeacherList";
+            this.TeacherList.Size = new System.Drawing.Size(313, 33);
+            this.TeacherList.TabIndex = 14;
+            this.TeacherList.Text = "Select Teacher ...";
+            this.TeacherList.SelectedIndexChanged += new System.EventHandler(this.TeacherList_SelectedIndexChanged_1);
+            // 
+            // CreateTeacherBtn
+            // 
+            this.CreateTeacherBtn.Location = new System.Drawing.Point(409, 284);
+            this.CreateTeacherBtn.Name = "CreateTeacherBtn";
+            this.CreateTeacherBtn.Size = new System.Drawing.Size(175, 48);
+            this.CreateTeacherBtn.TabIndex = 13;
+            this.CreateTeacherBtn.Text = "Create Teacher";
+            this.CreateTeacherBtn.UseVisualStyleBackColor = true;
+            this.CreateTeacherBtn.Click += new System.EventHandler(this.CreateTeacherBtn_Click);
+            // 
             // AdministratorMainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(822, 446);
+            this.ClientSize = new System.Drawing.Size(1249, 446);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.TeacherList);
+            this.Controls.Add(this.CreateTeacherBtn);
             this.Controls.Add(this.ManageClassButton);
             this.Controls.Add(this.CreateClassButton);
             this.Controls.Add(this.ManageCourseButton);
@@ -230,5 +266,8 @@
         private Database1DataSet database1DataSet;
         private System.Windows.Forms.BindingSource usersBindingSource;
         private Database1DataSetTableAdapters.UsersTableAdapter usersTableAdapter;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox TeacherList;
+        private System.Windows.Forms.Button CreateTeacherBtn;
     }
 }
