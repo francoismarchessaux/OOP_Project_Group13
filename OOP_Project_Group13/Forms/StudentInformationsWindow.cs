@@ -27,7 +27,6 @@ namespace OOP_Project_Group13
 
         private void StudentInformationsWindow_Load(object sender, EventArgs e)
         {
-            this.gradesTableAdapter.Fill(this.database1DataSet.Grades);
             NameLabel.Text = student.name.ToUpper() + " " + student.firstName.ToLower();
             StudentIDLabel.Text = "ID : " + student.ID.ToString();
             BirthDate.Text = "Birthday date : " + student.birthday.Date.ToString("dd/MM/yyyy");

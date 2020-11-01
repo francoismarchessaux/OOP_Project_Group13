@@ -57,5 +57,13 @@ namespace OOP_Project_Group13
                 password_TextBox.Clear();
             }
         }
+
+        private void password_TextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                button1_Click(sender, e);
+            }
+        }
     }
 }

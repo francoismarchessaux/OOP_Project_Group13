@@ -44,7 +44,6 @@
             this.ClassAverage = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gradesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.database1DataSet = new OOP_Project_Group13.Database1DataSet();
-            this.gradesTableAdapter = new OOP_Project_Group13.Database1DataSetTableAdapters.GradesTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.StudentPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gradeTab)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gradesBindingSource)).BeginInit();
@@ -179,7 +178,6 @@
             // 
             // gradesTableAdapter
             // 
-            this.gradesTableAdapter.ClearBeforeFill = true;
             // 
             // StudentInformationsWindow
             // 
@@ -203,7 +201,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.StudentPicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gradeTab)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gradesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,7 +218,6 @@
         private System.Windows.Forms.DataGridView gradeTab;
         private Database1DataSet database1DataSet;
         private System.Windows.Forms.BindingSource gradesBindingSource;
-        private Database1DataSetTableAdapters.GradesTableAdapter gradesTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn assessmentNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn studentGradeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn coefficientDataGridViewTextBoxColumn;

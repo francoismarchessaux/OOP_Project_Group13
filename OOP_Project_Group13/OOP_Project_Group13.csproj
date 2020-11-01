@@ -74,12 +74,6 @@
     <Compile Include="Forms\AddGradeWindows.Designer.cs">
       <DependentUpon>AddGradeWindows.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FacultyHomePage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FacultyHomePage.Designer.cs">
-      <DependentUpon>FacultyHomePage.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\AdministratorMainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,9 +123,6 @@
     <Compile Include="Users\User.cs" />
     <EmbeddedResource Include="Forms\AddGradeWindows.resx">
       <DependentUpon>AddGradeWindows.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FacultyHomePage.resx">
-      <DependentUpon>FacultyHomePage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdministratorMainWindow.resx">
       <DependentUpon>AdministratorMainWindow.cs</DependentUpon>
