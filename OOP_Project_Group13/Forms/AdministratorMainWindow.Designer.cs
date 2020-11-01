@@ -204,7 +204,7 @@
             // 
             this.CreateTeacherBtn.Location = new System.Drawing.Point(409, 269);
             this.CreateTeacherBtn.Name = "CreateTeacherBtn";
-            this.CreateTeacherBtn.Size = new System.Drawing.Size(175, 48);
+            this.CreateTeacherBtn.Size = new System.Drawing.Size(204, 48);
             this.CreateTeacherBtn.TabIndex = 13;
             this.CreateTeacherBtn.Text = "Create Teacher";
             this.CreateTeacherBtn.UseVisualStyleBackColor = true;
