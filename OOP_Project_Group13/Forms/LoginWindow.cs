@@ -1,4 +1,5 @@
 ﻿using System;
+using OOP_Project_Group13.Users;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -42,6 +43,10 @@ namespace OOP_Project_Group13
                         break;
 
                     case "Student":
+                        Student selectedStudent = new Student(userTable.Rows[0]["name"].ToString(), userTable.Rows[0]["firstName"].ToString(), userTable.Rows[0]["status"].ToString(), userTable.Rows[0]["password"].ToString(), Convert.ToInt32(userTable.Rows[0]["userID"]), userTable.Rows[0]["mail"].ToString(), userTable.Rows[0]["phone"].ToString(), userTable.Rows[0]["profilePicture"].ToString(), Convert.ToDateTime(userTable.Rows[0]["birthday"]), userTable.Rows[0]["address"].ToString());
+                        StudentInformationsWindow studentInfoWin = new StudentInformationsWindow(connection, selectedStudent);
+                        this.Hide();
+                        studentInfoWin.Show();
                         break;
                 }
             }

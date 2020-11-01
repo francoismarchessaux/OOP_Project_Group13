@@ -68,10 +68,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Database1DataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="FacultyHomePage.cs">
+    <Compile Include="Forms\AddGradeWindows.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FacultyHomePage.Designer.cs">
+    <Compile Include="Forms\AddGradeWindows.Designer.cs">
+      <DependentUpon>AddGradeWindows.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FacultyHomePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FacultyHomePage.Designer.cs">
       <DependentUpon>FacultyHomePage.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\AdministratorMainWindow.cs">
@@ -106,10 +112,10 @@
     <Compile Include="Forms\StudentInformationsWindow.Designer.cs">
       <DependentUpon>StudentInformationsWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="ListClasses.cs">
+    <Compile Include="Forms\ListClasses.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ListClasses.Designer.cs">
+    <Compile Include="Forms\ListClasses.Designer.cs">
       <DependentUpon>ListClasses.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Ressources.Designer.cs" />
@@ -121,7 +127,10 @@
     <Compile Include="Users\Administrator.cs" />
     <Compile Include="Users\Student.cs" />
     <Compile Include="Users\User.cs" />
-    <EmbeddedResource Include="FacultyHomePage.resx">
+    <EmbeddedResource Include="Forms\AddGradeWindows.resx">
+      <DependentUpon>AddGradeWindows.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FacultyHomePage.resx">
       <DependentUpon>FacultyHomePage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdministratorMainWindow.resx">
@@ -139,7 +148,7 @@
     <EmbeddedResource Include="Forms\StudentInformationsWindow.resx">
       <DependentUpon>StudentInformationsWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ListClasses.resx">
+    <EmbeddedResource Include="Forms\ListClasses.resx">
       <DependentUpon>ListClasses.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Ressources.resx" />

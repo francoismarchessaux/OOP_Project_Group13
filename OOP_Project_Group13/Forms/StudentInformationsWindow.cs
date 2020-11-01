@@ -17,6 +17,7 @@ namespace OOP_Project_Group13
     {
         SqlConnection connection;
         Student student;
+
         public StudentInformationsWindow(SqlConnection _connection, Student _student)
         {
             InitializeComponent();
@@ -26,6 +27,7 @@ namespace OOP_Project_Group13
 
         private void StudentInformationsWindow_Load(object sender, EventArgs e)
         {
+            this.gradesTableAdapter.Fill(this.database1DataSet.Grades);
             NameLabel.Text = student.name.ToUpper() + " " + student.firstName.ToLower();
             StudentIDLabel.Text = "ID : " + student.ID.ToString();
             BirthDate.Text = "Birthday date : " + student.birthday.Date.ToString("dd/MM/yyyy");
@@ -33,6 +35,14 @@ namespace OOP_Project_Group13
             MailLabel.Text = "Mail : " + student.mail;
             PhoneLabel.Text = "Phone number : " + student.phone;
             StudentPicture.ImageLocation = student.profilePicture;
+
+            String query = "Select * from [Grades] Where studentID = '" + student.ID + "'";
+            SqlDataAdapter SDA = new SqlDataAdapter(query, connection);
+            DataTable gradeTable = new DataTable();
+            SDA.Fill(gradeTable);
+            gradeTab.DataSource = gradeTable;
+            
+
         }
     }
 }
