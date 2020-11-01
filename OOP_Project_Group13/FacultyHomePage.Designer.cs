@@ -272,7 +272,7 @@ namespace OOP_Project_Group13
             this.Tue8.Name = "Tue8";
             this.Tue8.Size = new System.Drawing.Size(97, 45);
             this.Tue8.TabIndex = 18;
-            this.Tue8.Text = "label13";
+            this.Tue8.Text = "Tue8";
             this.Tue8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Tue8.Visible = false;
             // 
@@ -283,7 +283,7 @@ namespace OOP_Project_Group13
             this.Tue1.Name = "Tue1";
             this.Tue1.Size = new System.Drawing.Size(97, 45);
             this.Tue1.TabIndex = 19;
-            this.Tue1.Text = "label13";
+            this.Tue1.Text = "Tue1";
             this.Tue1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Tue1.Visible = false;
             // 
@@ -294,7 +294,7 @@ namespace OOP_Project_Group13
             this.Tue4.Name = "Tue4";
             this.Tue4.Size = new System.Drawing.Size(97, 45);
             this.Tue4.TabIndex = 20;
-            this.Tue4.Text = "label13";
+            this.Tue4.Text = "Tue4";
             this.Tue4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Tue4.Visible = false;
             // 
@@ -305,7 +305,7 @@ namespace OOP_Project_Group13
             this.Wed8.Name = "Wed8";
             this.Wed8.Size = new System.Drawing.Size(97, 45);
             this.Wed8.TabIndex = 21;
-            this.Wed8.Text = "label13";
+            this.Wed8.Text = "Wed8";
             this.Wed8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Wed8.Visible = false;
             // 
@@ -316,7 +316,7 @@ namespace OOP_Project_Group13
             this.Wed1.Name = "Wed1";
             this.Wed1.Size = new System.Drawing.Size(97, 45);
             this.Wed1.TabIndex = 22;
-            this.Wed1.Text = "label13";
+            this.Wed1.Text = "Wed1";
             this.Wed1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Wed1.Visible = false;
             // 
@@ -327,7 +327,7 @@ namespace OOP_Project_Group13
             this.Wed4.Name = "Wed4";
             this.Wed4.Size = new System.Drawing.Size(97, 45);
             this.Wed4.TabIndex = 23;
-            this.Wed4.Text = "label13";
+            this.Wed4.Text = "Wed4";
             this.Wed4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Wed4.Visible = false;
             // 
@@ -338,7 +338,7 @@ namespace OOP_Project_Group13
             this.Thur1.Name = "Thur1";
             this.Thur1.Size = new System.Drawing.Size(97, 45);
             this.Thur1.TabIndex = 24;
-            this.Thur1.Text = "label13";
+            this.Thur1.Text = "Thu1";
             this.Thur1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Thur1.Visible = false;
             // 
@@ -349,7 +349,7 @@ namespace OOP_Project_Group13
             this.Thur4.Name = "Thur4";
             this.Thur4.Size = new System.Drawing.Size(97, 45);
             this.Thur4.TabIndex = 25;
-            this.Thur4.Text = "label13";
+            this.Thur4.Text = "Thu4";
             this.Thur4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Thur4.Visible = false;
             // 
@@ -360,7 +360,7 @@ namespace OOP_Project_Group13
             this.Thur8.Name = "Thur8";
             this.Thur8.Size = new System.Drawing.Size(97, 45);
             this.Thur8.TabIndex = 26;
-            this.Thur8.Text = "label13";
+            this.Thur8.Text = "Thu8";
             this.Thur8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Thur8.Visible = false;
             // 
@@ -371,7 +371,7 @@ namespace OOP_Project_Group13
             this.Fri4.Name = "Fri4";
             this.Fri4.Size = new System.Drawing.Size(97, 45);
             this.Fri4.TabIndex = 27;
-            this.Fri4.Text = "label13";
+            this.Fri4.Text = "Fri4";
             this.Fri4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Fri4.Visible = false;
             // 
@@ -382,7 +382,7 @@ namespace OOP_Project_Group13
             this.Fri1.Name = "Fri1";
             this.Fri1.Size = new System.Drawing.Size(97, 45);
             this.Fri1.TabIndex = 28;
-            this.Fri1.Text = "label13";
+            this.Fri1.Text = "Fri1";
             this.Fri1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Fri1.Visible = false;
             // 
@@ -393,7 +393,7 @@ namespace OOP_Project_Group13
             this.Fri8.Name = "Fri8";
             this.Fri8.Size = new System.Drawing.Size(97, 45);
             this.Fri8.TabIndex = 29;
-            this.Fri8.Text = "label13";
+            this.Fri8.Text = "Fri8";
             this.Fri8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Fri8.Visible = false;
             // 
@@ -404,7 +404,7 @@ namespace OOP_Project_Group13
             this.Sat8.Name = "Sat8";
             this.Sat8.Size = new System.Drawing.Size(97, 45);
             this.Sat8.TabIndex = 30;
-            this.Sat8.Text = "label13";
+            this.Sat8.Text = "Sat8";
             this.Sat8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Sat8.Visible = false;
             // 
@@ -415,7 +415,7 @@ namespace OOP_Project_Group13
             this.Sat4.Name = "Sat4";
             this.Sat4.Size = new System.Drawing.Size(97, 45);
             this.Sat4.TabIndex = 31;
-            this.Sat4.Text = "label13";
+            this.Sat4.Text = "Sat4";
             this.Sat4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Sat4.Visible = false;
             // 
@@ -426,7 +426,7 @@ namespace OOP_Project_Group13
             this.Sat1.Name = "Sat1";
             this.Sat1.Size = new System.Drawing.Size(97, 45);
             this.Sat1.TabIndex = 32;
-            this.Sat1.Text = "label13";
+            this.Sat1.Text = "Sat1";
             this.Sat1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Sat1.Visible = false;
             // 
