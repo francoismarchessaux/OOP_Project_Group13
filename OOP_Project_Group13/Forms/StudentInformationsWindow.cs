@@ -33,6 +33,18 @@ namespace OOP_Project_Group13
             MailLabel.Text = "Mail : " + student.mail;
             PhoneLabel.Text = "Phone number : " + student.phone;
             StudentPicture.ImageLocation = student.profilePicture;
+            Label label1 = new Label();
+            splitContainer1.Panel1.Controls.Add(label1);
+            label1.Visible = true;
+            label1.Text = "a";
+            label1.Location = new Point(800,400);
+            
+
+        }
+
+        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
