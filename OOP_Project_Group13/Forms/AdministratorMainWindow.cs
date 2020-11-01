@@ -27,7 +27,7 @@ namespace OOP_Project_Group13
 
         private void CreateStudentButton_Click(object sender, EventArgs e)
         {
-            CreateStudentWindow studentCreationWindow = new CreateStudentWindow(connection, "Student");
+            CreateUser studentCreationWindow = new CreateUser(connection, "Student");
             studentCreationWindow.Show();
         }
 
@@ -54,6 +54,14 @@ namespace OOP_Project_Group13
             {
                 this.StudentList.Items.Add(userTable.Rows[i]["name"].ToString() + " " + userTable.Rows[i]["firstName"].ToString() + " " + userTable.Rows[i]["userID"].ToString());
             }
+            query = "Select name, firstName, userID from [Users] Where status = 'Faculty'";
+            SDA = new SqlDataAdapter(query, connection);
+            DataTable TeacherTable = new DataTable();
+            SDA.Fill(TeacherTable);
+            for (int i = 0; i < TeacherTable.Rows.Count; i++)
+            {
+                this.TeacherList.Items.Add(TeacherTable.Rows[i]["name"].ToString() + " " + TeacherTable.Rows[i]["firstName"].ToString() + " " + TeacherTable.Rows[i]["userID"].ToString());
+            }
         }
 
         private void CreateCourseButton_Click(object sender, EventArgs e)
@@ -64,13 +72,20 @@ namespace OOP_Project_Group13
 
         private void TeacherList_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-
+            string[] teacherInfo = this.TeacherList.Text.Split(' ');
+            String query = "Select * from [Users] Where userID = '" + teacherInfo[2] + "'";
+            SqlDataAdapter SDA = new SqlDataAdapter(query, connection);
+            DataTable teacherTable = new DataTable();
+            SDA.Fill(teacherTable);
+            Faculty selectedTeacher = new Faculty(teacherTable.Rows[0]["name"].ToString(), teacherTable.Rows[0]["firstName"].ToString(), teacherTable.Rows[0]["status"].ToString(), teacherTable.Rows[0]["password"].ToString(), Convert.ToInt32(teacherTable.Rows[0]["userID"]), teacherTable.Rows[0]["mail"].ToString(), teacherTable.Rows[0]["phone"].ToString(), teacherTable.Rows[0]["profilePicture"].ToString());
+            FacultyInformationsWindows TeacherInfoWin = new FacultyInformationsWindows(connection, selectedTeacher);
+            TeacherInfoWin.Show();
         }
 
         private void CreateTeacherBtn_Click(object sender, EventArgs e)
         {
-            CreateStudentWindow studentCreationWindow = new CreateStudentWindow(connection, "Faculty");
-            studentCreationWindow.Show();
+            CreateUser teacherCreationWindow = new CreateUser(connection, "Faculty");
+            teacherCreationWindow.Show();
         }
     }
 }

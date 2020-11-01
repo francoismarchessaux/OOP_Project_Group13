@@ -103,7 +103,7 @@
             // 
             // CreateStudentButton
             // 
-            this.CreateStudentButton.Location = new System.Drawing.Point(25, 284);
+            this.CreateStudentButton.Location = new System.Drawing.Point(25, 269);
             this.CreateStudentButton.Name = "CreateStudentButton";
             this.CreateStudentButton.Size = new System.Drawing.Size(175, 48);
             this.CreateStudentButton.TabIndex = 6;
@@ -202,7 +202,7 @@
             // 
             // CreateTeacherBtn
             // 
-            this.CreateTeacherBtn.Location = new System.Drawing.Point(409, 284);
+            this.CreateTeacherBtn.Location = new System.Drawing.Point(409, 269);
             this.CreateTeacherBtn.Name = "CreateTeacherBtn";
             this.CreateTeacherBtn.Size = new System.Drawing.Size(175, 48);
             this.CreateTeacherBtn.TabIndex = 13;

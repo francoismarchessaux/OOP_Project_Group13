@@ -11,12 +11,12 @@ using System.Windows.Forms;
 
 namespace OOP_Project_Group13.Forms
 {
-    public partial class CreateStudentWindow : Form
+    public partial class CreateUser : Form
     {
         SqlConnection connection;
         string status;
 
-        public CreateStudentWindow(SqlConnection _connection, string _status)
+        public CreateUser(SqlConnection _connection, string _status)
         {
             InitializeComponent();
             connection = _connection;

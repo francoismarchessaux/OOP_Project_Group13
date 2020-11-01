@@ -1,6 +1,6 @@
 ﻿namespace OOP_Project_Group13.Forms
 {
-    partial class CreateStudentWindow
+    partial class CreateUser
     {
         /// <summary>
         /// Required designer variable.
