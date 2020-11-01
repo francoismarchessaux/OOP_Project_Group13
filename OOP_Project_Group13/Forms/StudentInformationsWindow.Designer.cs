@@ -28,18 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.StudentPicture = new System.Windows.Forms.PictureBox();
-            this.LastNameLabel = new System.Windows.Forms.Label();
-            this.FirstNameLabel = new System.Windows.Forms.Label();
+            this.NameLabel = new System.Windows.Forms.Label();
             this.StudentIDLabel = new System.Windows.Forms.Label();
             this.BirthDate = new System.Windows.Forms.Label();
             this.AdressLabel = new System.Windows.Forms.Label();
             this.MailLabel = new System.Windows.Forms.Label();
             this.PhoneLabel = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.gradeTab = new System.Windows.Forms.DataGridView();
+            this.assessmentNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentGradeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coefficientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClassAverage = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gradesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.database1DataSet = new OOP_Project_Group13.Database1DataSet();
             ((System.ComponentModel.ISupportInitialize)(this.StudentPicture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gradeTab)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gradesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // StudentPicture
@@ -50,23 +58,14 @@
             this.StudentPicture.TabIndex = 0;
             this.StudentPicture.TabStop = false;
             // 
-            // LastNameLabel
+            // NameLabel
             // 
-            this.LastNameLabel.AutoSize = true;
-            this.LastNameLabel.Location = new System.Drawing.Point(225, 26);
-            this.LastNameLabel.Name = "LastNameLabel";
-            this.LastNameLabel.Size = new System.Drawing.Size(115, 25);
-            this.LastNameLabel.TabIndex = 1;
-            this.LastNameLabel.Text = "Last Name";
-            // 
-            // FirstNameLabel
-            // 
-            this.FirstNameLabel.AutoSize = true;
-            this.FirstNameLabel.Location = new System.Drawing.Point(337, 26);
-            this.FirstNameLabel.Name = "FirstNameLabel";
-            this.FirstNameLabel.Size = new System.Drawing.Size(116, 25);
-            this.FirstNameLabel.TabIndex = 2;
-            this.FirstNameLabel.Text = "First Name";
+            this.NameLabel.AutoSize = true;
+            this.NameLabel.Location = new System.Drawing.Point(225, 26);
+            this.NameLabel.Name = "NameLabel";
+            this.NameLabel.Size = new System.Drawing.Size(150, 25);
+            this.NameLabel.TabIndex = 1;
+            this.NameLabel.Text = "Student NAme";
             // 
             // StudentIDLabel
             // 
@@ -113,42 +112,95 @@
             this.PhoneLabel.TabIndex = 7;
             this.PhoneLabel.Text = "Phone : ";
             // 
-            // listView1
+            // gradeTab
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2});
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(26, 321);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(725, 405);
-            this.listView1.TabIndex = 8;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.gradeTab.AllowUserToAddRows = false;
+            this.gradeTab.AllowUserToDeleteRows = false;
+            this.gradeTab.AutoGenerateColumns = false;
+            this.gradeTab.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gradeTab.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.assessmentNameDataGridViewTextBoxColumn,
+            this.studentGradeDataGridViewTextBoxColumn,
+            this.coefficientDataGridViewTextBoxColumn,
+            this.ClassAverage});
+            this.gradeTab.DataSource = this.gradesBindingSource;
+            this.gradeTab.Location = new System.Drawing.Point(26, 332);
+            this.gradeTab.Name = "gradeTab";
+            this.gradeTab.ReadOnly = true;
+            this.gradeTab.RowHeadersWidth = 82;
+            this.gradeTab.RowTemplate.Height = 33;
+            this.gradeTab.Size = new System.Drawing.Size(887, 486);
+            this.gradeTab.TabIndex = 8;
             // 
-            // columnHeader1
+            // assessmentNameDataGridViewTextBoxColumn
             // 
-            this.columnHeader1.Text = "Grades";
+            this.assessmentNameDataGridViewTextBoxColumn.DataPropertyName = "AssessmentName";
+            this.assessmentNameDataGridViewTextBoxColumn.HeaderText = "AssessmentName";
+            this.assessmentNameDataGridViewTextBoxColumn.MinimumWidth = 10;
+            this.assessmentNameDataGridViewTextBoxColumn.Name = "assessmentNameDataGridViewTextBoxColumn";
+            this.assessmentNameDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // studentGradeDataGridViewTextBoxColumn
+            // 
+            this.studentGradeDataGridViewTextBoxColumn.DataPropertyName = "studentGrade";
+            dataGridViewCellStyle5.NullValue = "Not Yet Graded";
+            this.studentGradeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            this.studentGradeDataGridViewTextBoxColumn.HeaderText = "studentGrade";
+            this.studentGradeDataGridViewTextBoxColumn.MinimumWidth = 10;
+            this.studentGradeDataGridViewTextBoxColumn.Name = "studentGradeDataGridViewTextBoxColumn";
+            this.studentGradeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.studentGradeDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // coefficientDataGridViewTextBoxColumn
+            // 
+            this.coefficientDataGridViewTextBoxColumn.DataPropertyName = "coefficient";
+            this.coefficientDataGridViewTextBoxColumn.HeaderText = "coefficient";
+            this.coefficientDataGridViewTextBoxColumn.MinimumWidth = 10;
+            this.coefficientDataGridViewTextBoxColumn.Name = "coefficientDataGridViewTextBoxColumn";
+            this.coefficientDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // ClassAverage
+            // 
+            this.ClassAverage.HeaderText = "Class Average";
+            this.ClassAverage.MinimumWidth = 10;
+            this.ClassAverage.Name = "ClassAverage";
+            this.ClassAverage.Width = 200;
+            // 
+            // gradesBindingSource
+            // 
+            this.gradesBindingSource.DataMember = "Grades";
+            this.gradesBindingSource.DataSource = this.database1DataSet;
+            // 
+            // database1DataSet
+            // 
+            this.database1DataSet.DataSetName = "Database1DataSet";
+            this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // gradesTableAdapter
+            // 
             // 
             // StudentInformationsWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(782, 755);
-            this.Controls.Add(this.listView1);
+            this.ClientSize = new System.Drawing.Size(933, 830);
+            this.Controls.Add(this.gradeTab);
             this.Controls.Add(this.PhoneLabel);
             this.Controls.Add(this.MailLabel);
             this.Controls.Add(this.AdressLabel);
             this.Controls.Add(this.BirthDate);
             this.Controls.Add(this.StudentIDLabel);
-            this.Controls.Add(this.FirstNameLabel);
-            this.Controls.Add(this.LastNameLabel);
+            this.Controls.Add(this.NameLabel);
             this.Controls.Add(this.StudentPicture);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "StudentInformationsWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Student Informations";
+            this.Load += new System.EventHandler(this.StudentInformationsWindow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.StudentPicture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gradeTab)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gradesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -157,15 +209,18 @@
         #endregion
 
         private System.Windows.Forms.PictureBox StudentPicture;
-        private System.Windows.Forms.Label LastNameLabel;
-        private System.Windows.Forms.Label FirstNameLabel;
+        private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.Label StudentIDLabel;
         private System.Windows.Forms.Label BirthDate;
         private System.Windows.Forms.Label AdressLabel;
         private System.Windows.Forms.Label MailLabel;
         private System.Windows.Forms.Label PhoneLabel;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.DataGridView gradeTab;
+        private Database1DataSet database1DataSet;
+        private System.Windows.Forms.BindingSource gradesBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn assessmentNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn studentGradeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn coefficientDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClassAverage;
     }
 }

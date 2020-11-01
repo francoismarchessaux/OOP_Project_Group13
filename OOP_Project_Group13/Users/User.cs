@@ -14,9 +14,12 @@ namespace OOP_Project_Group13.Users
         public string password { get; set; }
         public int ID { get; set; }
         public string mail { get; set; }
-        public int phone { get; set; }
+        public string phone { get; set; }
+        public string profilePicture { get; set; }
 
-        public User (string _name, string _firstName, string _status, string _password, int _ID, string _mail, int _phone)
+        public User() { }
+        
+        public User (string _name, string _firstName, string _status, string _password, int _ID, string _mail, string _phone, string _profilePicture)
         {
             name = _name;
             firstName = _firstName;
@@ -25,6 +28,7 @@ namespace OOP_Project_Group13.Users
             ID = _ID;
             mail = _mail;
             phone = _phone;
+            profilePicture = _profilePicture;
         }
     }
 }
