@@ -24,7 +24,7 @@ namespace OOP_Project_Group13.Forms
         private void CreateButton_Click(object sender, EventArgs e)
         {
             connection.Open();
-            String query = "INSERT INTO [Users] (userID, name, firstName, mail) VALUES ('" + Convert.ToInt32(StudentID_TxtBox.Text) + "', '" + LastName_TxtBox.Text.ToUpper() + "', '" + FirstName_TxtBox.Text.ToLower() + "', '" + FirstName_TxtBox.Text.ToLower() + ". + " + LastName_TxtBox.Text.ToLower() + "@college.ie)";
+            String query = "INSERT INTO [Users] (userID, name, firstName, mail, status) VALUES ('" + Convert.ToInt32(StudentID_TxtBox.Text) + "', '" + LastName_TxtBox.Text.ToUpper() + "', '" + FirstName_TxtBox.Text.ToLower() + "', '" + FirstName_TxtBox.Text.ToLower() + "." + LastName_TxtBox.Text.ToLower() + "@college.ie', 'Student')";
             SqlDataAdapter SDA = new SqlDataAdapter(query, connection);
             SDA.SelectCommand.ExecuteNonQuery();
             connection.Close();
