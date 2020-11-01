@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -26,12 +27,20 @@ namespace OOP_Project_Group13
                 {
                     string info = dt.Rows[i]["Horaire"].ToString();
                     string[] horaire = info.Split(' ');
-                    string nom = dt.Rows[i]["nomClasse"].ToString();
+                    string nom = dt.Rows[i]["NomClasse"].ToString();
                     string labelName = ""+horaire[0][0] + horaire[0][1] + horaire[0][2] + horaire[1][0];
-                    Type t = Type.GetType(labelName);
-                    Label l = Activator.CreateInstance(t) as Label;
-                    l.Visible = true;
-                    l.Text = nom;
+                    foreach (Control x in panel1.Controls)
+                    {
+                        if (x is Label)
+                        {
+                            string n = x.Name;
+                            if (labelName == n)
+                            {
+                                x.Visible = true;
+                                x.Text = nom;
+                            }
+                        }
+                    }
                 }
             }
         }
