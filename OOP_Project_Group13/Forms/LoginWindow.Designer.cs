@@ -49,6 +49,7 @@
             this.password_TextBox.PasswordChar = '*';
             this.password_TextBox.Size = new System.Drawing.Size(149, 31);
             this.password_TextBox.TabIndex = 1;
+            this.password_TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.password_TextBox_KeyPress);
             // 
             // userID_Label
             // 
