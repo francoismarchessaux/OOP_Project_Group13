@@ -24,7 +24,16 @@ namespace OOP_Project_Group13.Forms
 
         private void FacultyInformationsWindows_Load(object sender, EventArgs e)
         {
+            TeacherName.Text = Teacher.firstName + " " + Teacher.name;
+            teacherID.Text = "ID : " + Teacher.ID.ToString();
+            TeacherMail.Text = "Mail : " + Teacher.mail;
+            TeacherPhone.Text = "Phone : " + Teacher.phone;
+            teacherPicture.ImageLocation = Teacher.profilePicture;
+        }
 
+        private void BackBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

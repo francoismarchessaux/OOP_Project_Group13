@@ -120,5 +120,10 @@ namespace OOP_Project_Group13
                 listCourses[i].Location = new Point(0, pos + 20);
             }
         }
+
+        private void BackBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }
