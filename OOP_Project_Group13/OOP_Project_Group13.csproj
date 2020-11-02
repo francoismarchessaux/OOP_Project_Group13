@@ -136,6 +136,10 @@
     <Compile Include="Forms\ListClasses.Designer.cs">
       <DependentUpon>ListClasses.cs</DependentUpon>
     </Compile>
+    <Compile Include="LabelGrade.cs" />
+    <Compile Include="PanelCourse.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Properties\Ressources.Designer.cs" />
     <Compile Include="Subject.cs" />
     <Compile Include="Users\Faculty.cs" />
