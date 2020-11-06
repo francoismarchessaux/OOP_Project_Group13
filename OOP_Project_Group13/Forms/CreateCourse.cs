@@ -67,10 +67,5 @@ namespace OOP_Project_Group13
             MessageBox.Show("Course created succesfully !");
             this.Hide();
         }
-
-        private void backBtn_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-        }
     }
 }
