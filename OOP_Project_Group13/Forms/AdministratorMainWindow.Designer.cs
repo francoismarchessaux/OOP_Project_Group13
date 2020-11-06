@@ -43,13 +43,13 @@
             this.ManageClassButton = new System.Windows.Forms.Button();
             this.database1DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            
+            this.database1DataSet = new OOP_Project_Group13.Database1DataSet();
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            
+            this.usersTableAdapter = new OOP_Project_Group13.Database1DataSetTableAdapters.UsersTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.AdminPP_PictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
-            
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -165,16 +165,17 @@
             // 
             // database1DataSet
             // 
-         
+            this.database1DataSet.DataSetName = "Database1DataSet";
+            this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // usersBindingSource
             // 
             this.usersBindingSource.DataMember = "Users";
-            
+            this.usersBindingSource.DataSource = this.database1DataSet;
             // 
             // usersTableAdapter
             // 
-           
+            this.usersTableAdapter.ClearBeforeFill = true;
             // 
             // AdministratorMainWindow
             // 
@@ -203,7 +204,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.AdminPP_PictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
-           
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -226,8 +227,8 @@
         private System.Windows.Forms.Button ManageClassButton;
         private System.Windows.Forms.BindingSource database1DataSetBindingSource;
         private System.Windows.Forms.BindingSource userBindingSource;
-        
+        private Database1DataSet database1DataSet;
         private System.Windows.Forms.BindingSource usersBindingSource;
-        
+        private Database1DataSetTableAdapters.UsersTableAdapter usersTableAdapter;
     }
 }

@@ -9,14 +9,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace OOP_Project_Group13
 {
     public partial class LoginWindow : Form
     {
-        MySqlConnection connection;
-        public LoginWindow(MySqlConnection _connection)
+        SqlConnection connection;
+        public LoginWindow(SqlConnection _connection)
         {
             InitializeComponent();
             connection = _connection;
@@ -25,7 +24,7 @@ namespace OOP_Project_Group13
         private void button1_Click(object sender, EventArgs e)
         {
             String query = "Select * from [Users] Where userID = ' " + userID_TextBox.Text + "'";
-            MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
+            SqlDataAdapter SDA = new SqlDataAdapter(query, connection);
             DataTable userTable = new DataTable();
             SDA.Fill(userTable);
             bool same = userTable.Rows[0]["password"].Equals(password_TextBox.Text);
