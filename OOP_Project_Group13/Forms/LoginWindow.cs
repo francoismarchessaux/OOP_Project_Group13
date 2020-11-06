@@ -28,8 +28,7 @@ namespace OOP_Project_Group13
             MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
             DataTable userTable = new DataTable();
             SDA.Fill(userTable);
-            bool same = userTable.Rows[0]["password"].Equals(password_TextBox.Text);
-            if (userTable.Rows.Count != 0 && same == true)
+            if (userTable.Rows.Count != 0 && userTable.Rows[0]["password"].Equals(password_TextBox.Text) == true)
             {
                 string userStatus = userTable.Rows[0]["status"].ToString();
                 switch (userStatus)
