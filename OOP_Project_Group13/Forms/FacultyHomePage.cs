@@ -1,3 +1,4 @@
+using MySqlConnector;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,11 +15,11 @@ namespace OOP_Project_Group13
 {
     public partial class FacultyHomePage : Form
     {
-        public FacultyHomePage(SqlConnection con)
+        public FacultyHomePage(MySqlConnection con)
         {
             InitializeComponent();
             String query = "SELECT * FROM [Class] WHERE IdStudent='20201'";
-            SqlDataAdapter SDA = new SqlDataAdapter(query, con);
+            MySqlDataAdapter SDA = new MySqlDataAdapter(query, con);
             DataTable dt = new DataTable();
             SDA.Fill(dt);
             if (dt.Rows.Count > 0)

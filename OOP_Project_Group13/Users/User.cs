@@ -18,8 +18,8 @@ namespace OOP_Project_Group13.Users
         public string profilePicture { get; set; }
 
         public User() { }
-        
-        public User (string _name, string _firstName, string _status, string _password, int _ID, string _mail, string _phone, string _profilePicture)
+
+        public User(string _name, string _firstName, string _status, string _password, int _ID, string _mail, string _phone, string _profilePicture)
         {
             name = _name;
             firstName = _firstName;
