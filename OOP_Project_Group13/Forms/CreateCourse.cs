@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySqlConnector;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,8 +14,8 @@ namespace OOP_Project_Group13
 {
     public partial class CreateCourse : Form
     {
-        SqlConnection connection;
-        public CreateCourse(SqlConnection _connection)
+        MySqlConnection connection;
+        public CreateCourse(MySqlConnection _connection)
         {
             InitializeComponent();
             connection = _connection;
@@ -61,7 +62,7 @@ namespace OOP_Project_Group13
             string jour = date.ToString("yyyy/MM/dd");
             connection.Open();
             String query = "INSERT INTO [Course] (Subject, Class, Teacher, Date,Time) VALUES ('" + textBoxSubject.Text + "', '" + textBoxClass.Text + "', '" + textBoxTeacher.Text + "','" + jour + "','" + textBoxTime.Text + "')";
-            SqlDataAdapter SDA = new SqlDataAdapter(query, connection);
+            MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
             SDA.SelectCommand.ExecuteNonQuery();
             connection.Close();
             MessageBox.Show("Course created succesfully !");

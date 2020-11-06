@@ -43,88 +43,85 @@
             // 
             // StudentPicture
             // 
-            this.StudentPicture.Location = new System.Drawing.Point(17, 17);
-            this.StudentPicture.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.StudentPicture.Location = new System.Drawing.Point(26, 27);
             this.StudentPicture.Name = "StudentPicture";
-            this.StudentPicture.Size = new System.Drawing.Size(129, 147);
+            this.StudentPicture.Size = new System.Drawing.Size(193, 229);
             this.StudentPicture.TabIndex = 0;
             this.StudentPicture.TabStop = false;
             // 
             // NameLabel
             // 
             this.NameLabel.AutoSize = true;
-            this.NameLabel.Location = new System.Drawing.Point(150, 17);
-            this.NameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.NameLabel.Location = new System.Drawing.Point(225, 27);
             this.NameLabel.Name = "NameLabel";
-            this.NameLabel.Size = new System.Drawing.Size(99, 17);
+            this.NameLabel.Size = new System.Drawing.Size(150, 25);
             this.NameLabel.TabIndex = 1;
             this.NameLabel.Text = "Student NAme";
             // 
             // StudentIDLabel
             // 
             this.StudentIDLabel.AutoSize = true;
-            this.StudentIDLabel.Location = new System.Drawing.Point(150, 44);
-            this.StudentIDLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.StudentIDLabel.Location = new System.Drawing.Point(225, 69);
             this.StudentIDLabel.Name = "StudentIDLabel";
-            this.StudentIDLabel.Size = new System.Drawing.Size(29, 17);
+            this.StudentIDLabel.Size = new System.Drawing.Size(44, 25);
             this.StudentIDLabel.TabIndex = 3;
             this.StudentIDLabel.Text = "ID :";
             // 
             // BirthDate
             // 
             this.BirthDate.AutoSize = true;
-            this.BirthDate.Location = new System.Drawing.Point(150, 68);
-            this.BirthDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.BirthDate.Location = new System.Drawing.Point(225, 106);
             this.BirthDate.Name = "BirthDate";
-            this.BirthDate.Size = new System.Drawing.Size(79, 17);
+            this.BirthDate.Size = new System.Drawing.Size(119, 25);
             this.BirthDate.TabIndex = 4;
             this.BirthDate.Text = "Birth Date :";
             // 
             // AdressLabel
             // 
             this.AdressLabel.AutoSize = true;
-            this.AdressLabel.Location = new System.Drawing.Point(150, 95);
-            this.AdressLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.AdressLabel.Location = new System.Drawing.Point(225, 148);
             this.AdressLabel.Name = "AdressLabel";
-            this.AdressLabel.Size = new System.Drawing.Size(64, 17);
+            this.AdressLabel.Size = new System.Drawing.Size(97, 25);
             this.AdressLabel.TabIndex = 5;
             this.AdressLabel.Text = "Adress : ";
             // 
             // MailLabel
             // 
             this.MailLabel.AutoSize = true;
-            this.MailLabel.Location = new System.Drawing.Point(150, 123);
-            this.MailLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.MailLabel.Location = new System.Drawing.Point(225, 192);
             this.MailLabel.Name = "MailLabel";
-            this.MailLabel.Size = new System.Drawing.Size(41, 17);
+            this.MailLabel.Size = new System.Drawing.Size(64, 25);
             this.MailLabel.TabIndex = 6;
             this.MailLabel.Text = "Mail :";
             // 
             // PhoneLabel
             // 
             this.PhoneLabel.AutoSize = true;
-            this.PhoneLabel.Location = new System.Drawing.Point(150, 148);
-            this.PhoneLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.PhoneLabel.Location = new System.Drawing.Point(225, 231);
             this.PhoneLabel.Name = "PhoneLabel";
-            this.PhoneLabel.Size = new System.Drawing.Size(61, 17);
+            this.PhoneLabel.Size = new System.Drawing.Size(92, 25);
             this.PhoneLabel.TabIndex = 7;
             this.PhoneLabel.Text = "Phone : ";
             // 
             // splitContainer1
             // 
             this.splitContainer1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.splitContainer1.Location = new System.Drawing.Point(101, 219);
+            this.splitContainer1.Location = new System.Drawing.Point(152, 342);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            this.splitContainer1.Size = new System.Drawing.Size(799, 345);
-            this.splitContainer1.SplitterDistance = 266;
+            this.splitContainer1.Size = new System.Drawing.Size(1198, 539);
+            this.splitContainer1.SplitterDistance = 415;
+            this.splitContainer1.SplitterWidth = 6;
             this.splitContainer1.TabIndex = 8;
             // 
             // StudentInformationsWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1070, 699);
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(1605, 1092);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.PhoneLabel);
             this.Controls.Add(this.MailLabel);
@@ -133,7 +130,6 @@
             this.Controls.Add(this.StudentIDLabel);
             this.Controls.Add(this.NameLabel);
             this.Controls.Add(this.StudentPicture);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "StudentInformationsWindow";

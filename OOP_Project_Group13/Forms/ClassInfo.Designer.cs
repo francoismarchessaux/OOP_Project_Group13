@@ -31,13 +31,10 @@ namespace OOP_Project_Group13
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.database1DataSet = new OOP_Project_Group13.Database1DataSet();
             this.classBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.classTableAdapter = new OOP_Project_Group13.Database1DataSetTableAdapters.ClassTableAdapter();
             this.idClasseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.studentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.classBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,17 +64,13 @@ namespace OOP_Project_Group13
             // 
             // database1DataSet
             // 
-            this.database1DataSet.DataSetName = "Database1DataSet";
-            this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // classBindingSource
             // 
             this.classBindingSource.DataMember = "Class";
-            this.classBindingSource.DataSource = this.database1DataSet;
             // 
             // classTableAdapter
             // 
-            this.classTableAdapter.ClearBeforeFill = true;
             // 
             // idClasseDataGridViewTextBoxColumn
             // 
@@ -106,7 +99,6 @@ namespace OOP_Project_Group13
             this.Text = "ClassInfo";
             this.Load += new System.EventHandler(this.ClassInfo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.classBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -117,9 +109,7 @@ namespace OOP_Project_Group13
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private Database1DataSet database1DataSet;
         private System.Windows.Forms.BindingSource classBindingSource;
-        private Database1DataSetTableAdapters.ClassTableAdapter classTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idClasseDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn studentDataGridViewTextBoxColumn;
     }
