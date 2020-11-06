@@ -35,7 +35,7 @@ namespace OOP_Project_Group13
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             string[] studentInfo = this.StudentList.Text.Split(' ');
-            String query = "Select * from [Users] Where userID = '" + studentInfo[2] + "'";
+            String query = "Select * from users Where userID = '" + studentInfo[2] + "'";
             MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
             DataTable studentTable = new DataTable();
             SDA.Fill(studentTable);
@@ -73,7 +73,7 @@ namespace OOP_Project_Group13
         private void TeacherList_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             string[] teacherInfo = this.TeacherList.Text.Split(' ');
-            String query = "Select * from [Users] Where userID = '" + teacherInfo[2] + "'";
+            String query = "Select * from users Where userID = '" + teacherInfo[2] + "'";
             MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
             DataTable teacherTable = new DataTable();
             SDA.Fill(teacherTable);

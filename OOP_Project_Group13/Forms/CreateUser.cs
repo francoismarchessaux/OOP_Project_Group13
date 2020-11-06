@@ -30,7 +30,7 @@ namespace OOP_Project_Group13.Forms
             int IDbase = Convert.ToInt32(DateTime.Now.Year.ToString() + "01");
             while(continueID == true)
             {
-                String queryID = "Select * from [Users] Where userID = ' " + IDbase + "'";
+                String queryID = "Select * from users Where userID = ' " + IDbase + "'";
                 MySqlDataAdapter sdaID = new MySqlDataAdapter(queryID, connection);
                 DataTable idTable = new DataTable();
                 sdaID.Fill(idTable);
@@ -47,11 +47,11 @@ namespace OOP_Project_Group13.Forms
             String query;
             if(status == "Student")
             {
-                query = "INSERT INTO [Users] (userID, name, firstName, mail, status) VALUES ('" + IDbase + "', '" + LastName_TxtBox.Text.ToUpper() + "', '" + FirstName_TxtBox.Text + "', '" + FirstName_TxtBox.Text.ToLower() + "." + LastName_TxtBox.Text.ToLower() + "@college.ie', 'Student')";
+                query = "INSERT INTO users (userID, name, firstName, mail, status) VALUES ('" + IDbase + "', '" + LastName_TxtBox.Text.ToUpper() + "', '" + FirstName_TxtBox.Text + "', '" + FirstName_TxtBox.Text.ToLower() + "." + LastName_TxtBox.Text.ToLower() + "@college.ie', 'Student')";
             }
             else
             {
-                query = "INSERT INTO [Users] (userID, name, firstName, mail, status) VALUES ('" + IDbase + "', '" + LastName_TxtBox.Text.ToUpper() + "', '" + FirstName_TxtBox.Text + "', '" + FirstName_TxtBox.Text.ToLower() + "." + LastName_TxtBox.Text.ToLower() + "@college.ie', 'Faculty')";
+                query = "INSERT INTO users (userID, name, firstName, mail, status) VALUES ('" + IDbase + "', '" + LastName_TxtBox.Text.ToUpper() + "', '" + FirstName_TxtBox.Text + "', '" + FirstName_TxtBox.Text.ToLower() + "." + LastName_TxtBox.Text.ToLower() + "@college.ie', 'Faculty')";
             }
             MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
             SDA.SelectCommand.ExecuteNonQuery();
@@ -65,6 +65,7 @@ namespace OOP_Project_Group13.Forms
                 MessageBox.Show("Teacher created succesfully !");
             }
             this.Hide();
+
         }
 
         private void BackButton_Click(object sender, EventArgs e)
