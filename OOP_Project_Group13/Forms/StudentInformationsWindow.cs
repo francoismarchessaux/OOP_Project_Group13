@@ -1,4 +1,5 @@
-﻿using OOP_Project_Group13.Forms;
+﻿using MySqlConnector;
+using OOP_Project_Group13.Forms;
 using OOP_Project_Group13.Users;
 using System;
 using System.Collections.Generic;
@@ -15,9 +16,9 @@ namespace OOP_Project_Group13
 {
     public partial class StudentInformationsWindow : Form
     {
-        SqlConnection connection;
+        MySqlConnection connection;
         Student student;
-        public StudentInformationsWindow(SqlConnection _connection, Student _student)
+        public StudentInformationsWindow(MySqlConnection _connection, Student _student)
         {
             InitializeComponent();
             connection = _connection;
