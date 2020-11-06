@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOP_Project_Group13
 {
-    public abstract class Subject
+    public class Subject
     {
         public string name { get; set; }
         public Subject(string name)

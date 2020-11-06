@@ -11,9 +11,9 @@ namespace OOP_Project_Group13
         private int note;
         private string nomCC;
         private int coeff;
-        private string matiere;
+        private Subject matiere;
 
-        public Grade(int note,string nomCC,int coeff,string matiere)
+        public Grade(int note,string nomCC,int coeff,Subject matiere)
         {
             this.note = note;
             this.nomCC = nomCC;
@@ -67,7 +67,7 @@ namespace OOP_Project_Group13
                 }
             }
         }
-        public string Matiere
+        public Subject Matiere
         {
             get
             {
