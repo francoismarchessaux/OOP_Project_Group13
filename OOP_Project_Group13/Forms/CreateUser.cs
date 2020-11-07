@@ -1,4 +1,5 @@
 using MySqlConnector;
+using OOP_Project_Group13.Users;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,12 +17,14 @@ namespace OOP_Project_Group13.Forms
     {
         MySqlConnection connection;
         string status;
+        Administrator admin;
 
-        public CreateUser(MySqlConnection _connection, string _status)
+        public CreateUser(MySqlConnection _connection, string _status, Administrator _admin)
         {
             InitializeComponent();
             connection = _connection;
             status = _status;
+            admin = _admin;
         }
 
         private void CreateButton_Click(object sender, EventArgs e)
@@ -65,12 +68,15 @@ namespace OOP_Project_Group13.Forms
                 MessageBox.Show("Teacher created succesfully !");
             }
             this.Hide();
-
+            AdministratorMainWindow adminWin = new AdministratorMainWindow(admin, connection);
+            adminWin.Show();
         }
 
         private void BackButton_Click(object sender, EventArgs e)
         {
             this.Hide();
+            AdministratorMainWindow adminWin = new AdministratorMainWindow(admin, connection);
+            adminWin.Show();
         }
     }
 }

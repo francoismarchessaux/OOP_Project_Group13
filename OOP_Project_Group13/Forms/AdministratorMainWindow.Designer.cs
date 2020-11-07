@@ -37,16 +37,15 @@
             this.CreateStudentButton = new System.Windows.Forms.Button();
             this.StudentList = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.CreateCourseButton = new System.Windows.Forms.Button();
-            this.ManageCourseButton = new System.Windows.Forms.Button();
             this.CreateClassButton = new System.Windows.Forms.Button();
-            this.ManageClassButton = new System.Windows.Forms.Button();
             this.database1DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label4 = new System.Windows.Forms.Label();
             this.TeacherList = new System.Windows.Forms.ComboBox();
             this.CreateTeacherBtn = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.ClassesList = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.AdminPP_PictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
@@ -127,52 +126,18 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Manage Student";
             // 
-            // CreateCourseButton
-            // 
-            this.CreateCourseButton.Location = new System.Drawing.Point(815, 269);
-            this.CreateCourseButton.Name = "CreateCourseButton";
-            this.CreateCourseButton.Size = new System.Drawing.Size(175, 48);
-            this.CreateCourseButton.TabIndex = 9;
-            this.CreateCourseButton.Text = "Create Course";
-            this.CreateCourseButton.UseVisualStyleBackColor = true;
-            this.CreateCourseButton.Click += new System.EventHandler(this.CreateCourseButton_Click);
-            // 
-            // ManageCourseButton
-            // 
-            this.ManageCourseButton.Location = new System.Drawing.Point(815, 343);
-            this.ManageCourseButton.Name = "ManageCourseButton";
-            this.ManageCourseButton.Size = new System.Drawing.Size(175, 76);
-            this.ManageCourseButton.TabIndex = 10;
-            this.ManageCourseButton.Text = "Manage Courses";
-            this.ManageCourseButton.UseVisualStyleBackColor = true;
-            // 
             // CreateClassButton
             // 
-            this.CreateClassButton.Location = new System.Drawing.Point(1043, 269);
+            this.CreateClassButton.Location = new System.Drawing.Point(816, 269);
             this.CreateClassButton.Name = "CreateClassButton";
             this.CreateClassButton.Size = new System.Drawing.Size(175, 48);
             this.CreateClassButton.TabIndex = 11;
             this.CreateClassButton.Text = "Create Class";
             this.CreateClassButton.UseVisualStyleBackColor = true;
             // 
-            // ManageClassButton
-            // 
-            this.ManageClassButton.Location = new System.Drawing.Point(1043, 343);
-            this.ManageClassButton.Name = "ManageClassButton";
-            this.ManageClassButton.Size = new System.Drawing.Size(175, 76);
-            this.ManageClassButton.TabIndex = 12;
-            this.ManageClassButton.Text = "Manage Classes";
-            this.ManageClassButton.UseVisualStyleBackColor = true;
-            // 
-            // database1DataSet
-            // 
-            // 
             // usersBindingSource
             // 
             this.usersBindingSource.DataMember = "Users";
-            // 
-            // usersTableAdapter
-            // 
             // 
             // label4
             // 
@@ -203,18 +168,36 @@
             this.CreateTeacherBtn.UseVisualStyleBackColor = true;
             this.CreateTeacherBtn.Click += new System.EventHandler(this.CreateTeacherBtn_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(811, 358);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(173, 25);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "Manage Classes";
+            // 
+            // ClassesList
+            // 
+            this.ClassesList.FormattingEnabled = true;
+            this.ClassesList.Location = new System.Drawing.Point(816, 386);
+            this.ClassesList.Name = "ClassesList";
+            this.ClassesList.Size = new System.Drawing.Size(313, 33);
+            this.ClassesList.TabIndex = 16;
+            this.ClassesList.Text = "Select Class ...";
+            this.ClassesList.SelectedIndexChanged += new System.EventHandler(this.ClassesList_SelectedIndexChanged);
+            // 
             // AdministratorMainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1249, 446);
+            this.ClientSize = new System.Drawing.Size(1152, 446);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.ClassesList);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.TeacherList);
             this.Controls.Add(this.CreateTeacherBtn);
-            this.Controls.Add(this.ManageClassButton);
             this.Controls.Add(this.CreateClassButton);
-            this.Controls.Add(this.ManageCourseButton);
-            this.Controls.Add(this.CreateCourseButton);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.StudentList);
             this.Controls.Add(this.CreateStudentButton);
@@ -249,15 +232,14 @@
         private System.Windows.Forms.Button CreateStudentButton;
         private System.Windows.Forms.ComboBox StudentList;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button CreateCourseButton;
-        private System.Windows.Forms.Button ManageCourseButton;
         private System.Windows.Forms.Button CreateClassButton;
-        private System.Windows.Forms.Button ManageClassButton;
         private System.Windows.Forms.BindingSource database1DataSetBindingSource;
         private System.Windows.Forms.BindingSource userBindingSource;
         private System.Windows.Forms.BindingSource usersBindingSource;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox TeacherList;
         private System.Windows.Forms.Button CreateTeacherBtn;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox ClassesList;
     }
 }

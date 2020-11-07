@@ -1,13 +1,5 @@
 using MySqlConnector;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace OOP_Project_Group13.Forms
@@ -28,7 +20,14 @@ namespace OOP_Project_Group13.Forms
             TeacherName.Text = Teacher.firstName + " " + Teacher.name;
             teacherID.Text = "ID : " + Teacher.ID.ToString();
             TeacherMail.Text = "Mail : " + Teacher.mail;
-            TeacherPhone.Text = "Phone : " + Teacher.phone;
+            if(Teacher.phone == "0000000000")
+            {
+                TeacherPhone.Text = "Phone : Not yet entered";
+            }
+            else
+            {
+                TeacherPhone.Text = "Phone : " + Teacher.phone;
+            }
             teacherPicture.ImageLocation = Teacher.profilePicture;
         }
 

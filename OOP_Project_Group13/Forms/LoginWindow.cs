@@ -35,7 +35,8 @@ namespace OOP_Project_Group13
                 switch (userStatus)
                 {
                     case "Admin":
-                        AdministratorMainWindow adminWindow = new AdministratorMainWindow(userTable.Rows[0]["firstName"].ToString() + " " + userTable.Rows[0]["name"].ToString(), Convert.ToInt32(userTable.Rows[0]["userID"]), userTable.Rows[0]["profilePicture"].ToString(), connection);
+                        Administrator admin = new Administrator(userTable.Rows[0]["name"].ToString(), userTable.Rows[0]["firstName"].ToString(), userTable.Rows[0]["status"].ToString(), userTable.Rows[0]["password"].ToString(), Convert.ToInt32(userTable.Rows[0]["userID"]), userTable.Rows[0]["mail"].ToString(), userTable.Rows[0]["phone"].ToString(), userTable.Rows[0]["profilePicture"].ToString());
+                        AdministratorMainWindow adminWindow = new AdministratorMainWindow(admin, connection);
                         this.Hide();
                         adminWindow.Show();
                         break;
