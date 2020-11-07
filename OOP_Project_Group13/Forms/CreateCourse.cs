@@ -71,9 +71,6 @@ namespace OOP_Project_Group13
             adminWin.Show();
         }
 
-        private void CreateCourse_Load(object sender, EventArgs e)
-        {
 
-        }
     }
 }
