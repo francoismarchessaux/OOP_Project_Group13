@@ -68,5 +68,10 @@ namespace OOP_Project_Group13
             MessageBox.Show("Course created succesfully !");
             this.Hide();
         }
+
+        private void CreateCourse_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
