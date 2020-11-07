@@ -105,5 +105,12 @@ namespace OOP_Project_Group13
             ManageClassWindow classMngWin = new ManageClassWindow(selectedClass, connection);
             classMngWin.Show();
         }
+
+        private void CreateClassButton_Click(object sender, EventArgs e)
+        {
+            CreateClass ClassCreationWindow = new CreateClass(connection);
+            ClassCreationWindow.Show();
+            Hide();
+        }
     }
 }
