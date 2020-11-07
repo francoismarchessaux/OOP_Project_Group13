@@ -98,22 +98,28 @@ namespace OOP_Project_Group13
             }
             y = max+10 ;
             generalPanel.Controls.Add(newPan);
+            Panel title = new Panel();
+            title.Height = 30;
+            title.Width = 750;
+            title.BackColor = Color.LightSlateGray;
             newPan.Location = new Point(x, y);
             courseName.Text = avg.subject.name;
             courseName.AutoSize = true;
             courseName.Visible = true;
-            newPan.Controls.Add(courseName);
+            title.Controls.Add(courseName);
             courseName.Location = new Point(10, 10);
             averageLabel.Text = "Average : ";
             averageLabel.AutoSize = true;
             averageLabel.Visible = true;
-            newPan.Controls.Add(averageLabel);
+            title.Controls.Add(averageLabel);
             averageLabel.Location = new Point(650, 10);
-            average.Text = ""+avg.GetAverage();
+            double mean = avg.GetAverage();
+            average.Text = ""+mean;
             average.AutoSize = true;
             average.Visible = true;
-            newPan.Controls.Add(average);
+            title.Controls.Add(average);
             average.Location = new Point(710, 10);
+            newPan.Controls.Add(title);
             listCourses.Add(newPan);
             return newPan;
         }
