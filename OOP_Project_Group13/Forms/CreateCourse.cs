@@ -16,12 +16,12 @@ namespace OOP_Project_Group13
     public partial class CreateCourse : Form
     {
         MySqlConnection connection;
-        Administrator admin;
-        public CreateCourse(MySqlConnection _connection, Administrator _admin)
+        string groupName;
+        public CreateCourse(MySqlConnection _connection, string _groupName)
         {
             InitializeComponent();
             connection = _connection;
-            admin = _admin;
+            groupName = _groupName;
         }
 
         private void buttonCreate_Click(object sender, EventArgs e)
@@ -40,15 +40,24 @@ namespace OOP_Project_Group13
             }
             else
             {
-                connection.Open();
-                query = "INSERT INTO Course (Subject, Teacher, Day, Time) VALUES ('" + subject + "', '" + teacher + "', '" + day + "','" + time + "')";
-                SDA = new MySqlDataAdapter(query, connection);
-                SDA.SelectCommand.ExecuteNonQuery();
-                connection.Close();
-                MessageBox.Show("Course created succesfully !");
-                this.Hide();
-                AdministratorMainWindow adminWin = new AdministratorMainWindow(admin, connection);
-                adminWin.Show();
+                //query = "SELECT * from Course WHERE Group = '" + groupName + "' AND Day = '" + day + "' AND Time = '" + time + "'";
+                //SDA = new MySqlDataAdapter(query, connection);
+                //DataTable groupTable = new DataTable();
+                //SDA.Fill(groupTable);
+                //if(groupTable.Rows.Count == 1)
+                //{
+                //    MessageBox.Show("This group already has a course at this time (Course : " + groupTable.Rows[0]["Subject"] + ")");
+                //}
+                //else 
+                //{
+                //    connection.Open();
+                //    query = "INSERT INTO Course (Subject, Teacher, Day, Time, Group) VALUES ('" + subject + "', '" + teacher + "', '" + day + "','" + time + "','" + groupName + "')";
+                //    SDA = new MySqlDataAdapter(query, connection);
+                //    SDA.SelectCommand.ExecuteNonQuery();
+                //    connection.Close();
+                //    MessageBox.Show("Course created succesfully !");
+                //    this.Hide();
+                //}
             }
         }
 
@@ -67,8 +76,6 @@ namespace OOP_Project_Group13
         private void BackBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AdministratorMainWindow adminWin = new AdministratorMainWindow(admin, connection);
-            adminWin.Show();
         }
     }
 }

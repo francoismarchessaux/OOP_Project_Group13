@@ -43,8 +43,6 @@
             this.DayList = new System.Windows.Forms.ComboBox();
             this.TimeList = new System.Windows.Forms.ComboBox();
             this.BackBtn = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.classBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.oopprojectDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.oopprojectDataSet)).BeginInit();
@@ -73,7 +71,7 @@
             // labelDay
             // 
             this.labelDay.AutoSize = true;
-            this.labelDay.Location = new System.Drawing.Point(82, 247);
+            this.labelDay.Location = new System.Drawing.Point(82, 203);
             this.labelDay.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelDay.Name = "labelDay";
             this.labelDay.Size = new System.Drawing.Size(62, 25);
@@ -83,7 +81,7 @@
             // labelTime
             // 
             this.labelTime.AutoSize = true;
-            this.labelTime.Location = new System.Drawing.Point(82, 308);
+            this.labelTime.Location = new System.Drawing.Point(82, 267);
             this.labelTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTime.Name = "labelTime";
             this.labelTime.Size = new System.Drawing.Size(71, 25);
@@ -92,7 +90,7 @@
             // 
             // buttonCreate
             // 
-            this.buttonCreate.Location = new System.Drawing.Point(87, 369);
+            this.buttonCreate.Location = new System.Drawing.Point(87, 392);
             this.buttonCreate.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCreate.Name = "buttonCreate";
             this.buttonCreate.Size = new System.Drawing.Size(117, 46);
@@ -152,7 +150,7 @@
             "Thursday",
             "Friday",
             "Saturday"});
-            this.DayList.Location = new System.Drawing.Point(241, 239);
+            this.DayList.Location = new System.Drawing.Point(241, 200);
             this.DayList.Name = "DayList";
             this.DayList.Size = new System.Drawing.Size(317, 33);
             this.DayList.TabIndex = 16;
@@ -164,14 +162,14 @@
             "8 : 00 am - 11 : 00 am",
             "1 : 00 pm - 3 : 55 pm",
             "4 : 00 pm - 7 : 00 pm"});
-            this.TimeList.Location = new System.Drawing.Point(241, 300);
+            this.TimeList.Location = new System.Drawing.Point(241, 267);
             this.TimeList.Name = "TimeList";
             this.TimeList.Size = new System.Drawing.Size(317, 33);
             this.TimeList.TabIndex = 17;
             // 
             // BackBtn
             // 
-            this.BackBtn.Location = new System.Drawing.Point(441, 369);
+            this.BackBtn.Location = new System.Drawing.Point(441, 392);
             this.BackBtn.Margin = new System.Windows.Forms.Padding(4);
             this.BackBtn.Name = "BackBtn";
             this.BackBtn.Size = new System.Drawing.Size(117, 46);
@@ -180,38 +178,11 @@
             this.BackBtn.UseVisualStyleBackColor = true;
             this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click);
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday"});
-            this.comboBox1.Location = new System.Drawing.Point(241, 189);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(317, 33);
-            this.comboBox1.TabIndex = 20;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(82, 189);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 25);
-            this.label2.TabIndex = 19;
-            this.label2.Text = "Group :";
-            // 
             // CreateCourse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(659, 446);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(662, 496);
             this.Controls.Add(this.BackBtn);
             this.Controls.Add(this.TimeList);
             this.Controls.Add(this.DayList);
@@ -253,7 +224,5 @@
         private System.Windows.Forms.ComboBox DayList;
         private System.Windows.Forms.ComboBox TimeList;
         private System.Windows.Forms.Button BackBtn;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label2;
     }
 }

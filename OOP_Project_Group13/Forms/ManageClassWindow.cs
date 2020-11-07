@@ -26,5 +26,11 @@ namespace OOP_Project_Group13.Forms
         {
             classNameLabel.Text = "Class Name : " + group.name;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CreateCourse createCoursewin = new CreateCourse(connection, group.name);
+            createCoursewin.Show();
+        }
     }
 }

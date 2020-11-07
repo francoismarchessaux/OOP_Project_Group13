@@ -75,13 +75,6 @@ namespace OOP_Project_Group13
             }
         }
 
-        private void CreateCourseButton_Click(object sender, EventArgs e)
-        {
-            CreateCourse ccWin = new CreateCourse(connection, admin);
-            ccWin.Show();
-            this.Hide();
-        }
-
         private void TeacherList_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             string[] teacherInfo = this.TeacherList.Text.Split(' ');

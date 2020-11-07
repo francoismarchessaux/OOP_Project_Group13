@@ -29,77 +29,87 @@
         private void InitializeComponent()
         {
             this.classNameLabel = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.CreateCourseBtn = new System.Windows.Forms.Button();
+            this.ModifyCourseBtn = new System.Windows.Forms.Button();
+            this.DeleteCourseBtn = new System.Windows.Forms.Button();
+            this.StudentsBtn = new System.Windows.Forms.Button();
+            this.TimetableBtn = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // classNameLabel
             // 
             this.classNameLabel.AutoSize = true;
-            this.classNameLabel.Location = new System.Drawing.Point(39, 39);
+            this.classNameLabel.Location = new System.Drawing.Point(39, 45);
             this.classNameLabel.Name = "classNameLabel";
             this.classNameLabel.Size = new System.Drawing.Size(128, 25);
             this.classNameLabel.TabIndex = 0;
             this.classNameLabel.Text = "Class Name";
             // 
-            // button1
+            // CreateCourseBtn
             // 
-            this.button1.Location = new System.Drawing.Point(44, 101);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(165, 43);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Create Course";
-            this.button1.UseVisualStyleBackColor = true;
+            this.CreateCourseBtn.Location = new System.Drawing.Point(44, 101);
+            this.CreateCourseBtn.Name = "CreateCourseBtn";
+            this.CreateCourseBtn.Size = new System.Drawing.Size(165, 43);
+            this.CreateCourseBtn.TabIndex = 1;
+            this.CreateCourseBtn.Text = "Create Course";
+            this.CreateCourseBtn.UseVisualStyleBackColor = true;
+            this.CreateCourseBtn.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // ModifyCourseBtn
             // 
-            this.button2.Location = new System.Drawing.Point(242, 101);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(165, 43);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Modify Course";
-            this.button2.UseVisualStyleBackColor = true;
+            this.ModifyCourseBtn.Location = new System.Drawing.Point(242, 101);
+            this.ModifyCourseBtn.Name = "ModifyCourseBtn";
+            this.ModifyCourseBtn.Size = new System.Drawing.Size(165, 43);
+            this.ModifyCourseBtn.TabIndex = 2;
+            this.ModifyCourseBtn.Text = "Modify Course";
+            this.ModifyCourseBtn.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // DeleteCourseBtn
             // 
-            this.button3.Location = new System.Drawing.Point(442, 101);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(165, 43);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Delete Course";
-            this.button3.UseVisualStyleBackColor = true;
+            this.DeleteCourseBtn.Location = new System.Drawing.Point(442, 101);
+            this.DeleteCourseBtn.Name = "DeleteCourseBtn";
+            this.DeleteCourseBtn.Size = new System.Drawing.Size(165, 43);
+            this.DeleteCourseBtn.TabIndex = 3;
+            this.DeleteCourseBtn.Text = "Delete Course";
+            this.DeleteCourseBtn.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // StudentsBtn
             // 
-            this.button4.Location = new System.Drawing.Point(44, 196);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(165, 43);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Students";
-            this.button4.UseVisualStyleBackColor = true;
+            this.StudentsBtn.Location = new System.Drawing.Point(44, 196);
+            this.StudentsBtn.Name = "StudentsBtn";
+            this.StudentsBtn.Size = new System.Drawing.Size(165, 43);
+            this.StudentsBtn.TabIndex = 4;
+            this.StudentsBtn.Text = "Students";
+            this.StudentsBtn.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // TimetableBtn
             // 
-            this.button5.Location = new System.Drawing.Point(215, 196);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(165, 43);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "Timetable";
-            this.button5.UseVisualStyleBackColor = true;
+            this.TimetableBtn.Location = new System.Drawing.Point(206, 196);
+            this.TimetableBtn.Name = "TimetableBtn";
+            this.TimetableBtn.Size = new System.Drawing.Size(165, 43);
+            this.TimetableBtn.TabIndex = 5;
+            this.TimetableBtn.Text = "Timetable";
+            this.TimetableBtn.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(44, 245);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1243, 630);
+            this.panel1.TabIndex = 6;
             // 
             // ManageClassWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1066, 623);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(1299, 887);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.TimetableBtn);
+            this.Controls.Add(this.StudentsBtn);
+            this.Controls.Add(this.DeleteCourseBtn);
+            this.Controls.Add(this.ModifyCourseBtn);
+            this.Controls.Add(this.CreateCourseBtn);
             this.Controls.Add(this.classNameLabel);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -115,10 +125,11 @@
         #endregion
 
         private System.Windows.Forms.Label classNameLabel;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button CreateCourseBtn;
+        private System.Windows.Forms.Button ModifyCourseBtn;
+        private System.Windows.Forms.Button DeleteCourseBtn;
+        private System.Windows.Forms.Button StudentsBtn;
+        private System.Windows.Forms.Button TimetableBtn;
+        private System.Windows.Forms.Panel panel1;
     }
 }
