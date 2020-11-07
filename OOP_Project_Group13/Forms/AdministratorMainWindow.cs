@@ -17,19 +17,22 @@ namespace OOP_Project_Group13
     public partial class AdministratorMainWindow : Form
     {
         MySqlConnection connection;
-        public AdministratorMainWindow(string fullName, int ID, string link, MySqlConnection _connection)
+        Administrator admin;
+        public AdministratorMainWindow(Administrator _admin, MySqlConnection _connection)
         {
             InitializeComponent();
             connection = _connection;
-            AdminName_Label.Text = fullName;
-            AdminID_Label.Text = ID.ToString();
-            AdminPP_PictureBox.ImageLocation = link;
+            admin = _admin;
+            AdminName_Label.Text = admin.firstName + " " + admin.name;
+            AdminID_Label.Text = admin.ID.ToString();
+            AdminPP_PictureBox.ImageLocation = admin.profilePicture;
         }
 
         private void CreateStudentButton_Click(object sender, EventArgs e)
         {
-            CreateUser studentCreationWindow = new CreateUser(connection, "Student");
+            CreateUser studentCreationWindow = new CreateUser(connection, "Student", admin);
             studentCreationWindow.Show();
+            this.Hide();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -62,12 +65,21 @@ namespace OOP_Project_Group13
             {
                 this.TeacherList.Items.Add(TeacherTable.Rows[i]["name"].ToString() + " " + TeacherTable.Rows[i]["firstName"].ToString() + " " + TeacherTable.Rows[i]["userID"].ToString());
             }
+            query = "Select className from class";
+            SDA = new MySqlDataAdapter(query, connection);
+            DataTable ClassTable = new DataTable();
+            SDA.Fill(ClassTable);
+            for (int i = 0; i < ClassTable.Rows.Count; i++)
+            {
+                this.ClassesList.Items.Add(ClassTable.Rows[i]["className"]);
+            }
         }
 
         private void CreateCourseButton_Click(object sender, EventArgs e)
         {
-            CreateCourse ccWin = new CreateCourse(connection);
+            CreateCourse ccWin = new CreateCourse(connection, admin);
             ccWin.Show();
+            this.Hide();
         }
 
         private void TeacherList_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -84,8 +96,21 @@ namespace OOP_Project_Group13
 
         private void CreateTeacherBtn_Click(object sender, EventArgs e)
         {
-            CreateUser teacherCreationWindow = new CreateUser(connection, "Faculty");
+            CreateUser teacherCreationWindow = new CreateUser(connection, "Faculty", admin);
             teacherCreationWindow.Show();
+            this.Hide();
+        }
+
+        private void ClassesList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string classNameStr = ClassesList.Text;
+            String query = "Select * from class Where className = '" + classNameStr + "'";
+            MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
+            DataTable classTable = new DataTable();
+            SDA.Fill(classTable);
+            Class selectedClass = new Class(classTable.Rows[0]["className"].ToString(), classTable.Rows[0]["studentsIDs"].ToString());
+            ManageClassWindow classMngWin = new ManageClassWindow(selectedClass, connection);
+            classMngWin.Show();
         }
     }
 }
