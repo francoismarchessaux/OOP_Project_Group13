@@ -61,5 +61,10 @@ namespace OOP_Project_Group13
         {
 
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

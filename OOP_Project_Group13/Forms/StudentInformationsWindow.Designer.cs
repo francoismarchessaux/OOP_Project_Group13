@@ -35,6 +35,8 @@
             this.AdressLabel = new System.Windows.Forms.Label();
             this.MailLabel = new System.Windows.Forms.Label();
             this.PhoneLabel = new System.Windows.Forms.Label();
+            this.buttonGrade = new System.Windows.Forms.Button();
+            this.buttonTimeTable = new System.Windows.Forms.Button();
             this.generalPanel = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.StudentPicture)).BeginInit();
             this.SuspendLayout();
@@ -54,9 +56,9 @@
             this.NameLabel.Location = new System.Drawing.Point(150, 17);
             this.NameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.NameLabel.Name = "NameLabel";
-            this.NameLabel.Size = new System.Drawing.Size(99, 17);
+            this.NameLabel.Size = new System.Drawing.Size(98, 17);
             this.NameLabel.TabIndex = 1;
-            this.NameLabel.Text = "Student NAme";
+            this.NameLabel.Text = "Student Name";
             // 
             // StudentIDLabel
             // 
@@ -108,22 +110,47 @@
             this.PhoneLabel.TabIndex = 7;
             this.PhoneLabel.Text = "Phone : ";
             // 
+            // buttonGrade
+            // 
+            this.buttonGrade.Location = new System.Drawing.Point(17, 215);
+            this.buttonGrade.Name = "buttonGrade";
+            this.buttonGrade.Size = new System.Drawing.Size(75, 23);
+            this.buttonGrade.TabIndex = 9;
+            this.buttonGrade.Text = "Grades";
+            this.buttonGrade.UseVisualStyleBackColor = true;
+            this.buttonGrade.Click += new System.EventHandler(this.buttonGrade_Click);
+            // 
+            // buttonTimeTable
+            // 
+            this.buttonTimeTable.Location = new System.Drawing.Point(90, 215);
+            this.buttonTimeTable.Name = "buttonTimeTable";
+            this.buttonTimeTable.Size = new System.Drawing.Size(89, 23);
+            this.buttonTimeTable.TabIndex = 10;
+            this.buttonTimeTable.Text = "TimeTable";
+            this.buttonTimeTable.UseVisualStyleBackColor = true;
+            this.buttonTimeTable.Click += new System.EventHandler(this.buttonTimeTable_Click);
+            // 
             // generalPanel
             // 
+            this.generalPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.generalPanel.AutoScroll = true;
-            this.generalPanel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.generalPanel.Location = new System.Drawing.Point(17, 237);
+            this.generalPanel.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.generalPanel.Location = new System.Drawing.Point(19, 237);
             this.generalPanel.Name = "generalPanel";
-            this.generalPanel.Size = new System.Drawing.Size(1105, 331);
-            this.generalPanel.TabIndex = 8;
+            this.generalPanel.Size = new System.Drawing.Size(1241, 426);
+            this.generalPanel.TabIndex = 27;
             // 
             // StudentInformationsWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1134, 675);
+            this.ClientSize = new System.Drawing.Size(1270, 690);
             this.Controls.Add(this.generalPanel);
+            this.Controls.Add(this.buttonTimeTable);
+            this.Controls.Add(this.buttonGrade);
             this.Controls.Add(this.PhoneLabel);
             this.Controls.Add(this.MailLabel);
             this.Controls.Add(this.AdressLabel);
@@ -132,7 +159,6 @@
             this.Controls.Add(this.NameLabel);
             this.Controls.Add(this.StudentPicture);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "StudentInformationsWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -153,6 +179,8 @@
         private System.Windows.Forms.Label AdressLabel;
         private System.Windows.Forms.Label MailLabel;
         private System.Windows.Forms.Label PhoneLabel;
+        private System.Windows.Forms.Button buttonGrade;
+        private System.Windows.Forms.Button buttonTimeTable;
         private System.Windows.Forms.Panel generalPanel;
     }
 }
