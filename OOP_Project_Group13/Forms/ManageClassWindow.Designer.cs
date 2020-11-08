@@ -34,7 +34,7 @@
             this.DeleteCourseBtn = new System.Windows.Forms.Button();
             this.StudentsBtn = new System.Windows.Forms.Button();
             this.TimetableBtn = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.TimeTablePnl = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // classNameLabel
@@ -92,20 +92,25 @@
             this.TimetableBtn.TabIndex = 5;
             this.TimetableBtn.Text = "Timetable";
             this.TimetableBtn.UseVisualStyleBackColor = true;
+            this.TimetableBtn.Click += new System.EventHandler(this.TimetableBtn_Click);
             // 
-            // panel1
+            // TimeTablePnl
             // 
-            this.panel1.Location = new System.Drawing.Point(44, 245);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1243, 630);
-            this.panel1.TabIndex = 6;
+            this.TimeTablePnl.AutoSize = true;
+            this.TimeTablePnl.BackColor = System.Drawing.SystemColors.Control;
+            this.TimeTablePnl.Location = new System.Drawing.Point(44, 245);
+            this.TimeTablePnl.Name = "TimeTablePnl";
+            this.TimeTablePnl.Size = new System.Drawing.Size(979, 195);
+            this.TimeTablePnl.TabIndex = 6;
             // 
             // ManageClassWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1299, 887);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.TimeTablePnl);
             this.Controls.Add(this.TimetableBtn);
             this.Controls.Add(this.StudentsBtn);
             this.Controls.Add(this.DeleteCourseBtn);
@@ -131,6 +136,6 @@
         private System.Windows.Forms.Button DeleteCourseBtn;
         private System.Windows.Forms.Button StudentsBtn;
         private System.Windows.Forms.Button TimetableBtn;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel TimeTablePnl;
     }
 }

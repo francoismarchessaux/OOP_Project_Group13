@@ -183,6 +183,12 @@
     <Compile Include="Forms\ManageClassWindow.Designer.cs">
       <DependentUpon>ManageClassWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ModifyCourseWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ModifyCourseWindow.Designer.cs">
+      <DependentUpon>ModifyCourseWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Grade.cs" />
     <Compile Include="Forms\StudentInformationsWindow.cs">
       <SubType>Form</SubType>
@@ -248,6 +254,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ManageClassWindow.resx">
       <DependentUpon>ManageClassWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ModifyCourseWindow.resx">
+      <DependentUpon>ModifyCourseWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\StudentInformationsWindow.resx">
       <DependentUpon>StudentInformationsWindow.cs</DependentUpon>
