@@ -76,7 +76,7 @@ namespace OOP_Project_Group13
         }
         public void GetTimetable()
         {
-            String query = "SELECT * FROM class WHERE studentID='" + student.ID + "'";
+            String query = "SELECT * FROM Course WHERE Class='" + student.studentClass.name + "'";
             MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
             DataTable dt = new DataTable();
             SDA.Fill(dt);
@@ -84,10 +84,10 @@ namespace OOP_Project_Group13
             {
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
-                    string info = dt.Rows[i]["Horaire"].ToString();
-                    string[] horaire = info.Split(' ');
-                    string nom = dt.Rows[i]["className"].ToString();
-                    string labelName = "" + horaire[0][0] + horaire[0][1] + horaire[0][2] + horaire[1][0];
+                    string day = dt.Rows[i]["Day"].ToString();
+                    string hour = dt.Rows[i]["Time"].ToString();
+                    string name = dt.Rows[i]["Subject"].ToString();
+                    string labelName = "" + day[0] + day[1] + day[2] + hour[0];
                     foreach (Control x in timetable.Controls)
                     {
                         if (x is Label)
@@ -96,7 +96,7 @@ namespace OOP_Project_Group13
                             if (labelName == n)
                             {
                                 x.Visible = true;
-                                x.Text = nom;
+                                x.Text = name;
                             }
                         }
                     }
