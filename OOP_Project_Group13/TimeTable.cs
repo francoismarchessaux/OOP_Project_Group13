@@ -133,8 +133,13 @@ namespace OOP_Project_Group13
             if(admin == true)
             {
                 ModifyCourseWindow modifyWin = new ModifyCourseWindow();
-                //modifyWin.label1.Text = sender
-                //modifyWin.Show();
+                Label label = sender as Label;
+                /*if(label!=null)
+                {
+                    modifyWin.label1.Text = label.Text;
+                    modifyWin.Show();
+                }*/
+                modifyWin.Show();
             }
         }
     }
