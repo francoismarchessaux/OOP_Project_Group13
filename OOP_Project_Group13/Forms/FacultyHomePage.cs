@@ -15,35 +15,12 @@ namespace OOP_Project_Group13
 {
     public partial class FacultyHomePage : Form
     {
-        public FacultyHomePage(MySqlConnection con)
+        public FacultyHomePage(MySqlConnection con, Faculty teacher)
         {
             InitializeComponent();
-            String query = "SELECT * FROM [Class] WHERE IdStudent='20201'";
-            MySqlDataAdapter SDA = new MySqlDataAdapter(query, con);
-            DataTable dt = new DataTable();
-            SDA.Fill(dt);
-            if (dt.Rows.Count > 0)
-            {
-                for (int i = 0; i < dt.Rows.Count; i++)
-                {
-                    string info = dt.Rows[i]["Horaire"].ToString();
-                    string[] horaire = info.Split(' ');
-                    string nom = dt.Rows[i]["NomClasse"].ToString();
-                    string labelName = ""+horaire[0][0] + horaire[0][1] + horaire[0][2] + horaire[1][0];
-                    foreach (Control x in panel1.Controls)
-                    {
-                        if (x is Label)
-                        {
-                            string n = x.Name;
-                            if (labelName == n)
-                            {
-                                x.Visible = true;
-                                x.Text = nom;
-                            }
-                        }
-                    }
-                }
-            }
+            TimeTable tt = new TimeTable(teacher, con, panelTT);
+            tt.InitializeTimeTable();
+            tt.GetTimetable();
         }
 
         private void buttonClasses_Click(object sender, EventArgs e)

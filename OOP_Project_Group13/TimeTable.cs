@@ -13,12 +13,12 @@ namespace OOP_Project_Group13
 {
     public class TimeTable
     {
-        Student student;
+        User user;
         MySqlConnection connection;
         Panel timetable;
-        public TimeTable(Student student, MySqlConnection connection, Panel timetable)
+        public TimeTable(User user, MySqlConnection connection, Panel timetable)
         {
-            this.student = student;
+            this.user = user;
             this.connection = connection;
             this.timetable = timetable;
         }
@@ -58,11 +58,10 @@ namespace OOP_Project_Group13
                 int[] tab = { 8, 1, 4 };
                 for (int j = 0; j < 3; j++)
                 {
-                    Label label = new Label();
+                    Button label = new Button();
                     label.Name = "" + week[i][0] + week[i][1] + week[i][2] + tab[j];
                     label.Height = 55;
                     label.Width = 87;
-                    label.BorderStyle = BorderStyle.FixedSingle;
                     label.Location = new Point(x, y);
                     label.TextAlign = ContentAlignment.MiddleCenter;
                     label.Visible = false;
@@ -76,7 +75,21 @@ namespace OOP_Project_Group13
         }
         public void GetTimetable()
         {
-            String query = "SELECT * FROM Course WHERE Class='" + student.studentClass.name + "'";
+            String query = "";
+            if(user is Student)
+            {
+                Student student = (Student)user;
+                query = "SELECT * FROM Course WHERE Class='" + student.studentClass.name + "'";
+            }
+            else
+            {
+                Faculty teacher = (Faculty)user;
+                query = "SELECT * FROM Course WHERE Class='" + teacher.Classes[0].name + "' ";
+                for (int i = 1; i < teacher.Classes.Count; i++)
+                {
+                    query+="AND Class='"+teacher.Classes[i].name+"' ";
+                }
+            }
             MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
             DataTable dt = new DataTable();
             SDA.Fill(dt);
@@ -90,7 +103,7 @@ namespace OOP_Project_Group13
                     string labelName = "" + day[0] + day[1] + day[2] + hour[0];
                     foreach (Control x in timetable.Controls)
                     {
-                        if (x is Label)
+                        if (x is Button)
                         {
                             string n = x.Name;
                             if (labelName == n)
