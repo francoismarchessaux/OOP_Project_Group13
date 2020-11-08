@@ -110,7 +110,6 @@ namespace OOP_Project_Group13
         {
             CreateClass ClassCreationWindow = new CreateClass(connection);
             ClassCreationWindow.Show();
-            Hide();
         }
     }
 }
