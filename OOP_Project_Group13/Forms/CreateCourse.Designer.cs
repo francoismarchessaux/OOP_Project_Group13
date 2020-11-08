@@ -90,7 +90,7 @@
             // 
             // buttonCreate
             // 
-            this.buttonCreate.Location = new System.Drawing.Point(87, 392);
+            this.buttonCreate.Location = new System.Drawing.Point(87, 350);
             this.buttonCreate.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCreate.Name = "buttonCreate";
             this.buttonCreate.Size = new System.Drawing.Size(117, 46);
@@ -169,7 +169,7 @@
             // 
             // BackBtn
             // 
-            this.BackBtn.Location = new System.Drawing.Point(441, 392);
+            this.BackBtn.Location = new System.Drawing.Point(441, 350);
             this.BackBtn.Margin = new System.Windows.Forms.Padding(4);
             this.BackBtn.Name = "BackBtn";
             this.BackBtn.Size = new System.Drawing.Size(117, 46);
@@ -182,7 +182,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(662, 496);
+            this.ClientSize = new System.Drawing.Size(658, 438);
             this.Controls.Add(this.BackBtn);
             this.Controls.Add(this.TimeList);
             this.Controls.Add(this.DayList);

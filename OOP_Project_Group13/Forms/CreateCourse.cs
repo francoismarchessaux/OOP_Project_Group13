@@ -40,24 +40,24 @@ namespace OOP_Project_Group13
             }
             else
             {
-                //query = "SELECT * from Course WHERE Group = '" + groupName + "' AND Day = '" + day + "' AND Time = '" + time + "'";
-                //SDA = new MySqlDataAdapter(query, connection);
-                //DataTable groupTable = new DataTable();
-                //SDA.Fill(groupTable);
-                //if(groupTable.Rows.Count == 1)
-                //{
-                //    MessageBox.Show("This group already has a course at this time (Course : " + groupTable.Rows[0]["Subject"] + ")");
-                //}
-                //else 
-                //{
-                //    connection.Open();
-                //    query = "INSERT INTO Course (Subject, Teacher, Day, Time, Group) VALUES ('" + subject + "', '" + teacher + "', '" + day + "','" + time + "','" + groupName + "')";
-                //    SDA = new MySqlDataAdapter(query, connection);
-                //    SDA.SelectCommand.ExecuteNonQuery();
-                //    connection.Close();
-                //    MessageBox.Show("Course created succesfully !");
-                //    this.Hide();
-                //}
+                query = "SELECT * from Course WHERE Class = '" + groupName + "' AND Day = '" + day + "' AND Time = '" + time + "'";
+                SDA = new MySqlDataAdapter(query, connection);
+                DataTable groupTable = new DataTable();
+                SDA.Fill(groupTable);
+                if (groupTable.Rows.Count == 1)
+                {
+                    MessageBox.Show("This group already has a course at this time (Course : " + groupTable.Rows[0]["Subject"] + ")");
+                }
+                else
+                {
+                    connection.Open();
+                    query = "INSERT INTO Course (Subject, Teacher, Day, Time, Class) VALUES ('" + subject + "', '" + teacher + "', '" + day + "','" + time + "','" + groupName + "')";
+                    SDA = new MySqlDataAdapter(query, connection);
+                    SDA.SelectCommand.ExecuteNonQuery();
+                    connection.Close();
+                    MessageBox.Show("Course created succesfully !");
+                    this.Hide();
+                }
             }
         }
 
