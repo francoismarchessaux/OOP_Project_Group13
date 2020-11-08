@@ -16,9 +16,9 @@ namespace OOP_Project_Group13
         public List<Course> courses { get; set; }
         public List<string> students { get; set; }
 
-        public Class()
+        public Class(string _name)
         {
-
+            name = _name;
         }
         public Class(string _name, string _students)
         {

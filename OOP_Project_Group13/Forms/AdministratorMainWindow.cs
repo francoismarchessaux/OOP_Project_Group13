@@ -42,7 +42,9 @@ namespace OOP_Project_Group13
             MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
             DataTable studentTable = new DataTable();
             SDA.Fill(studentTable);
-            Student selectedStudent = new Student(studentTable.Rows[0]["name"].ToString(), studentTable.Rows[0]["firstName"].ToString(), studentTable.Rows[0]["status"].ToString(), studentTable.Rows[0]["password"].ToString(), Convert.ToInt32(studentTable.Rows[0]["userID"]), studentTable.Rows[0]["mail"].ToString(), studentTable.Rows[0]["phone"].ToString(), studentTable.Rows[0]["profilePicture"].ToString(), Convert.ToDateTime(studentTable.Rows[0]["birthday"]), studentTable.Rows[0]["address"].ToString());
+            string name = studentTable.Rows[0]["className"].ToString();
+            Class _class = new Class(name);
+            Student selectedStudent = new Student(studentTable.Rows[0]["name"].ToString(), studentTable.Rows[0]["firstName"].ToString(), studentTable.Rows[0]["status"].ToString(), studentTable.Rows[0]["password"].ToString(), Convert.ToInt32(studentTable.Rows[0]["userID"]), studentTable.Rows[0]["mail"].ToString(), studentTable.Rows[0]["phone"].ToString(), studentTable.Rows[0]["profilePicture"].ToString(), Convert.ToDateTime(studentTable.Rows[0]["birthday"]), studentTable.Rows[0]["address"].ToString(),_class );
             StudentInformationsWindow studentInfoWin = new StudentInformationsWindow(connection, selectedStudent);
             studentInfoWin.Show();
         }
