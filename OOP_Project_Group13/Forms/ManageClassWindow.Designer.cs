@@ -64,6 +64,7 @@
             this.ModifyCourseBtn.TabIndex = 2;
             this.ModifyCourseBtn.Text = "Modify Course";
             this.ModifyCourseBtn.UseVisualStyleBackColor = true;
+            this.ModifyCourseBtn.Click += new System.EventHandler(this.ModifyCourseBtn_Click);
             // 
             // DeleteCourseBtn
             // 
