@@ -87,7 +87,7 @@ namespace OOP_Project_Group13
                 query = "SELECT * FROM Course WHERE Class='" + teacher.Classes[0].name + "' ";
                 for (int i = 1; i < teacher.Classes.Count; i++)
                 {
-                    query+="AND Class='"+teacher.Classes[i].name+"' ";
+                    query+="OR Class='"+teacher.Classes[i].name+"' ";
                 }
             }
             MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
@@ -115,6 +115,7 @@ namespace OOP_Project_Group13
                     }
                 }
             }
+
         }
     }
 }
