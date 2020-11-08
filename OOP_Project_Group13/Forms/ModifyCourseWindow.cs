@@ -16,5 +16,10 @@ namespace OOP_Project_Group13.Forms
         {
             InitializeComponent();
         }
+
+        private void ModifyCourseWindow_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

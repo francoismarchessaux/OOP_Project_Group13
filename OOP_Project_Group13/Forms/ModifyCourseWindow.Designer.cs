@@ -48,6 +48,7 @@
             this.Controls.Add(this.label1);
             this.Name = "ModifyCourseWindow";
             this.Text = "ModifyCourseWindow";
+            this.Load += new System.EventHandler(this.ModifyCourseWindow_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -55,6 +56,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label label1;
     }
 }

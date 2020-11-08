@@ -1,4 +1,5 @@
 ﻿using MySqlConnector;
+using OOP_Project_Group13.Forms;
 using OOP_Project_Group13.Users;
 using System;
 using System.Collections.Generic;
@@ -16,11 +17,19 @@ namespace OOP_Project_Group13
         User user;
         MySqlConnection connection;
         Panel timetable;
+        bool admin;
         public TimeTable(User user, MySqlConnection connection, Panel timetable)
         {
             this.user = user;
             this.connection = connection;
             this.timetable = timetable;
+        }
+        public TimeTable(User user, MySqlConnection connection, Panel timetable, bool _admin)
+        {
+            this.user = user;
+            this.connection = connection;
+            this.timetable = timetable;
+            admin = _admin;
         }
         public void InitializeTimeTable()
         {
@@ -70,6 +79,7 @@ namespace OOP_Project_Group13
                     else
                         y += 80;
                     timetable.Controls.Add(label);
+                    label.Click += new EventHandler(label_Click);
                 }
             }
         }
@@ -114,6 +124,16 @@ namespace OOP_Project_Group13
                         }
                     }
                 }
+            }
+        }
+
+        private void label_Click(object sender, System.EventArgs e)
+        {
+            if(admin == true)
+            {
+                ModifyCourseWindow modifyWin = new ModifyCourseWindow();
+                //modifyWin.label1.Text = sender
+                //modifyWin.Show();
             }
         }
     }
