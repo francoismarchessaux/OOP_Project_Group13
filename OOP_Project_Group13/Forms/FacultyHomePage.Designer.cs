@@ -31,37 +31,7 @@ namespace OOP_Project_Group13
             this.labelNom = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonClasses = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.Sat1 = new System.Windows.Forms.Label();
-            this.Sat4 = new System.Windows.Forms.Label();
-            this.Sat8 = new System.Windows.Forms.Label();
-            this.Fri8 = new System.Windows.Forms.Label();
-            this.Fri1 = new System.Windows.Forms.Label();
-            this.Fri4 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.Thu8 = new System.Windows.Forms.Label();
-            this.Thu4 = new System.Windows.Forms.Label();
-            this.Thu1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.Wed4 = new System.Windows.Forms.Label();
-            this.Wed1 = new System.Windows.Forms.Label();
-            this.Wed8 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.Tue4 = new System.Windows.Forms.Label();
-            this.Tue1 = new System.Windows.Forms.Label();
-            this.Tue8 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.Mon4 = new System.Windows.Forms.Label();
-            this.Mon1 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.Mon8 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.panelTT = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // labelNom
@@ -84,7 +54,7 @@ namespace OOP_Project_Group13
             // 
             // buttonClasses
             // 
-            this.buttonClasses.Location = new System.Drawing.Point(51, 455);
+            this.buttonClasses.Location = new System.Drawing.Point(59, 579);
             this.buttonClasses.Name = "buttonClasses";
             this.buttonClasses.Size = new System.Drawing.Size(149, 39);
             this.buttonClasses.TabIndex = 3;
@@ -92,363 +62,25 @@ namespace OOP_Project_Group13
             this.buttonClasses.UseVisualStyleBackColor = true;
             this.buttonClasses.Click += new System.EventHandler(this.buttonClasses_Click);
             // 
-            // panel1
+            // panelTT
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.Sat1);
-            this.panel1.Controls.Add(this.Sat4);
-            this.panel1.Controls.Add(this.Sat8);
-            this.panel1.Controls.Add(this.Fri8);
-            this.panel1.Controls.Add(this.Fri1);
-            this.panel1.Controls.Add(this.Fri4);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.Thu8);
-            this.panel1.Controls.Add(this.Thu4);
-            this.panel1.Controls.Add(this.Thu1);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.Wed4);
-            this.panel1.Controls.Add(this.Wed1);
-            this.panel1.Controls.Add(this.Wed8);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.Tue4);
-            this.panel1.Controls.Add(this.Tue1);
-            this.panel1.Controls.Add(this.Tue8);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.Mon4);
-            this.panel1.Controls.Add(this.Mon1);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.Mon8);
-            this.panel1.Location = new System.Drawing.Point(128, 131);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(660, 290);
-            this.panel1.TabIndex = 4;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // Sat1
-            // 
-            this.Sat1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Sat1.Location = new System.Drawing.Point(544, 141);
-            this.Sat1.Name = "Sat1";
-            this.Sat1.Size = new System.Drawing.Size(97, 45);
-            this.Sat1.TabIndex = 32;
-            this.Sat1.Text = "Sat1";
-            this.Sat1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Sat1.Visible = false;
-            // 
-            // Sat4
-            // 
-            this.Sat4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Sat4.Location = new System.Drawing.Point(544, 192);
-            this.Sat4.Name = "Sat4";
-            this.Sat4.Size = new System.Drawing.Size(97, 45);
-            this.Sat4.TabIndex = 31;
-            this.Sat4.Text = "Sat4";
-            this.Sat4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Sat4.Visible = false;
-            // 
-            // Sat8
-            // 
-            this.Sat8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Sat8.Location = new System.Drawing.Point(544, 39);
-            this.Sat8.Name = "Sat8";
-            this.Sat8.Size = new System.Drawing.Size(97, 45);
-            this.Sat8.TabIndex = 30;
-            this.Sat8.Text = "Sat8";
-            this.Sat8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Sat8.Visible = false;
-            // 
-            // Fri8
-            // 
-            this.Fri8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Fri8.Location = new System.Drawing.Point(441, 39);
-            this.Fri8.Name = "Fri8";
-            this.Fri8.Size = new System.Drawing.Size(97, 45);
-            this.Fri8.TabIndex = 29;
-            this.Fri8.Text = "Fri8";
-            this.Fri8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Fri8.Visible = false;
-            // 
-            // Fri1
-            // 
-            this.Fri1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Fri1.Location = new System.Drawing.Point(441, 141);
-            this.Fri1.Name = "Fri1";
-            this.Fri1.Size = new System.Drawing.Size(97, 45);
-            this.Fri1.TabIndex = 28;
-            this.Fri1.Text = "Fri1";
-            this.Fri1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Fri1.Visible = false;
-            // 
-            // Fri4
-            // 
-            this.Fri4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Fri4.Location = new System.Drawing.Point(441, 192);
-            this.Fri4.Name = "Fri4";
-            this.Fri4.Size = new System.Drawing.Size(97, 45);
-            this.Fri4.TabIndex = 27;
-            this.Fri4.Text = "Fri4";
-            this.Fri4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Fri4.Visible = false;
-            // 
-            // label7
-            // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(560, 13);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(65, 17);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Saturday";
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(467, 13);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(47, 17);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Friday";
-            // 
-            // Thu8
-            // 
-            this.Thu8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Thu8.Location = new System.Drawing.Point(338, 39);
-            this.Thu8.Name = "Thu8";
-            this.Thu8.Size = new System.Drawing.Size(97, 45);
-            this.Thu8.TabIndex = 26;
-            this.Thu8.Text = "Thu8";
-            this.Thu8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Thu8.Visible = false;
-            // 
-            // Thu4
-            // 
-            this.Thu4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Thu4.Location = new System.Drawing.Point(338, 192);
-            this.Thu4.Name = "Thu4";
-            this.Thu4.Size = new System.Drawing.Size(97, 45);
-            this.Thu4.TabIndex = 25;
-            this.Thu4.Text = "Thu4";
-            this.Thu4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Thu4.Visible = false;
-            // 
-            // Thu1
-            // 
-            this.Thu1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Thu1.Location = new System.Drawing.Point(338, 141);
-            this.Thu1.Name = "Thu1";
-            this.Thu1.Size = new System.Drawing.Size(97, 45);
-            this.Thu1.TabIndex = 24;
-            this.Thu1.Text = "Thu1";
-            this.Thu1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Thu1.Visible = false;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(354, 13);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 17);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Thursday";
-            // 
-            // Wed4
-            // 
-            this.Wed4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Wed4.Location = new System.Drawing.Point(231, 192);
-            this.Wed4.Name = "Wed4";
-            this.Wed4.Size = new System.Drawing.Size(97, 45);
-            this.Wed4.TabIndex = 23;
-            this.Wed4.Text = "Wed4";
-            this.Wed4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Wed4.Visible = false;
-            // 
-            // Wed1
-            // 
-            this.Wed1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Wed1.Location = new System.Drawing.Point(231, 141);
-            this.Wed1.Name = "Wed1";
-            this.Wed1.Size = new System.Drawing.Size(97, 45);
-            this.Wed1.TabIndex = 22;
-            this.Wed1.Text = "Wed1";
-            this.Wed1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Wed1.Visible = false;
-            // 
-            // Wed8
-            // 
-            this.Wed8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Wed8.Location = new System.Drawing.Point(231, 39);
-            this.Wed8.Name = "Wed8";
-            this.Wed8.Size = new System.Drawing.Size(97, 45);
-            this.Wed8.TabIndex = 21;
-            this.Wed8.Text = "Wed8";
-            this.Wed8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Wed8.Visible = false;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(237, 13);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 17);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Wednesday";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // Tue4
-            // 
-            this.Tue4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Tue4.Location = new System.Drawing.Point(124, 192);
-            this.Tue4.Name = "Tue4";
-            this.Tue4.Size = new System.Drawing.Size(97, 45);
-            this.Tue4.TabIndex = 20;
-            this.Tue4.Text = "Tue4";
-            this.Tue4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Tue4.Visible = false;
-            // 
-            // Tue1
-            // 
-            this.Tue1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Tue1.Location = new System.Drawing.Point(124, 141);
-            this.Tue1.Name = "Tue1";
-            this.Tue1.Size = new System.Drawing.Size(97, 45);
-            this.Tue1.TabIndex = 19;
-            this.Tue1.Text = "Tue1";
-            this.Tue1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Tue1.Visible = false;
-            // 
-            // Tue8
-            // 
-            this.Tue8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Tue8.Location = new System.Drawing.Point(124, 39);
-            this.Tue8.Name = "Tue8";
-            this.Tue8.Size = new System.Drawing.Size(97, 45);
-            this.Tue8.TabIndex = 18;
-            this.Tue8.Text = "Tue8";
-            this.Tue8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Tue8.Visible = false;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(141, 13);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 17);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Tuesday";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // Mon4
-            // 
-            this.Mon4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Mon4.Location = new System.Drawing.Point(16, 192);
-            this.Mon4.Name = "Mon4";
-            this.Mon4.Size = new System.Drawing.Size(97, 45);
-            this.Mon4.TabIndex = 17;
-            this.Mon4.Text = "Mon4";
-            this.Mon4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Mon4.Visible = false;
-            // 
-            // Mon1
-            // 
-            this.Mon1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Mon1.Location = new System.Drawing.Point(16, 141);
-            this.Mon1.Name = "Mon1";
-            this.Mon1.Size = new System.Drawing.Size(97, 45);
-            this.Mon1.TabIndex = 16;
-            this.Mon1.Text = "Mon1";
-            this.Mon1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Mon1.Visible = false;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(38, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 17);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Monday";
-            // 
-            // Mon8
-            // 
-            this.Mon8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Mon8.Location = new System.Drawing.Point(16, 39);
-            this.Mon8.Name = "Mon8";
-            this.Mon8.Size = new System.Drawing.Size(97, 45);
-            this.Mon8.TabIndex = 9;
-            this.Mon8.Text = "Mon8";
-            this.Mon8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Mon8.Visible = false;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(56, 157);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(59, 17);
-            this.label8.TabIndex = 5;
-            this.label8.Text = "8.00 am";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(48, 208);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(67, 17);
-            this.label9.TabIndex = 6;
-            this.label9.Text = "11.00 am";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(56, 256);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(59, 17);
-            this.label10.TabIndex = 7;
-            this.label10.Text = "1.00 pm";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(56, 313);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(59, 17);
-            this.label11.TabIndex = 8;
-            this.label11.Text = "4.00 pm";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(56, 364);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(59, 17);
-            this.label12.TabIndex = 9;
-            this.label12.Text = "7.00 pm";
+            this.panelTT.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panelTT.Location = new System.Drawing.Point(59, 147);
+            this.panelTT.Name = "panelTT";
+            this.panelTT.Size = new System.Drawing.Size(1241, 426);
+            this.panelTT.TabIndex = 4;
             // 
             // FacultyHomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(894, 543);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(1340, 638);
+            this.Controls.Add(this.panelTT);
             this.Controls.Add(this.buttonClasses);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.labelNom);
             this.Name = "FacultyHomePage";
             this.Text = "FacultyHomePage";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -459,35 +91,6 @@ namespace OOP_Project_Group13
         private System.Windows.Forms.Label labelNom;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonClasses;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label Sat1;
-        private System.Windows.Forms.Label Sat4;
-        private System.Windows.Forms.Label Sat8;
-        private System.Windows.Forms.Label Fri8;
-        private System.Windows.Forms.Label Fri1;
-        private System.Windows.Forms.Label Fri4;
-        private System.Windows.Forms.Label Thu8;
-        private System.Windows.Forms.Label Thu4;
-        private System.Windows.Forms.Label Thu1;
-        private System.Windows.Forms.Label Wed4;
-        private System.Windows.Forms.Label Wed1;
-        private System.Windows.Forms.Label Wed8;
-        private System.Windows.Forms.Label Tue4;
-        private System.Windows.Forms.Label Tue1;
-        private System.Windows.Forms.Label Tue8;
-        private System.Windows.Forms.Label Mon4;
-        private System.Windows.Forms.Label Mon1;
-        private System.Windows.Forms.Label Mon8;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Panel panelTT;
     }
 } 

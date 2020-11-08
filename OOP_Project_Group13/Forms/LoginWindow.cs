@@ -41,6 +41,18 @@ namespace OOP_Project_Group13
                         break;
 
                     case "Faculty":
+                        string classes = userTable.Rows[0]["className"].ToString();
+                        string[] list = classes.Split(' ');
+                        List<Class> listClasses = new List<Class>();
+                        foreach(string classe in list)
+                        {
+                            Class c = new Class(classe);
+                            listClasses.Add(c);
+                        }
+                        Faculty teacher = new Faculty(userTable.Rows[0]["name"].ToString(), userTable.Rows[0]["firstName"].ToString(), userTable.Rows[0]["status"].ToString(), userTable.Rows[0]["password"].ToString(), Convert.ToInt32(userTable.Rows[0]["userID"]), userTable.Rows[0]["mail"].ToString(), userTable.Rows[0]["phone"].ToString(), userTable.Rows[0]["profilePicture"].ToString(),listClasses);
+                        FacultyHomePage facultyInfoWin = new FacultyHomePage(connection, teacher);
+                        this.Hide();
+                        facultyInfoWin.Show();
                         break;
 
                     case "Student":
