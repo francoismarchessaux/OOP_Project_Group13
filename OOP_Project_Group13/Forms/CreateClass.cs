@@ -10,12 +10,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.Control;
+using static System.ComponentModel.ISupportInitialize;
+using System.Globalization;
 
 namespace OOP_Project_Group13.Forms
 {
     public partial class CreateClass : Form
     {
         MySqlConnection connection;
+       
+
         public CreateClass(MySqlConnection _connection)
         {
             InitializeComponent();
@@ -24,11 +29,20 @@ namespace OOP_Project_Group13.Forms
 
         private void ComboStudent_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
-
+        
         private void AddStudent_Click(object sender, EventArgs e)
         {
+            string NameGroup = NameClass.Text;
+            string[] Tab = ComboStudent.Text.Split(' ');
+            string Name = Tab[0];
+            string Surname = Tab[1];
+            string StudentsID = Tab[2];
+
+
+            dataGridView1.Rows.Add(NameGroup,Tab[0], Tab[1], Tab[2]);
+                
+            
 
         }
 
@@ -39,6 +53,7 @@ namespace OOP_Project_Group13.Forms
 
         private void CreateClass_Load(object sender, EventArgs e)
         {
+
             String query = "Select name, firstName, userID from Users Where status = 'Student'";
             MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
             DataTable userTable = new DataTable();
@@ -64,5 +79,14 @@ namespace OOP_Project_Group13.Forms
         {
 
         }
+
+       private void RemoveStudent_Click(object sender, EventArgs e)
+       {
+       //     if (this.ClassDataGridView.SelectedRows.Count > 0 && this.ClassDataGridView.SelectedRows[0].Index != this.ClassDataGridView.Rows.Count - 1)               
+       //     {
+       //         this.ClassDataGridView.Rows.RemoveAt(this.ClassDataGridView.SelectedRows[0].Index);                
+       //     }
+
+       }
     }
 }
