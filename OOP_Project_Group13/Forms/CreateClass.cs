@@ -64,7 +64,7 @@ namespace OOP_Project_Group13.Forms
             SDA = new MySqlDataAdapter(query, connection);
             SDA.SelectCommand.ExecuteNonQuery();
             connection.Close();
-            MessageBox.Show("Class created succesfully !");
+            MessageBox.Show("Class created successfully !");
             this.Hide();
         }
         
