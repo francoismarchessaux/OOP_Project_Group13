@@ -48,9 +48,26 @@ namespace OOP_Project_Group13.Forms
 
         private void CreateClassButton_Click(object sender, EventArgs e)
         {
-
+            String NameGroup = NameClass.Text;
+            String StudentsIDs = "";
+            for (int i = 0; i < dataGridView1.RowCount; i++)
+            {
+                StudentsIDs = StudentsIDs + " " + dataGridView1[3, i].Value;
+            }
+            String query = "SELECT * from Class WHERE className = '" + NameGroup +  "' AND studentsIDs = '" + StudentsIDs + "'";
+            MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
+            SDA = new MySqlDataAdapter(query, connection);
+            DataTable groupTable = new DataTable();
+            SDA.Fill(groupTable);
+            connection.Open();
+            query = "INSERT INTO Class (className, studentsIDs ) VALUES ('" + NameGroup + "' ,  '" + StudentsIDs + "')";
+            SDA = new MySqlDataAdapter(query, connection);
+            SDA.SelectCommand.ExecuteNonQuery();
+            connection.Close();
+            MessageBox.Show("Class created succesfully !");
+            this.Hide();
         }
-
+        
         private void CreateClass_Load(object sender, EventArgs e)
         {
 
