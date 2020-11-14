@@ -68,13 +68,17 @@ namespace OOP_Project_Group13.Forms
         
         private void CreateClass_Load(object sender, EventArgs e)
         {
-            String query = "Select name, firstName, userID from Users Where status = 'Student'";
+            String query = "Select * from Users Where status = 'Student'and className is NULL";
             MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
             DataTable userTable = new DataTable();
             SDA.Fill(userTable);
             for (int i = 0; i < userTable.Rows.Count; i++)
             {
-                this.ComboStudent.Items.Add(userTable.Rows[i]["name"].ToString() + " " + userTable.Rows[i]["firstName"].ToString() + " " + userTable.Rows[i]["userID"].ToString());
+                Class test = new Class(userTable.Rows[i]["className"].ToString());
+               
+                    this.ComboStudent.Items.Add(userTable.Rows[i]["name"].ToString() + " " + userTable.Rows[i]["firstName"].ToString() + " " + userTable.Rows[i]["userID"].ToString());
+                
+                
             }            
         }
 
