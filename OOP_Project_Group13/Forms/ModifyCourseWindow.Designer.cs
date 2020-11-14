@@ -36,9 +36,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(41, 50);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 25);
+            this.label1.Size = new System.Drawing.Size(102, 25);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Course :";
+            this.label1.Text = "Subject : ";
             // 
             // ModifyCourseWindow
             // 

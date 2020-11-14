@@ -116,6 +116,9 @@
   <ItemGroup>
     <Compile Include="Attendance.cs" />
     <Compile Include="Average.cs" />
+    <Compile Include="ButtonClass.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Class.cs" />
     <Compile Include="Forms\AddGradeWindows.cs">
       <SubType>Form</SubType>
