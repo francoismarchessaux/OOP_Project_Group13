@@ -8,16 +8,14 @@ namespace OOP_Project_Group13
 {
     public class Course
     {
-        string name { get; set; }
-        Faculty teacher { get; set; }
-        Subject subject { get; set; }
-        string type { get; set; }
-        public Course(string name, Faculty teacher, string type, Subject subject)
+        public string name { get; set; }
+        public string teacher { get; set; }
+        public string type { get; set; }
+        public Course(string name, string teacher, string type)
         {
             this.name = name;
             this.teacher = teacher;
             this.type = type;
-            this.subject = subject;
         }
     }
 }

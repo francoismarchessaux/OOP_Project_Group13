@@ -67,7 +67,7 @@ namespace OOP_Project_Group13
                 int[] tab = { 8, 1, 4 };
                 for (int j = 0; j < 3; j++)
                 {
-                    Button label = new Button();
+                    ButtonClass label = new ButtonClass();
                     label.Name = "" + week[i][0] + week[i][1] + week[i][2] + tab[j];
                     label.Height = 55;
                     label.Width = 87;
@@ -111,15 +111,18 @@ namespace OOP_Project_Group13
                     string hour = dt.Rows[i]["Time"].ToString();
                     string name = dt.Rows[i]["Subject"].ToString();
                     string labelName = "" + day[0] + day[1] + day[2] + hour[0];
+                    Course course = new Course(name, dt.Rows[i]["Teacher"].ToString(), "normal");
                     foreach (Control x in timetable.Controls)
                     {
-                        if (x is Button)
+                        if (x is ButtonClass)
                         {
+                            ButtonClass button = (ButtonClass)x;
                             string n = x.Name;
                             if (labelName == n)
                             {
                                 x.Visible = true;
                                 x.Text = name;
+                                button.course = course;
                             }
                         }
                     }
@@ -132,8 +135,9 @@ namespace OOP_Project_Group13
         {
             if(admin == true)
             {
-                Button b = sender as Button ;
-                ModifyCourseWindow modifyWin = new ModifyCourseWindow(b.Text);
+                ButtonClass b = sender as ButtonClass ;
+                Course c = b.course;
+                ModifyCourseWindow modifyWin = new ModifyCourseWindow(connection, c);
                 modifyWin.Show();
             }
         }

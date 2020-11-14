@@ -48,11 +48,11 @@ namespace OOP_Project_Group13.Forms
 
         private void CreateClassButton_Click(object sender, EventArgs e)
         {
-            String NameGroup = NameClass.Text;
-            String StudentsIDs = "";
+            string NameGroup = NameClass.Text;
+            string StudentsIDs = "";
             for (int i = 0; i < dataGridView1.RowCount; i++)
             {
-                StudentsIDs = StudentsIDs + " " + dataGridView1[3, i].Value;
+                StudentsIDs = dataGridView1[3, i].Value + " " + StudentsIDs;
             }
             String query = "SELECT * from Class WHERE className = '" + NameGroup +  "' AND studentsIDs = '" + StudentsIDs + "'";
             MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);

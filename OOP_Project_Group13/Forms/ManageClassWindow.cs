@@ -28,6 +28,17 @@ namespace OOP_Project_Group13.Forms
         private void ManageClassWindow_Load(object sender, EventArgs e)
         {
             classNameLabel.Text = "Class Name : " + group.name;
+            DataTable studentInfos = new DataTable();
+            for (int i = 0; i < group.students.Count; i++)
+            {
+                String query = "SELECT * FROM Users WHERE userID ='" + group.students[i] + "'";
+                MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
+                SDA.Fill(studentInfos);
+            }
+            for (int i = 0; i < studentInfos.Rows.Count; i++)
+            {
+                dataGridView1.Rows.Add(studentInfos.Rows[i]["userID"], studentInfos.Rows[i]["name"], studentInfos.Rows[i]["firstName"]);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -44,6 +55,8 @@ namespace OOP_Project_Group13.Forms
 
         private void TimetableBtn_Click(object sender, EventArgs e)
         {
+            TimeTablePnl.Visible = true;
+            dataGridView1.Visible = false;
             String query = "SELECT * FROM Users WHERE userID='" + group.students[0] + "'";
             MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
             DataTable studentInfos = new DataTable();
@@ -53,6 +66,12 @@ namespace OOP_Project_Group13.Forms
             TimeTable classTimetable = new TimeTable(new Student(studentInfos.Rows[0]["name"].ToString(), studentInfos.Rows[0]["firstName"].ToString(), studentInfos.Rows[0]["status"].ToString(), studentInfos.Rows[0]["password"].ToString(), Convert.ToInt32(studentInfos.Rows[0]["userID"]), studentInfos.Rows[0]["mail"].ToString(), studentInfos.Rows[0]["phone"].ToString(), studentInfos.Rows[0]["profilePicture"].ToString(), Convert.ToDateTime(studentInfos.Rows[0]["birthday"]), studentInfos.Rows[0]["address"].ToString(), _class), connection, TimeTablePnl, true);
             classTimetable.InitializeTimeTable();
             classTimetable.GetTimetable();
+        }
+
+        private void StudentsBtn_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Visible = true;
+            TimeTablePnl.Visible = false;
         }
     }
 }
