@@ -115,6 +115,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attendance.cs" />
+    <Compile Include="AttendanceCourse.cs" />
     <Compile Include="Average.cs" />
     <Compile Include="ButtonClass.cs">
       <SubType>Component</SubType>

@@ -13,12 +13,20 @@ namespace OOP_Project_Group13
         public Label averageLabel { get; set; }
         public Label average { get; set; }
         public List<LabelGrade> grades { get; set; }
+        public Label attRate { get; set; }
+        public Label attNumber { get; set; }
         public PanelCourse(Label name, Label averageLabel, Label average, List<LabelGrade> grades)
         {
             this.name = name;
             this.averageLabel = averageLabel;
             this.average = average;
             this.grades = grades;
+        }
+        public PanelCourse(Label name, Label attRate,Label attNumber)
+        {
+            this.name = name;
+            this.attRate = attRate;
+            this.attNumber = attNumber;
         }
         
     }

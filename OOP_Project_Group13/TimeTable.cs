@@ -133,7 +133,7 @@ namespace OOP_Project_Group13
             if(admin == true)
             {
                 Button b = sender as Button ;
-                ModifyCourseWindow modifyWin = new ModifyCourseWindow(b.Text);
+                ModifyCourseWindow modifyWin = new ModifyCourseWindow();
                 modifyWin.Show();
             }
         }

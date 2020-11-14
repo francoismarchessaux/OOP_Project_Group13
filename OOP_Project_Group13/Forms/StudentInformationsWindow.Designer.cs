@@ -38,6 +38,7 @@
             this.buttonGrade = new System.Windows.Forms.Button();
             this.buttonTimeTable = new System.Windows.Forms.Button();
             this.generalPanel = new System.Windows.Forms.Panel();
+            this.buttonAttendance = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.StudentPicture)).BeginInit();
             this.SuspendLayout();
             // 
@@ -142,12 +143,23 @@
             this.generalPanel.Size = new System.Drawing.Size(1241, 426);
             this.generalPanel.TabIndex = 27;
             // 
+            // buttonAttendance
+            // 
+            this.buttonAttendance.Location = new System.Drawing.Point(177, 215);
+            this.buttonAttendance.Name = "buttonAttendance";
+            this.buttonAttendance.Size = new System.Drawing.Size(98, 23);
+            this.buttonAttendance.TabIndex = 28;
+            this.buttonAttendance.Text = "Attendance";
+            this.buttonAttendance.UseVisualStyleBackColor = true;
+            this.buttonAttendance.Click += new System.EventHandler(this.buttonAttendance_Click);
+            // 
             // StudentInformationsWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1270, 690);
+            this.Controls.Add(this.buttonAttendance);
             this.Controls.Add(this.generalPanel);
             this.Controls.Add(this.buttonTimeTable);
             this.Controls.Add(this.buttonGrade);
@@ -182,5 +194,6 @@
         private System.Windows.Forms.Button buttonGrade;
         private System.Windows.Forms.Button buttonTimeTable;
         private System.Windows.Forms.Panel generalPanel;
+        private System.Windows.Forms.Button buttonAttendance;
     }
 }

@@ -20,5 +20,10 @@ namespace OOP_Project_Group13
             Application.Run(new LoginWindow(connection));
             Console.ReadLine();
         }
+        public static MySqlConnection GetConnection()
+        {
+            MySqlConnection connection = new MySqlConnection(@"server=DESKTOP-04OJU8R;user id=Louis; Password = Louloulebg; persistsecurityinfo=True;database=oopproject");
+            return connection;
+        }
     }
 }

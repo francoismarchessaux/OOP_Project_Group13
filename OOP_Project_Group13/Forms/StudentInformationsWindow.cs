@@ -207,5 +207,11 @@ namespace OOP_Project_Group13
             generalPanel.Controls.Clear();
             GetGrades(student.ID.ToString());
         }
+
+        private void buttonAttendance_Click(object sender, EventArgs e)
+        {
+            generalPanel.Controls.Clear();
+            student.attendances.GetGrades(student.ID.ToString(),generalPanel);
+        }
     }
 }
