@@ -35,6 +35,11 @@
             this.StudentsBtn = new System.Windows.Forms.Button();
             this.TimetableBtn = new System.Windows.Forms.Button();
             this.TimeTablePnl = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // classNameLabel
@@ -83,6 +88,7 @@
             this.StudentsBtn.TabIndex = 4;
             this.StudentsBtn.Text = "Students";
             this.StudentsBtn.UseVisualStyleBackColor = true;
+            this.StudentsBtn.Click += new System.EventHandler(this.StudentsBtn_Click);
             // 
             // TimetableBtn
             // 
@@ -97,19 +103,62 @@
             // TimeTablePnl
             // 
             this.TimeTablePnl.AutoSize = true;
-            this.TimeTablePnl.BackColor = System.Drawing.SystemColors.Control;
+            this.TimeTablePnl.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.TimeTablePnl.Location = new System.Drawing.Point(44, 245);
             this.TimeTablePnl.Name = "TimeTablePnl";
-            this.TimeTablePnl.Size = new System.Drawing.Size(979, 195);
+            this.TimeTablePnl.Size = new System.Drawing.Size(1645, 730);
             this.TimeTablePnl.TabIndex = 6;
+            this.TimeTablePnl.Visible = false;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.LastName,
+            this.FirstName});
+            this.dataGridView1.Location = new System.Drawing.Point(47, 251);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidth = 82;
+            this.dataGridView1.RowTemplate.Height = 33;
+            this.dataGridView1.Size = new System.Drawing.Size(1642, 652);
+            this.dataGridView1.TabIndex = 7;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 10;
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 200;
+            // 
+            // LastName
+            // 
+            this.LastName.HeaderText = "Last Name";
+            this.LastName.MinimumWidth = 10;
+            this.LastName.Name = "LastName";
+            this.LastName.ReadOnly = true;
+            this.LastName.Width = 200;
+            // 
+            // FirstName
+            // 
+            this.FirstName.HeaderText = "First Name";
+            this.FirstName.MinimumWidth = 10;
+            this.FirstName.Name = "FirstName";
+            this.FirstName.ReadOnly = true;
+            this.FirstName.Width = 200;
             // 
             // ManageClassWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1299, 887);
+            this.ClientSize = new System.Drawing.Size(1701, 1092);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.TimeTablePnl);
             this.Controls.Add(this.TimetableBtn);
             this.Controls.Add(this.StudentsBtn);
@@ -123,6 +172,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manage Class";
             this.Load += new System.EventHandler(this.ManageClassWindow_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -137,5 +187,9 @@
         private System.Windows.Forms.Button StudentsBtn;
         private System.Windows.Forms.Button TimetableBtn;
         private System.Windows.Forms.Panel TimeTablePnl;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
     }
 }

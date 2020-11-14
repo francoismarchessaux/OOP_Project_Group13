@@ -11,6 +11,7 @@ namespace OOP_Project_Group13
     {
         public Course course { get; set; }
 
+        public ButtonClass() { }
         public ButtonClass(Course _course)
         {
             course = _course;
