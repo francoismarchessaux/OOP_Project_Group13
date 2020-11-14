@@ -19,12 +19,14 @@ namespace OOP_Project_Group13.Forms
     public partial class CreateClass : Form
     {
         MySqlConnection connection;
-       
+        Administrator admin;
 
-        public CreateClass(MySqlConnection _connection)
+
+        public CreateClass(MySqlConnection _connection, Administrator _admin)
         {
             InitializeComponent();
             connection = _connection;
+            admin = _admin;
         }
 
         private void ComboStudent_SelectedIndexChanged(object sender, EventArgs e)
@@ -39,11 +41,7 @@ namespace OOP_Project_Group13.Forms
             string Surname = Tab[1];
             string StudentsID = Tab[2];
 
-
             dataGridView1.Rows.Add(NameGroup,Tab[0], Tab[1], Tab[2]);
-                
-            
-
         }
 
         private void CreateClassButton_Click(object sender, EventArgs e)
@@ -70,7 +68,6 @@ namespace OOP_Project_Group13.Forms
         
         private void CreateClass_Load(object sender, EventArgs e)
         {
-
             String query = "Select name, firstName, userID from Users Where status = 'Student'";
             MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
             DataTable userTable = new DataTable();
@@ -78,8 +75,7 @@ namespace OOP_Project_Group13.Forms
             for (int i = 0; i < userTable.Rows.Count; i++)
             {
                 this.ComboStudent.Items.Add(userTable.Rows[i]["name"].ToString() + " " + userTable.Rows[i]["firstName"].ToString() + " " + userTable.Rows[i]["userID"].ToString());
-            }
-            
+            }            
         }
 
         private void Clear_Click(object sender, EventArgs e)
@@ -89,7 +85,10 @@ namespace OOP_Project_Group13.Forms
 
         private void Back_Click(object sender, EventArgs e)
         {
+            AdministratorMainWindow adminWindow = new AdministratorMainWindow(admin, connection);
             this.Hide();
+            adminWindow.Show();
+
         }
 
         private void NameClass_TextChanged(object sender, EventArgs e)
@@ -99,10 +98,10 @@ namespace OOP_Project_Group13.Forms
 
        private void RemoveStudent_Click(object sender, EventArgs e)
        {
-       //     if (this.ClassDataGridView.SelectedRows.Count > 0 && this.ClassDataGridView.SelectedRows[0].Index != this.ClassDataGridView.Rows.Count - 1)               
-       //     {
-       //         this.ClassDataGridView.Rows.RemoveAt(this.ClassDataGridView.SelectedRows[0].Index);                
-       //     }
+            if (this.dataGridView1.SelectedRows.Count > 0 && this.dataGridView1.SelectedRows[0].Index != this.dataGridView1.Rows.Count - 1)               
+            {
+                this.dataGridView1.Rows.RemoveAt(this.dataGridView1.SelectedRows[0].Index);                
+            }
 
        }
     }
