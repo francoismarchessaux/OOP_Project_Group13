@@ -35,6 +35,8 @@
             this.TeacherList = new System.Windows.Forms.ComboBox();
             this.TimeList = new System.Windows.Forms.ComboBox();
             this.TypeList = new System.Windows.Forms.ComboBox();
+            this.ApplyBtn = new System.Windows.Forms.Button();
+            this.BackBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // subjectLbl
@@ -84,6 +86,10 @@
             // TimeList
             // 
             this.TimeList.FormattingEnabled = true;
+            this.TimeList.Items.AddRange(new object[] {
+            "8 : 00 am - 11 : 00 am",
+            "1 : 00 pm - 3 : 55 pm",
+            "4 : 00 pm - 7 : 00 pm"});
             this.TimeList.Location = new System.Drawing.Point(156, 169);
             this.TimeList.Name = "TimeList";
             this.TimeList.Size = new System.Drawing.Size(338, 33);
@@ -101,11 +107,33 @@
             this.TypeList.Size = new System.Drawing.Size(338, 33);
             this.TypeList.TabIndex = 6;
             // 
+            // ApplyBtn
+            // 
+            this.ApplyBtn.Location = new System.Drawing.Point(46, 302);
+            this.ApplyBtn.Name = "ApplyBtn";
+            this.ApplyBtn.Size = new System.Drawing.Size(122, 42);
+            this.ApplyBtn.TabIndex = 7;
+            this.ApplyBtn.Text = "Apply";
+            this.ApplyBtn.UseVisualStyleBackColor = true;
+            this.ApplyBtn.Click += new System.EventHandler(this.ApplyBtn_Click);
+            // 
+            // BackBtn
+            // 
+            this.BackBtn.Location = new System.Drawing.Point(372, 302);
+            this.BackBtn.Name = "BackBtn";
+            this.BackBtn.Size = new System.Drawing.Size(122, 42);
+            this.BackBtn.TabIndex = 8;
+            this.BackBtn.Text = "Back";
+            this.BackBtn.UseVisualStyleBackColor = true;
+            this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click);
+            // 
             // ModifyCourseWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(950, 416);
+            this.ClientSize = new System.Drawing.Size(544, 364);
+            this.Controls.Add(this.BackBtn);
+            this.Controls.Add(this.ApplyBtn);
             this.Controls.Add(this.TypeList);
             this.Controls.Add(this.TimeList);
             this.Controls.Add(this.TeacherList);
@@ -114,7 +142,7 @@
             this.Controls.Add(this.teacherLbl);
             this.Controls.Add(this.subjectLbl);
             this.Name = "ModifyCourseWindow";
-            this.Text = "ModifyCourseWindow";
+            this.Text = "Modify Course";
             this.Load += new System.EventHandler(this.ModifyCourseWindow_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -130,5 +158,7 @@
         private System.Windows.Forms.ComboBox TeacherList;
         private System.Windows.Forms.ComboBox TimeList;
         private System.Windows.Forms.ComboBox TypeList;
+        private System.Windows.Forms.Button ApplyBtn;
+        private System.Windows.Forms.Button BackBtn;
     }
 }

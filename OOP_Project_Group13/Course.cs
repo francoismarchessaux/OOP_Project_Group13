@@ -11,11 +11,13 @@ namespace OOP_Project_Group13
         public string name { get; set; }
         public string teacher { get; set; }
         public string type { get; set; }
-        public Course(string name, string teacher, string type)
+        public string time { get; set; }
+        public Course(string _name, string _teacher, string _type, string _time)
         {
-            this.name = name;
-            this.teacher = teacher;
-            this.type = type;
+            name = _name;
+            teacher = _teacher;
+            type = _type;
+            time = _time;
         }
     }
 }

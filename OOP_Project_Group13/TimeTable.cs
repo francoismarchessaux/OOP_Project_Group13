@@ -111,7 +111,7 @@ namespace OOP_Project_Group13
                     string hour = dt.Rows[i]["Time"].ToString();
                     string name = dt.Rows[i]["Subject"].ToString();
                     string labelName = "" + day[0] + day[1] + day[2] + hour[0];
-                    Course course = new Course(name, dt.Rows[i]["Teacher"].ToString(), "normal");
+                    Course course = new Course(name, dt.Rows[i]["Teacher"].ToString(), "normal", hour);
                     foreach (Control x in timetable.Controls)
                     {
                         if (x is ButtonClass)

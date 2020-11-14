@@ -15,7 +15,6 @@ namespace OOP_Project_Group13.Forms
     {
         MySqlConnection connection;
         Course course;
-        Faculty teacher;
         public ModifyCourseWindow(MySqlConnection _connection, Course _course)
         {
             InitializeComponent();
@@ -34,8 +33,32 @@ namespace OOP_Project_Group13.Forms
                 this.TeacherList.Items.Add(TeacherTable.Rows[i]["name"].ToString() + " " + TeacherTable.Rows[i]["firstName"].ToString() + " " + TeacherTable.Rows[i]["userID"].ToString());
             }
             TeacherList.SelectedItem = course.teacher;
+            TimeList.SelectedItem = course.time;
             subjectLbl.Text = $"Subject : {course.name}";
-            teacherLbl.Text = course.teacher;
         }
+
+        private void BackBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void ApplyBtn_Click(object sender, EventArgs e)
+        {
+            String query = "Select number from course Where Subject = '" + course.name + "' AND teacher = '" + course.teacher + "' AND Time = '" + course.time + "'";
+            MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
+            DataTable courseInfo = new DataTable();
+            SDA.Fill(courseInfo);
+            string teacher = TeacherList.Text;
+            string time = TimeList.Text;
+            string type = TypeList.Text;
+            connection.Open();
+            query = "UPDATE course SET teacher = '" + teacher + "', time = '" + time + "', type = '" + type + "' WHERE(number = '" + courseInfo.Rows[0]["number"] + "')";
+            SDA = new MySqlDataAdapter(query, connection);
+            SDA.SelectCommand.ExecuteNonQuery();
+            connection.Close();
+            MessageBox.Show("Course modified successfully !");
+            this.Close();
+        }
+
     }
 }
