@@ -55,7 +55,7 @@ namespace OOP_Project_Group13
                     SDA = new MySqlDataAdapter(query, connection);
                     SDA.SelectCommand.ExecuteNonQuery();
                     connection.Close();
-                    MessageBox.Show("Course created succesfully !");
+                    MessageBox.Show("Course created successfully !");
                     this.Hide();
                 }
             }

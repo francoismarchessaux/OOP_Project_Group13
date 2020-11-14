@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.Student = new System.Windows.Forms.Label();
             this.Back = new System.Windows.Forms.Button();
             this.CreateClassButton = new System.Windows.Forms.Button();
@@ -37,7 +38,17 @@
             this.ComboStudent = new System.Windows.Forms.ComboBox();
             this.NameOfTheClass = new System.Windows.Forms.Label();
             this.NameClass = new System.Windows.Forms.TextBox();
+            this.RemoveStudent = new System.Windows.Forms.Button();
+            this.oopprojectDataSet = new OOP_Project_Group13.oopprojectDataSet();
+            this.classBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.classTableAdapter = new OOP_Project_Group13.oopprojectDataSetTableAdapters.classTableAdapter();
+            this.ClassName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameofStudent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SurnameofStudent = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oopprojectDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.classBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // Student
@@ -71,9 +82,17 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ClassName,
+            this.ID,
+            this.NameofStudent,
+            this.SurnameofStudent});
             this.dataGridView1.Location = new System.Drawing.Point(66, 153);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(777, 249);
             this.dataGridView1.TabIndex = 4;
             // 
@@ -123,11 +142,60 @@
             this.NameClass.TabIndex = 11;
             this.NameClass.TextChanged += new System.EventHandler(this.NameClass_TextChanged);
             // 
+            // RemoveStudent
+            // 
+            this.RemoveStudent.Location = new System.Drawing.Point(66, 408);
+            this.RemoveStudent.Name = "RemoveStudent";
+            this.RemoveStudent.Size = new System.Drawing.Size(75, 23);
+            this.RemoveStudent.TabIndex = 12;
+            this.RemoveStudent.Text = "Remove";
+            this.RemoveStudent.UseVisualStyleBackColor = true;
+            this.RemoveStudent.Click += new System.EventHandler(this.RemoveStudent_Click);
+            // 
+            // oopprojectDataSet
+            // 
+            this.oopprojectDataSet.DataSetName = "oopprojectDataSet";
+            this.oopprojectDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // classBindingSource
+            // 
+            this.classBindingSource.DataMember = "class";
+            this.classBindingSource.DataSource = this.oopprojectDataSet;
+            // 
+            // classTableAdapter
+            // 
+            this.classTableAdapter.ClearBeforeFill = true;
+            // 
+            // ClassName
+            // 
+            this.ClassName.HeaderText = "Class";
+            this.ClassName.Name = "ClassName";
+            this.ClassName.ReadOnly = true;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // NameofStudent
+            // 
+            this.NameofStudent.HeaderText = "Name";
+            this.NameofStudent.Name = "NameofStudent";
+            this.NameofStudent.ReadOnly = true;
+            // 
+            // SurnameofStudent
+            // 
+            this.SurnameofStudent.HeaderText = "Surname";
+            this.SurnameofStudent.Name = "SurnameofStudent";
+            this.SurnameofStudent.ReadOnly = true;
+            // 
             // CreateClass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(912, 532);
+            this.Controls.Add(this.RemoveStudent);
             this.Controls.Add(this.NameClass);
             this.Controls.Add(this.NameOfTheClass);
             this.Controls.Add(this.ComboStudent);
@@ -141,6 +209,8 @@
             this.Text = "CreateClass";
             this.Load += new System.EventHandler(this.CreateClass_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oopprojectDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.classBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -156,5 +226,13 @@
         private System.Windows.Forms.ComboBox ComboStudent;
         private System.Windows.Forms.Label NameOfTheClass;
         private System.Windows.Forms.TextBox NameClass;
+        private System.Windows.Forms.Button RemoveStudent;
+        private oopprojectDataSet oopprojectDataSet;
+        private System.Windows.Forms.BindingSource classBindingSource;
+        private oopprojectDataSetTableAdapters.classTableAdapter classTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClassName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NameofStudent;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SurnameofStudent;
     }
 }
