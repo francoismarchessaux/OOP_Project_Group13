@@ -110,8 +110,9 @@ namespace OOP_Project_Group13
 
         private void CreateClassButton_Click(object sender, EventArgs e)
         {
-            CreateClass ClassCreationWindow = new CreateClass(connection);
+            CreateClass ClassCreationWindow = new CreateClass(connection, admin);
             ClassCreationWindow.Show();
+            this.Hide();
         }
     }
 }
