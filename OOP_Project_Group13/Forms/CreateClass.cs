@@ -80,7 +80,7 @@ namespace OOP_Project_Group13.Forms
 
         private void Clear_Click(object sender, EventArgs e)
         {
-
+            dataGridView1.Rows.Clear();
         }
 
         private void Back_Click(object sender, EventArgs e)
@@ -93,16 +93,15 @@ namespace OOP_Project_Group13.Forms
 
         private void NameClass_TextChanged(object sender, EventArgs e)
         {
-
         }
 
        private void RemoveStudent_Click(object sender, EventArgs e)
        {
-            if (this.dataGridView1.SelectedRows.Count > 0 && this.dataGridView1.SelectedRows[0].Index != this.dataGridView1.Rows.Count - 1)               
+            if (this.dataGridView1.SelectedRows.Count > 0)
             {
-                this.dataGridView1.Rows.RemoveAt(this.dataGridView1.SelectedRows[0].Index);                
+                dataGridView1.Rows.RemoveAt(this.dataGridView1.SelectedRows[0].Index);
             }
 
-       }
+        }
     }
 }
