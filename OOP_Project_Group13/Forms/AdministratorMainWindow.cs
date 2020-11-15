@@ -38,15 +38,7 @@ namespace OOP_Project_Group13
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             string[] studentInfo = this.StudentList.Text.Split(' ');
-            String query = "Select * from users Where userID = '" + studentInfo[2] + "'";
-            MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
-            DataTable studentTable = new DataTable();
-            SDA.Fill(studentTable);
-            string name = studentTable.Rows[0]["className"].ToString();
-            Class _class = new Class(name);
-            List<AttendanceCourse> l = new List<AttendanceCourse>();
-            Attendance a = new Attendance(l);
-            Student selectedStudent = new Student(studentTable.Rows[0]["name"].ToString(), studentTable.Rows[0]["firstName"].ToString(), studentTable.Rows[0]["status"].ToString(), studentTable.Rows[0]["password"].ToString(), Convert.ToInt32(studentTable.Rows[0]["userID"]), studentTable.Rows[0]["mail"].ToString(), studentTable.Rows[0]["phone"].ToString(), studentTable.Rows[0]["profilePicture"].ToString(), Convert.ToDateTime(studentTable.Rows[0]["birthday"]), studentTable.Rows[0]["address"].ToString(),_class,a);
+            Student selectedStudent = new Student(Convert.ToInt32(studentInfo[2]));
             StudentInformationsWindow studentInfoWin = new StudentInformationsWindow(connection, selectedStudent);
             studentInfoWin.Show();
         }
@@ -86,7 +78,7 @@ namespace OOP_Project_Group13
             MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
             DataTable teacherTable = new DataTable();
             SDA.Fill(teacherTable);
-            Faculty selectedTeacher = new Faculty(teacherTable.Rows[0]["name"].ToString(), teacherTable.Rows[0]["firstName"].ToString(), teacherTable.Rows[0]["status"].ToString(), teacherTable.Rows[0]["password"].ToString(), Convert.ToInt32(teacherTable.Rows[0]["userID"]), teacherTable.Rows[0]["mail"].ToString(), teacherTable.Rows[0]["phone"].ToString(), teacherTable.Rows[0]["profilePicture"].ToString());
+            Faculty selectedTeacher = new Faculty(Convert.ToInt32(teacherTable.Rows[0]["userID"]));
             FacultyInformationsWindows TeacherInfoWin = new FacultyInformationsWindows(connection, selectedTeacher);
             TeacherInfoWin.Show();
         }
@@ -101,20 +93,7 @@ namespace OOP_Project_Group13
         private void ClassesList_SelectedIndexChanged(object sender, EventArgs e)
         {
             string classNameStr = ClassesList.Text;
-            String query = "Select * from class Where className = '" + classNameStr + "'";
-            MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
-            DataTable classTable = new DataTable();
-            SDA.Fill(classTable);
-            string [] tab = classTable.Rows[0]["studentsIDs"].ToString().Split(' ');
-            List<Student> list = new List<Student>();
-            for (int i=0; i < tab.Length; i++)
-            {
-                int louis = Convert.ToInt32(tab[i]);
-                Student Theo = new Student(louis);
-                list.Add(Theo);
-            }
-            Class selectedClass = new Class(classTable.Rows[0]["className"].ToString(), list);
-
+            Class selectedClass = new Class(classNameStr);
             CreateExamButton classMngWin = new CreateExamButton(selectedClass, connection);
             classMngWin.Show();
         }

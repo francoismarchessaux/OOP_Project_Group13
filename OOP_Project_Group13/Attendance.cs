@@ -1,4 +1,5 @@
 ﻿using MySqlConnector;
+using OOP_Project_Group13.Users;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -13,10 +14,12 @@ namespace OOP_Project_Group13
     public class Attendance
     {
         MySqlConnection connection = Program.GetConnection();
+        Student student { get; set; }
         List<AttendanceCourse> attendance { get; set; }
-        public Attendance(List<AttendanceCourse> attendance)
+        public Attendance(Student student)
         {
-            this.attendance = attendance;
+            this.student = student;
+            attendance = new List<AttendanceCourse>();
         }
         
         public void AddCourse (AttendanceCourse att,Panel generalPanel)
@@ -81,9 +84,9 @@ namespace OOP_Project_Group13
                 newPan.Controls.Add(addAtt.grade);
             }
         }
-        public void GetGrades(string studentID,Panel panel)
+        public void GetAttendance(Panel panel)
         {
-            String query = "SELECT * FROM attendance WHERE studentID='" + studentID + "'";
+            String query = "SELECT * FROM attendance WHERE studentID='" + student.ID + "'";
             MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
             DataTable dt = new DataTable();
             SDA.Fill(dt);

@@ -34,7 +34,7 @@ namespace OOP_Project_Group13
                 switch (userStatus)
                 {
                     case "Admin":
-                        Administrator admin = new Administrator(userTable.Rows[0]["name"].ToString(), userTable.Rows[0]["firstName"].ToString(), userTable.Rows[0]["status"].ToString(), userTable.Rows[0]["password"].ToString(), Convert.ToInt32(userTable.Rows[0]["userID"]), userTable.Rows[0]["mail"].ToString(), userTable.Rows[0]["phone"].ToString(), userTable.Rows[0]["profilePicture"].ToString());
+                        Administrator admin = new Administrator(Convert.ToInt32(userTable.Rows[0]["userID"]));
                         AdministratorMainWindow adminWindow = new AdministratorMainWindow(admin, connection);
                         this.Hide();
                         adminWindow.Show();
@@ -49,21 +49,14 @@ namespace OOP_Project_Group13
                             Class c = new Class(classe);
                             listClasses.Add(c);
                         }
-                        Faculty teacher = new Faculty(userTable.Rows[0]["name"].ToString(), userTable.Rows[0]["firstName"].ToString(), userTable.Rows[0]["status"].ToString(), userTable.Rows[0]["password"].ToString(), Convert.ToInt32(userTable.Rows[0]["userID"]), userTable.Rows[0]["mail"].ToString(), userTable.Rows[0]["phone"].ToString(), userTable.Rows[0]["profilePicture"].ToString(),listClasses);
+                        Faculty teacher = new Faculty(Convert.ToInt32(userTable.Rows[0]["userID"]));
                         FacultyHomePage facultyInfoWin = new FacultyHomePage(connection, teacher);
                         this.Hide();
                         facultyInfoWin.Show();
                         break;
 
                     case "Student":
-
-                        List<AttendanceCourse> l = new List<AttendanceCourse>();
-                        Attendance a= new Attendance(l);
-                        Class b = new Class(userTable.Rows[0]["className"].ToString());
-                        Student selectedStudent = new Student(userTable.Rows[0]["name"].ToString(), userTable.Rows[0]["firstName"].ToString(), userTable.Rows[0]["status"].ToString(), userTable.Rows[0]["password"].ToString(), Convert.ToInt32(userTable.Rows[0]["userID"]), userTable.Rows[0]["mail"].ToString(), userTable.Rows[0]["phone"].ToString(), userTable.Rows[0]["profilePicture"].ToString(), Convert.ToDateTime(userTable.Rows[0]["birthday"]), userTable.Rows[0]["address"].ToString(),b,a);
-
-                       
-
+                        Student selectedStudent = new Student(Convert.ToInt32(userTable.Rows[0]["studentID"].ToString()));
                         StudentInformationsWindow studentInfoWin = new StudentInformationsWindow(connection, selectedStudent);
                         this.Hide();
                         studentInfoWin.Show();

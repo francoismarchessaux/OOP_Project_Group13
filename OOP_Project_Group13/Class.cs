@@ -12,23 +12,24 @@ namespace OOP_Project_Group13
 {
     public class Class
     {
+        MySqlConnection connection = Program.GetConnection();
         public string name { get; set; }
-        public List<Course> courses { get; set; }
         public List<Student> students { get; set; }
 
-        public Class(string _name)
+        public Class(string className)
         {
-            name = _name;
-        }
-        public Class(string _name, List<Student> _students)
-        {
-            name = _name;
-            students = _students;
-        }
-        public Class(string _name, List<Course> _courses, List<Student> _students)
-        {
-            name = _name;
-            students = _students;
+            name = className;
+            String query = "Select * from class Where className = '" +name + "'";
+            MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
+            DataTable classTable = new DataTable();
+            SDA.Fill(classTable);
+            string[] tab = classTable.Rows[0]["studentsIDs"].ToString().Split(' ');
+            for (int i = 0; i < tab.Length; i++)
+            {
+                int id = Convert.ToInt32(tab[i]);
+                Student student = new Student(id);
+                students.Add(student);
+            }
         }
     }
 }
