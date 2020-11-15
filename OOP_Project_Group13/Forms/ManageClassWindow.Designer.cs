@@ -46,19 +46,19 @@
             // classNameLabel
             // 
             this.classNameLabel.AutoSize = true;
-            this.classNameLabel.Location = new System.Drawing.Point(29, 36);
+            this.classNameLabel.Location = new System.Drawing.Point(26, 29);
             this.classNameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.classNameLabel.Name = "classNameLabel";
-            this.classNameLabel.Size = new System.Drawing.Size(94, 20);
+            this.classNameLabel.Size = new System.Drawing.Size(83, 17);
             this.classNameLabel.TabIndex = 0;
             this.classNameLabel.Text = "Class Name";
             // 
             // CreateCourseBtn
             // 
-            this.CreateCourseBtn.Location = new System.Drawing.Point(33, 81);
-            this.CreateCourseBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CreateCourseBtn.Location = new System.Drawing.Point(29, 65);
+            this.CreateCourseBtn.Margin = new System.Windows.Forms.Padding(2);
             this.CreateCourseBtn.Name = "CreateCourseBtn";
-            this.CreateCourseBtn.Size = new System.Drawing.Size(124, 34);
+            this.CreateCourseBtn.Size = new System.Drawing.Size(110, 27);
             this.CreateCourseBtn.TabIndex = 1;
             this.CreateCourseBtn.Text = "Create Course";
             this.CreateCourseBtn.UseVisualStyleBackColor = true;
@@ -66,10 +66,10 @@
             // 
             // ModifyCourseBtn
             // 
-            this.ModifyCourseBtn.Location = new System.Drawing.Point(182, 81);
-            this.ModifyCourseBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ModifyCourseBtn.Location = new System.Drawing.Point(162, 65);
+            this.ModifyCourseBtn.Margin = new System.Windows.Forms.Padding(2);
             this.ModifyCourseBtn.Name = "ModifyCourseBtn";
-            this.ModifyCourseBtn.Size = new System.Drawing.Size(124, 34);
+            this.ModifyCourseBtn.Size = new System.Drawing.Size(110, 27);
             this.ModifyCourseBtn.TabIndex = 2;
             this.ModifyCourseBtn.Text = "Modify Course";
             this.ModifyCourseBtn.UseVisualStyleBackColor = true;
@@ -77,20 +77,20 @@
             // 
             // DeleteCourseBtn
             // 
-            this.DeleteCourseBtn.Location = new System.Drawing.Point(332, 81);
-            this.DeleteCourseBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DeleteCourseBtn.Location = new System.Drawing.Point(295, 65);
+            this.DeleteCourseBtn.Margin = new System.Windows.Forms.Padding(2);
             this.DeleteCourseBtn.Name = "DeleteCourseBtn";
-            this.DeleteCourseBtn.Size = new System.Drawing.Size(124, 34);
+            this.DeleteCourseBtn.Size = new System.Drawing.Size(110, 27);
             this.DeleteCourseBtn.TabIndex = 3;
             this.DeleteCourseBtn.Text = "Delete Course";
             this.DeleteCourseBtn.UseVisualStyleBackColor = true;
             // 
             // StudentsBtn
             // 
-            this.StudentsBtn.Location = new System.Drawing.Point(33, 157);
-            this.StudentsBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.StudentsBtn.Location = new System.Drawing.Point(29, 126);
+            this.StudentsBtn.Margin = new System.Windows.Forms.Padding(2);
             this.StudentsBtn.Name = "StudentsBtn";
-            this.StudentsBtn.Size = new System.Drawing.Size(124, 34);
+            this.StudentsBtn.Size = new System.Drawing.Size(110, 27);
             this.StudentsBtn.TabIndex = 4;
             this.StudentsBtn.Text = "Students";
             this.StudentsBtn.UseVisualStyleBackColor = true;
@@ -98,10 +98,10 @@
             // 
             // TimetableBtn
             // 
-            this.TimetableBtn.Location = new System.Drawing.Point(154, 157);
-            this.TimetableBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TimetableBtn.Location = new System.Drawing.Point(137, 126);
+            this.TimetableBtn.Margin = new System.Windows.Forms.Padding(2);
             this.TimetableBtn.Name = "TimetableBtn";
-            this.TimetableBtn.Size = new System.Drawing.Size(124, 34);
+            this.TimetableBtn.Size = new System.Drawing.Size(110, 27);
             this.TimetableBtn.TabIndex = 5;
             this.TimetableBtn.Text = "Timetable";
             this.TimetableBtn.UseVisualStyleBackColor = true;
@@ -111,10 +111,10 @@
             // 
             this.TimeTablePnl.AutoSize = true;
             this.TimeTablePnl.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.TimeTablePnl.Location = new System.Drawing.Point(33, 196);
-            this.TimeTablePnl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TimeTablePnl.Location = new System.Drawing.Point(29, 157);
+            this.TimeTablePnl.Margin = new System.Windows.Forms.Padding(2);
             this.TimeTablePnl.Name = "TimeTablePnl";
-            this.TimeTablePnl.Size = new System.Drawing.Size(1234, 584);
+            this.TimeTablePnl.Size = new System.Drawing.Size(1097, 467);
             this.TimeTablePnl.TabIndex = 6;
             this.TimeTablePnl.Visible = false;
             // 
@@ -128,13 +128,13 @@
             this.ID,
             this.LastName,
             this.FirstName});
-            this.dataGridView1.Location = new System.Drawing.Point(35, 201);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Location = new System.Drawing.Point(31, 161);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 82;
             this.dataGridView1.RowTemplate.Height = 33;
-            this.dataGridView1.Size = new System.Drawing.Size(1232, 522);
+            this.dataGridView1.Size = new System.Drawing.Size(1095, 418);
             this.dataGridView1.TabIndex = 7;
             // 
             // ID
@@ -163,9 +163,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(738, 81);
+            this.button1.Location = new System.Drawing.Point(656, 65);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(158, 34);
+            this.button1.Size = new System.Drawing.Size(140, 27);
             this.button1.TabIndex = 8;
             this.button1.Text = "Create Exam";
             this.button1.UseVisualStyleBackColor = true;
@@ -173,10 +174,10 @@
             // 
             // CreateExamButton
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1276, 840);
+            this.ClientSize = new System.Drawing.Size(1134, 672);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.TimeTablePnl);
@@ -186,7 +187,7 @@
             this.Controls.Add(this.ModifyCourseBtn);
             this.Controls.Add(this.CreateCourseBtn);
             this.Controls.Add(this.classNameLabel);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CreateExamButton";

@@ -18,7 +18,7 @@ namespace OOP_Project_Group13
         public FacultyHomePage(MySqlConnection con, Faculty teacher)
         {
             InitializeComponent();
-            TimeTable tt = new TimeTable(teacher, con, panelTT);
+            TimeTable tt = new TimeTable(teacher, panelTT);
             tt.InitializeTimeTable();
             tt.GetTimetable();
         }
