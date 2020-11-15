@@ -36,6 +36,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.buttonCreateExam = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxCoeff = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // classNameLabel
@@ -117,11 +119,30 @@
             this.buttonCreateExam.UseVisualStyleBackColor = true;
             this.buttonCreateExam.Click += new System.EventHandler(this.buttonCreateExam_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(39, 268);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(48, 20);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "Coeff";
+            // 
+            // textBoxCoeff
+            // 
+            this.textBoxCoeff.Location = new System.Drawing.Point(207, 268);
+            this.textBoxCoeff.Name = "textBoxCoeff";
+            this.textBoxCoeff.Size = new System.Drawing.Size(100, 26);
+            this.textBoxCoeff.TabIndex = 22;
+            this.textBoxCoeff.TextChanged += new System.EventHandler(this.textBoxCoeff_TextChanged);
+            // 
             // CreateExam
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textBoxCoeff);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonCreateExam);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label1);
@@ -148,5 +169,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button buttonCreateExam;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBoxCoeff;
     }
 }
