@@ -41,7 +41,7 @@ namespace OOP_Project_Group13.Forms
             string Surname = Tab[1];
             string StudentsID = Tab[2];
 
-            dataGridView1.Rows.Add(NameGroup,Tab[0], Tab[1], Tab[2]);
+            dataGridView1.Rows.Add(NameGroup,Tab[2], Tab[0], Tab[1]);
         }
 
         private void CreateClassButton_Click(object sender, EventArgs e)
@@ -76,9 +76,7 @@ namespace OOP_Project_Group13.Forms
             {
                 Class test = new Class(userTable.Rows[i]["className"].ToString());
                
-                    this.ComboStudent.Items.Add(userTable.Rows[i]["name"].ToString() + " " + userTable.Rows[i]["firstName"].ToString() + " " + userTable.Rows[i]["userID"].ToString());
-                
-                
+                    this.ComboStudent.Items.Add(userTable.Rows[i]["name"].ToString() + " " + userTable.Rows[i]["firstName"].ToString() + " " + userTable.Rows[i]["userID"].ToString());                
             }            
         }
 
@@ -92,7 +90,6 @@ namespace OOP_Project_Group13.Forms
             AdministratorMainWindow adminWindow = new AdministratorMainWindow(admin, connection);
             this.Hide();
             adminWindow.Show();
-
         }
 
         private void NameClass_TextChanged(object sender, EventArgs e)
@@ -105,7 +102,6 @@ namespace OOP_Project_Group13.Forms
             {
                 dataGridView1.Rows.RemoveAt(this.dataGridView1.SelectedRows[0].Index);
             }
-
         }
     }
 }
