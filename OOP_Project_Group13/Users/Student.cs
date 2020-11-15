@@ -68,9 +68,9 @@ namespace OOP_Project_Group13.Users
             mail = info[5];
             profilePicture = info[6];
             birthday = Convert.ToDateTime(info[7]);
-            phone = info[7];
-            address = info[8];
-            Class c = new Class(info[9]);
+            phone = info[8];
+            address = info[9];
+            Class c = new Class(info[10]);
             studentClass = c;
 
 

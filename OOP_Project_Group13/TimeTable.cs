@@ -15,19 +15,17 @@ namespace OOP_Project_Group13
     public class TimeTable
     {
         User user;
-        MySqlConnection connection;
+        MySqlConnection connection= Program.GetConnection();
         Panel timetable;
         bool admin;
-        public TimeTable(User user, MySqlConnection connection, Panel timetable)
+        public TimeTable(User user, Panel timetable)
         {
             this.user = user;
-            this.connection = connection;
             this.timetable = timetable;
         }
-        public TimeTable(User user, MySqlConnection connection, Panel timetable, bool _admin)
+        public TimeTable(User user, Panel timetable, bool _admin)
         {
             this.user = user;
-            this.connection = connection;
             this.timetable = timetable;
             admin = _admin;
         }
@@ -135,9 +133,6 @@ namespace OOP_Project_Group13
         {
             if(admin == true)
             {
-
-                
-
                 ButtonClass b = sender as ButtonClass ;
                 Course c = b.course;
                 ModifyCourseWindow modifyWin = new ModifyCourseWindow(connection, c);
