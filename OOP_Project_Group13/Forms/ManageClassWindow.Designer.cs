@@ -1,6 +1,6 @@
 ﻿namespace OOP_Project_Group13.Forms
 {
-    partial class ManageClassWindow
+    partial class CreateExamButton
     {
         /// <summary>
         /// Required designer variable.
@@ -39,23 +39,26 @@
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // classNameLabel
             // 
             this.classNameLabel.AutoSize = true;
-            this.classNameLabel.Location = new System.Drawing.Point(39, 45);
+            this.classNameLabel.Location = new System.Drawing.Point(29, 36);
+            this.classNameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.classNameLabel.Name = "classNameLabel";
-            this.classNameLabel.Size = new System.Drawing.Size(128, 25);
+            this.classNameLabel.Size = new System.Drawing.Size(94, 20);
             this.classNameLabel.TabIndex = 0;
             this.classNameLabel.Text = "Class Name";
             // 
             // CreateCourseBtn
             // 
-            this.CreateCourseBtn.Location = new System.Drawing.Point(44, 101);
+            this.CreateCourseBtn.Location = new System.Drawing.Point(33, 81);
+            this.CreateCourseBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.CreateCourseBtn.Name = "CreateCourseBtn";
-            this.CreateCourseBtn.Size = new System.Drawing.Size(165, 43);
+            this.CreateCourseBtn.Size = new System.Drawing.Size(124, 34);
             this.CreateCourseBtn.TabIndex = 1;
             this.CreateCourseBtn.Text = "Create Course";
             this.CreateCourseBtn.UseVisualStyleBackColor = true;
@@ -63,9 +66,10 @@
             // 
             // ModifyCourseBtn
             // 
-            this.ModifyCourseBtn.Location = new System.Drawing.Point(242, 101);
+            this.ModifyCourseBtn.Location = new System.Drawing.Point(182, 81);
+            this.ModifyCourseBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ModifyCourseBtn.Name = "ModifyCourseBtn";
-            this.ModifyCourseBtn.Size = new System.Drawing.Size(165, 43);
+            this.ModifyCourseBtn.Size = new System.Drawing.Size(124, 34);
             this.ModifyCourseBtn.TabIndex = 2;
             this.ModifyCourseBtn.Text = "Modify Course";
             this.ModifyCourseBtn.UseVisualStyleBackColor = true;
@@ -73,18 +77,20 @@
             // 
             // DeleteCourseBtn
             // 
-            this.DeleteCourseBtn.Location = new System.Drawing.Point(442, 101);
+            this.DeleteCourseBtn.Location = new System.Drawing.Point(332, 81);
+            this.DeleteCourseBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DeleteCourseBtn.Name = "DeleteCourseBtn";
-            this.DeleteCourseBtn.Size = new System.Drawing.Size(165, 43);
+            this.DeleteCourseBtn.Size = new System.Drawing.Size(124, 34);
             this.DeleteCourseBtn.TabIndex = 3;
             this.DeleteCourseBtn.Text = "Delete Course";
             this.DeleteCourseBtn.UseVisualStyleBackColor = true;
             // 
             // StudentsBtn
             // 
-            this.StudentsBtn.Location = new System.Drawing.Point(44, 196);
+            this.StudentsBtn.Location = new System.Drawing.Point(33, 157);
+            this.StudentsBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.StudentsBtn.Name = "StudentsBtn";
-            this.StudentsBtn.Size = new System.Drawing.Size(165, 43);
+            this.StudentsBtn.Size = new System.Drawing.Size(124, 34);
             this.StudentsBtn.TabIndex = 4;
             this.StudentsBtn.Text = "Students";
             this.StudentsBtn.UseVisualStyleBackColor = true;
@@ -92,9 +98,10 @@
             // 
             // TimetableBtn
             // 
-            this.TimetableBtn.Location = new System.Drawing.Point(206, 196);
+            this.TimetableBtn.Location = new System.Drawing.Point(154, 157);
+            this.TimetableBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TimetableBtn.Name = "TimetableBtn";
-            this.TimetableBtn.Size = new System.Drawing.Size(165, 43);
+            this.TimetableBtn.Size = new System.Drawing.Size(124, 34);
             this.TimetableBtn.TabIndex = 5;
             this.TimetableBtn.Text = "Timetable";
             this.TimetableBtn.UseVisualStyleBackColor = true;
@@ -104,9 +111,10 @@
             // 
             this.TimeTablePnl.AutoSize = true;
             this.TimeTablePnl.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.TimeTablePnl.Location = new System.Drawing.Point(44, 245);
+            this.TimeTablePnl.Location = new System.Drawing.Point(33, 196);
+            this.TimeTablePnl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TimeTablePnl.Name = "TimeTablePnl";
-            this.TimeTablePnl.Size = new System.Drawing.Size(1645, 730);
+            this.TimeTablePnl.Size = new System.Drawing.Size(1234, 584);
             this.TimeTablePnl.TabIndex = 6;
             this.TimeTablePnl.Visible = false;
             // 
@@ -120,12 +128,13 @@
             this.ID,
             this.LastName,
             this.FirstName});
-            this.dataGridView1.Location = new System.Drawing.Point(47, 251);
+            this.dataGridView1.Location = new System.Drawing.Point(35, 201);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 82;
             this.dataGridView1.RowTemplate.Height = 33;
-            this.dataGridView1.Size = new System.Drawing.Size(1642, 652);
+            this.dataGridView1.Size = new System.Drawing.Size(1232, 522);
             this.dataGridView1.TabIndex = 7;
             // 
             // ID
@@ -152,12 +161,23 @@
             this.FirstName.ReadOnly = true;
             this.FirstName.Width = 200;
             // 
-            // ManageClassWindow
+            // button1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.button1.Location = new System.Drawing.Point(738, 81);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(158, 34);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Create Exam";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.buttonCreateExam_Click_1);
+            // 
+            // CreateExamButton
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1701, 1092);
+            this.ClientSize = new System.Drawing.Size(1276, 840);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.TimeTablePnl);
             this.Controls.Add(this.TimetableBtn);
@@ -166,9 +186,10 @@
             this.Controls.Add(this.ModifyCourseBtn);
             this.Controls.Add(this.CreateCourseBtn);
             this.Controls.Add(this.classNameLabel);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "ManageClassWindow";
+            this.Name = "CreateExamButton";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manage Class";
             this.Load += new System.EventHandler(this.ManageClassWindow_Load);
@@ -191,5 +212,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
         private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
+        private System.Windows.Forms.Button button1;
     }
 }
