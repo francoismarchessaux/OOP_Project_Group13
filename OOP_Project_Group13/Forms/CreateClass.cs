@@ -35,14 +35,28 @@ namespace OOP_Project_Group13.Forms
         
         private void AddStudent_Click(object sender, EventArgs e)
         {
-            string NameGroup = NameClass.Text;
-            string[] Tab = ComboStudent.Text.Split(' ');
-            string Name = Tab[0];
-            string Surname = Tab[1];
-            string StudentsID = Tab[2];
+            if (ComboStudent.Text != "")
+            {
+                string NameGroup = NameClass.Text;
+                string[] Tab = ComboStudent.Text.Split(' ');
+                string Name = Tab[0];
+                string Surname = Tab[1];
+                string StudentsID = Tab[2];
 
-            dataGridView1.Rows.Add(NameGroup,Tab[2], Tab[0], Tab[1]);
-        }
+                dataGridView1.Rows.Add(NameGroup, Tab[2], Tab[0], Tab[1]);
+                int index = ComboStudent.SelectedIndex;
+                ComboStudent.Items.RemoveAt(index);
+                ComboStudent.Text = string.Empty;
+            }
+
+            else
+            {
+                MessageBox.Show("No student selected.");
+            }
+
+
+                
+        }        
 
         private void CreateClassButton_Click(object sender, EventArgs e)
         {
@@ -73,10 +87,8 @@ namespace OOP_Project_Group13.Forms
             DataTable userTable = new DataTable();
             SDA.Fill(userTable);
             for (int i = 0; i < userTable.Rows.Count; i++)
-            {
-                Class test = new Class(userTable.Rows[i]["className"].ToString());
-               
-                    this.ComboStudent.Items.Add(userTable.Rows[i]["name"].ToString() + " " + userTable.Rows[i]["firstName"].ToString() + " " + userTable.Rows[i]["userID"].ToString());                
+            {                               
+                this.ComboStudent.Items.Add(userTable.Rows[i]["name"].ToString() + " " + userTable.Rows[i]["firstName"].ToString() + " " + userTable.Rows[i]["userID"].ToString());                
             }            
         }
 
@@ -100,7 +112,13 @@ namespace OOP_Project_Group13.Forms
        {
             if (this.dataGridView1.SelectedRows.Count > 0)
             {
-                dataGridView1.Rows.RemoveAt(this.dataGridView1.SelectedRows[0].Index);
+                string ID = dataGridView1.SelectedRows[0].Cells["ID"].Value.ToString();
+                string Name = dataGridView1.SelectedRows[0].Cells["NameOfStudent"].Value.ToString();
+                string Surname = dataGridView1.SelectedRows[0].Cells["SurnameOfStudent"].Value.ToString();
+                ComboStudent.Items.Add(Name +" "+ Surname + " "+ ID);
+
+                dataGridView1.Rows.Remove(this.dataGridView1.SelectedRows[0]);
+
             }
         }
     }

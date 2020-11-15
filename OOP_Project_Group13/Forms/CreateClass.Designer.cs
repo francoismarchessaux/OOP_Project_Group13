@@ -33,10 +33,6 @@
             this.Back = new System.Windows.Forms.Button();
             this.CreateClassButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ClassName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NameofStudent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SurnameofStudent = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Clear = new System.Windows.Forms.Button();
             this.AddStudent = new System.Windows.Forms.Button();
             this.ComboStudent = new System.Windows.Forms.ComboBox();
@@ -46,6 +42,10 @@
             this.oopprojectDataSet = new OOP_Project_Group13.oopprojectDataSet();
             this.classBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.classTableAdapter = new OOP_Project_Group13.oopprojectDataSetTableAdapters.classTableAdapter();
+            this.ClassName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameOfStudent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SurnameOfStudent = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.oopprojectDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.classBindingSource)).BeginInit();
@@ -88,37 +88,13 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ClassName,
             this.ID,
-            this.NameofStudent,
-            this.SurnameofStudent});
+            this.NameOfStudent,
+            this.SurnameOfStudent});
             this.dataGridView1.Location = new System.Drawing.Point(46, 153);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(443, 249);
             this.dataGridView1.TabIndex = 4;
-            // 
-            // ClassName
-            // 
-            this.ClassName.HeaderText = "Class";
-            this.ClassName.Name = "ClassName";
-            this.ClassName.ReadOnly = true;
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // NameofStudent
-            // 
-            this.NameofStudent.HeaderText = "Name";
-            this.NameofStudent.Name = "NameofStudent";
-            this.NameofStudent.ReadOnly = true;
-            // 
-            // SurnameofStudent
-            // 
-            this.SurnameofStudent.HeaderText = "Surname";
-            this.SurnameofStudent.Name = "SurnameofStudent";
-            this.SurnameofStudent.ReadOnly = true;
             // 
             // Clear
             // 
@@ -190,6 +166,30 @@
             // 
             this.classTableAdapter.ClearBeforeFill = true;
             // 
+            // ClassName
+            // 
+            this.ClassName.HeaderText = "Class";
+            this.ClassName.Name = "ClassName";
+            this.ClassName.ReadOnly = true;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // NameOfStudent
+            // 
+            this.NameOfStudent.HeaderText = "Name";
+            this.NameOfStudent.Name = "NameOfStudent";
+            this.NameOfStudent.ReadOnly = true;
+            // 
+            // SurnameOfStudent
+            // 
+            this.SurnameOfStudent.HeaderText = "Surname";
+            this.SurnameOfStudent.Name = "SurnameOfStudent";
+            this.SurnameOfStudent.ReadOnly = true;
+            // 
             // CreateClass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -232,7 +232,7 @@
         private oopprojectDataSetTableAdapters.classTableAdapter classTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClassName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NameofStudent;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SurnameofStudent;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NameOfStudent;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SurnameOfStudent;
     }
 }
