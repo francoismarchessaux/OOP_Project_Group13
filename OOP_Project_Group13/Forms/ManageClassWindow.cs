@@ -48,7 +48,7 @@ namespace OOP_Project_Group13.Forms
         {
             TimeTablePnl.Visible = true;
             dataGridView1.Visible = false;
-            TimeTable classTimetable = new TimeTable(group.students[0], connection, TimeTablePnl, true);
+            TimeTable classTimetable = new TimeTable(group.students[0], TimeTablePnl,true);
             classTimetable.InitializeTimeTable();
             classTimetable.GetTimetable();
         }
