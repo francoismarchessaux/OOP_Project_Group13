@@ -105,7 +105,16 @@ namespace OOP_Project_Group13
             MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
             DataTable classTable = new DataTable();
             SDA.Fill(classTable);
-            Class selectedClass = new Class(classTable.Rows[0]["className"].ToString(), classTable.Rows[0]["studentsIDs"].ToString());
+            string [] tab = classTable.Rows[0]["studentsIDs"].ToString().Split(' ');
+            List<Student> list = new List<Student>();
+            for (int i=0; i < tab.Length; i++)
+            {
+                int louis = Convert.ToInt32(list[i]);
+                Student Theo = new Student(louis);
+                list.Add(Theo);
+            }
+            Class selectedClass = new Class(classTable.Rows[0]["className"].ToString(), list);
+
             CreateExamButton classMngWin = new CreateExamButton(selectedClass, connection);
             classMngWin.Show();
         }
