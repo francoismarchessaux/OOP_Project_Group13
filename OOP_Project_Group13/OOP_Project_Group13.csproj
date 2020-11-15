@@ -121,6 +121,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Class.cs" />
+    <Compile Include="CreateExam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateExam.Designer.cs">
+      <DependentUpon>CreateExam.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AddGradeWindows.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -227,6 +233,9 @@
     <Compile Include="Users\Administrator.cs" />
     <Compile Include="Users\Student.cs" />
     <Compile Include="Users\User.cs" />
+    <EmbeddedResource Include="CreateExam.resx">
+      <DependentUpon>CreateExam.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddGradeWindows.resx">
       <DependentUpon>AddGradeWindows.cs</DependentUpon>
     </EmbeddedResource>

@@ -56,15 +56,14 @@ namespace OOP_Project_Group13
                         break;
 
                     case "Student":
-<<<<<<< HEAD
+
                         List<AttendanceCourse> l = new List<AttendanceCourse>();
                         Attendance a= new Attendance(l);
                         Class b = new Class(userTable.Rows[0]["className"].ToString());
                         Student selectedStudent = new Student(userTable.Rows[0]["name"].ToString(), userTable.Rows[0]["firstName"].ToString(), userTable.Rows[0]["status"].ToString(), userTable.Rows[0]["password"].ToString(), Convert.ToInt32(userTable.Rows[0]["userID"]), userTable.Rows[0]["mail"].ToString(), userTable.Rows[0]["phone"].ToString(), userTable.Rows[0]["profilePicture"].ToString(), Convert.ToDateTime(userTable.Rows[0]["birthday"]), userTable.Rows[0]["address"].ToString(),b,a);
-=======
-                        Class test = new Class(userTable.Rows[0]["className"].ToString());
-                        Student selectedStudent = new Student(userTable.Rows[0]["name"].ToString(), userTable.Rows[0]["firstName"].ToString(), userTable.Rows[0]["status"].ToString(), userTable.Rows[0]["password"].ToString(), Convert.ToInt32(userTable.Rows[0]["userID"]), userTable.Rows[0]["mail"].ToString(), userTable.Rows[0]["phone"].ToString(), userTable.Rows[0]["profilePicture"].ToString(), Convert.ToDateTime(userTable.Rows[0]["birthday"]), userTable.Rows[0]["address"].ToString(),test);
->>>>>>> fc66b54752012fcbdf2485a3951e93741d4b8980
+
+                       
+
                         StudentInformationsWindow studentInfoWin = new StudentInformationsWindow(connection, selectedStudent);
                         this.Hide();
                         studentInfoWin.Show();

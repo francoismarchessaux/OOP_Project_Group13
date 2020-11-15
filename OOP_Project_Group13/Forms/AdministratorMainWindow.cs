@@ -106,7 +106,7 @@ namespace OOP_Project_Group13
             DataTable classTable = new DataTable();
             SDA.Fill(classTable);
             Class selectedClass = new Class(classTable.Rows[0]["className"].ToString(), classTable.Rows[0]["studentsIDs"].ToString());
-            ManageClassWindow classMngWin = new ManageClassWindow(selectedClass, connection);
+            CreateExamButton classMngWin = new CreateExamButton(selectedClass, connection);
             classMngWin.Show();
         }
 
