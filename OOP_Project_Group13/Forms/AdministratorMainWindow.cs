@@ -109,7 +109,7 @@ namespace OOP_Project_Group13
             List<Student> list = new List<Student>();
             for (int i=0; i < tab.Length; i++)
             {
-                int louis = Convert.ToInt32(list[i]);
+                int louis = Convert.ToInt32(tab[i]);
                 Student Theo = new Student(louis);
                 list.Add(Theo);
             }
