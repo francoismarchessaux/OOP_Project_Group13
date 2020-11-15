@@ -135,13 +135,14 @@ namespace OOP_Project_Group13
         {
             if(admin == true)
             {
-
-                
-
+<<<<<<< HEAD
+                Button b = sender as Button ;
+                ModifyCourseWindow modifyWin = new ModifyCourseWindow();
+=======
                 ButtonClass b = sender as ButtonClass ;
                 Course c = b.course;
                 ModifyCourseWindow modifyWin = new ModifyCourseWindow(connection, c);
-
+>>>>>>> fc66b54752012fcbdf2485a3951e93741d4b8980
                 modifyWin.Show();
             }
         }

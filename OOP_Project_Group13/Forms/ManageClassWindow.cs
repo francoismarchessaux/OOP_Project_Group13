@@ -13,12 +13,12 @@ using System.Windows;
 
 namespace OOP_Project_Group13.Forms
 {
-    public partial class CreateExamButton : Form
+    public partial class ManageClassWindow : Form
     {
         MySqlConnection connection;
         Class group;
         TimeTable tbl;
-        public CreateExamButton(Class _class, MySqlConnection _connection)
+        public ManageClassWindow(Class _class, MySqlConnection _connection)
         {
             InitializeComponent();
             group = _class;
@@ -72,12 +72,6 @@ namespace OOP_Project_Group13.Forms
         {
             dataGridView1.Visible = true;
             TimeTablePnl.Visible = false;
-        }
-
-        private void buttonCreateExam_Click_1(object sender, EventArgs e)
-        {
-            CreateExam createExamwin = new CreateExam(connection, group);
-            createExamwin.Show();
         }
     }
 }
