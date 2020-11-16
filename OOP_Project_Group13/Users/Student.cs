@@ -45,8 +45,6 @@ namespace OOP_Project_Group13.Users
             birthday = Convert.ToDateTime(info[7]);
             phone = info[8];
             address = info[9];
-            Class c = new Class(info[10]);
-            studentClass = c;
             attendances = new Attendance(this);
         }
         #endregion

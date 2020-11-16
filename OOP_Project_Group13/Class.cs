@@ -19,6 +19,7 @@ namespace OOP_Project_Group13
         public Class(string className)
         {
             name = className;
+            students = new List<Student>();
             String query = "Select * from class Where className = '" +name + "'";
             MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
             DataTable classTable = new DataTable();
@@ -30,6 +31,8 @@ namespace OOP_Project_Group13
                 Student student = new Student(id);
                 students.Add(student);
             }
+            for (int i = 0; i < students.Count; i++)
+                students[i].studentClass = this;
         }
     }
 }
