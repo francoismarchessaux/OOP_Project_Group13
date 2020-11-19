@@ -34,5 +34,14 @@ namespace OOP_Project_Group13
             for (int i = 0; i < students.Count; i++)
                 students[i].studentClass = this;
         }
+        public Class(int ID)
+        {
+            String query = "Select * from users Where userID = '" + ID + "'";
+            MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
+            DataTable classTable = new DataTable();
+            SDA.Fill(classTable);
+            name = classTable.Rows[0]["className"].ToString();
+            SDA.Fill(classTable);
+        }
     }
 }

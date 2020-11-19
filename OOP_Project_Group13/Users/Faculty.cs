@@ -19,6 +19,7 @@ namespace OOP_Project_Group13
         
         public Faculty(int Id)
         {
+            Classes = new List<Class>();
             String query = "SELECT * FROM users WHERE userID='" + Id + "'";
             MySqlDataAdapter SDA = new MySqlDataAdapter(query, con);
             DataTable dt = new DataTable();

@@ -46,6 +46,7 @@ namespace OOP_Project_Group13.Users
             phone = info[8];
             address = info[9];
             attendances = new Attendance(this);
+            studentClass = new Class(Id);
         }
         #endregion
 
