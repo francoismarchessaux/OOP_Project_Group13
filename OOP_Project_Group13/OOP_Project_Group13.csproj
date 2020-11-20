@@ -140,6 +140,12 @@
       <DependentUpon>AdministratorMainWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Course.cs" />
+    <Compile Include="Forms\AttendanceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AttendanceForm.Designer.cs">
+      <DependentUpon>AttendanceForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ClassInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -241,6 +247,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdministratorMainWindow.resx">
       <DependentUpon>AdministratorMainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AttendanceForm.resx">
+      <DependentUpon>AttendanceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ClassInfo.resx">
       <DependentUpon>ClassInfo.cs</DependentUpon>

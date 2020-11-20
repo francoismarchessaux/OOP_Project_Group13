@@ -32,6 +32,7 @@ namespace OOP_Project_Group13
             this.label2 = new System.Windows.Forms.Label();
             this.buttonClasses = new System.Windows.Forms.Button();
             this.panelTT = new System.Windows.Forms.Panel();
+            this.Attendance = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelNom
@@ -70,11 +71,21 @@ namespace OOP_Project_Group13
             this.panelTT.Size = new System.Drawing.Size(1241, 426);
             this.panelTT.TabIndex = 4;
             // 
+            // Attendance
+            // 
+            this.Attendance.Location = new System.Drawing.Point(1151, 579);
+            this.Attendance.Name = "Attendance";
+            this.Attendance.Size = new System.Drawing.Size(149, 39);
+            this.Attendance.TabIndex = 5;
+            this.Attendance.Text = "Attendance";
+            this.Attendance.UseVisualStyleBackColor = true;
+            // 
             // FacultyHomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1340, 638);
+            this.Controls.Add(this.Attendance);
             this.Controls.Add(this.panelTT);
             this.Controls.Add(this.buttonClasses);
             this.Controls.Add(this.label2);
@@ -92,5 +103,6 @@ namespace OOP_Project_Group13
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonClasses;
         private System.Windows.Forms.Panel panelTT;
+        private System.Windows.Forms.Button Attendance;
     }
 } 

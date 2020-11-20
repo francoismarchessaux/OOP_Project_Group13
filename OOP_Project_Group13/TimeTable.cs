@@ -109,7 +109,8 @@ namespace OOP_Project_Group13
                     string hour = dt.Rows[i]["Time"].ToString();
                     string name = dt.Rows[i]["Subject"].ToString();
                     string labelName = "" + day[0] + day[1] + day[2] + hour[0];
-                    Course course = new Course(name, dt.Rows[i]["Teacher"].ToString(), "normal", hour);
+                    Class _class = new Class(dt.Rows[i]["Class"].ToString());
+                    Course course = new Course(name, dt.Rows[i]["Teacher"].ToString(), "normal",day+" "+hour, _class);
                     foreach (Control x in timetable.Controls)
                     {
                         if (x is ButtonClass)
@@ -131,13 +132,20 @@ namespace OOP_Project_Group13
 
         private void label_Click(object sender, System.EventArgs e)
         {
-            if(admin == true)
+            if(user is Administrator)
             {
                 ButtonClass b = sender as ButtonClass ;
                 Course c = b.course;
                 ModifyCourseWindow modifyWin = new ModifyCourseWindow(connection, c);
 
                 modifyWin.Show();
+            }
+            else
+            {
+                ButtonClass b = sender as ButtonClass;
+                Course c = b.course;
+                AttendanceForm attendance = new AttendanceForm(connection, c);
+                attendance.Show();
             }
         }
     }
