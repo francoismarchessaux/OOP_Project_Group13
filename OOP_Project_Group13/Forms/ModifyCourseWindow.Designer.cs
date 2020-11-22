@@ -125,7 +125,8 @@
             "Tuesday",
             "Wednesday",
             "Thursday",
-            "Friday"});
+            "Friday",
+            "Saturday"});
             this.DayList.Location = new System.Drawing.Point(156, 177);
             this.DayList.Name = "DayList";
             this.DayList.Size = new System.Drawing.Size(338, 33);

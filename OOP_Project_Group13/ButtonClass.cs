@@ -10,8 +10,13 @@ namespace OOP_Project_Group13
     class ButtonClass : Button
     {
         public Course course { get; set; }
-
+        public string name { get; set; }
         public ButtonClass() { }
+
+        public ButtonClass(string _name)
+        {
+            name = _name;
+        }
         public ButtonClass(Course _course)
         {
             course = _course;

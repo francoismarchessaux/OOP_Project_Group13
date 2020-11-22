@@ -1,6 +1,6 @@
 ﻿namespace OOP_Project_Group13.Forms
 {
-    partial class CreateExamButton
+    partial class ManageClassWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -186,7 +186,7 @@
             this.MinimizeBox = false;
             this.Name = "CreateExamButton";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Manage Class";
+            this.Text = "Class Informations";
             this.Load += new System.EventHandler(this.ManageClassWindow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

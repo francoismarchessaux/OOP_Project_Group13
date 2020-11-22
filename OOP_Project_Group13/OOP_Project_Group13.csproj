@@ -213,12 +213,6 @@
     <Compile Include="Forms\StudentInformationsWindow.Designer.cs">
       <DependentUpon>StudentInformationsWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ListClasses.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ListClasses.Designer.cs">
-      <DependentUpon>ListClasses.cs</DependentUpon>
-    </Compile>
     <Compile Include="LabelGrade.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -283,9 +277,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\StudentInformationsWindow.resx">
       <DependentUpon>StudentInformationsWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ListClasses.resx">
-      <DependentUpon>ListClasses.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Ressources.resx" />
     <None Include="oopprojectDataSet.xsc">

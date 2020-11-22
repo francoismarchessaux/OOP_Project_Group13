@@ -78,7 +78,7 @@ namespace OOP_Project_Group13
             DataTable teacherTable = new DataTable();
             SDA.Fill(teacherTable);
             Faculty selectedTeacher = new Faculty(Convert.ToInt32(teacherTable.Rows[0]["userID"]));
-            FacultyInformationsWindows TeacherInfoWin = new FacultyInformationsWindows(connection, selectedTeacher);
+            FacultyInformationsWindows TeacherInfoWin = new FacultyInformationsWindows(connection, selectedTeacher, "Admin");
             TeacherInfoWin.Show();
         }
 
@@ -92,7 +92,7 @@ namespace OOP_Project_Group13
         {
             string classNameStr = ClassesList.Text;
             Class selectedClass = new Class(classNameStr);
-            CreateExamButton classMngWin = new CreateExamButton(selectedClass, connection);
+            ManageClassWindow classMngWin = new ManageClassWindow(selectedClass, connection, true);
             classMngWin.Show();
         }
 
