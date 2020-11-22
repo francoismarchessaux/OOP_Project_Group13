@@ -14,7 +14,7 @@ namespace OOP_Project_Group13
         [STAThread]
         static void Main()
         {
-            MySqlConnection connection = new MySqlConnection(@"server=DESKTOP-04OJU8R;user id=Louis; Password = Louloulebg; persistsecurityinfo=True;database=oopproject");
+            MySqlConnection connection = GetConnection();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LoginWindow(connection));

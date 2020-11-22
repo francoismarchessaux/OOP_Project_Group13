@@ -230,6 +230,9 @@
     <Compile Include="PanelCourse.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="PanelFees.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Properties\Ressources.Designer.cs" />
     <Compile Include="Subject.cs" />
     <Compile Include="Users\Faculty.cs" />
