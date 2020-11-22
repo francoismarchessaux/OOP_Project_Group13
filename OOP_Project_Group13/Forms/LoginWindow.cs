@@ -56,7 +56,7 @@ namespace OOP_Project_Group13
                         break;
 
                     case "Student":
-                        Student selectedStudent = new Student(Convert.ToInt32(userTable.Rows[0]["studentID"].ToString()));
+                        Student selectedStudent = new Student(Convert.ToInt32(userTable.Rows[0]["userID"].ToString()));
                         StudentInformationsWindow studentInfoWin = new StudentInformationsWindow(connection, selectedStudent);
                         this.Hide();
                         studentInfoWin.Show();

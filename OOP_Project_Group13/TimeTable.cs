@@ -17,17 +17,17 @@ namespace OOP_Project_Group13
         User user;
         MySqlConnection connection= Program.GetConnection();
         Panel timetable;
-        bool admin;
+        string status; 
         public TimeTable(User user, Panel timetable)
         {
             this.user = user;
             this.timetable = timetable;
         }
-        public TimeTable(User user, Panel timetable, bool _admin)
+        public TimeTable(User user, Panel timetable, string _status)
         {
             this.user = user;
             this.timetable = timetable;
-            admin = _admin;
+            status = _status;
         }
         public void InitializeTimeTable()
         {
@@ -132,7 +132,7 @@ namespace OOP_Project_Group13
 
         private void label_Click(object sender, System.EventArgs e)
         {
-            if(user is Administrator)
+            if(status == "Admin")
             {
                 ButtonClass b = sender as ButtonClass ;
                 Course c = b.course;
@@ -140,7 +140,7 @@ namespace OOP_Project_Group13
 
                 modifyWin.Show();
             }
-            else
+            else if(status == "Teacher")
             {
                 ButtonClass b = sender as ButtonClass;
                 Course c = b.course;
