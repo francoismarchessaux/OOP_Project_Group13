@@ -32,7 +32,6 @@ namespace OOP_Project_Group13
         {
             CreateUser studentCreationWindow = new CreateUser(connection, "Student", admin);
             studentCreationWindow.Show();
-            this.Hide();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -87,7 +86,6 @@ namespace OOP_Project_Group13
         {
             CreateUser teacherCreationWindow = new CreateUser(connection, "Faculty", admin);
             teacherCreationWindow.Show();
-            this.Hide();
         }
 
         private void ClassesList_SelectedIndexChanged(object sender, EventArgs e)
@@ -102,7 +100,6 @@ namespace OOP_Project_Group13
         {
             CreateClass ClassCreationWindow = new CreateClass(connection, admin);
             ClassCreationWindow.Show();
-            this.Hide();
         }
     }
 }

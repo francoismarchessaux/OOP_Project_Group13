@@ -36,7 +36,7 @@ namespace OOP_Project_Group13
                     case "Admin":
                         Administrator admin = new Administrator(Convert.ToInt32(userTable.Rows[0]["userID"]));
                         AdministratorMainWindow adminWindow = new AdministratorMainWindow(admin, connection);
-                        this.Hide();
+                        this.Close();
                         adminWindow.Show();
                         break;
 
@@ -51,14 +51,14 @@ namespace OOP_Project_Group13
                         }
                         Faculty teacher = new Faculty(Convert.ToInt32(userTable.Rows[0]["userID"]));
                         FacultyHomePage facultyInfoWin = new FacultyHomePage(connection, teacher);
-                        this.Hide();
+                        this.Close();
                         facultyInfoWin.Show();
                         break;
 
                     case "Student":
                         Student selectedStudent = new Student(Convert.ToInt32(userTable.Rows[0]["userID"].ToString()));
                         StudentInformationsWindow studentInfoWin = new StudentInformationsWindow(connection, selectedStudent);
-                        this.Hide();
+                        this.Close();
                         studentInfoWin.Show();
                         break;
                 }

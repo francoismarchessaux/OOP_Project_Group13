@@ -56,7 +56,7 @@ namespace OOP_Project_Group13
                     SDA.SelectCommand.ExecuteNonQuery();
                     connection.Close();
                     MessageBox.Show("Course created successfully !");
-                    this.Hide();
+                    this.Close();
                 }
             }
         }
@@ -75,7 +75,7 @@ namespace OOP_Project_Group13
 
         private void BackBtn_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
         }
 
 

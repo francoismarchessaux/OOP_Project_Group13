@@ -33,7 +33,7 @@ namespace OOP_Project_Group13.Forms
 
         private void BackBtn_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
         }
     }
 }

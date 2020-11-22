@@ -77,7 +77,7 @@ namespace OOP_Project_Group13.Forms
             SDA.SelectCommand.ExecuteNonQuery();
             connection.Close();
             MessageBox.Show("Class created successfully !");
-            this.Hide();
+            this.Close();
         }
         
         private void CreateClass_Load(object sender, EventArgs e)
@@ -100,7 +100,7 @@ namespace OOP_Project_Group13.Forms
         private void Back_Click(object sender, EventArgs e)
         {
             AdministratorMainWindow adminWindow = new AdministratorMainWindow(admin, connection);
-            this.Hide();
+            this.Close();
             adminWindow.Show();
         }
 
