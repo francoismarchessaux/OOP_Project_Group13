@@ -99,9 +99,7 @@ namespace OOP_Project_Group13.Forms
 
         private void Back_Click(object sender, EventArgs e)
         {
-            AdministratorMainWindow adminWindow = new AdministratorMainWindow(admin, connection);
             this.Close();
-            adminWindow.Show();
         }
 
         private void NameClass_TextChanged(object sender, EventArgs e)

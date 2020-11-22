@@ -34,6 +34,9 @@ namespace OOP_Project_Group13.Forms
             this.TeacherMail = new System.Windows.Forms.Label();
             this.TeacherPhone = new System.Windows.Forms.Label();
             this.BackBtn = new System.Windows.Forms.Button();
+            this.DeleteBtn = new System.Windows.Forms.Button();
+            this.panelTT = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.teacherPicture)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,7 +86,7 @@ namespace OOP_Project_Group13.Forms
             // 
             // BackBtn
             // 
-            this.BackBtn.Location = new System.Drawing.Point(845, 669);
+            this.BackBtn.Location = new System.Drawing.Point(1576, 1014);
             this.BackBtn.Name = "BackBtn";
             this.BackBtn.Size = new System.Drawing.Size(119, 39);
             this.BackBtn.TabIndex = 5;
@@ -91,11 +94,43 @@ namespace OOP_Project_Group13.Forms
             this.BackBtn.UseVisualStyleBackColor = true;
             this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click);
             // 
+            // DeleteBtn
+            // 
+            this.DeleteBtn.Location = new System.Drawing.Point(1402, 1014);
+            this.DeleteBtn.Name = "DeleteBtn";
+            this.DeleteBtn.Size = new System.Drawing.Size(157, 39);
+            this.DeleteBtn.TabIndex = 6;
+            this.DeleteBtn.Text = "Delete User";
+            this.DeleteBtn.UseVisualStyleBackColor = true;
+            this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
+            // 
+            // panelTT
+            // 
+            this.panelTT.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panelTT.Location = new System.Drawing.Point(26, 360);
+            this.panelTT.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panelTT.Name = "panelTT";
+            this.panelTT.Size = new System.Drawing.Size(1668, 646);
+            this.panelTT.TabIndex = 7;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(325, 304);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(157, 39);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "Classes";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // FacultyInformationsWindows
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(994, 730);
+            this.ClientSize = new System.Drawing.Size(1707, 1065);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.panelTT);
+            this.Controls.Add(this.DeleteBtn);
             this.Controls.Add(this.BackBtn);
             this.Controls.Add(this.TeacherPhone);
             this.Controls.Add(this.TeacherMail);
@@ -122,5 +157,8 @@ namespace OOP_Project_Group13.Forms
         private System.Windows.Forms.Label TeacherMail;
         private System.Windows.Forms.Label TeacherPhone;
         private System.Windows.Forms.Button BackBtn;
+        private System.Windows.Forms.Button DeleteBtn;
+        private System.Windows.Forms.Panel panelTT;
+        private System.Windows.Forms.Button button2;
     }
 }
