@@ -40,7 +40,7 @@ namespace OOP_Project_Group13.Forms
             this.AttendanceBtn = new System.Windows.Forms.Button();
             this.classesPanel = new System.Windows.Forms.Panel();
             this.ttBtn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.ModifyBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.teacherPicture)).BeginInit();
             this.SuspendLayout();
             // 
@@ -157,14 +157,15 @@ namespace OOP_Project_Group13.Forms
             this.ttBtn.UseVisualStyleBackColor = true;
             this.ttBtn.Click += new System.EventHandler(this.ttBtn_Click);
             // 
-            // button1
+            // ModifyBtn
             // 
-            this.button1.Location = new System.Drawing.Point(251, 217);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(157, 39);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Modify profile";
-            this.button1.UseVisualStyleBackColor = true;
+            this.ModifyBtn.Location = new System.Drawing.Point(246, 217);
+            this.ModifyBtn.Name = "ModifyBtn";
+            this.ModifyBtn.Size = new System.Drawing.Size(157, 39);
+            this.ModifyBtn.TabIndex = 13;
+            this.ModifyBtn.Text = "Modify profile";
+            this.ModifyBtn.UseVisualStyleBackColor = true;
+            this.ModifyBtn.Click += new System.EventHandler(this.ModifyBtn_Click);
             // 
             // FacultyInformationsWindows
             // 
@@ -172,7 +173,7 @@ namespace OOP_Project_Group13.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1707, 1065);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.ModifyBtn);
             this.Controls.Add(this.ttBtn);
             this.Controls.Add(this.classesPanel);
             this.Controls.Add(this.AttendanceBtn);
@@ -211,6 +212,6 @@ namespace OOP_Project_Group13.Forms
         private System.Windows.Forms.Button AttendanceBtn;
         private System.Windows.Forms.Panel classesPanel;
         private System.Windows.Forms.Button ttBtn;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button ModifyBtn;
     }
 }

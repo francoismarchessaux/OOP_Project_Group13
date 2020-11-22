@@ -23,6 +23,10 @@ namespace OOP_Project_Group13.Forms
 
         private void FacultyInformationsWindows_Load(object sender, EventArgs e)
         {
+            if(status == "Admin")
+            {
+                ModifyBtn.Hide();
+            }
             panelTT.Enabled = false;
             panelTT.Hide();
             classesPanel.Enabled = false;
@@ -120,6 +124,12 @@ namespace OOP_Project_Group13.Forms
                 ManageClassWindow manageClass = new ManageClassWindow(group, connection, true);
                 manageClass.Show();
             }
+        }
+
+        private void ModifyBtn_Click(object sender, EventArgs e)
+        {
+            ModifyProfile modWin = new ModifyProfile(connection, Teacher.ID);
+            modWin.Show();
         }
     }
 }
