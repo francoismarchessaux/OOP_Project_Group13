@@ -67,14 +67,12 @@ namespace OOP_Project_Group13.Forms
             {
                 MessageBox.Show("Teacher created succesfully !");
             }
-            this.Hide();
-            AdministratorMainWindow adminWin = new AdministratorMainWindow(admin, connection);
-            adminWin.Show();
+            this.Close();
         }
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             AdministratorMainWindow adminWin = new AdministratorMainWindow(admin, connection);
             adminWin.Show();
         }

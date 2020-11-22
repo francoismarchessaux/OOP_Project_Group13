@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySqlConnector;
+using OOP_Project_Group13.Forms;
 
 namespace OOP_Project_Group13
 {
@@ -50,9 +51,10 @@ namespace OOP_Project_Group13
                             listClasses.Add(c);
                         }
                         Faculty teacher = new Faculty(Convert.ToInt32(userTable.Rows[0]["userID"]));
-                        FacultyHomePage facultyInfoWin = new FacultyHomePage(connection, teacher);
+                        //FacultyHomePage facultyInfoWin = new FacultyHomePage(connection, teacher);
+                        FacultyInformationsWindows facWin = new FacultyInformationsWindows(connection, teacher, "Teacher");
                         this.Hide();
-                        facultyInfoWin.Show();
+                        facWin.Show();
                         break;
 
                     case "Student":

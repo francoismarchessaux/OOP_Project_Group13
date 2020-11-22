@@ -37,11 +37,14 @@ namespace OOP_Project_Group13
             birthday = Convert.ToDateTime(info[7]);
             phone = info[8];
             address = info[9];
-            string[] classes = info[10].Split(' ');
-            for (int i = 0; i < classes.Length; i++)
+            if(info[10] != "")
             {
-                Class c = new Class(classes[i]);
-                Classes.Add(c);
+                string[] classes = info[10].Split(' ');
+                for (int i = 0; i < classes.Length; i++)
+                {
+                    Class c = new Class(classes[i]);
+                    Classes.Add(c);
+                }
             }
         }
     }

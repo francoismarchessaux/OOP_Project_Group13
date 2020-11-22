@@ -20,7 +20,7 @@ namespace OOP_Project_Group13
         {
             name = className;
             students = new List<Student>();
-            String query = "Select * from class Where className = '" +name + "'";
+            String query = "Select * from class Where className = '" + name + "'";
             MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
             DataTable classTable = new DataTable();
             SDA.Fill(classTable);
