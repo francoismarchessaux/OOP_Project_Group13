@@ -82,5 +82,11 @@ namespace OOP_Project_Group13
             generalPanel.Controls.Clear();
             student.attendances.GetAttendance(generalPanel);
         }
+
+        private void Fees_Click(object sender, EventArgs e)
+        {
+            generalPanel.Controls.Clear();
+            student.FeesPanel(generalPanel);
+        }
     }
 }
