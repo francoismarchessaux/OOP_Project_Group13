@@ -15,7 +15,7 @@ namespace OOP_Project_Group13
     public class TimeTable
     {
         User user;
-        MySqlConnection connection= Program.GetConnection();
+        MySqlConnection connection = Program.GetConnection();
         Panel timetable;
         string status; 
         public TimeTable(User user, Panel timetable)
@@ -110,7 +110,7 @@ namespace OOP_Project_Group13
                     string name = dt.Rows[i]["Subject"].ToString();
                     string labelName = "" + day[0] + day[1] + day[2] + hour[0];
                     Class _class = new Class(dt.Rows[i]["Class"].ToString());
-                    Course course = new Course(name, dt.Rows[i]["Teacher"].ToString(), "normal",day+" "+hour, _class);
+                    Course course = new Course(name, dt.Rows[i]["Teacher"].ToString(), "normal", day, hour, _class);
                     foreach (Control x in timetable.Controls)
                     {
                         if (x is ButtonClass)

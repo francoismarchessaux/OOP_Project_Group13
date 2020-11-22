@@ -34,6 +34,7 @@ namespace OOP_Project_Group13.Forms
             }
             TeacherList.SelectedItem = course.teacher;
             TimeList.SelectedItem = course.time;
+            DayList.SelectedItem = course.day;
             subjectLbl.Text = $"Subject : {course.name}";
         }
 
@@ -44,15 +45,15 @@ namespace OOP_Project_Group13.Forms
 
         private void ApplyBtn_Click(object sender, EventArgs e)
         {
-            String query = "Select number from course Where Subject = '" + course.name + "' AND teacher = '" + course.teacher + "' AND Time = '" + course.time + "'";
+            String query = "Select number from course Where Subject = '" + course.name + "' AND teacher = '" + course.teacher + "' AND Day = '" + course.day + "' AND Time = '" + course.time + "'";
             MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
             DataTable courseInfo = new DataTable();
             SDA.Fill(courseInfo);
             string teacher = TeacherList.Text;
             string time = TimeList.Text;
-            string type = TypeList.Text;
+            string day = DayList.Text;
             connection.Open();
-            query = "UPDATE course SET teacher = '" + teacher + "', time = '" + time + "', type = '" + type + "' WHERE(number = '" + courseInfo.Rows[0]["number"] + "')";
+            query = "UPDATE course SET teacher = '" + teacher + "', day = '" + day + "', time = '" + time + "' WHERE(number = '" + courseInfo.Rows[0]["number"] + "')";
             SDA = new MySqlDataAdapter(query, connection);
             SDA.SelectCommand.ExecuteNonQuery();
             connection.Close();
@@ -60,5 +61,15 @@ namespace OOP_Project_Group13.Forms
             this.Close();
         }
 
+        private void deleteBtn_Click(object sender, EventArgs e)
+        {
+            String query = "DELETE FROM course WHERE Subject = '" + course.name + "' AND teacher = '" + course.teacher + "' AND Time = '" + course.time + "'";
+            MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
+            connection.Open();
+            SDA.SelectCommand.ExecuteNonQuery();
+            connection.Close();
+            MessageBox.Show("Course deleted successfully !");
+            this.Close();
+        }
     }
 }

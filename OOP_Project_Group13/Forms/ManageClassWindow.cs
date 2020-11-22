@@ -64,5 +64,17 @@ namespace OOP_Project_Group13.Forms
             CreateExam createExamwin = new CreateExam(connection, group);
             createExamwin.Show();
         }
+
+        private void BackBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void RefreshBtn_Click(object sender, EventArgs e)
+        {
+            TimeTablePnl.Controls.Clear();
+            dataGridView1.Visible = true;
+            this.Refresh();
+        }
     }
 }
