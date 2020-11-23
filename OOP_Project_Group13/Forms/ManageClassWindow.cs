@@ -64,5 +64,16 @@ namespace OOP_Project_Group13.Forms
             CreateExam createExamwin = new CreateExam(connection, group);
             createExamwin.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AddGrade2 SubmitGrade = new AddGrade2(connection, group);
+            SubmitGrade.Show();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

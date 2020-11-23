@@ -38,8 +38,9 @@ namespace OOP_Project_Group13
             string subject = SubjectList.Text;
             string title = textBoxTitle.Text;
             string coeff = textBoxCoeff.Text;
+            string Class = groupName.name;
             DateTime date = dateTimePicker1.Value;
-            String query = "SELECT * from Grade WHERE Subject = '" + subject + "' AND AssesmentName = '" + title + "' AND Date = '" + date.ToString("yyyy/MM/dd") +"' AND coefficient = '" + coeff   + "'";
+            String query = "SELECT * from Grade WHERE Subject = '" + subject + "' AND AssesmentName = '" + title + "' AND Date = '" + date.ToString("yyyy/MM/dd") +"' AND coefficient = '" + coeff   +" ' AND Class = '" + Class + "'";
             MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
             DataTable ExamTable = new DataTable();
             SDA.Fill(ExamTable);
@@ -47,7 +48,7 @@ namespace OOP_Project_Group13
             {
                 int StudentID = groupName.students[i].ID;
                 connection.Open();
-                query = "INSERT INTO Grade (Subject, AssesmentName, Date, StudentID, coefficient) VALUES ('" + subject + "', '" + title + "', '" + date.ToString("yyyy/MM/dd") + "','" + StudentID +"', '" + coeff +  "')";
+                query = "INSERT INTO Grade (Subject, AssesmentName, Date, StudentID, coefficient,Class) VALUES ('" + subject + "', '" + title + "', '" + date.ToString("yyyy/MM/dd") + "','" + StudentID +"', '" + coeff + "', '"+  Class +  "')";
                 SDA = new MySqlDataAdapter(query, connection);
                 SDA.SelectCommand.ExecuteNonQuery();
                 connection.Close();

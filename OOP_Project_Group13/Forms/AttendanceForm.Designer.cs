@@ -30,6 +30,8 @@
         {
             this.panelAttendance = new System.Windows.Forms.Panel();
             this.labelName = new System.Windows.Forms.Label();
+            this.buttonValidate = new System.Windows.Forms.Button();
+            this.Modify = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // panelAttendance
@@ -50,11 +52,32 @@
             this.labelName.TabIndex = 1;
             this.labelName.Text = "courseName";
             // 
+            // buttonValidate
+            // 
+            this.buttonValidate.Location = new System.Drawing.Point(59, 408);
+            this.buttonValidate.Name = "buttonValidate";
+            this.buttonValidate.Size = new System.Drawing.Size(104, 35);
+            this.buttonValidate.TabIndex = 2;
+            this.buttonValidate.Text = "Validate";
+            this.buttonValidate.UseVisualStyleBackColor = true;
+            //this.buttonValidate.Click += new System.EventHandler(this.buttonValidate_Click);
+            // 
+            // Modify
+            // 
+            this.Modify.Location = new System.Drawing.Point(654, 408);
+            this.Modify.Name = "Modify";
+            this.Modify.Size = new System.Drawing.Size(104, 35);
+            this.Modify.TabIndex = 3;
+            this.Modify.Text = "Modify";
+            this.Modify.UseVisualStyleBackColor = true;
+            // 
             // AttendanceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(805, 518);
+            this.Controls.Add(this.Modify);
+            this.Controls.Add(this.buttonValidate);
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.panelAttendance);
             this.Name = "AttendanceForm";
@@ -68,5 +91,7 @@
 
         private System.Windows.Forms.Panel panelAttendance;
         private System.Windows.Forms.Label labelName;
+        private System.Windows.Forms.Button buttonValidate;
+        private System.Windows.Forms.Button Modify;
     }
 }

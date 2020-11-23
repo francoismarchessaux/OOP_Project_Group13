@@ -15,6 +15,8 @@ namespace OOP_Project_Group13
         public List<LabelGrade> grades { get; set; }
         public Label attRate { get; set; }
         public Label attNumber { get; set; }
+        public CheckBox check { get; set; }
+        public Label status { get; set; }
         public PanelCourse(Label name, Label averageLabel, Label average, List<LabelGrade> grades)
         {
             this.name = name;
@@ -28,6 +30,15 @@ namespace OOP_Project_Group13
             this.attRate = attRate;
             this.attNumber = attNumber;
         }
-        
+        public PanelCourse(Label name, Label status, CheckBox check)
+        {
+            this.name = name;
+            this.status = status;
+            this.check = check;
+            Controls.Add(status);
+            Controls.Add(name);
+            Controls.Add(check);
+        }
+
     }
 }

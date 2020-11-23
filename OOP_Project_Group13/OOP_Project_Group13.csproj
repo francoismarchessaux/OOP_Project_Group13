@@ -114,6 +114,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddGrade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddGrade.Designer.cs">
+      <DependentUpon>AddGrade.cs</DependentUpon>
+    </Compile>
     <Compile Include="Attendance.cs" />
     <Compile Include="AttendanceCourse.cs" />
     <Compile Include="Average.cs" />
@@ -232,13 +238,16 @@
     </Compile>
     <Compile Include="Properties\Ressources.Designer.cs" />
     <Compile Include="Subject.cs" />
-    <Compile Include="Users\Faculty.cs" />
+    <Compile Include="Forms\Users\Faculty.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TimeTable.cs" />
-    <Compile Include="Users\Administrator.cs" />
-    <Compile Include="Users\Student.cs" />
-    <Compile Include="Users\User.cs" />
+    <Compile Include="Forms\Users\Administrator.cs" />
+    <Compile Include="Forms\Users\Student.cs" />
+    <Compile Include="Forms\Users\User.cs" />
+    <EmbeddedResource Include="AddGrade.resx">
+      <DependentUpon>AddGrade.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateExam.resx">
       <DependentUpon>CreateExam.cs</DependentUpon>
     </EmbeddedResource>

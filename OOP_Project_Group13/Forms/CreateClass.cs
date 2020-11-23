@@ -121,5 +121,10 @@ namespace OOP_Project_Group13.Forms
 
             }
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
