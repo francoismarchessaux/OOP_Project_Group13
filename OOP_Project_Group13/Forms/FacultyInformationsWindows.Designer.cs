@@ -34,6 +34,13 @@ namespace OOP_Project_Group13.Forms
             this.TeacherMail = new System.Windows.Forms.Label();
             this.TeacherPhone = new System.Windows.Forms.Label();
             this.BackBtn = new System.Windows.Forms.Button();
+            this.DeleteBtn = new System.Windows.Forms.Button();
+            this.panelTT = new System.Windows.Forms.Panel();
+            this.ClassesBtn = new System.Windows.Forms.Button();
+            this.AttendanceBtn = new System.Windows.Forms.Button();
+            this.classesPanel = new System.Windows.Forms.Panel();
+            this.ttBtn = new System.Windows.Forms.Button();
+            this.ModifyBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.teacherPicture)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,7 +90,7 @@ namespace OOP_Project_Group13.Forms
             // 
             // BackBtn
             // 
-            this.BackBtn.Location = new System.Drawing.Point(845, 669);
+            this.BackBtn.Location = new System.Drawing.Point(200, 1014);
             this.BackBtn.Name = "BackBtn";
             this.BackBtn.Size = new System.Drawing.Size(119, 39);
             this.BackBtn.TabIndex = 5;
@@ -91,11 +98,88 @@ namespace OOP_Project_Group13.Forms
             this.BackBtn.UseVisualStyleBackColor = true;
             this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click);
             // 
+            // DeleteBtn
+            // 
+            this.DeleteBtn.Location = new System.Drawing.Point(26, 1014);
+            this.DeleteBtn.Name = "DeleteBtn";
+            this.DeleteBtn.Size = new System.Drawing.Size(157, 39);
+            this.DeleteBtn.TabIndex = 6;
+            this.DeleteBtn.Text = "Delete User";
+            this.DeleteBtn.UseVisualStyleBackColor = true;
+            this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
+            // 
+            // panelTT
+            // 
+            this.panelTT.AutoSize = true;
+            this.panelTT.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panelTT.Location = new System.Drawing.Point(26, 360);
+            this.panelTT.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panelTT.Name = "panelTT";
+            this.panelTT.Size = new System.Drawing.Size(1668, 646);
+            this.panelTT.TabIndex = 7;
+            // 
+            // ClassesBtn
+            // 
+            this.ClassesBtn.Location = new System.Drawing.Point(189, 322);
+            this.ClassesBtn.Name = "ClassesBtn";
+            this.ClassesBtn.Size = new System.Drawing.Size(157, 39);
+            this.ClassesBtn.TabIndex = 9;
+            this.ClassesBtn.Text = "Classes";
+            this.ClassesBtn.UseVisualStyleBackColor = true;
+            this.ClassesBtn.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // AttendanceBtn
+            // 
+            this.AttendanceBtn.Location = new System.Drawing.Point(352, 322);
+            this.AttendanceBtn.Name = "AttendanceBtn";
+            this.AttendanceBtn.Size = new System.Drawing.Size(157, 39);
+            this.AttendanceBtn.TabIndex = 10;
+            this.AttendanceBtn.Text = "Attendance";
+            this.AttendanceBtn.UseVisualStyleBackColor = true;
+            this.AttendanceBtn.Click += new System.EventHandler(this.AttendanceBtn_Click);
+            // 
+            // classesPanel
+            // 
+            this.classesPanel.AutoSize = true;
+            this.classesPanel.Enabled = false;
+            this.classesPanel.Location = new System.Drawing.Point(26, 360);
+            this.classesPanel.Name = "classesPanel";
+            this.classesPanel.Size = new System.Drawing.Size(1665, 617);
+            this.classesPanel.TabIndex = 11;
+            // 
+            // ttBtn
+            // 
+            this.ttBtn.Location = new System.Drawing.Point(26, 322);
+            this.ttBtn.Name = "ttBtn";
+            this.ttBtn.Size = new System.Drawing.Size(157, 39);
+            this.ttBtn.TabIndex = 12;
+            this.ttBtn.Text = "Timetable";
+            this.ttBtn.UseVisualStyleBackColor = true;
+            this.ttBtn.Click += new System.EventHandler(this.ttBtn_Click);
+            // 
+            // ModifyBtn
+            // 
+            this.ModifyBtn.Location = new System.Drawing.Point(246, 217);
+            this.ModifyBtn.Name = "ModifyBtn";
+            this.ModifyBtn.Size = new System.Drawing.Size(157, 39);
+            this.ModifyBtn.TabIndex = 13;
+            this.ModifyBtn.Text = "Modify profile";
+            this.ModifyBtn.UseVisualStyleBackColor = true;
+            this.ModifyBtn.Click += new System.EventHandler(this.ModifyBtn_Click);
+            // 
             // FacultyInformationsWindows
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(994, 730);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(1707, 1065);
+            this.Controls.Add(this.ModifyBtn);
+            this.Controls.Add(this.ttBtn);
+            this.Controls.Add(this.classesPanel);
+            this.Controls.Add(this.AttendanceBtn);
+            this.Controls.Add(this.ClassesBtn);
+            this.Controls.Add(this.panelTT);
+            this.Controls.Add(this.DeleteBtn);
             this.Controls.Add(this.BackBtn);
             this.Controls.Add(this.TeacherPhone);
             this.Controls.Add(this.TeacherMail);
@@ -122,5 +206,12 @@ namespace OOP_Project_Group13.Forms
         private System.Windows.Forms.Label TeacherMail;
         private System.Windows.Forms.Label TeacherPhone;
         private System.Windows.Forms.Button BackBtn;
+        private System.Windows.Forms.Button DeleteBtn;
+        private System.Windows.Forms.Panel panelTT;
+        private System.Windows.Forms.Button ClassesBtn;
+        private System.Windows.Forms.Button AttendanceBtn;
+        private System.Windows.Forms.Panel classesPanel;
+        private System.Windows.Forms.Button ttBtn;
+        private System.Windows.Forms.Button ModifyBtn;
     }
 }

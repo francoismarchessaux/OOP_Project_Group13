@@ -39,83 +39,85 @@
             this.buttonTimeTable = new System.Windows.Forms.Button();
             this.generalPanel = new System.Windows.Forms.Panel();
             this.buttonAttendance = new System.Windows.Forms.Button();
+            this.Fees = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.StudentPicture)).BeginInit();
             this.SuspendLayout();
             // 
             // StudentPicture
             // 
-            this.StudentPicture.Location = new System.Drawing.Point(17, 17);
+            this.StudentPicture.Location = new System.Drawing.Point(13, 14);
             this.StudentPicture.Margin = new System.Windows.Forms.Padding(2);
             this.StudentPicture.Name = "StudentPicture";
-            this.StudentPicture.Size = new System.Drawing.Size(129, 147);
+            this.StudentPicture.Size = new System.Drawing.Size(97, 119);
             this.StudentPicture.TabIndex = 0;
             this.StudentPicture.TabStop = false;
             // 
             // NameLabel
             // 
             this.NameLabel.AutoSize = true;
-            this.NameLabel.Location = new System.Drawing.Point(150, 17);
+            this.NameLabel.Location = new System.Drawing.Point(112, 14);
             this.NameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.NameLabel.Name = "NameLabel";
-            this.NameLabel.Size = new System.Drawing.Size(98, 17);
+            this.NameLabel.Size = new System.Drawing.Size(75, 13);
             this.NameLabel.TabIndex = 1;
             this.NameLabel.Text = "Student Name";
             // 
             // StudentIDLabel
             // 
             this.StudentIDLabel.AutoSize = true;
-            this.StudentIDLabel.Location = new System.Drawing.Point(150, 44);
+            this.StudentIDLabel.Location = new System.Drawing.Point(112, 36);
             this.StudentIDLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.StudentIDLabel.Name = "StudentIDLabel";
-            this.StudentIDLabel.Size = new System.Drawing.Size(29, 17);
+            this.StudentIDLabel.Size = new System.Drawing.Size(24, 13);
             this.StudentIDLabel.TabIndex = 3;
             this.StudentIDLabel.Text = "ID :";
             // 
             // BirthDate
             // 
             this.BirthDate.AutoSize = true;
-            this.BirthDate.Location = new System.Drawing.Point(150, 68);
+            this.BirthDate.Location = new System.Drawing.Point(112, 55);
             this.BirthDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.BirthDate.Name = "BirthDate";
-            this.BirthDate.Size = new System.Drawing.Size(79, 17);
+            this.BirthDate.Size = new System.Drawing.Size(60, 13);
             this.BirthDate.TabIndex = 4;
             this.BirthDate.Text = "Birth Date :";
             // 
             // AdressLabel
             // 
             this.AdressLabel.AutoSize = true;
-            this.AdressLabel.Location = new System.Drawing.Point(150, 95);
+            this.AdressLabel.Location = new System.Drawing.Point(112, 77);
             this.AdressLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.AdressLabel.Name = "AdressLabel";
-            this.AdressLabel.Size = new System.Drawing.Size(64, 17);
+            this.AdressLabel.Size = new System.Drawing.Size(48, 13);
             this.AdressLabel.TabIndex = 5;
             this.AdressLabel.Text = "Adress : ";
             // 
             // MailLabel
             // 
             this.MailLabel.AutoSize = true;
-            this.MailLabel.Location = new System.Drawing.Point(150, 123);
+            this.MailLabel.Location = new System.Drawing.Point(112, 100);
             this.MailLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.MailLabel.Name = "MailLabel";
-            this.MailLabel.Size = new System.Drawing.Size(41, 17);
+            this.MailLabel.Size = new System.Drawing.Size(32, 13);
             this.MailLabel.TabIndex = 6;
             this.MailLabel.Text = "Mail :";
             // 
             // PhoneLabel
             // 
             this.PhoneLabel.AutoSize = true;
-            this.PhoneLabel.Location = new System.Drawing.Point(150, 148);
+            this.PhoneLabel.Location = new System.Drawing.Point(112, 120);
             this.PhoneLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.PhoneLabel.Name = "PhoneLabel";
-            this.PhoneLabel.Size = new System.Drawing.Size(61, 17);
+            this.PhoneLabel.Size = new System.Drawing.Size(47, 13);
             this.PhoneLabel.TabIndex = 7;
             this.PhoneLabel.Text = "Phone : ";
             // 
             // buttonGrade
             // 
-            this.buttonGrade.Location = new System.Drawing.Point(17, 215);
+            this.buttonGrade.Location = new System.Drawing.Point(13, 175);
+            this.buttonGrade.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonGrade.Name = "buttonGrade";
-            this.buttonGrade.Size = new System.Drawing.Size(75, 23);
+            this.buttonGrade.Size = new System.Drawing.Size(56, 19);
             this.buttonGrade.TabIndex = 9;
             this.buttonGrade.Text = "Grades";
             this.buttonGrade.UseVisualStyleBackColor = true;
@@ -123,9 +125,10 @@
             // 
             // buttonTimeTable
             // 
-            this.buttonTimeTable.Location = new System.Drawing.Point(90, 215);
+            this.buttonTimeTable.Location = new System.Drawing.Point(68, 175);
+            this.buttonTimeTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonTimeTable.Name = "buttonTimeTable";
-            this.buttonTimeTable.Size = new System.Drawing.Size(89, 23);
+            this.buttonTimeTable.Size = new System.Drawing.Size(67, 19);
             this.buttonTimeTable.TabIndex = 10;
             this.buttonTimeTable.Text = "TimeTable";
             this.buttonTimeTable.UseVisualStyleBackColor = true;
@@ -138,27 +141,40 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.generalPanel.AutoScroll = true;
             this.generalPanel.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.generalPanel.Location = new System.Drawing.Point(19, 237);
+            this.generalPanel.Location = new System.Drawing.Point(14, 193);
+            this.generalPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.generalPanel.Name = "generalPanel";
-            this.generalPanel.Size = new System.Drawing.Size(1241, 426);
+            this.generalPanel.Size = new System.Drawing.Size(931, 346);
             this.generalPanel.TabIndex = 27;
             // 
             // buttonAttendance
             // 
-            this.buttonAttendance.Location = new System.Drawing.Point(177, 215);
+            this.buttonAttendance.Location = new System.Drawing.Point(133, 175);
+            this.buttonAttendance.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonAttendance.Name = "buttonAttendance";
-            this.buttonAttendance.Size = new System.Drawing.Size(98, 23);
+            this.buttonAttendance.Size = new System.Drawing.Size(74, 19);
             this.buttonAttendance.TabIndex = 28;
             this.buttonAttendance.Text = "Attendance";
             this.buttonAttendance.UseVisualStyleBackColor = true;
             this.buttonAttendance.Click += new System.EventHandler(this.buttonAttendance_Click);
             // 
+            // Fees
+            // 
+            this.Fees.Location = new System.Drawing.Point(203, 175);
+            this.Fees.Name = "Fees";
+            this.Fees.Size = new System.Drawing.Size(67, 19);
+            this.Fees.TabIndex = 29;
+            this.Fees.Text = "Fees";
+            this.Fees.UseVisualStyleBackColor = true;
+            this.Fees.Click += new System.EventHandler(this.Fees_Click);
+            // 
             // StudentInformationsWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1270, 690);
+            this.ClientSize = new System.Drawing.Size(952, 561);
+            this.Controls.Add(this.Fees);
             this.Controls.Add(this.buttonAttendance);
             this.Controls.Add(this.generalPanel);
             this.Controls.Add(this.buttonTimeTable);
@@ -195,5 +211,6 @@
         private System.Windows.Forms.Button buttonTimeTable;
         private System.Windows.Forms.Panel generalPanel;
         private System.Windows.Forms.Button buttonAttendance;
+        private System.Windows.Forms.Button Fees;
     }
 }

@@ -26,14 +26,14 @@ namespace OOP_Project_Group13.Users
         #endregion
 
         #region constructors
-        public Student (int Id)
+        public Student(int Id)
         {
             String query = "SELECT * FROM users WHERE userID='" + Id + "'";
             MySqlDataAdapter SDA = new MySqlDataAdapter(query, con);
             DataTable dt = new DataTable();
             SDA.Fill(dt);
             string[] info = new string[dt.Columns.Count];
-            for(int i =0; i < dt.Columns.Count; i++)
+            for (int i = 0; i < dt.Columns.Count; i++)
                 info[i] = dt.Rows[0][i].ToString();
             ID = Convert.ToInt32(info[0]);
             name = info[1];
@@ -64,7 +64,7 @@ namespace OOP_Project_Group13.Users
             course.Controls.Add(addGrade.name);
             course.Controls.Add(addGrade.grade);
             int count = course.grades.Count;
-            int y ;
+            int y;
             if (count == 0)
                 y = 40;
             else
@@ -75,7 +75,7 @@ namespace OOP_Project_Group13.Users
             addGrade.grade.Visible = true;
             course.Height += 20;
         }
-        private PanelCourse AddCourse(Panel generalPanel,Average avg, List<PanelCourse> listCourses)
+        private PanelCourse AddCourse(Panel generalPanel, Average avg, List<PanelCourse> listCourses)
         {
             Label courseName = new Label();
             Label averageLabel = new Label();
@@ -172,13 +172,72 @@ namespace OOP_Project_Group13.Users
                 }
                 for (int i = 0; i < subjects.Count; i++)
                 {
-                    PanelCourse course = AddCourse(panel,subjects[i], listCourses);
+                    PanelCourse course = AddCourse(panel, subjects[i], listCourses);
                     for (int j = 0; j < subjects[i].grades.Count; j++)
                     {
                         PlaceGrade(course, subjects[i].grades[j]);
                     }
                 }
             }
+        }
+
+        public void FeesPanel(Panel panel)
+        {
+            String query = "SELECT * FROM users WHERE userID ='" + ID + "' AND status ='Student'";
+            MySqlDataAdapter SDA = new MySqlDataAdapter(query, con);
+            DataTable dt = new DataTable();
+            SDA.Fill(dt);
+
+            Label Status = new Label();
+            Label FeesPaid = new Label();
+            Label FeesLeft = new Label();
+            Label Txt = new Label();
+
+            PanelFees newPan = new PanelFees(Status, FeesPaid, FeesLeft);
+            newPan.Height = 200;
+            newPan.Width = 930;
+            newPan.Location = new Point(0, 30);
+
+            Panel title = new Panel();
+            title.Height = 30;
+            title.Width = 930;
+            title.BackColor = Color.LightSlateGray;            
+            Txt.Text = "TUITION FEES ";            
+            title.Controls.Add(Txt);
+            panel.Controls.Add(title);
+            Txt.Location = new Point(5, 11);
+
+            if (Convert.ToDouble(dt.Rows[0]["fees"]) > 0.00 )
+            {
+                Status.Text = " The student " + dt.Rows[0]["name"].ToString() + " " + dt.Rows[0]["firstName"].ToString() + " is in dept of " + dt.Rows[0]["fees"].ToString() + "£.";
+                Status.AutoSize = true;
+                Status.Visible = true;
+            }
+
+            else
+            {
+                Status.Text = " The student " + dt.Rows[0]["name"].ToString() + " " + dt.Rows[0]["firstName"].ToString() + " has already paid the tuitions fees for the year.";
+                Status.AutoSize = true;
+                Status.Visible = true;
+            }
+
+            newPan.Controls.Add(Status);
+            Status.Location = new Point(20, 10);
+
+            FeesPaid.Text = "Fees paid : " + dt.Rows[0]["feesPaid"].ToString() + "£.";
+            FeesPaid.AutoSize = true;
+            FeesPaid.Visible = true;
+            newPan.Controls.Add(FeesPaid);
+            FeesPaid.Location = new Point(40, 40);
+
+            FeesLeft.Text = "Fees left to pay : " + dt.Rows[0]["fees"].ToString() + "£.";
+            FeesLeft.AutoSize = true;
+            FeesLeft.Visible = true;
+            newPan.Controls.Add(FeesLeft);
+            FeesLeft.Location = new Point(40, 70);
+
+            panel.Controls.Add(newPan);
+          
         }
         #endregion
     }

@@ -25,8 +25,8 @@ namespace OOP_Project_Group13
 
         private void buttonClasses_Click(object sender, EventArgs e)
         {
-            ListClasses form = new ListClasses();
-            form.Show();
+            //ListClasses form = new ListClasses();
+            //form.Show();
         }
 
         private void label4_Click(object sender, EventArgs e)

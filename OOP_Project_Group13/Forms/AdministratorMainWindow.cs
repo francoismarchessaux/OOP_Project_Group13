@@ -32,7 +32,6 @@ namespace OOP_Project_Group13
         {
             CreateUser studentCreationWindow = new CreateUser(connection, "Student", admin);
             studentCreationWindow.Show();
-            this.Hide();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -79,7 +78,7 @@ namespace OOP_Project_Group13
             DataTable teacherTable = new DataTable();
             SDA.Fill(teacherTable);
             Faculty selectedTeacher = new Faculty(Convert.ToInt32(teacherTable.Rows[0]["userID"]));
-            FacultyInformationsWindows TeacherInfoWin = new FacultyInformationsWindows(connection, selectedTeacher);
+            FacultyInformationsWindows TeacherInfoWin = new FacultyInformationsWindows(connection, selectedTeacher, "Admin");
             TeacherInfoWin.Show();
         }
 
@@ -87,14 +86,13 @@ namespace OOP_Project_Group13
         {
             CreateUser teacherCreationWindow = new CreateUser(connection, "Faculty", admin);
             teacherCreationWindow.Show();
-            this.Hide();
         }
 
         private void ClassesList_SelectedIndexChanged(object sender, EventArgs e)
         {
             string classNameStr = ClassesList.Text;
             Class selectedClass = new Class(classNameStr);
-            CreateExamButton classMngWin = new CreateExamButton(selectedClass, connection);
+            ManageClassWindow classMngWin = new ManageClassWindow(selectedClass, connection, true);
             classMngWin.Show();
         }
 
@@ -102,7 +100,40 @@ namespace OOP_Project_Group13
         {
             CreateClass ClassCreationWindow = new CreateClass(connection, admin);
             ClassCreationWindow.Show();
-            this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            StudentList.SelectedItem = "Selec Student ... ";
+            TeacherList.SelectedItem = "Selec Teacher ... ";
+            ClassesList.SelectedItem = "Selec Class ... ";
+            StudentList.Items.Clear();
+            TeacherList.Items.Clear();
+            ClassesList.Items.Clear();
+            String query = "Select name, firstName, userID from Users Where status = 'Student'";
+            MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
+            DataTable userTable = new DataTable();
+            SDA.Fill(userTable);
+            for (int i = 0; i < userTable.Rows.Count; i++)
+            {
+                this.StudentList.Items.Add(userTable.Rows[i]["name"].ToString() + " " + userTable.Rows[i]["firstName"].ToString() + " " + userTable.Rows[i]["userID"].ToString());
+            }
+            query = "Select name, firstName, userID from Users Where status = 'Faculty'";
+            SDA = new MySqlDataAdapter(query, connection);
+            DataTable TeacherTable = new DataTable();
+            SDA.Fill(TeacherTable);
+            for (int i = 0; i < TeacherTable.Rows.Count; i++)
+            {
+                this.TeacherList.Items.Add(TeacherTable.Rows[i]["name"].ToString() + " " + TeacherTable.Rows[i]["firstName"].ToString() + " " + TeacherTable.Rows[i]["userID"].ToString());
+            }
+            query = "Select className from class";
+            SDA = new MySqlDataAdapter(query, connection);
+            DataTable ClassTable = new DataTable();
+            SDA.Fill(ClassTable);
+            for (int i = 0; i < ClassTable.Rows.Count; i++)
+            {
+                this.ClassesList.Items.Add(ClassTable.Rows[i]["className"]);
+            }
         }
     }
 }

@@ -31,12 +31,13 @@
             this.subjectLbl = new System.Windows.Forms.Label();
             this.teacherLbl = new System.Windows.Forms.Label();
             this.timeLbl = new System.Windows.Forms.Label();
-            this.typeLbl = new System.Windows.Forms.Label();
             this.TeacherList = new System.Windows.Forms.ComboBox();
             this.TimeList = new System.Windows.Forms.ComboBox();
-            this.TypeList = new System.Windows.Forms.ComboBox();
             this.ApplyBtn = new System.Windows.Forms.Button();
             this.BackBtn = new System.Windows.Forms.Button();
+            this.deleteBtn = new System.Windows.Forms.Button();
+            this.DayList = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // subjectLbl
@@ -60,20 +61,11 @@
             // timeLbl
             // 
             this.timeLbl.AutoSize = true;
-            this.timeLbl.Location = new System.Drawing.Point(41, 169);
+            this.timeLbl.Location = new System.Drawing.Point(41, 250);
             this.timeLbl.Name = "timeLbl";
             this.timeLbl.Size = new System.Drawing.Size(77, 25);
             this.timeLbl.TabIndex = 2;
             this.timeLbl.Text = "Time : ";
-            // 
-            // typeLbl
-            // 
-            this.typeLbl.AutoSize = true;
-            this.typeLbl.Location = new System.Drawing.Point(41, 231);
-            this.typeLbl.Name = "typeLbl";
-            this.typeLbl.Size = new System.Drawing.Size(78, 25);
-            this.typeLbl.TabIndex = 3;
-            this.typeLbl.Text = "Type : ";
             // 
             // TeacherList
             // 
@@ -90,26 +82,14 @@
             "8 : 00 am - 11 : 00 am",
             "1 : 00 pm - 3 : 55 pm",
             "4 : 00 pm - 7 : 00 pm"});
-            this.TimeList.Location = new System.Drawing.Point(156, 169);
+            this.TimeList.Location = new System.Drawing.Point(156, 250);
             this.TimeList.Name = "TimeList";
             this.TimeList.Size = new System.Drawing.Size(338, 33);
             this.TimeList.TabIndex = 5;
             // 
-            // TypeList
-            // 
-            this.TypeList.FormattingEnabled = true;
-            this.TypeList.Items.AddRange(new object[] {
-            "Normal",
-            "Assignement",
-            "Exam"});
-            this.TypeList.Location = new System.Drawing.Point(156, 231);
-            this.TypeList.Name = "TypeList";
-            this.TypeList.Size = new System.Drawing.Size(338, 33);
-            this.TypeList.TabIndex = 6;
-            // 
             // ApplyBtn
             // 
-            this.ApplyBtn.Location = new System.Drawing.Point(46, 302);
+            this.ApplyBtn.Location = new System.Drawing.Point(46, 377);
             this.ApplyBtn.Name = "ApplyBtn";
             this.ApplyBtn.Size = new System.Drawing.Size(122, 42);
             this.ApplyBtn.TabIndex = 7;
@@ -119,7 +99,7 @@
             // 
             // BackBtn
             // 
-            this.BackBtn.Location = new System.Drawing.Point(372, 302);
+            this.BackBtn.Location = new System.Drawing.Point(372, 377);
             this.BackBtn.Name = "BackBtn";
             this.BackBtn.Size = new System.Drawing.Size(122, 42);
             this.BackBtn.TabIndex = 8;
@@ -127,17 +107,52 @@
             this.BackBtn.UseVisualStyleBackColor = true;
             this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click);
             // 
+            // deleteBtn
+            // 
+            this.deleteBtn.Location = new System.Drawing.Point(46, 310);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(180, 42);
+            this.deleteBtn.TabIndex = 9;
+            this.deleteBtn.Text = "Delete Course";
+            this.deleteBtn.UseVisualStyleBackColor = true;
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
+            // 
+            // DayList
+            // 
+            this.DayList.FormattingEnabled = true;
+            this.DayList.Items.AddRange(new object[] {
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"});
+            this.DayList.Location = new System.Drawing.Point(156, 177);
+            this.DayList.Name = "DayList";
+            this.DayList.Size = new System.Drawing.Size(338, 33);
+            this.DayList.TabIndex = 11;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(41, 177);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(62, 25);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Day :";
+            // 
             // ModifyCourseWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(544, 364);
+            this.ClientSize = new System.Drawing.Size(554, 431);
+            this.Controls.Add(this.DayList);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.deleteBtn);
             this.Controls.Add(this.BackBtn);
             this.Controls.Add(this.ApplyBtn);
-            this.Controls.Add(this.TypeList);
             this.Controls.Add(this.TimeList);
             this.Controls.Add(this.TeacherList);
-            this.Controls.Add(this.typeLbl);
             this.Controls.Add(this.timeLbl);
             this.Controls.Add(this.teacherLbl);
             this.Controls.Add(this.subjectLbl);
@@ -154,11 +169,12 @@
         public System.Windows.Forms.Label subjectLbl;
         public System.Windows.Forms.Label teacherLbl;
         public System.Windows.Forms.Label timeLbl;
-        public System.Windows.Forms.Label typeLbl;
         private System.Windows.Forms.ComboBox TeacherList;
         private System.Windows.Forms.ComboBox TimeList;
-        private System.Windows.Forms.ComboBox TypeList;
         private System.Windows.Forms.Button ApplyBtn;
         private System.Windows.Forms.Button BackBtn;
+        private System.Windows.Forms.Button deleteBtn;
+        private System.Windows.Forms.ComboBox DayList;
+        public System.Windows.Forms.Label label1;
     }
 }

@@ -212,18 +212,18 @@
     <Compile Include="Forms\ModifyCourseWindow.Designer.cs">
       <DependentUpon>ModifyCourseWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ModifyProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ModifyProfile.Designer.cs">
+      <DependentUpon>ModifyProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Grade.cs" />
     <Compile Include="Forms\StudentInformationsWindow.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\StudentInformationsWindow.Designer.cs">
       <DependentUpon>StudentInformationsWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\ListClasses.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ListClasses.Designer.cs">
-      <DependentUpon>ListClasses.cs</DependentUpon>
     </Compile>
     <Compile Include="LabelGrade.cs">
       <SubType>Component</SubType>
@@ -234,6 +234,9 @@
       <DependentUpon>oopprojectDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="PanelCourse.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PanelFees.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Properties\Ressources.Designer.cs" />
@@ -290,11 +293,11 @@
     <EmbeddedResource Include="Forms\ModifyCourseWindow.resx">
       <DependentUpon>ModifyCourseWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ModifyProfile.resx">
+      <DependentUpon>ModifyProfile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\StudentInformationsWindow.resx">
       <DependentUpon>StudentInformationsWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ListClasses.resx">
-      <DependentUpon>ListClasses.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Ressources.resx" />
     <None Include="oopprojectDataSet.xsc">

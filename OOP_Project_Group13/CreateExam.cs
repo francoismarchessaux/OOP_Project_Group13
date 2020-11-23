@@ -52,7 +52,7 @@ namespace OOP_Project_Group13
                 SDA = new MySqlDataAdapter(query, connection);
                 SDA.SelectCommand.ExecuteNonQuery();
                 connection.Close();
-                this.Hide();
+                this.Close();
             }
             MessageBox.Show("Exam created successfully !");
         }
