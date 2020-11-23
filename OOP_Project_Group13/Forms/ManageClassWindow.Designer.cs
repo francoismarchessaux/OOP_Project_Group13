@@ -1,6 +1,6 @@
 ﻿namespace OOP_Project_Group13.Forms
 {
-    partial class CreateExamButton
+    partial class ManageClassWindow
     {
         /// <summary>
         /// Required designer variable.

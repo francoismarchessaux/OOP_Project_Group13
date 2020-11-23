@@ -13,16 +13,17 @@ using System.Windows;
 
 namespace OOP_Project_Group13.Forms
 {
-    public partial class CreateExamButton : Form
+    public partial class ManageClassWindow : Form
     {
         MySqlConnection connection;
         Class group;
-        TimeTable tbl;
-        public CreateExamButton(Class _class, MySqlConnection _connection)
+        bool status;
+        public ManageClassWindow(Class _class, MySqlConnection _connection, bool _status)
         {
             InitializeComponent();
             group = _class;
             connection = _connection;
+            status = _status;
         }
 
         private void ManageClassWindow_Load(object sender, EventArgs e)
