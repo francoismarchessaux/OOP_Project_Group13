@@ -13,20 +13,26 @@ using System.Windows;
 
 namespace OOP_Project_Group13.Forms
 {
-    public partial class CreateExamButton : Form
+    public partial class ManageClassWindow : Form
     {
         MySqlConnection connection;
         Class group;
-        TimeTable tbl;
-        public CreateExamButton(Class _class, MySqlConnection _connection)
+        bool status;
+        public ManageClassWindow(Class _class, MySqlConnection _connection, bool _status)
         {
             InitializeComponent();
             group = _class;
             connection = _connection;
+            status = _status;
         }
 
         private void ManageClassWindow_Load(object sender, EventArgs e)
         {
+            if(status == false)
+            {
+                CreateCourseBtn.Hide();
+                button1.Hide();
+            }
             classNameLabel.Text = "Class Name : " + group.name;
             for (int i = 0; i < group.students.Count; i++)
                 dataGridView1.Rows.Add(group.students[i].ID, group.students[i].name, group.students[i].firstName);
@@ -65,6 +71,7 @@ namespace OOP_Project_Group13.Forms
             createExamwin.Show();
         }
 
+<<<<<<< HEAD
         private void button2_Click(object sender, EventArgs e)
         {
             AddGrade2 SubmitGrade = new AddGrade2(connection, group);
@@ -74,6 +81,18 @@ namespace OOP_Project_Group13.Forms
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+=======
+        private void BackBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void RefreshBtn_Click(object sender, EventArgs e)
+        {
+            TimeTablePnl.Controls.Clear();
+            dataGridView1.Visible = true;
+            this.Refresh();
+>>>>>>> 482f6c242d40bf4db42d88e0b43305f263c7cc57
         }
     }
 }
