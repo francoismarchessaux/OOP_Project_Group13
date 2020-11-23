@@ -54,33 +54,19 @@
             // Student
             // 
             this.Student.AutoSize = true;
-<<<<<<< HEAD
             this.Student.Location = new System.Drawing.Point(57, 101);
             this.Student.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Student.Name = "Student";
             this.Student.Size = new System.Drawing.Size(65, 17);
-=======
-            this.Student.Location = new System.Drawing.Point(86, 158);
-            this.Student.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.Student.Name = "Student";
-            this.Student.Size = new System.Drawing.Size(98, 25);
->>>>>>> 482f6c242d40bf4db42d88e0b43305f263c7cc57
             this.Student.TabIndex = 1;
             this.Student.Text = "Student :";
             // 
             // Back
             // 
-<<<<<<< HEAD
             this.Back.Location = new System.Drawing.Point(61, 609);
             this.Back.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Back.Name = "Back";
             this.Back.Size = new System.Drawing.Size(100, 28);
-=======
-            this.Back.Location = new System.Drawing.Point(92, 952);
-            this.Back.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.Back.Name = "Back";
-            this.Back.Size = new System.Drawing.Size(150, 44);
->>>>>>> 482f6c242d40bf4db42d88e0b43305f263c7cc57
             this.Back.TabIndex = 2;
             this.Back.Text = "Back";
             this.Back.UseVisualStyleBackColor = true;
@@ -88,17 +74,10 @@
             // 
             // CreateClassButton
             // 
-<<<<<<< HEAD
             this.CreateClassButton.Location = new System.Drawing.Point(276, 558);
             this.CreateClassButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CreateClassButton.Name = "CreateClassButton";
             this.CreateClassButton.Size = new System.Drawing.Size(100, 28);
-=======
-            this.CreateClassButton.Location = new System.Drawing.Point(254, 785);
-            this.CreateClassButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.CreateClassButton.Name = "CreateClassButton";
-            this.CreateClassButton.Size = new System.Drawing.Size(150, 44);
->>>>>>> 482f6c242d40bf4db42d88e0b43305f263c7cc57
             this.CreateClassButton.TabIndex = 3;
             this.CreateClassButton.Text = "Create Class";
             this.CreateClassButton.UseVisualStyleBackColor = true;
@@ -114,21 +93,12 @@
             this.ID,
             this.NameOfStudent,
             this.SurnameOfStudent});
-<<<<<<< HEAD
             this.dataGridView1.Location = new System.Drawing.Point(61, 188);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(591, 306);
-=======
-            this.dataGridView1.Location = new System.Drawing.Point(92, 294);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 82;
-            this.dataGridView1.Size = new System.Drawing.Size(886, 479);
->>>>>>> 482f6c242d40bf4db42d88e0b43305f263c7cc57
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -164,51 +134,12 @@
             this.SurnameOfStudent.ReadOnly = true;
             this.SurnameOfStudent.Width = 125;
             // 
-            // ClassName
-            // 
-            this.ClassName.HeaderText = "Class";
-            this.ClassName.MinimumWidth = 10;
-            this.ClassName.Name = "ClassName";
-            this.ClassName.ReadOnly = true;
-            this.ClassName.Width = 200;
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 10;
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 200;
-            // 
-            // NameOfStudent
-            // 
-            this.NameOfStudent.HeaderText = "Name";
-            this.NameOfStudent.MinimumWidth = 10;
-            this.NameOfStudent.Name = "NameOfStudent";
-            this.NameOfStudent.ReadOnly = true;
-            this.NameOfStudent.Width = 200;
-            // 
-            // SurnameOfStudent
-            // 
-            this.SurnameOfStudent.HeaderText = "Surname";
-            this.SurnameOfStudent.MinimumWidth = 10;
-            this.SurnameOfStudent.Name = "SurnameOfStudent";
-            this.SurnameOfStudent.ReadOnly = true;
-            this.SurnameOfStudent.Width = 200;
-            // 
             // Clear
             // 
-<<<<<<< HEAD
             this.Clear.Location = new System.Drawing.Point(552, 502);
             this.Clear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Clear.Name = "Clear";
             this.Clear.Size = new System.Drawing.Size(100, 28);
-=======
-            this.Clear.Location = new System.Drawing.Point(828, 785);
-            this.Clear.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.Clear.Name = "Clear";
-            this.Clear.Size = new System.Drawing.Size(150, 44);
->>>>>>> 482f6c242d40bf4db42d88e0b43305f263c7cc57
             this.Clear.TabIndex = 7;
             this.Clear.Text = "Clear";
             this.Clear.UseVisualStyleBackColor = true;
@@ -216,17 +147,10 @@
             // 
             // AddStudent
             // 
-<<<<<<< HEAD
             this.AddStudent.Location = new System.Drawing.Point(516, 97);
             this.AddStudent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AddStudent.Name = "AddStudent";
             this.AddStudent.Size = new System.Drawing.Size(100, 28);
-=======
-            this.AddStudent.Location = new System.Drawing.Point(774, 152);
-            this.AddStudent.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.AddStudent.Name = "AddStudent";
-            this.AddStudent.Size = new System.Drawing.Size(150, 44);
->>>>>>> 482f6c242d40bf4db42d88e0b43305f263c7cc57
             this.AddStudent.TabIndex = 8;
             this.AddStudent.Text = "Add";
             this.AddStudent.UseVisualStyleBackColor = true;
@@ -235,66 +159,38 @@
             // ComboStudent
             // 
             this.ComboStudent.FormattingEnabled = true;
-<<<<<<< HEAD
             this.ComboStudent.Location = new System.Drawing.Point(228, 97);
             this.ComboStudent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ComboStudent.Name = "ComboStudent";
             this.ComboStudent.Size = new System.Drawing.Size(243, 24);
-=======
-            this.ComboStudent.Location = new System.Drawing.Point(342, 152);
-            this.ComboStudent.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.ComboStudent.Name = "ComboStudent";
-            this.ComboStudent.Size = new System.Drawing.Size(362, 33);
->>>>>>> 482f6c242d40bf4db42d88e0b43305f263c7cc57
             this.ComboStudent.TabIndex = 9;
             this.ComboStudent.SelectedIndexChanged += new System.EventHandler(this.ComboStudent_SelectedIndexChanged);
             // 
             // NameOfTheClass
             // 
             this.NameOfTheClass.AutoSize = true;
-<<<<<<< HEAD
             this.NameOfTheClass.Location = new System.Drawing.Point(57, 39);
             this.NameOfTheClass.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NameOfTheClass.Name = "NameOfTheClass";
             this.NameOfTheClass.Size = new System.Drawing.Size(129, 17);
-=======
-            this.NameOfTheClass.Location = new System.Drawing.Point(86, 62);
-            this.NameOfTheClass.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.NameOfTheClass.Name = "NameOfTheClass";
-            this.NameOfTheClass.Size = new System.Drawing.Size(196, 25);
->>>>>>> 482f6c242d40bf4db42d88e0b43305f263c7cc57
             this.NameOfTheClass.TabIndex = 10;
             this.NameOfTheClass.Text = "Name of the class :";
             // 
             // NameClass
             // 
-<<<<<<< HEAD
             this.NameClass.Location = new System.Drawing.Point(228, 36);
             this.NameClass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.NameClass.Name = "NameClass";
             this.NameClass.Size = new System.Drawing.Size(243, 22);
-=======
-            this.NameClass.Location = new System.Drawing.Point(342, 56);
-            this.NameClass.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.NameClass.Name = "NameClass";
-            this.NameClass.Size = new System.Drawing.Size(362, 31);
->>>>>>> 482f6c242d40bf4db42d88e0b43305f263c7cc57
             this.NameClass.TabIndex = 11;
             this.NameClass.TextChanged += new System.EventHandler(this.NameClass_TextChanged);
             // 
             // RemoveStudent
             // 
-<<<<<<< HEAD
             this.RemoveStudent.Location = new System.Drawing.Point(61, 502);
             this.RemoveStudent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.RemoveStudent.Name = "RemoveStudent";
             this.RemoveStudent.Size = new System.Drawing.Size(100, 28);
-=======
-            this.RemoveStudent.Location = new System.Drawing.Point(92, 785);
-            this.RemoveStudent.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.RemoveStudent.Name = "RemoveStudent";
-            this.RemoveStudent.Size = new System.Drawing.Size(150, 44);
->>>>>>> 482f6c242d40bf4db42d88e0b43305f263c7cc57
             this.RemoveStudent.TabIndex = 12;
             this.RemoveStudent.Text = "Remove";
             this.RemoveStudent.UseVisualStyleBackColor = true;
@@ -316,16 +212,9 @@
             // 
             // CreateClass
             // 
-<<<<<<< HEAD
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(725, 655);
-=======
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1088, 1023);
->>>>>>> 482f6c242d40bf4db42d88e0b43305f263c7cc57
             this.Controls.Add(this.RemoveStudent);
             this.Controls.Add(this.NameClass);
             this.Controls.Add(this.NameOfTheClass);
@@ -336,11 +225,7 @@
             this.Controls.Add(this.CreateClassButton);
             this.Controls.Add(this.Back);
             this.Controls.Add(this.Student);
-<<<<<<< HEAD
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-=======
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
->>>>>>> 482f6c242d40bf4db42d88e0b43305f263c7cc57
             this.Name = "CreateClass";
             this.Text = "CreateClass";
             this.Load += new System.EventHandler(this.CreateClass_Load);
