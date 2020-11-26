@@ -68,7 +68,6 @@ namespace OOP_Project_Group13.Forms
             }
             String query = "SELECT * from Class WHERE className = '" + NameGroup +  "' AND studentsIDs = '" + StudentsIDs + "'";
             MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
-            SDA = new MySqlDataAdapter(query, connection);
             DataTable groupTable = new DataTable();
             SDA.Fill(groupTable);
             connection.Open();

@@ -107,7 +107,6 @@ namespace OOP_Project_Group13.Forms
 
         private void AttendanceBtn_Click(object sender, EventArgs e)
         {
-
         }
 
         private void classButton_Click(object sender, EventArgs e)

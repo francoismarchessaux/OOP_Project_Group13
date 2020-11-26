@@ -2,12 +2,8 @@
 using OOP_Project_Group13.Users;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace OOP_Project_Group13.Forms
@@ -39,8 +35,15 @@ namespace OOP_Project_Group13.Forms
                 attendance.AutoSize = true;
                 attendance.Location = new Point(300, 10);
                 CheckBox check = new CheckBox();
-                check.Location = new Point(380, 5);
+                check.Location = new Point(380, 10);
                 check.Visible = true;
+                check.AutoSize = true;
+                Label lateLabel = new Label();
+                lateLabel.Text = "Late :";
+                lateLabel.AutoSize = true;
+                lateLabel.Location = new Point(450, 10);
+                CheckBox late = new CheckBox();
+                late.Location = new Point(500, 5);
                 int max = -70;
                 foreach(Control c in panelAttendance.Controls)
                 {
@@ -48,7 +51,7 @@ namespace OOP_Project_Group13.Forms
                         max = c.Location.Y;
                 }
                 int y = max + 70;
-                PanelCourse student = new PanelCourse(name,attendance,check);
+                PanelCourse student = new PanelCourse(name,attendance,check,lateLabel,late);
                 student.Height = 70;
                 student.Width = 520;
                 student.Name = ""+students[i].ID;
@@ -57,17 +60,97 @@ namespace OOP_Project_Group13.Forms
             }
         }
 
-        //private void buttonValidate_Click(object sender, EventArgs e)
-        //{
-        //    foreach (Control c in panelAttendance.Controls)
-        //    {
-        //        if (c is PanelCourse)
-        //        {
-        //            PanelCourse p = (PanelCourse)c;
-        //            if (p.Controls.)
-        //        }
+        private void buttonValidate_Click(object sender, EventArgs e)
+        {
+            connection.Open();
+            foreach(Control c in panelAttendance.Controls)
+            {
+                if(c is PanelCourse)
+                {
+                    PanelCourse p = (PanelCourse)c;
+                    int att = 0;
+                    if (p.check.Checked == true)
+                    {
+                        p.status.Text = "Présent";
+                        att = 2;
+                    }
+                    if (p.late.Checked == true && p.check.Checked == true)
+                    {
+                        p.status.Text = "Late";
+                        att = 1;
+                    }
+                    string info = p.name.Text;
+                    string ID = info.Split(' ')[2];
+                    string name = course.name;
+                    String studentInfo = "SELECT * FROM attendance WHERE StudentID='" + ID + "' AND Subject ='" + name + "'";
+                    MySqlDataAdapter SDA = new MySqlDataAdapter(studentInfo, connection);
+                    DataTable dt = new DataTable();
+                    SDA.Fill(dt);
+                    String query;
+                    if (dt.Rows.Count == 0)
+                    {
+                        query = "INSERT INTO attendance (StudentID,Subject,Attendance) VALUES ('" + ID + "','" + name + "','"+att+"')";
+                    }
+                    else
+                    {
+                        string idAttendance = dt.Rows[0][0].ToString();
+                        string attendance = dt.Rows[0]["Attendance"].ToString() + " "+att;
+                        query = "UPDATE attendance SET Attendance='" + attendance + "'WHERE idAttendance='" + idAttendance + "'";
+                    }
+                    MySqlDataAdapter uptade = new MySqlDataAdapter(query, connection);
+                    uptade.SelectCommand.ExecuteNonQuery();
+                }
+            }
+            buttonValidate.Enabled = false;
+            buttonModify.Enabled = true;
+            connection.Close();
+        }
 
-        //    }
-        //}
+        private void buttonModify_Click(object sender, EventArgs e)
+        {
+            connection.Open();
+            foreach (Control c in panelAttendance.Controls)
+            {
+                if (c is PanelCourse)
+                {
+                    PanelCourse p = (PanelCourse)c;
+                    int att = 0;
+                    if (p.check.Checked == true && p.late.Checked==false)
+                    {
+                        p.status.Text = "Présent";
+                        att = 2;
+                    }
+                    else if (p.late.Checked == true && p.check.Checked==true)
+                    {
+                        p.status.Text = "Late";
+                        att = 1;
+                    }
+                    else
+                        p.status.Text = "Absent";
+                    string info = p.name.Text;
+                    string ID = info.Split(' ')[2];
+                    string name = course.name;
+                    String studentInfo = "SELECT * FROM attendance WHERE StudentID='" + ID + "' AND Subject ='" + name + "'";
+                    MySqlDataAdapter SDA = new MySqlDataAdapter(studentInfo, connection);
+                    DataTable dt = new DataTable();
+                    SDA.Fill(dt);
+                    string idAttendance = dt.Rows[0][0].ToString();
+                    string[] attendance = dt.Rows[0]["Attendance"].ToString().Split(' ');
+                    attendance[attendance.Length - 1] = "" + att;
+                    string newAttendance = "";
+                    for (int i = 0; i < attendance.Length; i++)
+                    {
+                        if (i == 0)
+                            newAttendance += attendance[0];
+                        else
+                            newAttendance += " " + attendance[i];
+                    }
+                    String query = "UPDATE attendance SET Attendance='" + newAttendance + "'WHERE idAttendance='" + idAttendance + "'";
+                    MySqlDataAdapter uptade = new MySqlDataAdapter(query, connection);
+                    uptade.SelectCommand.ExecuteNonQuery();
+                }
+            }
+            connection.Close();
+        }
     }
 }

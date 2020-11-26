@@ -114,10 +114,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddGrade.cs">
+    <Compile Include="Forms\AddGrade.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddGrade.Designer.cs">
+    <Compile Include="Forms\AddGrade.Designer.cs">
       <DependentUpon>AddGrade.cs</DependentUpon>
     </Compile>
     <Compile Include="Attendance.cs" />
@@ -127,10 +127,10 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Class.cs" />
-    <Compile Include="CreateExam.cs">
+    <Compile Include="Forms\CreateExam.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreateExam.Designer.cs">
+    <Compile Include="Forms\CreateExam.Designer.cs">
       <DependentUpon>CreateExam.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\AddGradeWindows.cs">
@@ -248,10 +248,10 @@
     <Compile Include="Forms\Users\Administrator.cs" />
     <Compile Include="Forms\Users\Student.cs" />
     <Compile Include="Forms\Users\User.cs" />
-    <EmbeddedResource Include="AddGrade.resx">
+    <EmbeddedResource Include="Forms\AddGrade.resx">
       <DependentUpon>AddGrade.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CreateExam.resx">
+    <EmbeddedResource Include="Forms\CreateExam.resx">
       <DependentUpon>CreateExam.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddGradeWindows.resx">
