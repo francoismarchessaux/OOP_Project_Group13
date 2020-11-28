@@ -37,7 +37,6 @@ namespace OOP_Project_Group13.Forms
             this.DeleteBtn = new System.Windows.Forms.Button();
             this.panelTT = new System.Windows.Forms.Panel();
             this.ClassesBtn = new System.Windows.Forms.Button();
-            this.AttendanceBtn = new System.Windows.Forms.Button();
             this.classesPanel = new System.Windows.Forms.Panel();
             this.ttBtn = new System.Windows.Forms.Button();
             this.ModifyBtn = new System.Windows.Forms.Button();
@@ -128,16 +127,6 @@ namespace OOP_Project_Group13.Forms
             this.ClassesBtn.UseVisualStyleBackColor = true;
             this.ClassesBtn.Click += new System.EventHandler(this.button2_Click);
             // 
-            // AttendanceBtn
-            // 
-            this.AttendanceBtn.Location = new System.Drawing.Point(352, 322);
-            this.AttendanceBtn.Name = "AttendanceBtn";
-            this.AttendanceBtn.Size = new System.Drawing.Size(157, 39);
-            this.AttendanceBtn.TabIndex = 10;
-            this.AttendanceBtn.Text = "Attendance";
-            this.AttendanceBtn.UseVisualStyleBackColor = true;
-            this.AttendanceBtn.Click += new System.EventHandler(this.AttendanceBtn_Click);
-            // 
             // classesPanel
             // 
             this.classesPanel.AutoSize = true;
@@ -176,7 +165,6 @@ namespace OOP_Project_Group13.Forms
             this.Controls.Add(this.ModifyBtn);
             this.Controls.Add(this.ttBtn);
             this.Controls.Add(this.classesPanel);
-            this.Controls.Add(this.AttendanceBtn);
             this.Controls.Add(this.ClassesBtn);
             this.Controls.Add(this.panelTT);
             this.Controls.Add(this.DeleteBtn);
@@ -209,7 +197,6 @@ namespace OOP_Project_Group13.Forms
         private System.Windows.Forms.Button DeleteBtn;
         private System.Windows.Forms.Panel panelTT;
         private System.Windows.Forms.Button ClassesBtn;
-        private System.Windows.Forms.Button AttendanceBtn;
         private System.Windows.Forms.Panel classesPanel;
         private System.Windows.Forms.Button ttBtn;
         private System.Windows.Forms.Button ModifyBtn;

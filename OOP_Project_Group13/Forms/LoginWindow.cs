@@ -37,7 +37,6 @@ namespace OOP_Project_Group13
                     case "Admin":
                         Administrator admin = new Administrator(Convert.ToInt32(userTable.Rows[0]["userID"]));
                         AdministratorMainWindow adminWindow = new AdministratorMainWindow(admin, connection);
-                        this.Hide();
                         adminWindow.Show();
                         break;
 
@@ -53,14 +52,12 @@ namespace OOP_Project_Group13
                         Faculty teacher = new Faculty(Convert.ToInt32(userTable.Rows[0]["userID"]));
                         //FacultyHomePage facultyInfoWin = new FacultyHomePage(connection, teacher);
                         FacultyInformationsWindows facWin = new FacultyInformationsWindows(connection, teacher, "Teacher");
-                        this.Hide();
                         facWin.Show();
                         break;
 
                     case "Student":
                         Student selectedStudent = new Student(Convert.ToInt32(userTable.Rows[0]["userID"].ToString()));
                         StudentInformationsWindow studentInfoWin = new StudentInformationsWindow(connection, selectedStudent);
-                        this.Hide();
                         studentInfoWin.Show();
                         break;
                 }
@@ -71,6 +68,8 @@ namespace OOP_Project_Group13
                 userID_TextBox.Clear();
                 password_TextBox.Clear();
             }
+            userID_TextBox.Clear();
+            password_TextBox.Clear();
         }
 
         private void password_TextBox_KeyPress(object sender, KeyPressEventArgs e)

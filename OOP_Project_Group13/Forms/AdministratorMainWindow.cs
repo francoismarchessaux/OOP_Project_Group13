@@ -135,5 +135,10 @@ namespace OOP_Project_Group13
                 this.ClassesList.Items.Add(ClassTable.Rows[i]["className"]);
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

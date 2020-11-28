@@ -92,11 +92,8 @@ namespace OOP_Project_Group13
             else
             {
                 Faculty teacher = (Faculty)user;
-                query = "SELECT * FROM Course WHERE Class='" + teacher.Classes[0].name + "' ";
-                for (int i = 1; i < teacher.Classes.Count; i++)
-                {
-                    query+="OR Class='"+teacher.Classes[i].name+"' ";
-                }
+                string teacherSelect = teacher.name + " " + teacher.firstName + " " + teacher.ID;
+                query = "SELECT * FROM Course WHERE Teacher ='" + teacherSelect + "' ";
             }
             MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
             DataTable dt = new DataTable();

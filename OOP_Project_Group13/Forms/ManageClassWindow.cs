@@ -76,5 +76,21 @@ namespace OOP_Project_Group13.Forms
         {
 
         }
+
+        private void BackBtn_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void deleteBtn_Click(object sender, EventArgs e)
+        {
+            String query = "DELETE FROM class WHERE className = '" + group.name + "'";
+            MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
+            connection.Open();
+            SDA.SelectCommand.ExecuteNonQuery();
+            connection.Close();
+            MessageBox.Show("Class deleted successfully !");
+            Close();
+        }
     }
 }
