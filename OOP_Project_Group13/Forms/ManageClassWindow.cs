@@ -95,9 +95,9 @@ namespace OOP_Project_Group13.Forms
 
         private void button3_Click(object sender, EventArgs e)
         {
-            TimeTablePnl.Hide();
+            TimeTablePnl.Visible = false;
             Refresh();
-            TimeTablePnl.Show();
+            dataGridView1.Visible = true;
         }
     }
 }
