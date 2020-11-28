@@ -19,6 +19,41 @@ namespace OOP_Project_Group13.Forms
             course = _course;
             GetListStudents();
             labelName.Text = course.name + " " + course.courseClass.name;
+            if (_course.day != DateTime.Now.DayOfWeek.ToString())
+            {
+                buttonValidate.Enabled = false;
+                buttonModify.Enabled = true;
+                foreach (Control c in panelAttendance.Controls)
+                {
+                    if (c is PanelCourse)
+                    {
+                        PanelCourse p = (PanelCourse)c;
+                        string info = p.name.Text;
+                        string ID = info.Split(' ')[2];
+                        string name = course.name;
+                        String studentInfo = "SELECT * FROM attendance WHERE StudentID='" + ID + "' AND Subject ='" + name + "'";
+                        MySqlDataAdapter SDA = new MySqlDataAdapter(studentInfo, connection);
+                        DataTable dt = new DataTable();
+                        SDA.Fill(dt);
+                        if (dt.Rows.Count != 0)
+                        {
+                            string[] attendance = dt.Rows[0]["Attendance"].ToString().Split(' ');
+                            int lastAtt = Convert.ToInt32(attendance[attendance.Length - 1]);
+                            if (lastAtt == 1)
+                            {
+                                p.check.Checked = true;
+                                p.status.Text = "Late";
+                                p.late.Checked = true;
+                            }
+                            if (lastAtt == 2)
+                            {
+                                p.check.Checked = true;
+                                p.status.Text = "Present";
+                            }
+                        }
+                    }
+                }
+            }
         }
         public void GetListStudents()
         {
