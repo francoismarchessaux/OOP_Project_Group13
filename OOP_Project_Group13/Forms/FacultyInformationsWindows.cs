@@ -16,6 +16,7 @@ namespace OOP_Project_Group13.Forms
             connection = _connection;
             Teacher = _Teacher;
             status = _status;
+            classesPanel.Hide();
             TimeTable tt = new TimeTable(Teacher, panelTT, status);
             tt.InitializeTimeTable();
             tt.GetTimetable();
@@ -27,8 +28,6 @@ namespace OOP_Project_Group13.Forms
             {
                 ModifyBtn.Hide();
             }
-            panelTT.Enabled = false;
-            panelTT.Hide();
             classesPanel.Enabled = false;
             TeacherName.Text = Teacher.firstName + " " + Teacher.name;
             teacherID.Text = "ID : " + Teacher.ID.ToString();
@@ -111,6 +110,7 @@ namespace OOP_Project_Group13.Forms
 
         private void classButton_Click(object sender, EventArgs e)
         {
+            panelTT.Hide();
             ButtonClass classBtn = sender as ButtonClass;
             Class group = new Class(classBtn.name);
             if(status == "Teacher")

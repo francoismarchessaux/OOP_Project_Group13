@@ -176,12 +176,6 @@
     <Compile Include="Forms\CreateUser.Designer.cs">
       <DependentUpon>CreateUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FacultyHomePage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FacultyHomePage.Designer.cs">
-      <DependentUpon>FacultyHomePage.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\FacultyInformationsWindows.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -274,9 +268,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CreateUser.resx">
       <DependentUpon>CreateUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FacultyHomePage.resx">
-      <DependentUpon>FacultyHomePage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FacultyInformationsWindows.resx">
       <DependentUpon>FacultyInformationsWindows.cs</DependentUpon>
