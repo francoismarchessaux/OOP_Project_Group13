@@ -36,7 +36,7 @@ namespace OOP_Project_Group13
             SDA.Fill(teacherTable);
             if(teacherTable.Rows.Count == 1)
             {
-                MessageBox.Show("This teacher already has a course at this time (Course : " + teacherTable.Rows[0]["Subject"] + ")");
+                MessageBox.Show("This teacher already has a course at this time (Course : " + teacherTable.Rows[0]["Subject"] + " with class " + teacherTable.Rows[0]["class"] + ")");
             }
             else
             {

@@ -41,6 +41,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.deleteBtn = new System.Windows.Forms.Button();
             this.BackBtn = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -178,12 +179,23 @@
             this.BackBtn.UseVisualStyleBackColor = true;
             this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click);
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(1523, 102);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(165, 42);
+            this.button3.TabIndex = 12;
+            this.button3.Text = "Refresh";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // ManageClassWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1701, 1050);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.BackBtn);
             this.Controls.Add(this.deleteBtn);
             this.Controls.Add(this.button2);
@@ -221,5 +233,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button deleteBtn;
         private System.Windows.Forms.Button BackBtn;
+        private System.Windows.Forms.Button button3;
     }
 }

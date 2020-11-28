@@ -92,5 +92,12 @@ namespace OOP_Project_Group13.Forms
             MessageBox.Show("Class deleted successfully !");
             Close();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            TimeTablePnl.Hide();
+            Refresh();
+            TimeTablePnl.Show();
+        }
     }
 }

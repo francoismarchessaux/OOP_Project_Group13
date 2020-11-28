@@ -64,7 +64,14 @@ namespace OOP_Project_Group13.Forms
             string StudentsIDs = "";
             for (int i = 0; i < dataGridView1.RowCount; i++)
             {
-                StudentsIDs = dataGridView1[3, i].Value + " " + StudentsIDs;
+                if(i == dataGridView1.RowCount - 1)
+                {
+                    StudentsIDs += dataGridView1[1, i].Value;
+                }
+                else
+                {
+                    StudentsIDs += dataGridView1[1, i].Value + " ";
+                }
             }
             String query = "SELECT * from Class WHERE className = '" + NameGroup +  "' AND studentsIDs = '" + StudentsIDs + "'";
             MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
