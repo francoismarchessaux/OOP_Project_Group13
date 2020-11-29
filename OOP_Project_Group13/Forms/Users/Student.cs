@@ -180,8 +180,7 @@ namespace OOP_Project_Group13.Users
                 }
             }
         }
-
-        public void FeesPanel(Panel panel)
+        public void FeesPanel(Panel panel, string _status)
         {
             String query = "SELECT * FROM users WHERE userID ='" + ID + "' AND status ='Student'";
             MySqlDataAdapter SDA = new MySqlDataAdapter(query, con);
@@ -209,14 +208,29 @@ namespace OOP_Project_Group13.Users
 
             if (Convert.ToDouble(dt.Rows[0]["fees"]) > 0.00 )
             {
-                Status.Text = " The student " + dt.Rows[0]["name"].ToString() + " " + dt.Rows[0]["firstName"].ToString() + " is in dept of " + dt.Rows[0]["fees"].ToString() + "£.";
+                if (status == "admin")
+                {
+                    Status.Text = " The student " + dt.Rows[0]["name"].ToString() + " " + dt.Rows[0]["firstName"].ToString() + " has an outstanding balance of " + dt.Rows[0]["fees"].ToString() + "£.";
+                }
+                else
+                {
+                    Status.Text = dt.Rows[0]["name"].ToString() + " " + dt.Rows[0]["firstName"].ToString() + ", you have an outstanding balance of " + dt.Rows[0]["fees"].ToString() + "£.";
+                }
+                
                 Status.AutoSize = true;
                 Status.Visible = true;
             }
 
             else
             {
-                Status.Text = " The student " + dt.Rows[0]["name"].ToString() + " " + dt.Rows[0]["firstName"].ToString() + " has already paid the tuitions fees for the year.";
+                if (status == "admin")
+                {
+                    Status.Text = " The student " + dt.Rows[0]["name"].ToString() + " " + dt.Rows[0]["firstName"].ToString() + " has already paid the tuition fees for the year.";
+                }
+                else
+                {
+                    Status.Text = dt.Rows[0]["name"].ToString() + " " + dt.Rows[0]["firstName"].ToString() + ", you have already paid the tuiton fees for the year.";
+                }                
                 Status.AutoSize = true;
                 Status.Visible = true;
             }
@@ -224,13 +238,13 @@ namespace OOP_Project_Group13.Users
             newPan.Controls.Add(Status);
             Status.Location = new Point(20, 10);
 
-            FeesPaid.Text = "Fees paid : " + dt.Rows[0]["feesPaid"].ToString() + "£.";
+            FeesPaid.Text = "Fees already paid : " + dt.Rows[0]["feesPaid"].ToString() + "£.";
             FeesPaid.AutoSize = true;
             FeesPaid.Visible = true;
             newPan.Controls.Add(FeesPaid);
             FeesPaid.Location = new Point(40, 40);
 
-            FeesLeft.Text = "Fees left to pay : " + dt.Rows[0]["fees"].ToString() + "£.";
+            FeesLeft.Text = "Amount left to pay : " + dt.Rows[0]["fees"].ToString() + "£.";
             FeesLeft.AutoSize = true;
             FeesLeft.Visible = true;
             newPan.Controls.Add(FeesLeft);

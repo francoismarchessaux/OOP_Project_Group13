@@ -212,6 +212,12 @@
     <Compile Include="Forms\ModifyProfile.Designer.cs">
       <DependentUpon>ModifyProfile.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\PaymentWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PaymentWindow.Designer.cs">
+      <DependentUpon>PaymentWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Grade.cs" />
     <Compile Include="Forms\StudentInformationsWindow.cs">
       <SubType>Form</SubType>
@@ -286,6 +292,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ModifyProfile.resx">
       <DependentUpon>ModifyProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PaymentWindow.resx">
+      <DependentUpon>PaymentWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\StudentInformationsWindow.resx">
       <DependentUpon>StudentInformationsWindow.cs</DependentUpon>

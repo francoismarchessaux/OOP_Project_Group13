@@ -29,6 +29,18 @@ namespace OOP_Project_Group13.Forms
             admin = _admin;
         }
 
+        private void CreateClass_Load(object sender, EventArgs e)
+        {
+            String query = "Select * from Users Where status = 'Student'and className is NULL";
+            MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
+            DataTable userTable = new DataTable();
+            SDA.Fill(userTable);
+            for (int i = 0; i < userTable.Rows.Count; i++)
+            {
+                this.ComboStudent.Items.Add(userTable.Rows[i]["name"].ToString() + " " + userTable.Rows[i]["firstName"].ToString() + " " + userTable.Rows[i]["userID"].ToString());
+            }
+        }
+
         private void ComboStudent_SelectedIndexChanged(object sender, EventArgs e)
         {
         }
@@ -86,17 +98,7 @@ namespace OOP_Project_Group13.Forms
             this.Close();
         }
         
-        private void CreateClass_Load(object sender, EventArgs e)
-        {
-            String query = "Select * from Users Where status = 'Student'and className is NULL";
-            MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
-            DataTable userTable = new DataTable();
-            SDA.Fill(userTable);
-            for (int i = 0; i < userTable.Rows.Count; i++)
-            {                               
-                this.ComboStudent.Items.Add(userTable.Rows[i]["name"].ToString() + " " + userTable.Rows[i]["firstName"].ToString() + " " + userTable.Rows[i]["userID"].ToString());                
-            }            
-        }
+        
 
         private void Clear_Click(object sender, EventArgs e)
         {

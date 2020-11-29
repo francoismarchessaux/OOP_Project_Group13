@@ -95,7 +95,7 @@ namespace OOP_Project_Group13
         private void Fees_Click(object sender, EventArgs e)
         {
             generalPanel.Controls.Clear();           
-            student.FeesPanel(generalPanel);
+            student.FeesPanel(generalPanel, status);
 
             if (status == "student")
             {
@@ -105,7 +105,8 @@ namespace OOP_Project_Group13
 
         private void PaymentButton_Click(object sender, EventArgs e)
         {
-
+            PaymentWindow paymentWindow = new PaymentWindow();
+            paymentWindow.Show();
         }
     }
 }
