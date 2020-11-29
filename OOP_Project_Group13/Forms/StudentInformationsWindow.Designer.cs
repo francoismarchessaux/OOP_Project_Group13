@@ -40,6 +40,7 @@
             this.generalPanel = new System.Windows.Forms.Panel();
             this.buttonAttendance = new System.Windows.Forms.Button();
             this.Fees = new System.Windows.Forms.Button();
+            this.PaymentButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.StudentPicture)).BeginInit();
             this.SuspendLayout();
             // 
@@ -115,7 +116,7 @@
             // buttonGrade
             // 
             this.buttonGrade.Location = new System.Drawing.Point(13, 175);
-            this.buttonGrade.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonGrade.Margin = new System.Windows.Forms.Padding(2);
             this.buttonGrade.Name = "buttonGrade";
             this.buttonGrade.Size = new System.Drawing.Size(56, 19);
             this.buttonGrade.TabIndex = 9;
@@ -126,7 +127,7 @@
             // buttonTimeTable
             // 
             this.buttonTimeTable.Location = new System.Drawing.Point(68, 175);
-            this.buttonTimeTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonTimeTable.Margin = new System.Windows.Forms.Padding(2);
             this.buttonTimeTable.Name = "buttonTimeTable";
             this.buttonTimeTable.Size = new System.Drawing.Size(67, 19);
             this.buttonTimeTable.TabIndex = 10;
@@ -142,15 +143,15 @@
             this.generalPanel.AutoScroll = true;
             this.generalPanel.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.generalPanel.Location = new System.Drawing.Point(14, 193);
-            this.generalPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.generalPanel.Margin = new System.Windows.Forms.Padding(2);
             this.generalPanel.Name = "generalPanel";
-            this.generalPanel.Size = new System.Drawing.Size(931, 346);
+            this.generalPanel.Size = new System.Drawing.Size(931, 344);
             this.generalPanel.TabIndex = 27;
             // 
             // buttonAttendance
             // 
             this.buttonAttendance.Location = new System.Drawing.Point(133, 175);
-            this.buttonAttendance.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonAttendance.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAttendance.Name = "buttonAttendance";
             this.buttonAttendance.Size = new System.Drawing.Size(74, 19);
             this.buttonAttendance.TabIndex = 28;
@@ -168,12 +169,23 @@
             this.Fees.UseVisualStyleBackColor = true;
             this.Fees.Click += new System.EventHandler(this.Fees_Click);
             // 
+            // PaymentButton
+            // 
+            this.PaymentButton.Location = new System.Drawing.Point(357, 542);
+            this.PaymentButton.Name = "PaymentButton";
+            this.PaymentButton.Size = new System.Drawing.Size(222, 27);
+            this.PaymentButton.TabIndex = 0;
+            this.PaymentButton.Text = "Click here to proceed payment";
+            this.PaymentButton.UseVisualStyleBackColor = true;
+            this.PaymentButton.Click += new System.EventHandler(this.PaymentButton_Click);
+            // 
             // StudentInformationsWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(952, 561);
+            this.ClientSize = new System.Drawing.Size(952, 569);
+            this.Controls.Add(this.PaymentButton);
             this.Controls.Add(this.Fees);
             this.Controls.Add(this.buttonAttendance);
             this.Controls.Add(this.generalPanel);
@@ -212,5 +224,6 @@
         private System.Windows.Forms.Panel generalPanel;
         private System.Windows.Forms.Button buttonAttendance;
         private System.Windows.Forms.Button Fees;
+        private System.Windows.Forms.Button PaymentButton;
     }
 }

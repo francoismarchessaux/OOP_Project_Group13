@@ -19,11 +19,14 @@ namespace OOP_Project_Group13
     {
         MySqlConnection connection;
         Student student;
-        public StudentInformationsWindow(MySqlConnection _connection, Student _student)
+        string status;
+
+        public StudentInformationsWindow(MySqlConnection _connection, Student _student, string _status)
         {
             InitializeComponent();
             connection = _connection;
             student = _student;
+            status = _status;
         }
 
         private void StudentInformationsWindow_Load(object sender, EventArgs e)
@@ -57,7 +60,10 @@ namespace OOP_Project_Group13
             }
             StudentPicture.ImageLocation = student.profilePicture;
             student.GetGrades(generalPanel);
+
+            PaymentButton.Hide();
         }
+
         private void PanelTimeTable_Paint(object sender, PaintEventArgs e)
         {
 
@@ -68,25 +74,38 @@ namespace OOP_Project_Group13
             generalPanel.Controls.Clear();
             TimeTable tt = new TimeTable(student, generalPanel);
             tt.InitializeTimeTable();
-            tt.GetTimetable();            
+            tt.GetTimetable();
+            PaymentButton.Hide();
         }
         
         private void buttonGrade_Click(object sender, EventArgs e)
         {
             generalPanel.Controls.Clear();
             student.GetGrades(generalPanel);
+            PaymentButton.Hide();
         }
 
         private void buttonAttendance_Click(object sender, EventArgs e)
         {
             generalPanel.Controls.Clear();
             student.attendances.GetAttendance(generalPanel);
+            PaymentButton.Hide();
         }
 
         private void Fees_Click(object sender, EventArgs e)
         {
-            generalPanel.Controls.Clear();
+            generalPanel.Controls.Clear();           
             student.FeesPanel(generalPanel);
+
+            if (status == "student")
+            {
+                PaymentButton.Show();
+            }
+        }
+
+        private void PaymentButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
