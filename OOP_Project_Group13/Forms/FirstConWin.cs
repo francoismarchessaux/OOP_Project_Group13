@@ -22,6 +22,7 @@ namespace OOP_Project_Group13.Forms
             InitializeComponent();
             id = _id;
             connection = _connection;
+            status = _status;
         }
 
         private void button1_Click(object sender, EventArgs e)
