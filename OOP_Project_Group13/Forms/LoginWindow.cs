@@ -16,7 +16,7 @@ namespace OOP_Project_Group13
 {
     public partial class LoginWindow : Form
     {
-        MySqlConnection connection;
+        static MySqlConnection connection;
         public LoginWindow(MySqlConnection _connection)
         {
             InitializeComponent();
@@ -41,24 +41,27 @@ namespace OOP_Project_Group13
                         break;
 
                     case "Faculty":
-                        string classes = userTable.Rows[0]["className"].ToString();
-                        string[] list = classes.Split(' ');
-                        List<Class> listClasses = new List<Class>();
-                        foreach(string classe in list)
+                        if(userTable.Rows[0]["firstConnection"].ToString() == "true")
                         {
-                            Class c = new Class(classe);
-                            listClasses.Add(c);
+                            FirstConWin win = new FirstConWin(userID_TextBox.Text, connection, "Teacher");
+                            win.Show();
                         }
-                        Faculty teacher = new Faculty(Convert.ToInt32(userTable.Rows[0]["userID"]));
-                        //FacultyHomePage facultyInfoWin = new FacultyHomePage(connection, teacher);
-                        FacultyInformationsWindows facWin = new FacultyInformationsWindows(connection, teacher, "Teacher");
-                        facWin.Show();
+                        else
+                        {
+                            RunTeacher(userID_TextBox.Text);
+                        }
                         break;
 
                     case "Student":
-                        Student selectedStudent = new Student(Convert.ToInt32(userTable.Rows[0]["userID"].ToString()));
-                        StudentInformationsWindow studentInfoWin = new StudentInformationsWindow(connection, selectedStudent, "student");
-                        studentInfoWin.Show();
+                        if (userTable.Rows[0]["firstConnection"].ToString() == "true")
+                        {
+                            FirstConWin win = new FirstConWin(userID_TextBox.Text, connection, "Student");
+                            win.Show();
+                        }
+                        else
+                        {
+                            RunStudent(userID_TextBox.Text);
+                        }
                         break;
                 }
             }
@@ -78,6 +81,36 @@ namespace OOP_Project_Group13
             {
                 button1_Click(sender, e);
             }
+        }
+
+        public static void RunTeacher(string id)
+        {
+            String query = "Select * from users Where userID = ' " + id + "'";
+            MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
+            DataTable userTable = new DataTable();
+            SDA.Fill(userTable);
+            string classes = userTable.Rows[0]["className"].ToString();
+            string[] list = classes.Split(' ');
+            List<Class> listClasses = new List<Class>();
+            foreach (string classe in list)
+            {
+                Class c = new Class(classe);
+                listClasses.Add(c);
+            }
+            Faculty teacher = new Faculty(Convert.ToInt32(userTable.Rows[0]["userID"]));
+            FacultyInformationsWindows facWin = new FacultyInformationsWindows(connection, teacher, "Teacher");
+            facWin.Show();
+        }
+
+        public static void RunStudent(string id)
+        {
+            String query = "Select * from users Where userID = ' " + id + "'";
+            MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
+            DataTable userTable = new DataTable();
+            SDA.Fill(userTable);
+            Student selectedStudent = new Student(Convert.ToInt32(userTable.Rows[0]["userID"].ToString()));
+            StudentInformationsWindow studentInfoWin = new StudentInformationsWindow(connection, selectedStudent, "student");
+            studentInfoWin.Show();
         }
     }
 }

@@ -30,6 +30,7 @@ namespace OOP_Project_Group13.Forms
             SDA.Fill(user);
             NameLabel.Text = "Name : " + user.Rows[0]["name"].ToString() + user.Rows[0]["firstName"].ToString();
             IDLabel.Text = "ID : " + user.Rows[0]["userID"].ToString();
+            MailLabel.Text = "Mail : " + user.Rows[0]["mail"].ToString();
             if (user.Rows[0]["birthday"].ToString() != "01/01/2000")
             {
                 dateTimePicker1.Value = Convert.ToDateTime(user.Rows[0]["birthday"].ToString());
@@ -44,8 +45,34 @@ namespace OOP_Project_Group13.Forms
             }
             if (user.Rows[0]["phone"].ToString() != "0000000000")
             {
-                ProfilePictureTxtBox.Text = user.Rows[0]["phone"].ToString();
+                PhoneTxtBox.Text = user.Rows[0]["phone"].ToString();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.DefaultExt = "jpg";
+            ofd.CheckFileExists = true;
+            ofd.CheckPathExists = true;
+            ofd.ShowDialog();
+            ProfilePictureTxtBox.Text = ofd.FileName;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            String query = $"UPDATE users SET profilePicture = '{ProfilePictureTxtBox.Text}', birthday = '{dateTimePicker1.Value.Date.ToString("yyyy/MM/dd")}', phone = '{PhoneTxtBox.Text}', address = '{addressTxtBox.Text}' WHERE(userID = '{ID}')";
+            MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
+            connection.Open();
+            SDA.SelectCommand.ExecuteNonQuery();
+            connection.Close();
+            MessageBox.Show("Profile updated successfully !");
+            Close();
         }
     }
 }

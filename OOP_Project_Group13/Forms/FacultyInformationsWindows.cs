@@ -27,6 +27,11 @@ namespace OOP_Project_Group13.Forms
             if(status == "Admin")
             {
                 ModifyBtn.Hide();
+                LogOutBtn.Hide();
+            }
+            else
+            {
+                DeleteBtn.Hide();
             }
             classesPanel.Enabled = false;
             TeacherName.Text = Teacher.firstName + " " + Teacher.name;
@@ -129,6 +134,11 @@ namespace OOP_Project_Group13.Forms
         {
             ModifyProfile modWin = new ModifyProfile(connection, Teacher.ID);
             modWin.Show();
+        }
+
+        private void LogOutBtn_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
