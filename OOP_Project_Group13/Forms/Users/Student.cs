@@ -253,6 +253,33 @@ namespace OOP_Project_Group13.Users
             panel.Controls.Add(newPan);
           
         }
+
+        public void PanelPayment(Panel panel)
+        {
+            String query = "SELECT * FROM users WHERE userID ='" + ID + "' AND status ='Student'";
+            MySqlDataAdapter SDA = new MySqlDataAdapter(query, con);
+            DataTable dt = new DataTable();
+            SDA.Fill(dt);
+
+            Label Name = new Label();
+            Label Intro = new Label();
+
+            Panel Payment = new Panel();
+            Payment.Height = 30;
+            Payment.Width = 930;
+            Payment.BackColor = Color.LightSlateGray;
+
+            Name.Text = dt.Rows[0]["name"].ToString() + " " + dt.Rows[0]["firstName"].ToString();
+            Intro.Text = "Payment of the tuitions fees of : ";
+            Intro.AutoSize = true;
+            Intro.Visible = true;
+
+            Payment.Controls.Add(Name); Payment.Controls.Add(Intro);
+            Name.Location = new Point(180, 7);
+            Intro.Location = new Point(5, 7);
+
+            panel.Controls.Add(Payment);
+        }
         #endregion
     }
 }

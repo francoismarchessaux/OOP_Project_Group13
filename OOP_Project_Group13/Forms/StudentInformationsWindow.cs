@@ -105,8 +105,13 @@ namespace OOP_Project_Group13
 
         private void PaymentButton_Click(object sender, EventArgs e)
         {
-            PaymentWindow paymentWindow = new PaymentWindow();
+            PaymentWindow paymentWindow = new PaymentWindow(connection, student, status);
             paymentWindow.Show();
+        }
+
+        private void generalPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

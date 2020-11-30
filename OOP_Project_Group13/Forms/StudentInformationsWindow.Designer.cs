@@ -147,6 +147,7 @@
             this.generalPanel.Name = "generalPanel";
             this.generalPanel.Size = new System.Drawing.Size(931, 344);
             this.generalPanel.TabIndex = 27;
+            this.generalPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.generalPanel_Paint);
             // 
             // buttonAttendance
             // 
