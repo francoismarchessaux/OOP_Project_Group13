@@ -78,7 +78,7 @@ namespace OOP_Project_Group13.Forms
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 100);
+            this.label2.Location = new System.Drawing.Point(12, 108);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(299, 13);
             this.label2.TabIndex = 5;
