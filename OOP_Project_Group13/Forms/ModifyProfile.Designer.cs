@@ -136,39 +136,43 @@
             this.ProfilePictureTxtBox.Name = "ProfilePictureTxtBox";
             this.ProfilePictureTxtBox.Size = new System.Drawing.Size(325, 31);
             this.ProfilePictureTxtBox.TabIndex = 18;
+            this.ProfilePictureTxtBox.Text = "./Images/pp1.jpg";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(531, 300);
+            this.button1.Location = new System.Drawing.Point(531, 296);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(59, 31);
+            this.button1.Size = new System.Drawing.Size(59, 38);
             this.button1.TabIndex = 19;
             this.button1.Text = "V";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(35, 420);
+            this.button2.Location = new System.Drawing.Point(35, 354);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(114, 37);
+            this.button2.Size = new System.Drawing.Size(114, 44);
             this.button2.TabIndex = 20;
             this.button2.Text = "Apply";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(169, 420);
+            this.button3.Location = new System.Drawing.Point(169, 354);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(114, 37);
+            this.button3.Size = new System.Drawing.Size(114, 44);
             this.button3.TabIndex = 21;
             this.button3.Text = "Back";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // ModifyProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(906, 660);
+            this.ClientSize = new System.Drawing.Size(608, 423);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -184,6 +188,7 @@
             this.Controls.Add(this.IDLabel);
             this.Controls.Add(this.NameLabel);
             this.Name = "ModifyProfile";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modify Profile";
             this.Load += new System.EventHandler(this.ModifyProfile_Load);
             this.ResumeLayout(false);

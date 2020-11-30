@@ -40,6 +40,7 @@ namespace OOP_Project_Group13.Forms
             this.classesPanel = new System.Windows.Forms.Panel();
             this.ttBtn = new System.Windows.Forms.Button();
             this.ModifyBtn = new System.Windows.Forms.Button();
+            this.LogOutBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.teacherPicture)).BeginInit();
             this.SuspendLayout();
             // 
@@ -156,12 +157,23 @@ namespace OOP_Project_Group13.Forms
             this.ModifyBtn.UseVisualStyleBackColor = true;
             this.ModifyBtn.Click += new System.EventHandler(this.ModifyBtn_Click);
             // 
+            // LogOutBtn
+            // 
+            this.LogOutBtn.Location = new System.Drawing.Point(26, 1014);
+            this.LogOutBtn.Name = "LogOutBtn";
+            this.LogOutBtn.Size = new System.Drawing.Size(157, 39);
+            this.LogOutBtn.TabIndex = 14;
+            this.LogOutBtn.Text = "Log Out";
+            this.LogOutBtn.UseVisualStyleBackColor = true;
+            this.LogOutBtn.Click += new System.EventHandler(this.LogOutBtn_Click);
+            // 
             // FacultyInformationsWindows
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1707, 1065);
+            this.Controls.Add(this.LogOutBtn);
             this.Controls.Add(this.ModifyBtn);
             this.Controls.Add(this.ttBtn);
             this.Controls.Add(this.classesPanel);
@@ -200,5 +212,6 @@ namespace OOP_Project_Group13.Forms
         private System.Windows.Forms.Panel classesPanel;
         private System.Windows.Forms.Button ttBtn;
         private System.Windows.Forms.Button ModifyBtn;
+        private System.Windows.Forms.Button LogOutBtn;
     }
 }
