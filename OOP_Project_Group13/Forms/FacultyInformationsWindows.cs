@@ -82,22 +82,33 @@ namespace OOP_Project_Group13.Forms
             if (classes.Rows.Count > 0)
             {
                 string[] classesTab = classes.Rows[0]["className"].ToString().Split(' ');
-                Label lbl = new Label();
-                lbl.AutoSize = true;
-                lbl.Location = new System.Drawing.Point(0, 25);
-                lbl.Text = "M. " + Teacher.name + " has " + (classesTab.Length) + " classes : ";
-                classesPanel.Controls.Add(lbl);
-                int y = 50;
-                for (int i = 0; i < classesTab.Length; i++)
+                if(classesTab[0] != "")
                 {
-                    string name = classesTab[i];
-                    ButtonClass classButton = new ButtonClass(name);
-                    classButton.Text = "Class " + name;
-                    classButton.Location = new System.Drawing.Point(0, y);
-                    classesPanel.Controls.Add(classButton);
-                    y += 25;
-                    classButton.Click += new EventHandler(classButton_Click);
+                    Label lbl = new Label();
+                    lbl.AutoSize = true;
+                    lbl.Location = new System.Drawing.Point(0, 25);
+                    lbl.Text = "M. " + Teacher.name + " has " + (classesTab.Length) + " classes : ";
+                    classesPanel.Controls.Add(lbl);
+                    int y = 50;
+                    for (int i = 0; i < classesTab.Length; i++)
+                    {
+                        string name = classesTab[i];
+                        ButtonClass classButton = new ButtonClass(name);
+                        classButton.Text = "Class " + name;
+                        classButton.Location = new System.Drawing.Point(0, y);
+                        classesPanel.Controls.Add(classButton);
+                        y += 25;
+                        classButton.Click += new EventHandler(classButton_Click);
+                    }
+                }else
+                {
+                    Label lbl = new Label();
+                    lbl.AutoSize = true;
+                    lbl.Location = new System.Drawing.Point(0, 25);
+                    lbl.Text = "M. " + Teacher.name + " has zero classes at the moment";
+                    classesPanel.Controls.Add(lbl);
                 }
+
             }
         }
 

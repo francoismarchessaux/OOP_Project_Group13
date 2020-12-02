@@ -49,7 +49,7 @@ namespace OOP_Project_Group13
             {
                 BirthDate.Text = "Birthday date : " + student.birthday.Date.ToString("dd/MM/yyyy");
             }
-            if (student.address == "Adress")
+            if (student.address == "Address")
             {
                 AdressLabel.Text = "Address : Not yet entered";
             }

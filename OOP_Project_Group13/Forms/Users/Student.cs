@@ -158,8 +158,11 @@ namespace OOP_Project_Group13.Users
                         }
                         if (subjExist == true)
                         {
-                            Grade grade = new Grade(Convert.ToInt32(row["studentGrade"].ToString()), row["AssesmentName"].ToString(), Convert.ToInt32(row["coefficient"].ToString()), avg.subject);
-                            avg.grades.Add(grade);
+                            if (row["studentGrade"].ToString() != "Not yet graded" && row["studentGrade"].ToString() != null)
+                            {
+                                Grade grade = new Grade(Convert.ToInt32(row["studentGrade"].ToString()), row["AssesmentName"].ToString(), Convert.ToInt32(row["coefficient"].ToString()), avg.subject);
+                                avg.grades.Add(grade);
+                            }
                         }
                         else
                         {
