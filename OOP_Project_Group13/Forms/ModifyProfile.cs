@@ -28,7 +28,7 @@ namespace OOP_Project_Group13.Forms
             MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
             DataTable user = new DataTable();
             SDA.Fill(user);
-            NameLabel.Text = "Name : " + user.Rows[0]["name"].ToString() + user.Rows[0]["firstName"].ToString();
+            NameLabel.Text = "Name : " + user.Rows[0]["name"].ToString() + " " + user.Rows[0]["firstName"].ToString();
             IDLabel.Text = "ID : " + user.Rows[0]["userID"].ToString();
             MailLabel.Text = "Mail : " + user.Rows[0]["mail"].ToString();
             if (user.Rows[0]["birthday"].ToString() != "01/01/2000")

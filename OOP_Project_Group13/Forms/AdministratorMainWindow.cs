@@ -38,7 +38,7 @@ namespace OOP_Project_Group13
         {
             string[] studentInfo = this.StudentList.Text.Split(' ');
             Student selectedStudent = new Student(Convert.ToInt32(studentInfo[2]));
-            StudentInformationsWindow studentInfoWin = new StudentInformationsWindow(connection, selectedStudent, "teacher");
+            StudentInformationsWindow studentInfoWin = new StudentInformationsWindow(connection, selectedStudent, "Admin");
             studentInfoWin.Show();
         }
 

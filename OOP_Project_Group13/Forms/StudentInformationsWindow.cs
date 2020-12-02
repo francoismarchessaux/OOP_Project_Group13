@@ -31,6 +31,14 @@ namespace OOP_Project_Group13
 
         private void StudentInformationsWindow_Load(object sender, EventArgs e)
         {
+            if(status == "Admin")
+            {
+                profileBtn.Visible = false;
+            }
+            else
+            {
+                backButton.Text = "Log Out";
+            }
             NameLabel.Text = student.name.ToUpper() + " " + student.firstName.ToLower();
             StudentIDLabel.Text = "ID : " + student.ID.ToString();
             if (student.birthday.Date.ToString("dd/MM/yyyy") == "01/01/2000")
@@ -61,7 +69,7 @@ namespace OOP_Project_Group13
             StudentPicture.ImageLocation = student.profilePicture;
             student.GetGrades(generalPanel);
 
-            PaymentButton.Hide();
+            PaymentButton.Visible = false;
         }
 
         private void PanelTimeTable_Paint(object sender, PaintEventArgs e)
@@ -75,21 +83,21 @@ namespace OOP_Project_Group13
             TimeTable tt = new TimeTable(student, generalPanel);
             tt.InitializeTimeTable();
             tt.GetTimetable();
-            PaymentButton.Hide();
+            PaymentButton.Visible = false;       
         }
         
         private void buttonGrade_Click(object sender, EventArgs e)
         {
             generalPanel.Controls.Clear();
             student.GetGrades(generalPanel);
-            PaymentButton.Hide();
+            PaymentButton.Visible = false;
         }
 
         private void buttonAttendance_Click(object sender, EventArgs e)
         {
             generalPanel.Controls.Clear();
             student.attendances.GetAttendance(generalPanel);
-            PaymentButton.Hide();
+            PaymentButton.Visible = false;
         }
 
         private void Fees_Click(object sender, EventArgs e)
@@ -97,9 +105,9 @@ namespace OOP_Project_Group13
             generalPanel.Controls.Clear();           
             student.FeesPanel(generalPanel, status);
 
-            if (status == "student")
+            if (status == "Student")
             {
-                PaymentButton.Show();
+                PaymentButton.Visible = true;
             }
         }
 
@@ -112,6 +120,17 @@ namespace OOP_Project_Group13
         private void generalPanel_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void profileBtn_Click(object sender, EventArgs e)
+        {
+            ModifyProfile mod = new ModifyProfile(connection, student.ID);
+            mod.Show();
+        }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

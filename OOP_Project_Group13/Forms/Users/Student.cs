@@ -134,11 +134,14 @@ namespace OOP_Project_Group13.Users
                     if (subjects.Count == 0)
                     {
                         Subject subject = new Subject(row["Subject"].ToString());
-                        Grade grade = new Grade(Convert.ToInt32(row["studentGrade"].ToString()), row["AssesmentName"].ToString(), Convert.ToInt32(row["coefficient"].ToString()), subject);
-                        List<Grade> grades = new List<Grade>();
-                        grades.Add(grade);
-                        Average avg = new Average(subject, grades);
-                        subjects.Add(avg);
+                        if (row["studentGrade"].ToString() != "Not yet graded")
+                        {
+                            Grade grade = new Grade(Convert.ToInt32(row["studentGrade"].ToString()), row["AssesmentName"].ToString(), Convert.ToInt32(row["coefficient"].ToString()), subject);
+                            List<Grade> grades = new List<Grade>();
+                            grades.Add(grade);
+                            Average avg = new Average(subject, grades);
+                            subjects.Add(avg);
+                        }
                     }
                     else
                     {
@@ -180,7 +183,7 @@ namespace OOP_Project_Group13.Users
                 }
             }
         }
-        public void FeesPanel(Panel panel, string _status)
+        public void FeesPanel(Panel panel, string status)
         {
             String query = "SELECT * FROM users WHERE userID ='" + ID + "' AND status ='Student'";
             MySqlDataAdapter SDA = new MySqlDataAdapter(query, con);
@@ -205,34 +208,36 @@ namespace OOP_Project_Group13.Users
             title.Controls.Add(Txt);
             panel.Controls.Add(title);
             Txt.Location = new Point(5, 11);
-
-            if (Convert.ToDouble(dt.Rows[0]["fees"]) > 0.00 )
+            if (dt.Rows[0]["fees"] != null && dt.Rows[0]["fees"].ToString() != "")
             {
-                if (status == "admin")
+                if (Convert.ToDouble(dt.Rows[0]["fees"]) > 0.00)
                 {
-                    Status.Text = " The student " + dt.Rows[0]["name"].ToString() + " " + dt.Rows[0]["firstName"].ToString() + " has an outstanding balance of " + dt.Rows[0]["fees"].ToString() + "£.";
+                    if (status == "Admin")
+                    {
+                        Status.Text = " The student " + dt.Rows[0]["name"].ToString() + " " + dt.Rows[0]["firstName"].ToString() + " has an outstanding balance of " + dt.Rows[0]["fees"].ToString() + "£.";
+                    }
+                    else
+                    {
+                        Status.Text = dt.Rows[0]["name"].ToString() + " " + dt.Rows[0]["firstName"].ToString() + ", you have an outstanding balance of " + dt.Rows[0]["fees"].ToString() + "£.";
+                    }
+
+                    Status.AutoSize = true;
+                    Status.Visible = true;
                 }
+
                 else
                 {
-                    Status.Text = dt.Rows[0]["name"].ToString() + " " + dt.Rows[0]["firstName"].ToString() + ", you have an outstanding balance of " + dt.Rows[0]["fees"].ToString() + "£.";
+                    if (status == "Admin")
+                    {
+                        Status.Text = " The student " + dt.Rows[0]["name"].ToString() + " " + dt.Rows[0]["firstName"].ToString() + " has already paid the tuition fees for the year.";
+                    }
+                    else
+                    {
+                        Status.Text = dt.Rows[0]["name"].ToString() + " " + dt.Rows[0]["firstName"].ToString() + ", you have already paid the tuiton fees for the year.";
+                    }
+                    Status.AutoSize = true;
+                    Status.Visible = true;
                 }
-                
-                Status.AutoSize = true;
-                Status.Visible = true;
-            }
-
-            else
-            {
-                if (status == "admin")
-                {
-                    Status.Text = " The student " + dt.Rows[0]["name"].ToString() + " " + dt.Rows[0]["firstName"].ToString() + " has already paid the tuition fees for the year.";
-                }
-                else
-                {
-                    Status.Text = dt.Rows[0]["name"].ToString() + " " + dt.Rows[0]["firstName"].ToString() + ", you have already paid the tuiton fees for the year.";
-                }                
-                Status.AutoSize = true;
-                Status.Visible = true;
             }
 
             newPan.Controls.Add(Status);
