@@ -41,58 +41,66 @@ namespace OOP_Project_Group13.Forms
             this.ttBtn = new System.Windows.Forms.Button();
             this.ModifyBtn = new System.Windows.Forms.Button();
             this.LogOutBtn = new System.Windows.Forms.Button();
+            this.comboBoxStudent = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.teacherPicture)).BeginInit();
             this.SuspendLayout();
             // 
             // teacherPicture
             // 
-            this.teacherPicture.Location = new System.Drawing.Point(26, 26);
+            this.teacherPicture.Location = new System.Drawing.Point(20, 21);
+            this.teacherPicture.Margin = new System.Windows.Forms.Padding(2);
             this.teacherPicture.Name = "teacherPicture";
-            this.teacherPicture.Size = new System.Drawing.Size(200, 265);
+            this.teacherPicture.Size = new System.Drawing.Size(150, 212);
             this.teacherPicture.TabIndex = 0;
             this.teacherPicture.TabStop = false;
             // 
             // TeacherName
             // 
             this.TeacherName.AutoSize = true;
-            this.TeacherName.Location = new System.Drawing.Point(246, 26);
+            this.TeacherName.Location = new System.Drawing.Point(184, 21);
+            this.TeacherName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TeacherName.Name = "TeacherName";
-            this.TeacherName.Size = new System.Drawing.Size(153, 25);
+            this.TeacherName.Size = new System.Drawing.Size(113, 20);
             this.TeacherName.TabIndex = 1;
             this.TeacherName.Text = "Teacher Name";
             // 
             // teacherID
             // 
             this.teacherID.AutoSize = true;
-            this.teacherID.Location = new System.Drawing.Point(246, 70);
+            this.teacherID.Location = new System.Drawing.Point(184, 56);
+            this.teacherID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.teacherID.Name = "teacherID";
-            this.teacherID.Size = new System.Drawing.Size(117, 25);
+            this.teacherID.Size = new System.Drawing.Size(88, 20);
             this.teacherID.TabIndex = 2;
             this.teacherID.Text = "Teacher ID";
             // 
             // TeacherMail
             // 
             this.TeacherMail.AutoSize = true;
-            this.TeacherMail.Location = new System.Drawing.Point(246, 118);
+            this.TeacherMail.Location = new System.Drawing.Point(184, 94);
+            this.TeacherMail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TeacherMail.Name = "TeacherMail";
-            this.TeacherMail.Size = new System.Drawing.Size(136, 25);
+            this.TeacherMail.Size = new System.Drawing.Size(99, 20);
             this.TeacherMail.TabIndex = 3;
             this.TeacherMail.Text = "Teacher mail";
             // 
             // TeacherPhone
             // 
             this.TeacherPhone.AutoSize = true;
-            this.TeacherPhone.Location = new System.Drawing.Point(246, 168);
+            this.TeacherPhone.Location = new System.Drawing.Point(184, 134);
+            this.TeacherPhone.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TeacherPhone.Name = "TeacherPhone";
-            this.TeacherPhone.Size = new System.Drawing.Size(157, 25);
+            this.TeacherPhone.Size = new System.Drawing.Size(116, 20);
             this.TeacherPhone.TabIndex = 4;
             this.TeacherPhone.Text = "Teacher phone";
             // 
             // BackBtn
             // 
-            this.BackBtn.Location = new System.Drawing.Point(200, 1014);
+            this.BackBtn.Location = new System.Drawing.Point(150, 811);
+            this.BackBtn.Margin = new System.Windows.Forms.Padding(2);
             this.BackBtn.Name = "BackBtn";
-            this.BackBtn.Size = new System.Drawing.Size(119, 39);
+            this.BackBtn.Size = new System.Drawing.Size(89, 31);
             this.BackBtn.TabIndex = 5;
             this.BackBtn.Text = "Back";
             this.BackBtn.UseVisualStyleBackColor = true;
@@ -100,9 +108,10 @@ namespace OOP_Project_Group13.Forms
             // 
             // DeleteBtn
             // 
-            this.DeleteBtn.Location = new System.Drawing.Point(26, 1014);
+            this.DeleteBtn.Location = new System.Drawing.Point(20, 811);
+            this.DeleteBtn.Margin = new System.Windows.Forms.Padding(2);
             this.DeleteBtn.Name = "DeleteBtn";
-            this.DeleteBtn.Size = new System.Drawing.Size(157, 39);
+            this.DeleteBtn.Size = new System.Drawing.Size(118, 31);
             this.DeleteBtn.TabIndex = 6;
             this.DeleteBtn.Text = "Delete User";
             this.DeleteBtn.UseVisualStyleBackColor = true;
@@ -112,17 +121,18 @@ namespace OOP_Project_Group13.Forms
             // 
             this.panelTT.AutoSize = true;
             this.panelTT.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panelTT.Location = new System.Drawing.Point(26, 360);
-            this.panelTT.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panelTT.Location = new System.Drawing.Point(20, 288);
+            this.panelTT.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelTT.Name = "panelTT";
-            this.panelTT.Size = new System.Drawing.Size(1668, 646);
+            this.panelTT.Size = new System.Drawing.Size(1251, 517);
             this.panelTT.TabIndex = 7;
             // 
             // ClassesBtn
             // 
-            this.ClassesBtn.Location = new System.Drawing.Point(189, 322);
+            this.ClassesBtn.Location = new System.Drawing.Point(142, 258);
+            this.ClassesBtn.Margin = new System.Windows.Forms.Padding(2);
             this.ClassesBtn.Name = "ClassesBtn";
-            this.ClassesBtn.Size = new System.Drawing.Size(157, 39);
+            this.ClassesBtn.Size = new System.Drawing.Size(118, 31);
             this.ClassesBtn.TabIndex = 9;
             this.ClassesBtn.Text = "Classes";
             this.ClassesBtn.UseVisualStyleBackColor = true;
@@ -132,16 +142,18 @@ namespace OOP_Project_Group13.Forms
             // 
             this.classesPanel.AutoSize = true;
             this.classesPanel.Enabled = false;
-            this.classesPanel.Location = new System.Drawing.Point(26, 360);
+            this.classesPanel.Location = new System.Drawing.Point(20, 288);
+            this.classesPanel.Margin = new System.Windows.Forms.Padding(2);
             this.classesPanel.Name = "classesPanel";
-            this.classesPanel.Size = new System.Drawing.Size(1665, 617);
+            this.classesPanel.Size = new System.Drawing.Size(1249, 494);
             this.classesPanel.TabIndex = 11;
             // 
             // ttBtn
             // 
-            this.ttBtn.Location = new System.Drawing.Point(26, 322);
+            this.ttBtn.Location = new System.Drawing.Point(20, 258);
+            this.ttBtn.Margin = new System.Windows.Forms.Padding(2);
             this.ttBtn.Name = "ttBtn";
-            this.ttBtn.Size = new System.Drawing.Size(157, 39);
+            this.ttBtn.Size = new System.Drawing.Size(118, 31);
             this.ttBtn.TabIndex = 12;
             this.ttBtn.Text = "Timetable";
             this.ttBtn.UseVisualStyleBackColor = true;
@@ -149,9 +161,10 @@ namespace OOP_Project_Group13.Forms
             // 
             // ModifyBtn
             // 
-            this.ModifyBtn.Location = new System.Drawing.Point(246, 217);
+            this.ModifyBtn.Location = new System.Drawing.Point(184, 174);
+            this.ModifyBtn.Margin = new System.Windows.Forms.Padding(2);
             this.ModifyBtn.Name = "ModifyBtn";
-            this.ModifyBtn.Size = new System.Drawing.Size(157, 39);
+            this.ModifyBtn.Size = new System.Drawing.Size(118, 31);
             this.ModifyBtn.TabIndex = 13;
             this.ModifyBtn.Text = "Modify profile";
             this.ModifyBtn.UseVisualStyleBackColor = true;
@@ -159,20 +172,41 @@ namespace OOP_Project_Group13.Forms
             // 
             // LogOutBtn
             // 
-            this.LogOutBtn.Location = new System.Drawing.Point(26, 1014);
+            this.LogOutBtn.Location = new System.Drawing.Point(20, 811);
+            this.LogOutBtn.Margin = new System.Windows.Forms.Padding(2);
             this.LogOutBtn.Name = "LogOutBtn";
-            this.LogOutBtn.Size = new System.Drawing.Size(157, 39);
+            this.LogOutBtn.Size = new System.Drawing.Size(118, 31);
             this.LogOutBtn.TabIndex = 14;
             this.LogOutBtn.Text = "Log Out";
             this.LogOutBtn.UseVisualStyleBackColor = true;
             this.LogOutBtn.Click += new System.EventHandler(this.LogOutBtn_Click);
             // 
+            // comboBoxStudent
+            // 
+            this.comboBoxStudent.FormattingEnabled = true;
+            this.comboBoxStudent.Location = new System.Drawing.Point(752, 94);
+            this.comboBoxStudent.Name = "comboBoxStudent";
+            this.comboBoxStudent.Size = new System.Drawing.Size(144, 28);
+            this.comboBoxStudent.TabIndex = 15;
+            this.comboBoxStudent.SelectedIndexChanged += new System.EventHandler(this.comboBoxStudent_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(748, 71);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(148, 20);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Information student";
+            // 
             // FacultyInformationsWindows
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1707, 1065);
+            this.ClientSize = new System.Drawing.Size(1280, 840);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.comboBoxStudent);
             this.Controls.Add(this.LogOutBtn);
             this.Controls.Add(this.ModifyBtn);
             this.Controls.Add(this.ttBtn);
@@ -186,6 +220,7 @@ namespace OOP_Project_Group13.Forms
             this.Controls.Add(this.teacherID);
             this.Controls.Add(this.TeacherName);
             this.Controls.Add(this.teacherPicture);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FacultyInformationsWindows";
@@ -213,5 +248,7 @@ namespace OOP_Project_Group13.Forms
         private System.Windows.Forms.Button ttBtn;
         private System.Windows.Forms.Button ModifyBtn;
         private System.Windows.Forms.Button LogOutBtn;
+        private System.Windows.Forms.ComboBox comboBoxStudent;
+        private System.Windows.Forms.Label label1;
     }
 }

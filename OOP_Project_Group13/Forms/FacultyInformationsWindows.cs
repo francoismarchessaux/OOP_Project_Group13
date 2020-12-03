@@ -1,4 +1,5 @@
 using MySqlConnector;
+using OOP_Project_Group13.Users;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -46,6 +47,24 @@ namespace OOP_Project_Group13.Forms
                 TeacherPhone.Text = "Phone : " + Teacher.phone;
             }
             teacherPicture.ImageLocation = Teacher.profilePicture;
+
+            
+            
+            
+            for (int i = 0; i < Teacher.Classes.Count; i++)
+            {
+                for (int j=0; j < Teacher.Classes[i].students.Count; j++)
+                {
+                   
+                        this.comboBoxStudent.Items.Add(Teacher.Classes[i].students[j].name.ToString() + " " + Teacher.Classes[i].students[j].firstName.ToString() + " " + Teacher.Classes[i].students[j].ID.ToString());
+                    
+                }
+                   
+            }
+
+            
+
+
         }
 
         private void BackBtn_Click(object sender, EventArgs e)
@@ -150,6 +169,28 @@ namespace OOP_Project_Group13.Forms
         private void LogOutBtn_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void comboBoxStudent_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string[] studentInfo = this.comboBoxStudent.Text.Split(' ');
+            Student selectedStudent = new Student(Convert.ToInt32(studentInfo[2]));
+           
+            String query = "Select Tuteur from users Where userID = '" + studentInfo[2] + "'";
+            MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
+            DataTable Tuteur = new DataTable();
+            SDA.Fill(Tuteur);
+            
+            if (Teacher.ID.ToString() == Tuteur.Rows[0]["Tuteur"].ToString())
+            {
+                StudentInformationsWindow studentInfoWin = new StudentInformationsWindow(connection, selectedStudent, "Admin");
+                studentInfoWin.Show();
+            }
+            else
+            {
+                StudentInformationsWindow studentInfoWin2 = new StudentInformationsWindow(connection, selectedStudent, "Faculty");
+                studentInfoWin2.Show();
+            }
         }
     }
 }
