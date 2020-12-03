@@ -19,7 +19,12 @@ namespace OOP_Project_Group13.Forms
             course = _course;
             GetListStudents();
             labelName.Text = course.name + " " + course.courseClass.name;
-            if (_course.day != DateTime.Now.DayOfWeek.ToString())
+            String verify = "SELECT * FROM attendance WHERE StudentID='" + course.courseClass.students[0].ID + "' AND Subject ='" + course.name + "'";
+            MySqlDataAdapter SDAVerify = new MySqlDataAdapter(verify, connection);
+            DataTable dtVerify = new DataTable();
+            SDAVerify.Fill(dtVerify);
+            string lastDate = dtVerify.Rows[0]["LastChange"].ToString();
+            if (_course.day != DateTime.Now.DayOfWeek.ToString()||lastDate==DateTime.Now.ToString("yyyy/MM/dd"))
             {
                 buttonValidate.Enabled = false;
                 buttonModify.Enabled = true;
@@ -28,10 +33,7 @@ namespace OOP_Project_Group13.Forms
                     if (c is PanelCourse)
                     {
                         PanelCourse p = (PanelCourse)c;
-                        string info = p.name.Text;
-                        string ID = info.Split(' ')[2];
-                        string name = course.name;
-                        String studentInfo = "SELECT * FROM attendance WHERE StudentID='" + ID + "' AND Subject ='" + name + "'";
+                        String studentInfo = "SELECT * FROM attendance WHERE StudentID='" + p.name.Text.Split(' ')[2] + "' AND Subject ='" + course.name + "'";
                         MySqlDataAdapter SDA = new MySqlDataAdapter(studentInfo, connection);
                         DataTable dt = new DataTable();
                         SDA.Fill(dt);
@@ -124,13 +126,13 @@ namespace OOP_Project_Group13.Forms
                     String query;
                     if (dt.Rows.Count == 0)
                     {
-                        query = "INSERT INTO attendance (StudentID,Subject,Attendance) VALUES ('" + ID + "','" + name + "','"+att+"')";
+                        query = "INSERT INTO attendance (StudentID,Subject,Attendance,LastChange) VALUES ('" + ID + "','" + name + "','"+att+"','"+DateTime.Today.ToString("yyyy/MM/dd")+"')";
                     }
                     else
                     {
                         string idAttendance = dt.Rows[0][0].ToString();
                         string attendance = dt.Rows[0]["Attendance"].ToString() + " "+att;
-                        query = "UPDATE attendance SET Attendance='" + attendance + "'WHERE idAttendance='" + idAttendance + "'";
+                        query = "UPDATE attendance SET Attendance='" + attendance + "', LastChange='" + DateTime.Today.ToString("yyyy/MM/dd") + "' WHERE idAttendance='" + idAttendance + "'";
                     }
                     MySqlDataAdapter uptade = new MySqlDataAdapter(query, connection);
                     uptade.SelectCommand.ExecuteNonQuery();
@@ -180,7 +182,7 @@ namespace OOP_Project_Group13.Forms
                         else
                             newAttendance += " " + attendance[i];
                     }
-                    String query = "UPDATE attendance SET Attendance='" + newAttendance + "'WHERE idAttendance='" + idAttendance + "'";
+                    String query = "UPDATE attendance SET Attendance='" + newAttendance + "', LastChange='" + DateTime.Today.ToString("yyyy-MM-dd") + "' WHERE idAttendance='" + idAttendance + "'";
                     MySqlDataAdapter uptade = new MySqlDataAdapter(query, connection);
                     uptade.SelectCommand.ExecuteNonQuery();
                 }

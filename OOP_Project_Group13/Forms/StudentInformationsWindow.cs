@@ -19,15 +19,26 @@ namespace OOP_Project_Group13
     {
         MySqlConnection connection;
         Student student;
-        public StudentInformationsWindow(MySqlConnection _connection, Student _student)
+        string status;
+
+        public StudentInformationsWindow(MySqlConnection _connection, Student _student, string _status)
         {
             InitializeComponent();
             connection = _connection;
             student = _student;
+            status = _status;
         }
 
         private void StudentInformationsWindow_Load(object sender, EventArgs e)
         {
+            if(status == "Admin")
+            {
+                profileBtn.Visible = false;
+            }
+            else
+            {
+                backButton.Text = "Log Out";
+            }
             NameLabel.Text = student.name.ToUpper() + " " + student.firstName.ToLower();
             StudentIDLabel.Text = "ID : " + student.ID.ToString();
             if (student.birthday.Date.ToString("dd/MM/yyyy") == "01/01/2000")
@@ -38,7 +49,7 @@ namespace OOP_Project_Group13
             {
                 BirthDate.Text = "Birthday date : " + student.birthday.Date.ToString("dd/MM/yyyy");
             }
-            if (student.address == "Adress")
+            if (student.address == "Address")
             {
                 AdressLabel.Text = "Address : Not yet entered";
             }
@@ -57,7 +68,10 @@ namespace OOP_Project_Group13
             }
             StudentPicture.ImageLocation = student.profilePicture;
             student.GetGrades(generalPanel);
+
+            PaymentButton.Visible = false;
         }
+
         private void PanelTimeTable_Paint(object sender, PaintEventArgs e)
         {
 
@@ -68,25 +82,55 @@ namespace OOP_Project_Group13
             generalPanel.Controls.Clear();
             TimeTable tt = new TimeTable(student, generalPanel);
             tt.InitializeTimeTable();
-            tt.GetTimetable();            
+            tt.GetTimetable();
+            PaymentButton.Visible = false;       
         }
         
         private void buttonGrade_Click(object sender, EventArgs e)
         {
             generalPanel.Controls.Clear();
             student.GetGrades(generalPanel);
+            PaymentButton.Visible = false;
         }
 
         private void buttonAttendance_Click(object sender, EventArgs e)
         {
             generalPanel.Controls.Clear();
             student.attendances.GetAttendance(generalPanel);
+            PaymentButton.Visible = false;
         }
 
         private void Fees_Click(object sender, EventArgs e)
         {
-            generalPanel.Controls.Clear();
-            student.FeesPanel(generalPanel);
+            generalPanel.Controls.Clear();           
+            student.FeesPanel(generalPanel, status);
+
+            if (status == "Student")
+            {
+                PaymentButton.Visible = true;
+            }
+        }
+
+        private void PaymentButton_Click(object sender, EventArgs e)
+        {
+            PaymentWindow paymentWindow = new PaymentWindow(connection, student, status);
+            paymentWindow.Show();
+        }
+
+        private void generalPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void profileBtn_Click(object sender, EventArgs e)
+        {
+            ModifyProfile mod = new ModifyProfile(connection, student.ID);
+            mod.Show();
+        }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

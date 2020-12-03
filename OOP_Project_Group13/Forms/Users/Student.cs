@@ -134,11 +134,14 @@ namespace OOP_Project_Group13.Users
                     if (subjects.Count == 0)
                     {
                         Subject subject = new Subject(row["Subject"].ToString());
-                        Grade grade = new Grade(Convert.ToInt32(row["studentGrade"].ToString()), row["AssesmentName"].ToString(), Convert.ToInt32(row["coefficient"].ToString()), subject);
-                        List<Grade> grades = new List<Grade>();
-                        grades.Add(grade);
-                        Average avg = new Average(subject, grades);
-                        subjects.Add(avg);
+                        if (row["studentGrade"].ToString() != "Not yet graded")
+                        {
+                            Grade grade = new Grade(Convert.ToInt32(row["studentGrade"].ToString()), row["AssesmentName"].ToString(), Convert.ToInt32(row["coefficient"].ToString()), subject);
+                            List<Grade> grades = new List<Grade>();
+                            grades.Add(grade);
+                            Average avg = new Average(subject, grades);
+                            subjects.Add(avg);
+                        }
                     }
                     else
                     {
@@ -155,8 +158,11 @@ namespace OOP_Project_Group13.Users
                         }
                         if (subjExist == true)
                         {
-                            Grade grade = new Grade(Convert.ToInt32(row["studentGrade"].ToString()), row["AssesmentName"].ToString(), Convert.ToInt32(row["coefficient"].ToString()), avg.subject);
-                            avg.grades.Add(grade);
+                            if (row["studentGrade"].ToString() != "Not yet graded" && row["studentGrade"].ToString() != null)
+                            {
+                                Grade grade = new Grade(Convert.ToInt32(row["studentGrade"].ToString()), row["AssesmentName"].ToString(), Convert.ToInt32(row["coefficient"].ToString()), avg.subject);
+                                avg.grades.Add(grade);
+                            }
                         }
                         else
                         {
@@ -180,8 +186,7 @@ namespace OOP_Project_Group13.Users
                 }
             }
         }
-
-        public void FeesPanel(Panel panel)
+        public void FeesPanel(Panel panel, string status)
         {
             String query = "SELECT * FROM users WHERE userID ='" + ID + "' AND status ='Student'";
             MySqlDataAdapter SDA = new MySqlDataAdapter(query, con);
@@ -206,31 +211,48 @@ namespace OOP_Project_Group13.Users
             title.Controls.Add(Txt);
             panel.Controls.Add(title);
             Txt.Location = new Point(5, 11);
-
-            if (Convert.ToDouble(dt.Rows[0]["fees"]) > 0.00 )
+            if (dt.Rows[0]["fees"] != null && dt.Rows[0]["fees"].ToString() != "")
             {
-                Status.Text = " The student " + dt.Rows[0]["name"].ToString() + " " + dt.Rows[0]["firstName"].ToString() + " is in dept of " + dt.Rows[0]["fees"].ToString() + "£.";
-                Status.AutoSize = true;
-                Status.Visible = true;
-            }
+                if (Convert.ToDouble(dt.Rows[0]["fees"]) > 0.00)
+                {
+                    if (status == "Admin")
+                    {
+                        Status.Text = " The student " + dt.Rows[0]["name"].ToString() + " " + dt.Rows[0]["firstName"].ToString() + " has an outstanding balance of " + dt.Rows[0]["fees"].ToString() + "£.";
+                    }
+                    else
+                    {
+                        Status.Text = dt.Rows[0]["name"].ToString() + " " + dt.Rows[0]["firstName"].ToString() + ", you have an outstanding balance of " + dt.Rows[0]["fees"].ToString() + "£.";
+                    }
 
-            else
-            {
-                Status.Text = " The student " + dt.Rows[0]["name"].ToString() + " " + dt.Rows[0]["firstName"].ToString() + " has already paid the tuitions fees for the year.";
-                Status.AutoSize = true;
-                Status.Visible = true;
+                    Status.AutoSize = true;
+                    Status.Visible = true;
+                }
+
+                else
+                {
+                    if (status == "Admin")
+                    {
+                        Status.Text = " The student " + dt.Rows[0]["name"].ToString() + " " + dt.Rows[0]["firstName"].ToString() + " has already paid the tuition fees for the year.";
+                    }
+                    else
+                    {
+                        Status.Text = dt.Rows[0]["name"].ToString() + " " + dt.Rows[0]["firstName"].ToString() + ", you have already paid the tuiton fees for the year.";
+                    }
+                    Status.AutoSize = true;
+                    Status.Visible = true;
+                }
             }
 
             newPan.Controls.Add(Status);
             Status.Location = new Point(20, 10);
 
-            FeesPaid.Text = "Fees paid : " + dt.Rows[0]["feesPaid"].ToString() + "£.";
+            FeesPaid.Text = "Fees already paid : " + dt.Rows[0]["feesPaid"].ToString() + "£.";
             FeesPaid.AutoSize = true;
             FeesPaid.Visible = true;
             newPan.Controls.Add(FeesPaid);
             FeesPaid.Location = new Point(40, 40);
 
-            FeesLeft.Text = "Fees left to pay : " + dt.Rows[0]["fees"].ToString() + "£.";
+            FeesLeft.Text = "Amount left to pay : " + dt.Rows[0]["fees"].ToString() + "£.";
             FeesLeft.AutoSize = true;
             FeesLeft.Visible = true;
             newPan.Controls.Add(FeesLeft);
@@ -238,6 +260,33 @@ namespace OOP_Project_Group13.Users
 
             panel.Controls.Add(newPan);
           
+        }
+
+        public void PanelPayment(Panel panel)
+        {
+            String query = "SELECT * FROM users WHERE userID ='" + ID + "' AND status ='Student'";
+            MySqlDataAdapter SDA = new MySqlDataAdapter(query, con);
+            DataTable dt = new DataTable();
+            SDA.Fill(dt);
+
+            Label Name = new Label();
+            Label Intro = new Label();
+
+            Panel Payment = new Panel();
+            Payment.Height = 30;
+            Payment.Width = 930;
+            Payment.BackColor = Color.LightSlateGray;
+
+            Name.Text = dt.Rows[0]["name"].ToString() + " " + dt.Rows[0]["firstName"].ToString();
+            Intro.Text = "Payment of the tuitions fees of : ";
+            Intro.AutoSize = true;
+            Intro.Visible = true;
+
+            Payment.Controls.Add(Name); Payment.Controls.Add(Intro);
+            Name.Location = new Point(180, 7);
+            Intro.Location = new Point(5, 7);
+
+            panel.Controls.Add(Payment);
         }
         #endregion
     }
