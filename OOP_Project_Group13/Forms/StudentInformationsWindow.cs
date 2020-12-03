@@ -35,6 +35,14 @@ namespace OOP_Project_Group13
             {
                 profileBtn.Visible = false;
             }
+            if (status == "Faculty")
+            {
+                profileBtn.Visible = false;
+                AdressLabel.Visible = false;
+                PhoneLabel.Visible = false;
+                Fees.Visible = false;
+
+            }
             else
             {
                 backButton.Text = "Log Out";

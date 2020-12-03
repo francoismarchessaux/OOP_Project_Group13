@@ -33,7 +33,6 @@ namespace OOP_Project_Group13.Forms
             this.teacherID = new System.Windows.Forms.Label();
             this.TeacherMail = new System.Windows.Forms.Label();
             this.TeacherPhone = new System.Windows.Forms.Label();
-            this.BackBtn = new System.Windows.Forms.Button();
             this.DeleteBtn = new System.Windows.Forms.Button();
             this.panelTT = new System.Windows.Forms.Panel();
             this.ClassesBtn = new System.Windows.Forms.Button();
@@ -43,6 +42,7 @@ namespace OOP_Project_Group13.Forms
             this.LogOutBtn = new System.Windows.Forms.Button();
             this.comboBoxStudent = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.labelAdress = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.teacherPicture)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,17 +94,6 @@ namespace OOP_Project_Group13.Forms
             this.TeacherPhone.Size = new System.Drawing.Size(116, 20);
             this.TeacherPhone.TabIndex = 4;
             this.TeacherPhone.Text = "Teacher phone";
-            // 
-            // BackBtn
-            // 
-            this.BackBtn.Location = new System.Drawing.Point(150, 811);
-            this.BackBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.BackBtn.Name = "BackBtn";
-            this.BackBtn.Size = new System.Drawing.Size(89, 31);
-            this.BackBtn.TabIndex = 5;
-            this.BackBtn.Text = "Back";
-            this.BackBtn.UseVisualStyleBackColor = true;
-            this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click);
             // 
             // DeleteBtn
             // 
@@ -161,7 +150,7 @@ namespace OOP_Project_Group13.Forms
             // 
             // ModifyBtn
             // 
-            this.ModifyBtn.Location = new System.Drawing.Point(184, 174);
+            this.ModifyBtn.Location = new System.Drawing.Point(182, 202);
             this.ModifyBtn.Margin = new System.Windows.Forms.Padding(2);
             this.ModifyBtn.Name = "ModifyBtn";
             this.ModifyBtn.Size = new System.Drawing.Size(118, 31);
@@ -199,12 +188,23 @@ namespace OOP_Project_Group13.Forms
             this.label1.TabIndex = 16;
             this.label1.Text = "Information student";
             // 
+            // labelAdress
+            // 
+            this.labelAdress.AutoSize = true;
+            this.labelAdress.Location = new System.Drawing.Point(184, 169);
+            this.labelAdress.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelAdress.Name = "labelAdress";
+            this.labelAdress.Size = new System.Drawing.Size(119, 20);
+            this.labelAdress.TabIndex = 18;
+            this.labelAdress.Text = "Teacher adress";
+            // 
             // FacultyInformationsWindows
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1280, 840);
+            this.Controls.Add(this.labelAdress);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBoxStudent);
             this.Controls.Add(this.LogOutBtn);
@@ -214,7 +214,6 @@ namespace OOP_Project_Group13.Forms
             this.Controls.Add(this.ClassesBtn);
             this.Controls.Add(this.panelTT);
             this.Controls.Add(this.DeleteBtn);
-            this.Controls.Add(this.BackBtn);
             this.Controls.Add(this.TeacherPhone);
             this.Controls.Add(this.TeacherMail);
             this.Controls.Add(this.teacherID);
@@ -240,7 +239,6 @@ namespace OOP_Project_Group13.Forms
         private System.Windows.Forms.Label teacherID;
         private System.Windows.Forms.Label TeacherMail;
         private System.Windows.Forms.Label TeacherPhone;
-        private System.Windows.Forms.Button BackBtn;
         private System.Windows.Forms.Button DeleteBtn;
         private System.Windows.Forms.Panel panelTT;
         private System.Windows.Forms.Button ClassesBtn;
@@ -250,5 +248,6 @@ namespace OOP_Project_Group13.Forms
         private System.Windows.Forms.Button LogOutBtn;
         private System.Windows.Forms.ComboBox comboBoxStudent;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelAdress;
     }
 }
