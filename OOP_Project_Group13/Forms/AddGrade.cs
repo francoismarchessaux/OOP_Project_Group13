@@ -1,4 +1,5 @@
 ﻿using MySqlConnector;
+using OOP_Project_Group13.Users;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,8 +25,7 @@ namespace OOP_Project_Group13
 
         private void AddGrade_Load(object sender, EventArgs e)
         {
-            // TODO: cette ligne de code charge les données dans la table 'oopprojectDataSet.grade'. Vous pouvez la déplacer ou la supprimer selon les besoins.
-            this.gradeTableAdapter.Fill(this.oopprojectDataSet.grade);
+           
             classNameLabel.Text = "Class Name : " + groupName.name;
             
         }
@@ -48,6 +48,7 @@ namespace OOP_Project_Group13
             {
                 for (int j = 0; j < comboBox1.Items.Count; j++)
                 {
+                    presence = false;
                     if (comboBox1.Items[j].ToString() == GradeTable.Rows[i]["AssesmentName"].ToString())
                     {
                         presence = true;
@@ -68,17 +69,19 @@ namespace OOP_Project_Group13
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            String query = "SELECT * from Grade WHERE Subject = '" + SubjectList + "' AND AssesmentName = '" + comboBox1.Text + "'";
+            String query = "SELECT * from grade WHERE Subject = '" + SubjectList.Text + "' AND AssesmentName = '" + comboBox1.Text + "'";
             MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
             DataTable GradeTable = new DataTable();
             SDA.Fill(GradeTable);
             for (int i = 0; i < GradeTable.Rows.Count; i++)
             {
-                
-                string Name = GradeTable.Rows[i]["Name"].ToString();
-                string Surname = GradeTable.Rows[i]["Surname"].ToString();
+                Student Etudiant = new Student(Convert.ToInt32(GradeTable.Rows[i]["studentID"]));
 
-                dataGridView1.Rows.Add(Name, Surname);
+                string Name = Etudiant.name;
+                string Surname = Etudiant.firstName;
+                string NumberID = GradeTable.Rows[i]["studentID"].ToString();
+
+                dataGridView1.Rows.Add(Name, Surname,NumberID);
             }
 
         }
@@ -86,6 +89,29 @@ namespace OOP_Project_Group13
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
            
+        }
+
+        private void buttonAddGrade_Click(object sender, EventArgs e)
+        {
+            connection.Open();
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                string Grade = dataGridView1.Rows[i].Cells[3].Value.ToString();
+
+
+
+                String query = "UPDATE grade SET studentGrade = '" + Grade +"' WHERE  Subject = '" + SubjectList.Text + "' AND AssesmentName = '" + comboBox1.Text + "' AND studentID = '" + dataGridView1.Rows[i].Cells[2].Value + "'";
+                MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
+                
+                   
+                SDA = new MySqlDataAdapter(query, connection);
+                SDA.SelectCommand.ExecuteNonQuery();
+                
+            }
+            connection.Close();
+            MessageBox.Show("Grades added successfully !");
+            this.Close();
+
         }
     }
 }
