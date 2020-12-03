@@ -80,7 +80,7 @@ namespace OOP_Project_Group13
         private void buttonTimeTable_Click(object sender, EventArgs e)
         {
             generalPanel.Controls.Clear();
-            TimeTable tt = new TimeTable(student, generalPanel);
+            TimeTable tt = new TimeTable(student, generalPanel,status);
             tt.InitializeTimeTable();
             tt.GetTimetable();
             PaymentButton.Visible = false;       
@@ -102,10 +102,15 @@ namespace OOP_Project_Group13
 
         private void Fees_Click(object sender, EventArgs e)
         {
+            String query = "Select * from Users Where userID ='" + student.ID + "'";
+            MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
+            DataTable dt = new DataTable();
+            SDA.Fill(dt);
+
             generalPanel.Controls.Clear();           
             student.FeesPanel(generalPanel, status);
 
-            if (status == "Student")
+            if (status == "Student" && Convert.ToDouble(dt.Rows[0]["fees"]) > 0.00)
             {
                 PaymentButton.Visible = true;
             }

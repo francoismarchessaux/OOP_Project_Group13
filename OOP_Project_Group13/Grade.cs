@@ -8,19 +8,19 @@ namespace OOP_Project_Group13
 {
    public  class Grade
     {
-        private int note;
+        private double note;
         private string nomCC;
         private int coeff;
         private Subject matiere;
 
-        public Grade(int note,string nomCC,int coeff,Subject matiere)
+        public Grade(double note,string nomCC,int coeff,Subject matiere)
         {
             this.note = note;
             this.nomCC = nomCC;
             this.coeff = coeff;
             this.matiere = matiere;
         }
-        public int Note
+        public double Note
         {
             get
             {
@@ -28,7 +28,7 @@ namespace OOP_Project_Group13
             }
             set
             {
-                if (value < 0)
+                if (value < 0 && value>20)
                 {
                     Console.WriteLine("The grade must be 0 or higher");
                 }

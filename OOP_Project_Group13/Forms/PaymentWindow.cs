@@ -29,7 +29,7 @@ namespace OOP_Project_Group13.Forms
 
         private void PaymentWindow_Load(object sender, EventArgs e)
         {
-            String query = "Select * from Users Where status = 'Student'";
+            String query = "Select * from Users Where userID ='" + student.ID + "'";
             MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
             DataTable dt = new DataTable();
             SDA.Fill(dt);
@@ -53,7 +53,7 @@ namespace OOP_Project_Group13.Forms
 
         private void Payment_Click(object sender, EventArgs e)
         {
-            String query = "Select * from Users Where status = 'Student'";
+            String query = "Select * from Users Where userID ='" + student.ID + "'";
             MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
             DataTable dt = new DataTable();
             SDA.Fill(dt);
@@ -82,7 +82,30 @@ namespace OOP_Project_Group13.Forms
                 
 
                 
-                DialogResult PayeOrNo = MessageBox.Show(dialog, "Are you sure that you'd like to pay \nback the amount of " + tot +"£?", MessageBoxButtons.YesNo);
+                DialogResult PayeOrNo = MessageBox.Show(dialog, "Are you sure that you'd like to pay back the amount of " + tot +"£?", MessageBoxButtons.YesNoCancel);
+
+                if (PayeOrNo == DialogResult.Yes)
+                {
+                    double FeesLeft = Convert.ToDouble(dt.Rows[0]["fees"]) - tot;
+                    double PaidFees = Convert.ToDouble(dt.Rows[0]["feesPaid"]) + tot;
+                    
+                    query = "UPDATE users SET fees ='" + Convert.ToString(FeesLeft) + "', feesPaid ='" + Convert.ToString(PaidFees) + "' WHERE userID ='" + student.ID + "'";
+                    SDA = new MySqlDataAdapter(query, connection);
+                    connection.Open();
+                    SDA.SelectCommand.ExecuteNonQuery();
+                    connection.Close();
+                    MessageBox.Show("Payment successfull ! \nThank you.");
+                    Close();
+
+                }
+                if (PayeOrNo == DialogResult.No)
+                {
+                    textBox1.Clear();
+                }
+                if (PayeOrNo == DialogResult.Cancel)
+                {
+                    Close();
+                }
             }
 
 

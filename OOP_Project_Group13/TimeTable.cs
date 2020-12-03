@@ -134,7 +134,6 @@ namespace OOP_Project_Group13
                 ButtonClass b = sender as ButtonClass ;
                 Course c = b.course;
                 ModifyCourseWindow modifyWin = new ModifyCourseWindow(connection, c);
-
                 modifyWin.Show();
             }
             else if(status == "Teacher")
@@ -143,6 +142,24 @@ namespace OOP_Project_Group13
                 Course c = b.course;
                 AttendanceForm attendance = new AttendanceForm(connection, c);
                 attendance.Show();
+            }
+            else if (status == "Student")
+            {
+                ButtonClass b = sender as ButtonClass;
+                Course c = b.course;
+                String query =" SELECT * FROM grade WHERE studentID='"+user.ID+"' AND Subject ='"+c.name+"'";
+                DataTable dt = new DataTable();
+                MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
+                SDA.Fill(dt);
+                string assesment = "";
+                for(int i =0; i < dt.Rows.Count; i++)
+                {
+                    DateTime date = Convert.ToDateTime(dt.Rows[i]["Date"].ToString());
+                    assesment += date.ToString("yyyy-MM-dd")+": "+dt.Rows[i]["AssesmentName"].ToString()+"\n";
+                }
+                if (assesment == "")
+                    assesment = "There is no assesment yet in this subject.";
+                MessageBox.Show(assesment);
             }
         }
     }
