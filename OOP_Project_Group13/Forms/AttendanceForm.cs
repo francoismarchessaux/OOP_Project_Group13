@@ -24,7 +24,7 @@ namespace OOP_Project_Group13.Forms
             DataTable dtVerify = new DataTable();
             SDAVerify.Fill(dtVerify);
             string lastDate = dtVerify.Rows[0]["LastChange"].ToString();
-            if (_course.day != DateTime.Now.DayOfWeek.ToString()||lastDate==DateTime.Now.ToString("yyyy-MM-dd"))
+            if (_course.day != DateTime.Now.DayOfWeek.ToString()||lastDate==DateTime.Now.ToString("yyyy/MM/dd"))
             {
                 buttonValidate.Enabled = false;
                 buttonModify.Enabled = true;
@@ -126,13 +126,13 @@ namespace OOP_Project_Group13.Forms
                     String query;
                     if (dt.Rows.Count == 0)
                     {
-                        query = "INSERT INTO attendance (StudentID,Subject,Attendance,LastChange) VALUES ('" + ID + "','" + name + "','"+att+"','"+DateTime.Today.ToString("yyyy-MM-dd")+"')";
+                        query = "INSERT INTO attendance (StudentID,Subject,Attendance,LastChange) VALUES ('" + ID + "','" + name + "','"+att+"','"+DateTime.Today.ToString("yyyy/MM/dd")+"')";
                     }
                     else
                     {
                         string idAttendance = dt.Rows[0][0].ToString();
                         string attendance = dt.Rows[0]["Attendance"].ToString() + " "+att;
-                        query = "UPDATE attendance SET Attendance='" + attendance + "'WHERE idAttendance='" + idAttendance + "',LastChange='" + DateTime.Today.ToString("yyyy-MM-dd") + "'";
+                        query = "UPDATE attendance SET Attendance='" + attendance + "', LastChange='" + DateTime.Today.ToString("yyyy/MM/dd") + "' WHERE idAttendance='" + idAttendance + "'";
                     }
                     MySqlDataAdapter uptade = new MySqlDataAdapter(query, connection);
                     uptade.SelectCommand.ExecuteNonQuery();
