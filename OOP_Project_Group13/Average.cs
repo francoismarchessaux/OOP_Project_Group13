@@ -17,7 +17,7 @@ namespace OOP_Project_Group13
         }
         public double GetAverage()
         {
-            int sum = 0;
+            double sum = 0;
             int divide = 0;
             foreach(Grade grade in grades)
             {

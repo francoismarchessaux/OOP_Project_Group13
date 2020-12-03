@@ -166,12 +166,15 @@ namespace OOP_Project_Group13.Users
                         }
                         else
                         {
-                            Subject subject = new Subject(row["Subject"].ToString());
-                            Grade grade = new Grade(Convert.ToInt32(row["studentGrade"].ToString()), row["AssesmentName"].ToString(), Convert.ToInt32(row["coefficient"].ToString()), subject);
-                            List<Grade> grades = new List<Grade>();
-                            grades.Add(grade);
-                            avg = new Average(subject, grades);
-                            subjects.Add(avg);
+                            if (row["studentGrade"].ToString() != "Not yet graded" && row["studentGrade"].ToString() != null)
+                            {
+                                Subject subject = new Subject(row["Subject"].ToString());
+                                Grade grade = new Grade(Convert.ToInt32(row["studentGrade"].ToString()), row["AssesmentName"].ToString(), Convert.ToInt32(row["coefficient"].ToString()), subject);
+                                List<Grade> grades = new List<Grade>();
+                                grades.Add(grade);
+                                avg = new Average(subject, grades);
+                                subjects.Add(avg);
+                            }
                         }
 
                     }

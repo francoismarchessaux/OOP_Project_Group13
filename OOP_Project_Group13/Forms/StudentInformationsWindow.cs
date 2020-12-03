@@ -80,7 +80,7 @@ namespace OOP_Project_Group13
         private void buttonTimeTable_Click(object sender, EventArgs e)
         {
             generalPanel.Controls.Clear();
-            TimeTable tt = new TimeTable(student, generalPanel);
+            TimeTable tt = new TimeTable(student, generalPanel,status);
             tt.InitializeTimeTable();
             tt.GetTimetable();
             PaymentButton.Visible = false;       

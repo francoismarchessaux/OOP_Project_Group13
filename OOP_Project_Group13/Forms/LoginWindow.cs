@@ -109,7 +109,7 @@ namespace OOP_Project_Group13
             DataTable userTable = new DataTable();
             SDA.Fill(userTable);
             Student selectedStudent = new Student(Convert.ToInt32(userTable.Rows[0]["userID"].ToString()));
-            StudentInformationsWindow studentInfoWin = new StudentInformationsWindow(connection, selectedStudent, "student");
+            StudentInformationsWindow studentInfoWin = new StudentInformationsWindow(connection, selectedStudent, "Student");
             studentInfoWin.Show();
         }
     }

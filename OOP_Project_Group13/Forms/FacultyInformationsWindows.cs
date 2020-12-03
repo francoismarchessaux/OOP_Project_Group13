@@ -45,12 +45,15 @@ namespace OOP_Project_Group13.Forms
             {
                 TeacherPhone.Text = "Phone : " + Teacher.phone;
             }
+            if (Teacher.address == "Address")
+            {
+                labelAdress.Text = "Address : Not yet entered";
+            }
+            else
+            {
+                labelAdress.Text = "Address : " + Teacher.address;
+            }
             teacherPicture.ImageLocation = Teacher.profilePicture;
-        }
-
-        private void BackBtn_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void DeleteBtn_Click(object sender, EventArgs e)
