@@ -66,7 +66,7 @@ namespace OOP_Project_Group13.Forms
 
         private void button2_Click(object sender, EventArgs e)
         {
-            String query = $"UPDATE users SET profilePicture = '{ProfilePictureTxtBox.Text}', birthday = '{dateTimePicker1.Value.Date.ToString("yyyy/MM/dd")}', phone = '{PhoneTxtBox.Text}', address = '{addressTxtBox.Text}' WHERE(userID = '{ID}')";
+            String query = $"UPDATE users SET profilePicture = '{ProfilePictureTxtBox.Text.Replace('\\', '/')}', birthday = '{dateTimePicker1.Value.Date.ToString("yyyy/MM/dd")}', phone = '{PhoneTxtBox.Text}', address = '{addressTxtBox.Text}' WHERE(userID = '{ID}')";
             MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
             connection.Open();
             SDA.SelectCommand.ExecuteNonQuery();
