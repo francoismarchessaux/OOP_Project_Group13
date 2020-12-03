@@ -69,7 +69,7 @@ namespace OOP_Project_Group13
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            String query = "SELECT * from grade WHERE Subject = '" + SubjectList.Text + "' AND AssesmentName = '" + comboBox1.Text + "'";
+            String query = "SELECT * from grade WHERE Subject = '" + SubjectList.Text + "' AND AssesmentName = '" + comboBox1.Text + "' AND Class='"+groupName.name+"'";
             MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
             DataTable GradeTable = new DataTable();
             SDA.Fill(GradeTable);
@@ -96,22 +96,17 @@ namespace OOP_Project_Group13
             connection.Open();
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
-                string Grade = dataGridView1.Rows[i].Cells[3].Value.ToString();
-
-
-
-                String query = "UPDATE grade SET studentGrade = '" + Grade +"' WHERE  Subject = '" + SubjectList.Text + "' AND AssesmentName = '" + comboBox1.Text + "' AND studentID = '" + dataGridView1.Rows[i].Cells[2].Value + "'";
-                MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
-                
-                   
-                SDA = new MySqlDataAdapter(query, connection);
-                SDA.SelectCommand.ExecuteNonQuery();
-                
+                if (dataGridView1.Rows[i].Cells[3].Value != null)
+                {
+                    string Grade = dataGridView1.Rows[i].Cells[3].Value.ToString();
+                    String query = "UPDATE grade SET studentGrade = '" + Grade + "' WHERE  Subject = '" + SubjectList.Text + "' AND AssesmentName = '" + comboBox1.Text + "' AND studentID = '" + dataGridView1.Rows[i].Cells[2].Value + "'";
+                    MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
+                    SDA.SelectCommand.ExecuteNonQuery();
+                }
             }
             connection.Close();
             MessageBox.Show("Grades added successfully !");
             this.Close();
-
         }
     }
 }
