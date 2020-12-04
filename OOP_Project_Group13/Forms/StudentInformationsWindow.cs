@@ -34,6 +34,8 @@ namespace OOP_Project_Group13
             if(status == "Admin")
             {
                 profileBtn.Visible = false;
+                RefreshBtn.Visible = false;
+                backButton.Text = "Back";
             }
             if (status == "Faculty")
             {
@@ -41,15 +43,15 @@ namespace OOP_Project_Group13
                 AdressLabel.Visible = false;
                 PhoneLabel.Visible = false;
                 Fees.Visible = false;
-
+                backButton.Text = "Back";
             }
-            else
+            if (status == "Student")
             {
                 backButton.Text = "Log Out";
             }
             NameLabel.Text = student.name.ToUpper() + " " + student.firstName.ToLower();
             StudentIDLabel.Text = "ID : " + student.ID.ToString();
-            if (student.birthday.Date.ToString("dd/MM/yyyy") == "01/01/2000")
+            if (student.birthday.Date.ToString("dd/MM/yyyy") == "01/01/1900")
             {
                 BirthDate.Text = "Birthday date : Not yet entered";
             }
@@ -144,6 +146,39 @@ namespace OOP_Project_Group13
         private void backButton_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void RefreshBtn_Click(object sender, EventArgs e)
+        {
+            String query = "Select * from Users Where userID ='" + student.ID + "'";
+            MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
+            DataTable dt = new DataTable();
+            SDA.Fill(dt);
+            if (student.birthday.Date.ToString("dd/MM/yyyy") == "01/01/1900")
+            {
+                BirthDate.Text = "Birthday date : Not yet entered";
+            }
+            else
+            {
+                BirthDate.Text = "Birthday date : " + Convert.ToDateTime(dt.Rows[0]["birthday"]).ToString("dd/MM/yyyy");
+            }
+            if (student.address == "Address")
+            {
+                AdressLabel.Text = "Address : Not yet entered";
+            }
+            else
+            {
+                AdressLabel.Text = "Address : " + dt.Rows[0]["address"];
+            }
+            if (student.phone == "0000000000")
+            {
+                PhoneLabel.Text = "Phone number : Not yet entered";
+            }
+            else
+            {
+                PhoneLabel.Text = "Phone number : " + dt.Rows[0]["phone"];
+            }
+            StudentPicture.ImageLocation = dt.Rows[0]["profilePicture"].ToString();
         }
     }
 }

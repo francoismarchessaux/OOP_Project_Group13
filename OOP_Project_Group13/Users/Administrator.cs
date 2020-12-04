@@ -30,10 +30,10 @@ namespace OOP_Project_Group13.Users
             ID = Convert.ToInt32(info[0]);
             name = info[1];
             firstName = info[2];
-            status = info[3];
-            password = info[4];
-            mail = info[5];
-            profilePicture = info[6];
+            status = info[4];
+            password = info[5];
+            mail = info[6];
+            profilePicture = info[3];
             birthday = Convert.ToDateTime(info[7]);
             phone = info[8];
             address = info[9];
