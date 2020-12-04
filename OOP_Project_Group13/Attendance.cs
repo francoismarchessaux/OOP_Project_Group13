@@ -90,6 +90,7 @@ namespace OOP_Project_Group13
             MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
             DataTable dt = new DataTable();
             SDA.Fill(dt);
+            attendance = new List<AttendanceCourse>();
             if (dt.Rows.Count != 0)
             {
                 foreach (DataRow row in dt.Rows)
@@ -109,7 +110,7 @@ namespace OOP_Project_Group13
                     attendance.Add(course);
                 }
                 for (int i = 0; i < attendance.Count; i++)
-                    AddCourse(attendance[i],panel);
+                AddCourse(attendance[i],panel);
             }
         }
         private int GetIndexOfCourse(string name)
