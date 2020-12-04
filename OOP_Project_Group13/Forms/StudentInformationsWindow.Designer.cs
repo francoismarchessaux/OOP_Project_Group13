@@ -44,13 +44,14 @@
             this.profileBtn = new System.Windows.Forms.Button();
             this.backButton = new System.Windows.Forms.Button();
             this.RefreshBtn = new System.Windows.Forms.Button();
+            this.DeleteBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.StudentPicture)).BeginInit();
             this.SuspendLayout();
             // 
             // StudentPicture
             // 
             this.StudentPicture.Location = new System.Drawing.Point(26, 27);
-            this.StudentPicture.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.StudentPicture.Margin = new System.Windows.Forms.Padding(4);
             this.StudentPicture.Name = "StudentPicture";
             this.StudentPicture.Size = new System.Drawing.Size(194, 229);
             this.StudentPicture.TabIndex = 0;
@@ -119,7 +120,7 @@
             // buttonGrade
             // 
             this.buttonGrade.Location = new System.Drawing.Point(26, 333);
-            this.buttonGrade.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonGrade.Margin = new System.Windows.Forms.Padding(4);
             this.buttonGrade.Name = "buttonGrade";
             this.buttonGrade.Size = new System.Drawing.Size(112, 37);
             this.buttonGrade.TabIndex = 9;
@@ -130,7 +131,7 @@
             // buttonTimeTable
             // 
             this.buttonTimeTable.Location = new System.Drawing.Point(134, 333);
-            this.buttonTimeTable.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonTimeTable.Margin = new System.Windows.Forms.Padding(4);
             this.buttonTimeTable.Name = "buttonTimeTable";
             this.buttonTimeTable.Size = new System.Drawing.Size(134, 37);
             this.buttonTimeTable.TabIndex = 10;
@@ -144,7 +145,7 @@
             this.generalPanel.AutoSize = true;
             this.generalPanel.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.generalPanel.Location = new System.Drawing.Point(26, 369);
-            this.generalPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.generalPanel.Margin = new System.Windows.Forms.Padding(4);
             this.generalPanel.Name = "generalPanel";
             this.generalPanel.Size = new System.Drawing.Size(1862, 662);
             this.generalPanel.TabIndex = 27;
@@ -153,7 +154,7 @@
             // buttonAttendance
             // 
             this.buttonAttendance.Location = new System.Drawing.Point(266, 333);
-            this.buttonAttendance.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAttendance.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAttendance.Name = "buttonAttendance";
             this.buttonAttendance.Size = new System.Drawing.Size(148, 37);
             this.buttonAttendance.TabIndex = 28;
@@ -164,7 +165,7 @@
             // Fees
             // 
             this.Fees.Location = new System.Drawing.Point(406, 333);
-            this.Fees.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Fees.Margin = new System.Windows.Forms.Padding(6);
             this.Fees.Name = "Fees";
             this.Fees.Size = new System.Drawing.Size(134, 37);
             this.Fees.TabIndex = 29;
@@ -176,7 +177,7 @@
             // 
             this.PaymentButton.AutoSize = true;
             this.PaymentButton.Location = new System.Drawing.Point(704, 1037);
-            this.PaymentButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.PaymentButton.Margin = new System.Windows.Forms.Padding(6);
             this.PaymentButton.Name = "PaymentButton";
             this.PaymentButton.Size = new System.Drawing.Size(444, 52);
             this.PaymentButton.TabIndex = 0;
@@ -187,7 +188,7 @@
             // profileBtn
             // 
             this.profileBtn.Location = new System.Drawing.Point(28, 265);
-            this.profileBtn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.profileBtn.Margin = new System.Windows.Forms.Padding(6);
             this.profileBtn.Name = "profileBtn";
             this.profileBtn.Size = new System.Drawing.Size(160, 44);
             this.profileBtn.TabIndex = 30;
@@ -198,7 +199,7 @@
             // backButton
             // 
             this.backButton.Location = new System.Drawing.Point(28, 1037);
-            this.backButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.backButton.Margin = new System.Windows.Forms.Padding(4);
             this.backButton.Name = "backButton";
             this.backButton.Size = new System.Drawing.Size(112, 44);
             this.backButton.TabIndex = 31;
@@ -217,12 +218,24 @@
             this.RefreshBtn.UseVisualStyleBackColor = true;
             this.RefreshBtn.Click += new System.EventHandler(this.RefreshBtn_Click);
             // 
+            // DeleteBtn
+            // 
+            this.DeleteBtn.Location = new System.Drawing.Point(150, 1037);
+            this.DeleteBtn.Margin = new System.Windows.Forms.Padding(6);
+            this.DeleteBtn.Name = "DeleteBtn";
+            this.DeleteBtn.Size = new System.Drawing.Size(138, 44);
+            this.DeleteBtn.TabIndex = 33;
+            this.DeleteBtn.Text = "Delete user";
+            this.DeleteBtn.UseVisualStyleBackColor = true;
+            this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
+            // 
             // StudentInformationsWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1904, 1104);
+            this.Controls.Add(this.DeleteBtn);
             this.Controls.Add(this.RefreshBtn);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.profileBtn);
@@ -239,7 +252,7 @@
             this.Controls.Add(this.StudentIDLabel);
             this.Controls.Add(this.NameLabel);
             this.Controls.Add(this.StudentPicture);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimizeBox = false;
             this.Name = "StudentInformationsWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -269,5 +282,6 @@
         private System.Windows.Forms.Button profileBtn;
         private System.Windows.Forms.Button backButton;
         private System.Windows.Forms.Button RefreshBtn;
+        private System.Windows.Forms.Button DeleteBtn;
     }
 }

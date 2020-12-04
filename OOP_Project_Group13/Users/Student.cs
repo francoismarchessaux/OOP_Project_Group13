@@ -214,7 +214,7 @@ namespace OOP_Project_Group13.Users
                         if (subjects.Count == 0)
                         {
                             Subject subject = new Subject(row["Subject"].ToString());
-                            if (row["studentGrade"].ToString() != "Not yet graded" && row2["studentID"].ToString()==Teacher.ToString())
+                            if (row["studentGrade"].ToString() != "Not yet graded" && row2["studentID"].ToString() == Teacher.ToString())
                             {
                                 Grade grade = new Grade(Convert.ToInt32(row["studentGrade"].ToString()), row["AssesmentName"].ToString(), Convert.ToInt32(row["coefficient"].ToString()), subject);
                                 List<Grade> grades = new List<Grade>();

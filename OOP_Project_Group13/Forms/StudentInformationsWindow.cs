@@ -20,6 +20,16 @@ namespace OOP_Project_Group13
         MySqlConnection connection;
         Student student;
         string status;
+        Faculty teacher;
+
+        public StudentInformationsWindow(MySqlConnection _connection, Student _student, string _status, Faculty _teacher)
+        {
+            InitializeComponent();
+            connection = _connection;
+            student = _student;
+            status = _status;
+            teacher = _teacher;
+        }
 
         public StudentInformationsWindow(MySqlConnection _connection, Student _student, string _status)
         {
@@ -27,6 +37,7 @@ namespace OOP_Project_Group13
             connection = _connection;
             student = _student;
             status = _status;
+
         }
 
         private void StudentInformationsWindow_Load(object sender, EventArgs e)
@@ -36,6 +47,7 @@ namespace OOP_Project_Group13
                 profileBtn.Visible = false;
                 RefreshBtn.Visible = false;
                 backButton.Text = "Back";
+                DeleteBtn.Visible = true;
             }
             if (status == "Faculty")
             {
@@ -44,10 +56,13 @@ namespace OOP_Project_Group13
                 PhoneLabel.Visible = false;
                 Fees.Visible = false;
                 backButton.Text = "Back";
+                DeleteBtn.Visible = false;
+                student.GetGrades2(generalPanel, teacher);
             }
             if (status == "Student")
             {
                 backButton.Text = "Log Out";
+                DeleteBtn.Visible = false;
             }
             NameLabel.Text = student.name.ToUpper() + " " + student.firstName.ToLower();
             StudentIDLabel.Text = "ID : " + student.ID.ToString();
@@ -78,7 +93,6 @@ namespace OOP_Project_Group13
             }
             StudentPicture.ImageLocation = student.profilePicture;
             student.GetGrades(generalPanel);
-
             PaymentButton.Visible = false;
         }
 
@@ -99,7 +113,14 @@ namespace OOP_Project_Group13
         private void buttonGrade_Click(object sender, EventArgs e)
         {
             generalPanel.Controls.Clear();
-            student.GetGrades(generalPanel);
+            if (status == "Faculty")
+            {
+                student.GetGrades2(generalPanel, teacher);
+            }
+            else
+            {
+                student.GetGrades(generalPanel);
+            }
             PaymentButton.Visible = false;
         }
 
@@ -179,6 +200,17 @@ namespace OOP_Project_Group13
                 PhoneLabel.Text = "Phone number : " + dt.Rows[0]["phone"];
             }
             StudentPicture.ImageLocation = dt.Rows[0]["profilePicture"].ToString();
+        }
+
+        private void DeleteBtn_Click(object sender, EventArgs e)
+        {
+            String query = "DELETE FROM users WHERE userID = '" + student.ID + "'";
+            MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
+            connection.Open();
+            SDA.SelectCommand.ExecuteNonQuery();
+            connection.Close();
+            MessageBox.Show("User deleted successfully !");
+            Close();
         }
     }
 }
