@@ -119,6 +119,7 @@ namespace OOP_Project_Group13.Users
             listCourses.Add(newPan);
             return newPan;
         }
+        
         public void GetGrades(Panel panel)
         {
             String query = "SELECT * FROM grade WHERE studentID='" + ID + "'";
@@ -189,6 +190,92 @@ namespace OOP_Project_Group13.Users
                 }
             }
         }
+
+        public void GetGrades2(Panel panel, Faculty Teacher)
+        {
+            String query = "SELECT * FROM grade WHERE studentID='" + ID + "'";
+            MySqlDataAdapter SDA = new MySqlDataAdapter(query, con);
+            DataTable dt = new DataTable();
+            SDA.Fill(dt);
+            
+            List<PanelCourse> listCourses = new List<PanelCourse>();
+            List<Average> subjects = new List<Average>();
+           
+            if (dt.Rows.Count != 0)
+            {
+               foreach (DataRow row in dt.Rows)
+               {
+                    String query2 = "SELECT * FROM course WHERE Subject='" + row["Subject"].ToString() +"AND Class='" + row["Class"].ToString()  + "'";
+                    MySqlDataAdapter SDA2 = new MySqlDataAdapter(query2, con);
+                    DataTable dt2 = new DataTable();
+                    SDA.Fill(dt2);
+                    foreach (DataRow row2 in dt2.Rows)
+                  {
+                        if (subjects.Count == 0)
+                        {
+                            Subject subject = new Subject(row["Subject"].ToString());
+                            if (row["studentGrade"].ToString() != "Not yet graded" && row2["studentID"].ToString()==Teacher.ToString())
+                            {
+                                Grade grade = new Grade(Convert.ToInt32(row["studentGrade"].ToString()), row["AssesmentName"].ToString(), Convert.ToInt32(row["coefficient"].ToString()), subject);
+                                List<Grade> grades = new List<Grade>();
+                                grades.Add(grade);
+                                Average avg = new Average(subject, grades);
+                                subjects.Add(avg);
+                            }
+                        }
+                        else
+                        {
+                            bool subjExist = false;
+                            Average avg = null;
+                            for (int i = 0; i < subjects.Count; i++)
+                            {
+                                Subject subject = new Subject(row["Subject"].ToString());
+                                if (subject.name.Equals(subjects[i].subject.name))
+                                {
+                                    subjExist = true;
+                                    avg = subjects[i];
+                                }
+                            }
+                            if (subjExist == true)
+                            {
+                                if (row["studentGrade"].ToString() != "Not yet graded" && row2["studentID"].ToString() == Teacher.ToString())
+                                {
+                                    Grade grade = new Grade(Convert.ToInt32(row["studentGrade"].ToString()), row["AssesmentName"].ToString(), Convert.ToInt32(row["coefficient"].ToString()), avg.subject);
+                                    avg.grades.Add(grade);
+                                }
+                            }
+                            else
+                            {
+                                if (row["studentGrade"].ToString() != "Not yet graded" && row2["studentID"].ToString() == Teacher.ToString())
+                                {
+                                    Subject subject = new Subject(row["Subject"].ToString());
+                                    Grade grade = new Grade(Convert.ToInt32(row["studentGrade"].ToString()), row["AssesmentName"].ToString(), Convert.ToInt32(row["coefficient"].ToString()), subject);
+                                    List<Grade> grades = new List<Grade>();
+                                    grades.Add(grade);
+                                    avg = new Average(subject, grades);
+                                    subjects.Add(avg);
+                                }
+                            }
+
+                        }
+                    }
+
+                                
+               }
+               for (int i = 0; i < subjects.Count; i++)
+               {
+                                PanelCourse course = AddCourse(panel, subjects[i], listCourses);
+                                for (int j = 0; j < subjects[i].grades.Count; j++)
+                                {
+                                    PlaceGrade(course, subjects[i].grades[j]);
+                                }
+               }
+            }
+                    
+
+            
+        }
+
         public void FeesPanel(Panel panel, string status)
         {
             String query = "SELECT * FROM users WHERE userID ='" + ID + "' AND status ='Student'";
