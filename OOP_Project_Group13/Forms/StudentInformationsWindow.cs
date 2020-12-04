@@ -20,13 +20,23 @@ namespace OOP_Project_Group13
         MySqlConnection connection;
         Student student;
         string status;
+        Faculty teacher;
 
+        public StudentInformationsWindow(MySqlConnection _connection, Student _student, string _status, Faculty _teacher)
+        {
+            InitializeComponent();
+            connection = _connection;
+            student = _student;
+            status = _status;
+            teacher = _teacher;
+        }
         public StudentInformationsWindow(MySqlConnection _connection, Student _student, string _status)
         {
             InitializeComponent();
             connection = _connection;
             student = _student;
             status = _status;
+            
         }
 
         private void StudentInformationsWindow_Load(object sender, EventArgs e)
@@ -41,11 +51,12 @@ namespace OOP_Project_Group13
                 AdressLabel.Visible = false;
                 PhoneLabel.Visible = false;
                 Fees.Visible = false;
-
+                student.GetGrades2(generalPanel, teacher);
             }
             else
             {
                 backButton.Text = "Log Out";
+                student.GetGrades(generalPanel);
             }
             NameLabel.Text = student.name.ToUpper() + " " + student.firstName.ToLower();
             StudentIDLabel.Text = "ID : " + student.ID.ToString();
@@ -75,7 +86,6 @@ namespace OOP_Project_Group13
                 PhoneLabel.Text = "Phone number : " + student.phone;
             }
             StudentPicture.ImageLocation = student.profilePicture;
-            student.GetGrades(generalPanel);
 
             PaymentButton.Visible = false;
         }
@@ -97,7 +107,15 @@ namespace OOP_Project_Group13
         private void buttonGrade_Click(object sender, EventArgs e)
         {
             generalPanel.Controls.Clear();
-            student.GetGrades(generalPanel);
+            if (status == "Faculty")
+            {
+                student.GetGrades2(generalPanel, teacher);
+            }
+            else
+            {
+                student.GetGrades(generalPanel);
+            }
+            
             PaymentButton.Visible = false;
         }
 
