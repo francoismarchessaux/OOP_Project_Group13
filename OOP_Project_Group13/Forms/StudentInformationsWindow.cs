@@ -40,6 +40,12 @@ namespace OOP_Project_Group13
 
         }
 
+        /// <summary>
+        /// Loads the window with all of the information of the student on the data table 
+        /// Not every information is accessible depending on which person is connected
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void StudentInformationsWindow_Load(object sender, EventArgs e)
         {
             if(status == "Admin")
@@ -100,11 +106,11 @@ namespace OOP_Project_Group13
             PaymentButton.Visible = false;
         }
 
-        private void PanelTimeTable_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// Generates the timetable of the student on the "general" panel
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonTimeTable_Click(object sender, EventArgs e)
         {
             generalPanel.Controls.Clear();
@@ -114,6 +120,11 @@ namespace OOP_Project_Group13
             PaymentButton.Visible = false;       
         }
         
+        /// <summary>
+        /// Generates the list of grades of the student in every course on the"general" panel
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonGrade_Click(object sender, EventArgs e)
         {
             generalPanel.Controls.Clear();
@@ -128,6 +139,11 @@ namespace OOP_Project_Group13
             PaymentButton.Visible = false;
         }
 
+        /// <summary>
+        /// Generates the list of attendances of the student in every course on the "general" panel
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonAttendance_Click(object sender, EventArgs e)
         {
             generalPanel.Controls.Clear();
@@ -135,6 +151,14 @@ namespace OOP_Project_Group13
             PaymentButton.Visible = false;
         }
 
+        /// <summary>
+        /// Generates the informations of the student concerning the payment of his tuition fees on the "general" panel
+        /// A different message is shown if the student already paid all of his fees
+        /// If the tuiton fees aren't fully paid and the person connected is the student himself, 
+        /// the payment button is made visible 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Fees_Click(object sender, EventArgs e)
         {
             String query = "Select * from Users Where userID ='" + student.ID + "'";
@@ -151,6 +175,11 @@ namespace OOP_Project_Group13
             }
         }
 
+        /// <summary>
+        /// Closes the active window and regenerates/open the Payment Window of the connected student
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PaymentButton_Click(object sender, EventArgs e)
         {
             PaymentWindow paymentWindow = new PaymentWindow(connection, student, status);
@@ -162,17 +191,34 @@ namespace OOP_Project_Group13
 
         }
 
+        /// <summary>
+        /// Closes the active window and regenerates/open the Modify Profil Window for the connected student
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void profileBtn_Click(object sender, EventArgs e)
         {
             ModifyProfile mod = new ModifyProfile(connection, student.ID);
             mod.Show();
         }
 
+        /// <summary>
+        /// Closes the active window to get back eitherto the Administrator Main Window (if the admin is connected)
+        /// To the login Window (if the student is connected) or the Faculty Information Window (if the teacher is connected)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void backButton_Click(object sender, EventArgs e)
         {
             Close();
         }
 
+        /// <summary>
+        /// Button used to "refresh" the window, in case the student modifies his profile
+        /// The window needs to be updated with the new information
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void RefreshBtn_Click(object sender, EventArgs e)
         {
             String query = "Select * from Users Where userID ='" + student.ID + "'";
@@ -206,6 +252,13 @@ namespace OOP_Project_Group13
             StudentPicture.ImageLocation = dt.Rows[0]["profilePicture"].ToString();
         }
 
+        /// <summary>
+        /// Button only visible for an admin
+        /// Offers the possibility to remove the student for the data table
+        /// Therefore, this student will no longer exists
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
             String query = "DELETE FROM users WHERE userID = '" + student.ID + "'";
