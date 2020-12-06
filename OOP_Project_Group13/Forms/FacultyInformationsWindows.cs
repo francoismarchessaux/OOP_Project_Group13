@@ -4,6 +4,14 @@ using System;
 using System.Data;
 using System.Windows.Forms;
 
+/*
+23202 François Marchessaux
+23410 Théotime Froget
+22839 Louis Faverjon
+23215 Victor Guy
+23194 César Maurey
+*/
+
 namespace OOP_Project_Group13.Forms
 {
     public partial class FacultyInformationsWindows : Form
@@ -11,6 +19,7 @@ namespace OOP_Project_Group13.Forms
         MySqlConnection connection;
         Faculty Teacher;
         string status;
+
         public FacultyInformationsWindows(MySqlConnection _connection, Faculty _Teacher, string _status)
         {
             InitializeComponent();
@@ -23,6 +32,12 @@ namespace OOP_Project_Group13.Forms
             tt.GetTimetable();
         }
 
+        /// <summary>
+        /// Loads the window with all of the information of the teacher on the data table 
+        /// Not every option is accessible depending on which person is connected
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FacultyInformationsWindows_Load(object sender, EventArgs e)
         {
             if(status == "Admin")
@@ -75,6 +90,13 @@ namespace OOP_Project_Group13.Forms
 
         }
 
+        /// <summary>
+        /// Button only visible for the admin
+        /// Offers the possibility to remove the teacher from the data table
+        /// Therefore, this teacher no longer exists 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
             String query = "DELETE FROM users WHERE userID = '" + Teacher.ID + "'";
@@ -86,6 +108,11 @@ namespace OOP_Project_Group13.Forms
             this.Close();
         }
 
+        /// <summary>
+        /// Button that calls the ShowClasses() function
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             panelTT.Enabled = false;
@@ -95,6 +122,10 @@ namespace OOP_Project_Group13.Forms
             ShowClasses();
         }
 
+        /// <summary>
+        /// Generates the list of classes of the teacher on the "general" panel
+        /// A messag is shown if the teacher doesn't have a classe yet
+        /// </summary>
         private void ShowClasses()
         {
             String query = "Select className from users Where userID = '" + Teacher.ID + "'";
@@ -134,6 +165,13 @@ namespace OOP_Project_Group13.Forms
             }
         }
 
+        /// <summary>
+        /// The timetable is shown when the window loads
+        /// If the user decided to see the classes, which are displayed ont the same panel,
+        /// then the timetable of the teacher will be generated again on the "general" panel
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ttBtn_Click(object sender, EventArgs e)
         {
             panelTT.Enabled = true;
@@ -144,8 +182,14 @@ namespace OOP_Project_Group13.Forms
 
         private void AttendanceBtn_Click(object sender, EventArgs e)
         {
+
         }
 
+        /// <summary>
+        /// Opens Manage Class Window and depending on the user (teacher/admin) the third parameter is either true or false
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void classButton_Click(object sender, EventArgs e)
         {
             panelTT.Hide();
@@ -163,17 +207,35 @@ namespace OOP_Project_Group13.Forms
             }
         }
 
+        /// <summary>
+        /// Open the Modify Profil Window for the connected teacher
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ModifyBtn_Click(object sender, EventArgs e)
         {
             ModifyProfile modWin = new ModifyProfile(connection, Teacher.ID);
             modWin.Show();
         }
 
+        /// <summary>
+        /// Closes the active window to get back to either the Administrator Main Window (if the admin is connected),
+        /// the login Window (if the teacher is connected)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void LogOutBtn_Click(object sender, EventArgs e)
         {
             Close();
         }
 
+        /// <summary>
+        /// The combo-Box contains every student of the teacher
+        /// After the teacher selects a student, it open the Student Information Window 
+        /// If the teacher is the students's Tutor, it gets the same information of an admin on the student
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void comboBoxStudent_SelectedIndexChanged(object sender, EventArgs e)
         {
             string[] studentInfo = this.comboBoxStudent.Text.Split(' ');

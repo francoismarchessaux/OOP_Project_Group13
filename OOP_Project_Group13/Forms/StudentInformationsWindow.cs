@@ -203,8 +203,8 @@ namespace OOP_Project_Group13
         }
 
         /// <summary>
-        /// Closes the active window to get back eitherto the Administrator Main Window (if the admin is connected)
-        /// To the login Window (if the student is connected) or the Faculty Information Window (if the teacher is connected)
+        /// Closes the active window to get back to either the Administrator Main Window (if the admin is connected),
+        /// the login Window (if the student is connected) or the Faculty Information Window (if the teacher is connected)
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
