@@ -48,6 +48,10 @@ namespace OOP_Project_Group13
                 RefreshBtn.Visible = false;
                 backButton.Text = "Back";
                 DeleteBtn.Visible = true;
+                if (teacher != null)
+                    DeleteBtn.Visible = false;
+
+                student.GetGrades(generalPanel);
             }
             if (status == "Faculty")
             {
@@ -63,6 +67,7 @@ namespace OOP_Project_Group13
             {
                 backButton.Text = "Log Out";
                 DeleteBtn.Visible = false;
+                student.GetGrades(generalPanel);
             }
             NameLabel.Text = student.name.ToUpper() + " " + student.firstName.ToLower();
             StudentIDLabel.Text = "ID : " + student.ID.ToString();
@@ -92,7 +97,6 @@ namespace OOP_Project_Group13
                 PhoneLabel.Text = "Phone number : " + student.phone;
             }
             StudentPicture.ImageLocation = student.profilePicture;
-            student.GetGrades(generalPanel);
             PaymentButton.Visible = false;
         }
 
