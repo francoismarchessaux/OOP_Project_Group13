@@ -27,6 +27,11 @@ namespace OOP_Project_Group13.Forms
 
         }
 
+        /// <summary>
+        /// Loads the panel in which the name of the student is written and adapts the "dept" label depending on the student's fees
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PaymentWindow_Load(object sender, EventArgs e)
         {
             String query = "Select * from Users Where userID ='" + student.ID + "'";
@@ -40,7 +45,11 @@ namespace OOP_Project_Group13.Forms
         }
 
         
-
+        /// <summary>
+        /// Closes the active window to get back to the Student Information Window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BackButton_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -51,6 +60,14 @@ namespace OOP_Project_Group13.Forms
 
         }
 
+        /// <summary>
+        /// Button the user clicks after writing the amount to pay,
+        /// This funtion will analyse if the amount is correct, 
+        /// Will show how much the user will have to pay after this payment,
+        /// Asks the user for a payment confirmation
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Payment_Click(object sender, EventArgs e)
         {
             String query = "Select * from Users Where userID ='" + student.ID + "'";
