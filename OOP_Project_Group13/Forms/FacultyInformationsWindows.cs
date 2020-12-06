@@ -186,12 +186,12 @@ namespace OOP_Project_Group13.Forms
             
             if (Teacher.ID.ToString() == Tuteur.Rows[0]["Tuteur"].ToString())
             {
-                StudentInformationsWindow studentInfoWin = new StudentInformationsWindow(connection, selectedStudent, "Admin",Teacher);
+                StudentInformationsWindow studentInfoWin = new StudentInformationsWindow(connection, selectedStudent, "Admin", Teacher);
                 studentInfoWin.Show();
             }
             else
             {
-                StudentInformationsWindow studentInfoWin2 = new StudentInformationsWindow(connection, selectedStudent, "Faculty",Teacher);
+                StudentInformationsWindow studentInfoWin2 = new StudentInformationsWindow(connection, selectedStudent, "Faculty", Teacher);
                 studentInfoWin2.Show();
             }
         }

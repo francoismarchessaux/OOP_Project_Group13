@@ -51,6 +51,11 @@ namespace OOP_Project_Group13.Users
         #endregion
 
         #region methods
+        /// <summary>
+        /// Method that places a grade in the Panel which corresponds to the subject of the grade
+        /// </summary>
+        /// <param name="course">the course at which we want to add a grade</param>
+        /// <param name="grade">the grade we want to add</param>
         private void PlaceGrade(PanelCourse course, Grade grade)
         {
             Label gradeName = new Label();
@@ -75,6 +80,14 @@ namespace OOP_Project_Group13.Users
             addGrade.grade.Visible = true;
             course.Height += 20;
         }
+
+        /// <summary>
+        /// A method that adds in a general panel another panel which describes a new course
+        /// </summary>
+        /// <param name="generalPanel">the general panel where the new course panel will be</param>
+        /// <param name="avg">the average of the subject</param>
+        /// <param name="listCourses">the list of all the courses in the genral Panel</param>
+        /// <returns></returns>
         private PanelCourse AddCourse(Panel generalPanel, Average avg, List<PanelCourse> listCourses)
         {
             Label courseName = new Label();
@@ -120,6 +133,10 @@ namespace OOP_Project_Group13.Users
             return newPan;
         }
         
+        /// <summary>
+        /// Method that displays all the grades of a student
+        /// </summary>
+        /// <param name="panel">the panel where we want the grades to display</param>
         public void GetGrades(Panel panel)
         {
             String query = "SELECT * FROM grade WHERE studentID='" + ID + "'";
@@ -191,6 +208,11 @@ namespace OOP_Project_Group13.Users
             }
         }
 
+        /// <summary>
+        /// Method that displays grades of a student only in the subject that concerns the teacher
+        /// </summary>
+        /// <param name="panel">the panel where we want the grades to display</param>
+        /// <param name="Teacher">the teacher who wants to see the grades</param>
         public void GetGrades2(Panel panel, Faculty Teacher)
         {
             String query = "SELECT * FROM grade WHERE studentID='" + ID + "'";
@@ -214,7 +236,7 @@ namespace OOP_Project_Group13.Users
                         if (subjects.Count == 0)
                         {
                             Subject subject = new Subject(row["Subject"].ToString());
-                            if (row["studentGrade"].ToString() != "Not yet graded" && row2["studentID"].ToString()==Teacher.ToString())
+                            if (row["studentGrade"].ToString() != "Not yet graded" && row2["studentID"].ToString() == Teacher.ToString())
                             {
                                 Grade grade = new Grade(Convert.ToInt32(row["studentGrade"].ToString()), row["AssesmentName"].ToString(), Convert.ToInt32(row["coefficient"].ToString()), subject);
                                 List<Grade> grades = new List<Grade>();
@@ -276,6 +298,11 @@ namespace OOP_Project_Group13.Users
             
         }
 
+        /// <summary>
+        /// Method that display the actual situation of fees payment for a student
+        /// </summary>
+        /// <param name="panel">the panel where we want the fees to display</param>
+        /// <param name="status">status of the one who want to see the fees</param>
         public void FeesPanel(Panel panel, string status)
         {
             String query = "SELECT * FROM users WHERE userID ='" + ID + "' AND status ='Student'";
@@ -352,6 +379,10 @@ namespace OOP_Project_Group13.Users
           
         }
 
+        /// <summary>
+        /// Method that write the information of the student for the payment of the tuitions fees in a panel
+        /// </summary>
+        /// <param name="panel">the panel where the information will be display</param>
         public void PanelPayment(Panel panel)
         {
             String query = "SELECT * FROM users WHERE userID ='" + ID + "' AND status ='Student'";

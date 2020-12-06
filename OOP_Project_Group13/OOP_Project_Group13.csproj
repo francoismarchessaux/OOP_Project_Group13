@@ -120,13 +120,13 @@
     <Compile Include="Forms\AddGrade.Designer.cs">
       <DependentUpon>AddGrade.cs</DependentUpon>
     </Compile>
-    <Compile Include="Attendance.cs" />
-    <Compile Include="AttendanceCourse.cs" />
-    <Compile Include="Average.cs" />
-    <Compile Include="ButtonClass.cs">
+    <Compile Include="Models\Attendance.cs" />
+    <Compile Include="Models\AttendanceCourse.cs" />
+    <Compile Include="Models\Average.cs" />
+    <Compile Include="Modified_Tools\ButtonClass.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Class.cs" />
+    <Compile Include="Models\Class.cs" />
     <Compile Include="Forms\CreateExam.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,7 +139,7 @@
     <Compile Include="Forms\AdministratorMainWindow.Designer.cs">
       <DependentUpon>AdministratorMainWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Course.cs" />
+    <Compile Include="Models\Course.cs" />
     <Compile Include="Forms\AttendanceForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,12 +182,6 @@
     <Compile Include="Forms\FirstConWin.Designer.cs">
       <DependentUpon>FirstConWin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormCreateStudent.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormCreateStudent.Designer.cs">
-      <DependentUpon>FormCreateStudent.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\LoginWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -218,14 +212,14 @@
     <Compile Include="Forms\PaymentWindow.Designer.cs">
       <DependentUpon>PaymentWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Grade.cs" />
+    <Compile Include="Models\Grade.cs" />
     <Compile Include="Forms\StudentInformationsWindow.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\StudentInformationsWindow.Designer.cs">
       <DependentUpon>StudentInformationsWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="LabelGrade.cs">
+    <Compile Include="Modified_Tools\LabelGrade.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="oopprojectDataSet.Designer.cs">
@@ -233,21 +227,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>oopprojectDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="PanelCourse.cs">
+    <Compile Include="Modified_Tools\PanelCourse.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="PanelFees.cs">
+    <Compile Include="Modified_Tools\PanelFees.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Properties\Ressources.Designer.cs" />
-    <Compile Include="Subject.cs" />
-    <Compile Include="Forms\Users\Faculty.cs" />
+    <Compile Include="Models\Subject.cs" />
+    <Compile Include="Users\Faculty.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TimeTable.cs" />
-    <Compile Include="Forms\Users\Administrator.cs" />
-    <Compile Include="Forms\Users\Student.cs" />
-    <Compile Include="Forms\Users\User.cs" />
+    <Compile Include="Models\TimeTable.cs" />
+    <Compile Include="Users\Administrator.cs" />
+    <Compile Include="Users\Student.cs" />
+    <Compile Include="Users\User.cs" />
     <EmbeddedResource Include="Forms\AddGrade.resx">
       <DependentUpon>AddGrade.cs</DependentUpon>
     </EmbeddedResource>
@@ -277,9 +271,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FirstConWin.resx">
       <DependentUpon>FirstConWin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormCreateStudent.resx">
-      <DependentUpon>FormCreateStudent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginWindow.resx">
       <DependentUpon>LoginWindow.cs</DependentUpon>

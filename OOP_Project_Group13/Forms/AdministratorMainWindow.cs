@@ -104,9 +104,9 @@ namespace OOP_Project_Group13
 
         private void button1_Click(object sender, EventArgs e)
         {
-            StudentList.SelectedItem = "Selec Student ... ";
-            TeacherList.SelectedItem = "Selec Teacher ... ";
-            ClassesList.SelectedItem = "Selec Class ... ";
+            StudentList.Text = "Select Student ...";
+            TeacherList.Text = "Select Teacher ...";
+            ClassesList.Text = "Select Class ...";
             StudentList.Items.Clear();
             TeacherList.Items.Clear();
             ClassesList.Items.Clear();
@@ -134,11 +134,22 @@ namespace OOP_Project_Group13
             {
                 this.ClassesList.Items.Add(ClassTable.Rows[i]["className"]);
             }
+            query = "Select profilePicture from Users Where userID = '" + admin.ID + "'";
+            SDA = new MySqlDataAdapter(query, connection);
+            DataTable pp = new DataTable();
+            SDA.Fill(pp);
+            AdminPP_PictureBox.ImageLocation = pp.Rows[0]["profilePicture"].ToString();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ModifyProfile modWin = new ModifyProfile(connection, admin.ID);
+            modWin.Show();
         }
     }
 }

@@ -30,13 +30,14 @@ namespace OOP_Project_Group13
             status = _status;
             teacher = _teacher;
         }
+
         public StudentInformationsWindow(MySqlConnection _connection, Student _student, string _status)
         {
             InitializeComponent();
             connection = _connection;
             student = _student;
             status = _status;
-            
+
         }
 
         private void StudentInformationsWindow_Load(object sender, EventArgs e)
@@ -44,6 +45,13 @@ namespace OOP_Project_Group13
             if(status == "Admin")
             {
                 profileBtn.Visible = false;
+                RefreshBtn.Visible = false;
+                backButton.Text = "Back";
+                DeleteBtn.Visible = true;
+                if (teacher != null)
+                    DeleteBtn.Visible = false;
+
+                student.GetGrades(generalPanel);
             }
             if (status == "Faculty")
             {
@@ -51,16 +59,19 @@ namespace OOP_Project_Group13
                 AdressLabel.Visible = false;
                 PhoneLabel.Visible = false;
                 Fees.Visible = false;
+                backButton.Text = "Back";
+                DeleteBtn.Visible = false;
                 student.GetGrades2(generalPanel, teacher);
             }
-            else
+            if (status == "Student")
             {
                 backButton.Text = "Log Out";
+                DeleteBtn.Visible = false;
                 student.GetGrades(generalPanel);
             }
             NameLabel.Text = student.name.ToUpper() + " " + student.firstName.ToLower();
             StudentIDLabel.Text = "ID : " + student.ID.ToString();
-            if (student.birthday.Date.ToString("dd/MM/yyyy") == "01/01/2000")
+            if (student.birthday.Date.ToString("dd/MM/yyyy") == "01/01/1900")
             {
                 BirthDate.Text = "Birthday date : Not yet entered";
             }
@@ -86,7 +97,6 @@ namespace OOP_Project_Group13
                 PhoneLabel.Text = "Phone number : " + student.phone;
             }
             StudentPicture.ImageLocation = student.profilePicture;
-
             PaymentButton.Visible = false;
         }
 
@@ -115,7 +125,6 @@ namespace OOP_Project_Group13
             {
                 student.GetGrades(generalPanel);
             }
-            
             PaymentButton.Visible = false;
         }
 
@@ -161,6 +170,50 @@ namespace OOP_Project_Group13
 
         private void backButton_Click(object sender, EventArgs e)
         {
+            Close();
+        }
+
+        private void RefreshBtn_Click(object sender, EventArgs e)
+        {
+            String query = "Select * from Users Where userID ='" + student.ID + "'";
+            MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
+            DataTable dt = new DataTable();
+            SDA.Fill(dt);
+            if (student.birthday.Date.ToString("dd/MM/yyyy") == "01/01/1900")
+            {
+                BirthDate.Text = "Birthday date : Not yet entered";
+            }
+            else
+            {
+                BirthDate.Text = "Birthday date : " + Convert.ToDateTime(dt.Rows[0]["birthday"]).ToString("dd/MM/yyyy");
+            }
+            if (student.address == "Address")
+            {
+                AdressLabel.Text = "Address : Not yet entered";
+            }
+            else
+            {
+                AdressLabel.Text = "Address : " + dt.Rows[0]["address"];
+            }
+            if (student.phone == "0000000000")
+            {
+                PhoneLabel.Text = "Phone number : Not yet entered";
+            }
+            else
+            {
+                PhoneLabel.Text = "Phone number : " + dt.Rows[0]["phone"];
+            }
+            StudentPicture.ImageLocation = dt.Rows[0]["profilePicture"].ToString();
+        }
+
+        private void DeleteBtn_Click(object sender, EventArgs e)
+        {
+            String query = "DELETE FROM users WHERE userID = '" + student.ID + "'";
+            MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
+            connection.Open();
+            SDA.SelectCommand.ExecuteNonQuery();
+            connection.Close();
+            MessageBox.Show("User deleted successfully !");
             Close();
         }
     }
