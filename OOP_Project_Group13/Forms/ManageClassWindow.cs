@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using OOP_Project_Group13.Users;
 using System.Windows;
 
+//23202 François Marchessaux 23410 Théotime Froget 22839 Louis Faverjon 23215 Victor Guy 23194 César Maurey
 namespace OOP_Project_Group13.Forms
 {
     public partial class ManageClassWindow : Form
