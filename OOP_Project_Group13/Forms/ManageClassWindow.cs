@@ -28,7 +28,7 @@ namespace OOP_Project_Group13.Forms
         }
 
         /// <summary>
-        /// Initialize the window with all the students in the class
+        /// Initializes the window with all the students in the class
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -40,7 +40,7 @@ namespace OOP_Project_Group13.Forms
         }
 
         /// <summary>
-        /// Open the create course window when the user click on the create course window
+        /// Opens the create course window when the user click on the create course window
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -51,7 +51,7 @@ namespace OOP_Project_Group13.Forms
         }
 
         /// <summary>
-        /// Open the modify course window when the users click on the right button
+        /// Opens the modify course window when the users click on the right button
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -62,7 +62,7 @@ namespace OOP_Project_Group13.Forms
         }
 
         /// <summary>
-        /// Display the timetable of the class
+        /// Displays the timetable of the class
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -76,7 +76,7 @@ namespace OOP_Project_Group13.Forms
         }
 
         /// <summary>
-        /// Display the list of students
+        /// Displays the list of students
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -87,7 +87,7 @@ namespace OOP_Project_Group13.Forms
         }
 
         /// <summary>
-        /// Open the create exam window
+        /// Opens the create exam window
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -98,7 +98,7 @@ namespace OOP_Project_Group13.Forms
         }
 
         /// <summary>
-        /// Open the submit grades window
+        /// Opens the submit grades window
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -114,7 +114,7 @@ namespace OOP_Project_Group13.Forms
         }
 
         /// <summary>
-        /// Close the running window
+        /// Closes the running window
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -124,7 +124,7 @@ namespace OOP_Project_Group13.Forms
         }
 
         /// <summary>
-        /// Delete the class from the database
+        /// Deletes the class from the database
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -140,7 +140,7 @@ namespace OOP_Project_Group13.Forms
         }
 
         /// <summary>
-        /// Refresh the window
+        /// Refreshes the window
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

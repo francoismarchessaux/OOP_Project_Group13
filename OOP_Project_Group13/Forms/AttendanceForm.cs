@@ -15,7 +15,7 @@ namespace OOP_Project_Group13.Forms
         Course course;
 
         /// <summary>
-        /// Initialize the form at the actual attendance status for all the students
+        /// Initializes the form at the actual attendance status for all the students
         /// </summary>
         /// <param name="con"></param>
         /// <param name="_course"></param>
@@ -109,7 +109,7 @@ namespace OOP_Project_Group13.Forms
         }
 
         /// <summary>
-        /// Method that when the teacher click on the validate button add attendance status in the database for all the student
+        /// Method that when the teacher clicks on the validate button add attendance status in the database for all the student
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
