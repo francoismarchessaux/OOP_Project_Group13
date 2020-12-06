@@ -22,6 +22,11 @@ namespace OOP_Project_Group13
             attendance = new List<AttendanceCourse>();
         }
         
+        /// <summary>
+        /// Method that adds a new course in the general panel and adds attendances in this course
+        /// </summary>
+        /// <param name="att">the course to add with a list of attendances</param>
+        /// <param name="generalPanel">the panel where attendances going to be displayed</param>
         public void AddCourse (AttendanceCourse att,Panel generalPanel)
         {
             Label courseName = new Label();
@@ -31,7 +36,7 @@ namespace OOP_Project_Group13
             newPan.Height = 70;
             newPan.Width = 910;
             int x = 0;
-            int y = 10;
+            int y;
             int max = -10;
             foreach (Control c in generalPanel.Controls)
             {
@@ -84,6 +89,11 @@ namespace OOP_Project_Group13
                 newPan.Controls.Add(addAtt.grade);
             }
         }
+
+        /// <summary>
+        /// Method that displays attendances of a student
+        /// </summary>
+        /// <param name="panel">panel where attendances going to be displayed</param>
         public void GetAttendance(Panel panel)
         {
             String query = "SELECT * FROM attendance WHERE studentID='" + student.ID + "'";
@@ -113,6 +123,12 @@ namespace OOP_Project_Group13
                 AddCourse(attendance[i],panel);
             }
         }
+
+        /// <summary>
+        /// Method that get the index of the Panel of a subject
+        /// </summary>
+        /// <param name="name">name of the subject</param>
+        /// <returns>the position of the subject in the list of subjects</returns>
         private int GetIndexOfCourse(string name)
         {
             int index =0;
@@ -125,6 +141,12 @@ namespace OOP_Project_Group13
             }
             return index-1;
         }
+
+        /// <summary>
+        /// Method that get the rate of presence of an student in a subject
+        /// </summary>
+        /// <param name="name">name of the subject</param>
+        /// <returns></returns>
         private double GetAttendanceRate(string name)
         {
             double rate = 0;
@@ -134,6 +156,12 @@ namespace OOP_Project_Group13
             rate =Math.Round(rate*100/ (attendance[index].attendance.Length * 2),2);
             return rate;
         }
+        
+        /// <summary>
+        /// Method that get the sum of all the attendance in a subject for a student
+        /// </summary>
+        /// <param name="name">name of the subject</param>
+        /// <returns>sum of all his attendances</returns>
         private int GetAttendance(string name)
         {
             int sum = 0;
