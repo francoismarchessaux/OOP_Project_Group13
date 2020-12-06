@@ -146,12 +146,6 @@
     <Compile Include="Forms\AttendanceForm.Designer.cs">
       <DependentUpon>AttendanceForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ClassInfo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ClassInfo.Designer.cs">
-      <DependentUpon>ClassInfo.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\CreateClass.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -257,9 +251,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AttendanceForm.resx">
       <DependentUpon>AttendanceForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ClassInfo.resx">
-      <DependentUpon>ClassInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CreateClass.resx">
       <DependentUpon>CreateClass.cs</DependentUpon>

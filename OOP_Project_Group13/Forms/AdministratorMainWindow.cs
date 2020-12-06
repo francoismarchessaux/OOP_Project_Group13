@@ -27,13 +27,22 @@ namespace OOP_Project_Group13
             AdminID_Label.Text = admin.ID.ToString();
             AdminPP_PictureBox.ImageLocation = admin.profilePicture;
         }
-
+        /// <summary>
+        /// Open the student creation window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CreateStudentButton_Click(object sender, EventArgs e)
         {
             CreateUser studentCreationWindow = new CreateUser(connection, "Student", admin);
             studentCreationWindow.Show();
         }
 
+        /// <summary>
+        /// Method that opens the student informations window when the admin selects a student in the list
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             string[] studentInfo = this.StudentList.Text.Split(' ');
@@ -42,6 +51,11 @@ namespace OOP_Project_Group13
             studentInfoWin.Show();
         }
 
+        /// <summary>
+        /// Method that fills all the combobox with the relevant items when the window loads
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AdministratorMainWindow_Load(object sender, EventArgs e)
         {
             String query = "Select name, firstName, userID from Users Where status = 'Student'";
@@ -70,6 +84,11 @@ namespace OOP_Project_Group13
             }
         }
 
+        /// <summary>
+        /// Open the faculty informations window when the admin selects a teacher
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TeacherList_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             string[] teacherInfo = this.TeacherList.Text.Split(' ');
@@ -82,12 +101,22 @@ namespace OOP_Project_Group13
             TeacherInfoWin.Show();
         }
 
+        /// <summary>
+        /// Opens the create teacher window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CreateTeacherBtn_Click(object sender, EventArgs e)
         {
             CreateUser teacherCreationWindow = new CreateUser(connection, "Faculty", admin);
             teacherCreationWindow.Show();
         }
 
+        /// <summary>
+        /// Open the class information windown when the admin selects the class
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ClassesList_SelectedIndexChanged(object sender, EventArgs e)
         {
             string classNameStr = ClassesList.Text;
@@ -96,12 +125,22 @@ namespace OOP_Project_Group13
             classMngWin.Show();
         }
 
+        /// <summary>
+        /// Open the class creation window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CreateClassButton_Click(object sender, EventArgs e)
         {
             CreateClass ClassCreationWindow = new CreateClass(connection, admin);
             ClassCreationWindow.Show();
         }
 
+        /// <summary>
+        /// Refresh the window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             StudentList.Text = "Select Student ...";
@@ -141,11 +180,21 @@ namespace OOP_Project_Group13
             AdminPP_PictureBox.ImageLocation = pp.Rows[0]["profilePicture"].ToString();
         }
 
+        /// <summary>
+        /// Close the window and return to the login Window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             Close();
         }
 
+        /// <summary>
+        /// Open the modify profile window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button3_Click(object sender, EventArgs e)
         {
             ModifyProfile modWin = new ModifyProfile(connection, admin.ID);
