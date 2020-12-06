@@ -29,6 +29,11 @@ namespace OOP_Project_Group13.Forms
             admin = _admin;
         }
 
+        /// <summary>
+        /// Loads the combo-box with the surname, first name and ID of the students who still have no class
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CreateClass_Load(object sender, EventArgs e)
         {
             String query = "Select * from Users Where status = 'Student'and className is NULL";
@@ -45,6 +50,13 @@ namespace OOP_Project_Group13.Forms
         {
         }
         
+        /// <summary>
+        /// Tests if a student is selected in the combo box, this function is called when the button add is pushed
+        /// The informations of the student will then be collected and inserted into the DataGridView
+        /// This student will then be removed from the combo-Box in order to avoid adding him twice in the class
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddStudent_Click(object sender, EventArgs e)
         {
             if (ComboStudent.Text != "")
@@ -70,6 +82,14 @@ namespace OOP_Project_Group13.Forms
                 
         }        
 
+        /// <summary>
+        /// When all the wanted students are selected, the button "Create Class" calls this function
+        /// The name of the class (entered by the Admin) and the Id of every student in the DataGridView are taken 
+        /// And inserted into the Data Table "Class" 
+        /// A new class is now created
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CreateClassButton_Click(object sender, EventArgs e)
         {
             string NameGroup = NameClass.Text;
@@ -84,27 +104,32 @@ namespace OOP_Project_Group13.Forms
                 {
                     StudentsIDs += dataGridView1[1, i].Value + " ";
                 }
-            }
-            String query = "SELECT * from Class WHERE className = '" + NameGroup +  "' AND studentsIDs = '" + StudentsIDs + "'";
-            MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
-            DataTable groupTable = new DataTable();
-            SDA.Fill(groupTable);
+            }            
             connection.Open();
-            query = "INSERT INTO Class (className, studentsIDs ) VALUES ('" + NameGroup + "' ,  '" + StudentsIDs + "')";
-            SDA = new MySqlDataAdapter(query, connection);
+            string query = "INSERT INTO Class (className, studentsIDs ) VALUES ('" + NameGroup + "' ,  '" + StudentsIDs + "')";
+            MySqlDataAdapter SDA = new MySqlDataAdapter(query, connection);
             SDA.SelectCommand.ExecuteNonQuery();
             connection.Close();
             MessageBox.Show("Class created successfully !");
             this.Close();
         }
-        
-        
 
+        /// <summary>
+        /// This funtion is called when the button "Clear" is pushed and will clear every element in the DataGridView
+        /// In order tp reset the formation of the class without having to remove each student manually
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Clear_Click(object sender, EventArgs e)
         {
             dataGridView1.Rows.Clear();
         }
 
+        /// <summary>
+        /// Closes the active window to get back to the Administrator Main Window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Back_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -114,8 +139,14 @@ namespace OOP_Project_Group13.Forms
         {
         }
 
-       private void RemoveStudent_Click(object sender, EventArgs e)
-       {
+        /// <summary>
+        /// If a student is no longer wanted in the class created, the admin will select this student in the DataGridView
+        /// Then by clicking on "Remove", this student will be removed from the DataGridView and will be restored into the Combo-Box
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RemoveStudent_Click(object sender, EventArgs e)
+        {
             if (this.dataGridView1.SelectedRows.Count > 0)
             {
                 string ID = dataGridView1.SelectedRows[0].Cells["ID"].Value.ToString();

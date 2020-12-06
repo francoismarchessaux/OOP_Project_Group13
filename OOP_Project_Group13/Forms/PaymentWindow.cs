@@ -28,7 +28,7 @@ namespace OOP_Project_Group13.Forms
         }
 
         /// <summary>
-        /// Loads the window with the panel in which the name of the student is written and adapts the "dept" label depending on the student's fees
+        /// Loads the panel in which the name of the student is written and adapts the "dept" label depending on the student's fees
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -46,7 +46,7 @@ namespace OOP_Project_Group13.Forms
 
         
         /// <summary>
-        /// Closes the active window to get back to the Student Information Window
+        /// Closes the active window to get back to the Student Informations Window
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
