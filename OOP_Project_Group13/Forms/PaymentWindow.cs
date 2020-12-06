@@ -65,6 +65,8 @@ namespace OOP_Project_Group13.Forms
         /// This funtion will analyse if the amount is correct, 
         /// Will show how much the user will have to pay after this payment,
         /// Asks the user for a payment confirmation
+        /// If the payment is confirmed, the data table will be updated with the new values
+        /// (fees left to pay will decrease and fees paid will increase)
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
