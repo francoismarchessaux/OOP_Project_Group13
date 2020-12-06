@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+//23202 François Marchessaux 23410 Théotime Froget 22839 Louis Faverjon 23215 Victor Guy 23194 César Maurey
 namespace OOP_Project_Group13
 {
     public partial class AdministratorMainWindow : Form
@@ -28,7 +29,7 @@ namespace OOP_Project_Group13
             AdminPP_PictureBox.ImageLocation = admin.profilePicture;
         }
         /// <summary>
-        /// Open the student creation window
+        /// Opens the student creation window
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -85,7 +86,7 @@ namespace OOP_Project_Group13
         }
 
         /// <summary>
-        /// Open the faculty informations window when the admin selects a teacher
+        /// Opens the faculty informations window when the admin selects a teacher
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -113,7 +114,7 @@ namespace OOP_Project_Group13
         }
 
         /// <summary>
-        /// Open the class information windown when the admin selects the class
+        /// Opens the class information windown when the admin selects the class
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -126,7 +127,7 @@ namespace OOP_Project_Group13
         }
 
         /// <summary>
-        /// Open the class creation window
+        /// Opens the class creation window
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -137,7 +138,7 @@ namespace OOP_Project_Group13
         }
 
         /// <summary>
-        /// Refresh the window
+        /// Refreshes the window
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -181,7 +182,7 @@ namespace OOP_Project_Group13
         }
 
         /// <summary>
-        /// Close the window and return to the login Window
+        /// Closes the window and return to the login Window
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -191,7 +192,7 @@ namespace OOP_Project_Group13
         }
 
         /// <summary>
-        /// Open the modify profile window
+        /// Opens the modify profile window
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

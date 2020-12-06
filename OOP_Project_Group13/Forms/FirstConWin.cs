@@ -10,6 +10,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+//23202 François Marchessaux 23410 Théotime Froget 22839 Louis Faverjon 23215 Victor Guy 23194 César Maurey
 namespace OOP_Project_Group13.Forms
 {
     public partial class FirstConWin : Form
@@ -24,7 +25,13 @@ namespace OOP_Project_Group13.Forms
             connection = _connection;
             status = _status;
         }
-
+        /// <summary>
+        /// User changes password on first login
+        /// The new password is updated in the User database
+        /// Then the user is directed to his Student or Teacher environment
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             if(pswrd1.Text != null && pswrd2.Text != null)
@@ -63,6 +70,11 @@ namespace OOP_Project_Group13.Forms
             {
                 MessageBox.Show("Please enter a new password");
             }
+        }
+
+        private void FirstConWin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

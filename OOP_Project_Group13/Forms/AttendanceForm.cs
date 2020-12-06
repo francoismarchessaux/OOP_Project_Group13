@@ -6,12 +6,19 @@ using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 
+//23202 François Marchessaux 23410 Théotime Froget 22839 Louis Faverjon 23215 Victor Guy 23194 César Maurey
 namespace OOP_Project_Group13.Forms
 {
     public partial class AttendanceForm : Form
     {
         MySqlConnection connection;
         Course course;
+
+        /// <summary>
+        /// Initializes the form at the actual attendance status for all the students
+        /// </summary>
+        /// <param name="con"></param>
+        /// <param name="_course"></param>
         public AttendanceForm(MySqlConnection con,Course _course)
         {
             InitializeComponent();
@@ -57,6 +64,10 @@ namespace OOP_Project_Group13.Forms
                 }
             }
         }
+
+        /// <summary>
+        /// Method that displays all the students of the class with checkbox to check the attendance
+        /// </summary>
         public void GetListStudents()
         {
             List<Student> students = course.courseClass.students;
@@ -97,6 +108,11 @@ namespace OOP_Project_Group13.Forms
             }
         }
 
+        /// <summary>
+        /// Method that when the teacher clicks on the validate button add attendance status in the database for all the student
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonValidate_Click(object sender, EventArgs e)
         {
             connection.Open();
@@ -143,6 +159,11 @@ namespace OOP_Project_Group13.Forms
             connection.Close();
         }
 
+        /// <summary>
+        /// Method that modifies attendance status for the class when the teacher click on the modify button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonModify_Click(object sender, EventArgs e)
         {
             connection.Open();

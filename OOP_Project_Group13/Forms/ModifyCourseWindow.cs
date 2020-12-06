@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+//23202 François Marchessaux 23410 Théotime Froget 22839 Louis Faverjon 23215 Victor Guy 23194 César Maurey
 namespace OOP_Project_Group13.Forms
 {
     public partial class ModifyCourseWindow : Form
@@ -21,7 +22,11 @@ namespace OOP_Project_Group13.Forms
             connection = _connection;
             course = _course;
         }
-
+        /// <summary>
+        /// Adds the name, first name and ID of all teachers to the TeacherList
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ModifyCourseWindow_Load(object sender, EventArgs e)
         {
             String query = "Select name, firstName, userID from Users Where status = 'Faculty'";
@@ -37,12 +42,20 @@ namespace OOP_Project_Group13.Forms
             DayList.SelectedItem = course.day;
             subjectLbl.Text = $"Subject : {course.name}";
         }
-
+        /// <summary>
+        /// Close the window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BackBtn_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
+        /// <summary>
+        /// Modifies the course selected by the user
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ApplyBtn_Click(object sender, EventArgs e)
         {
             String query = "Select number from course Where Subject = '" + course.name + "' AND teacher = '" + course.teacher + "' AND Day = '" + course.day + "' AND Time = '" + course.time + "'";
@@ -60,7 +73,11 @@ namespace OOP_Project_Group13.Forms
             MessageBox.Show("Course modified successfully !");
             this.Close();
         }
-
+        /// <summary>
+        /// Deletes the course selected by the user
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void deleteBtn_Click(object sender, EventArgs e)
         {
             String query = "DELETE FROM course WHERE Subject = '" + course.name + "' AND teacher = '" + course.teacher + "' AND Time = '" + course.time + "'";

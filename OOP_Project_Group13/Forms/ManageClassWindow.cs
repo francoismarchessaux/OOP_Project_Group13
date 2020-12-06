@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using OOP_Project_Group13.Users;
 using System.Windows;
 
+//23202 François Marchessaux 23410 Théotime Froget 22839 Louis Faverjon 23215 Victor Guy 23194 César Maurey
 namespace OOP_Project_Group13.Forms
 {
     public partial class ManageClassWindow : Form
@@ -26,6 +27,11 @@ namespace OOP_Project_Group13.Forms
             status = _status;
         }
 
+        /// <summary>
+        /// Initializes the window with all the students in the class
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ManageClassWindow_Load(object sender, EventArgs e)
         {
             classNameLabel.Text = "Class Name : " + group.name;
@@ -33,18 +39,33 @@ namespace OOP_Project_Group13.Forms
                 dataGridView1.Rows.Add(group.students[i].ID, group.students[i].name, group.students[i].firstName);
         }
 
+        /// <summary>
+        /// Opens the create course window when the user click on the create course window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             CreateCourse createCoursewin = new CreateCourse(connection, group.name);
             createCoursewin.Show();
         }
 
+        /// <summary>
+        /// Opens the modify course window when the users click on the right button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ModifyCourseBtn_Click(object sender, EventArgs e)
         {
             CreateCourse createCoursewin = new CreateCourse(connection, group.name);
             createCoursewin.Show();
         }
 
+        /// <summary>
+        /// Displays the timetable of the class
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TimetableBtn_Click(object sender, EventArgs e)
         {
             TimeTablePnl.Visible = true;
@@ -54,18 +75,33 @@ namespace OOP_Project_Group13.Forms
             classTimetable.GetTimetable();
         }
 
+        /// <summary>
+        /// Displays the list of students
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void StudentsBtn_Click(object sender, EventArgs e)
         {
             dataGridView1.Visible = true;
             TimeTablePnl.Visible = false;
         }
 
+        /// <summary>
+        /// Opens the create exam window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonCreateExam_Click_1(object sender, EventArgs e)
         {
             CreateExam createExamwin = new CreateExam(connection, group);
             createExamwin.Show();
         }
 
+        /// <summary>
+        /// Opens the submit grades window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             AddGrade2 SubmitGrade = new AddGrade2(connection, group);
@@ -77,11 +113,21 @@ namespace OOP_Project_Group13.Forms
 
         }
 
+        /// <summary>
+        /// Closes the running window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BackBtn_Click(object sender, EventArgs e)
         {
             Close();
         }
 
+        /// <summary>
+        /// Deletes the class from the database
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void deleteBtn_Click(object sender, EventArgs e)
         {
             String query = "DELETE FROM class WHERE className = '" + group.name + "'";
@@ -93,6 +139,11 @@ namespace OOP_Project_Group13.Forms
             Close();
         }
 
+        /// <summary>
+        /// Refreshes the window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button3_Click(object sender, EventArgs e)
         {
             TimeTablePnl.Visible = false;
