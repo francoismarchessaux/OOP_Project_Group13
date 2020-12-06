@@ -14,10 +14,14 @@ namespace OOP_Project_Group13
 {
     public class TimeTable
     {
+        #region attributes
         User user;
         MySqlConnection connection = Program.GetConnection();
         Panel timetable;
-        string status; 
+        string status;
+        #endregion
+
+        #region constructors
         public TimeTable(User user, Panel timetable)
         {
             this.user = user;
@@ -29,6 +33,13 @@ namespace OOP_Project_Group13
             this.timetable = timetable;
             status = _status;
         }
+        #endregion
+
+        #region methods
+
+        /// <summary>
+        /// Method that displays a empty timetable, with every course hidenn
+        /// </summary>
         public void InitializeTimeTable()
         {
             string[] week = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" };
@@ -81,6 +92,10 @@ namespace OOP_Project_Group13
                 }
             }
         }
+
+        /// <summary>
+        /// Method that shows the courses of a student in the previous empty timetable
+        /// </summary>
         public void GetTimetable()
         {
             String query = "";
@@ -127,6 +142,11 @@ namespace OOP_Project_Group13
 
         }
 
+        /// <summary>
+        /// Method that open a window based on who press the button of a course (ModifyCourse for the admin, Attendace for the Faculty, Incoming assesment for the Student) 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void label_Click(object sender, System.EventArgs e)
         {
             if(status == "Admin")
@@ -162,5 +182,6 @@ namespace OOP_Project_Group13
                 MessageBox.Show(assesment);
             }
         }
+        #endregion
     }
 }
