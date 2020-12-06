@@ -22,7 +22,12 @@ namespace OOP_Project_Group13
             InitializeComponent();
             connection = _connection;
         }
-
+        /// <summary>
+        /// Verifies that the password and the ID  number are correct 
+        /// Sends the user to his environment according to his status : Admin/Faculty/Student
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             String query = "Select * from users Where userID = ' " + userID_TextBox.Text + "'";
@@ -74,7 +79,11 @@ namespace OOP_Project_Group13
             userID_TextBox.Clear();
             password_TextBox.Clear();
         }
-
+        /// <summary>
+        /// Allows the user to validate his choice by pressing the enter key directly
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void password_TextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if(e.KeyChar == Convert.ToChar(Keys.Enter))
@@ -82,7 +91,10 @@ namespace OOP_Project_Group13
                 button1_Click(sender, e);
             }
         }
-
+        /// <summary>
+        /// Open the Faculty Information window (Teacher's environment)
+        /// </summary>
+        /// <param name="id"></param>
         public static void RunTeacher(string id)
         {
             String query = "Select * from users Where userID = ' " + id + "'";
@@ -101,7 +113,10 @@ namespace OOP_Project_Group13
             FacultyInformationsWindows facWin = new FacultyInformationsWindows(connection, teacher, "Teacher");
             facWin.Show();
         }
-
+        /// <summary>
+        /// Open the Student Information window (Student's environment)
+        /// </summary>
+        /// <param name="id"></param>
         public static void RunStudent(string id)
         {
             String query = "Select * from users Where userID = ' " + id + "'";
@@ -111,6 +126,11 @@ namespace OOP_Project_Group13
             Student selectedStudent = new Student(Convert.ToInt32(userTable.Rows[0]["userID"].ToString()));
             StudentInformationsWindow studentInfoWin = new StudentInformationsWindow(connection, selectedStudent, "Student");
             studentInfoWin.Show();
+        }
+
+        private void LoginWindow_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
