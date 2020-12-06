@@ -26,7 +26,13 @@ namespace OOP_Project_Group13.Forms
             status = _status;
             admin = _admin;
         }
-
+        /// <summary>
+        /// Creates users with differents status : Teacher or Student and adds them to the User database
+        /// Creates email adresses for people created
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CreateButton_Click(object sender, EventArgs e)
         {
             bool continueID = true;
@@ -69,12 +75,21 @@ namespace OOP_Project_Group13.Forms
             }
             this.Close();
         }
-
+        /// <summary>
+        /// Closes the active window to get back to the Administrator Main Window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BackButton_Click(object sender, EventArgs e)
         {
             this.Close();
             AdministratorMainWindow adminWin = new AdministratorMainWindow(admin, connection);
             adminWin.Show();
+        }
+
+        private void CreateUser_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

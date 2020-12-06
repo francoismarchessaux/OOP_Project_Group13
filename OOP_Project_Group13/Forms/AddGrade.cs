@@ -22,7 +22,11 @@ namespace OOP_Project_Group13
             connection = _connection;
             groupName = _groupName;
         }
-
+        /// <summary>
+        /// Displays the name of the group when the page loads
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddGrade_Load(object sender, EventArgs e)
         {
            
@@ -34,7 +38,11 @@ namespace OOP_Project_Group13
         {
 
         }
-
+        /// <summary>
+        /// Displays the exams already created for a subject and checks if it is not already present in the combobox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SubjectList_SelectedIndexChanged(object sender, EventArgs e)
         {
             string Subject = SubjectList.Text;
@@ -61,12 +69,17 @@ namespace OOP_Project_Group13
 
             }
         }
-
+        
         private void classNameLabel_Click(object sender, EventArgs e)
         {
 
         }
-
+        /// <summary>
+        /// Displays people waiting for a grade for a precis exam in a datagridview
+        /// Offers the possibility for the user to enter the grade of the students directly into the datagridview
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             String query = "SELECT * from grade WHERE Subject = '" + SubjectList.Text + "' AND AssesmentName = '" + comboBox1.Text + "' AND Class='"+groupName.name+"'";
@@ -90,7 +103,11 @@ namespace OOP_Project_Group13
         {
            
         }
-
+        /// <summary>
+        /// Adds the grade entered in the datagridview to the grades of the student
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonAddGrade_Click(object sender, EventArgs e)
         {
             connection.Open();
