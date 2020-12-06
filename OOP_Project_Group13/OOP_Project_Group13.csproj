@@ -182,12 +182,6 @@
     <Compile Include="Forms\FirstConWin.Designer.cs">
       <DependentUpon>FirstConWin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormCreateStudent.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormCreateStudent.Designer.cs">
-      <DependentUpon>FormCreateStudent.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\LoginWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -277,9 +271,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FirstConWin.resx">
       <DependentUpon>FirstConWin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormCreateStudent.resx">
-      <DependentUpon>FormCreateStudent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginWindow.resx">
       <DependentUpon>LoginWindow.cs</DependentUpon>
