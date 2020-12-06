@@ -26,6 +26,11 @@ namespace OOP_Project_Group13.Forms
             status = _status;
         }
 
+        /// <summary>
+        /// Initialize the window with all the students in the class
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ManageClassWindow_Load(object sender, EventArgs e)
         {
             classNameLabel.Text = "Class Name : " + group.name;
@@ -33,18 +38,33 @@ namespace OOP_Project_Group13.Forms
                 dataGridView1.Rows.Add(group.students[i].ID, group.students[i].name, group.students[i].firstName);
         }
 
+        /// <summary>
+        /// Open the create course window when the user click on the create course window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             CreateCourse createCoursewin = new CreateCourse(connection, group.name);
             createCoursewin.Show();
         }
 
+        /// <summary>
+        /// Open the modify course window when the users click on the right button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ModifyCourseBtn_Click(object sender, EventArgs e)
         {
             CreateCourse createCoursewin = new CreateCourse(connection, group.name);
             createCoursewin.Show();
         }
 
+        /// <summary>
+        /// Display the timetable of the class
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TimetableBtn_Click(object sender, EventArgs e)
         {
             TimeTablePnl.Visible = true;
@@ -54,18 +74,33 @@ namespace OOP_Project_Group13.Forms
             classTimetable.GetTimetable();
         }
 
+        /// <summary>
+        /// Display the list of students
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void StudentsBtn_Click(object sender, EventArgs e)
         {
             dataGridView1.Visible = true;
             TimeTablePnl.Visible = false;
         }
 
+        /// <summary>
+        /// Open the create exam window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonCreateExam_Click_1(object sender, EventArgs e)
         {
             CreateExam createExamwin = new CreateExam(connection, group);
             createExamwin.Show();
         }
 
+        /// <summary>
+        /// Open the submit grades window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             AddGrade2 SubmitGrade = new AddGrade2(connection, group);
@@ -77,11 +112,21 @@ namespace OOP_Project_Group13.Forms
 
         }
 
+        /// <summary>
+        /// Close the running window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BackBtn_Click(object sender, EventArgs e)
         {
             Close();
         }
 
+        /// <summary>
+        /// Delete the class from the database
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void deleteBtn_Click(object sender, EventArgs e)
         {
             String query = "DELETE FROM class WHERE className = '" + group.name + "'";
@@ -93,6 +138,11 @@ namespace OOP_Project_Group13.Forms
             Close();
         }
 
+        /// <summary>
+        /// Refresh the window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button3_Click(object sender, EventArgs e)
         {
             TimeTablePnl.Visible = false;
