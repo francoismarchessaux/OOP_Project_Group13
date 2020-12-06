@@ -23,7 +23,13 @@ namespace OOP_Project_Group13
             connection = _connection;
             groupName = _groupName;
         }
-
+        /// <summary>
+        /// The Admin/Teacher enters the information of a new course
+        /// The programm studies if it's possible to create this course (no other courses at the same time)
+        /// If it's possible, the course is added to the Course database
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonCreate_Click(object sender, EventArgs e)
         {
             string subject = SubjectList.Text;
@@ -60,7 +66,11 @@ namespace OOP_Project_Group13
                 }
             }
         }
-
+        /// <summary>
+        /// Adds the name, first name and ID of all teachers to the TeacherList
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CreateCourse_Load(object sender, EventArgs e)
         {
             String query = "Select name, firstName, userID from Users Where status = 'Faculty'";

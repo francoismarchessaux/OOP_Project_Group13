@@ -27,12 +27,21 @@ namespace OOP_Project_Group13
         {
 
         }
-
+        /// <summary>
+        /// Displays the name of the group when the page loads
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CreateExam_Load(object sender, EventArgs e)
         {
             classNameLabel.Text = "Class Name : " + groupName.name;
         }
-
+        /// <summary>
+        /// Allows the Admin/Teacher to create a new exam
+        /// All the information that the teacher will enter in the textbox will be stored in the Grade database
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonCreateExam_Click(object sender, EventArgs e)
         {
             string subject = SubjectList.Text;
